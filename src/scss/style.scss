@@ -1,0 +1,49 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+.mat-warn {
+    background-color: #de1a0b;
+    color: white;
+  }
+ .mat-accent{
+    background-color: #43a047;
+    color: white;
+  }
+
+  .snack-bar{
+      position: absolute;
+      top:34px;
+      right: 10px;
+  }
+  
+  .cursor_pointer{
+    cursor: pointer;
+  }
+
+  .color_green{
+    color: green;;
+  }
+  .progress-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1111;
+
+  }
+  .loading{
+    position: relative;
+    top: 50%;
+}
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
