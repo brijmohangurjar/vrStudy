@@ -50,6 +50,9 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { SubjectsComponent } from './views/subjects/subjects.component';
+import { TopicComponent } from './views/topic/topic.component';
+import { BookComponent } from './views/book/book.component';
+import { PageComponent } from './views/page/page.component';
 
 @NgModule({
   imports: [
@@ -85,7 +88,10 @@ import { SubjectsComponent } from './views/subjects/subjects.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    TopicComponent,
+    BookComponent,
+    PageComponent
   ],
   providers: [
     {

@@ -11,6 +11,9 @@ import { RegisterComponent } from './views/register/register.component';
 import { AuthGuardService } from './service/auth-guard.service'
 import { LoggedInGuardService } from './service/logged-in-guard.service'
 import { SubjectsComponent } from './views/subjects/subjects.component';
+import { TopicComponent } from './views/topic/topic.component';
+import { BookComponent } from './views/book/book.component';
+import { PageComponent } from './views/page/page.component';
 
 
 export const routes: Routes = [
@@ -60,6 +63,18 @@ export const routes: Routes = [
       {
         path: 'subject',
         component: SubjectsComponent
+      },
+      {
+        path: 'topic',
+        component: TopicComponent
+      },
+      {
+        path: 'book',
+        component: BookComponent
+      },
+      {
+        path: 'page',
+        component: PageComponent
       },
       {
         path: 'base',

@@ -19,6 +19,21 @@ export const navItems: INavData[] = [
     url: '/subject',
     icon: 'cil-address-book'
   },
+  {
+    name: 'Topic',
+    url: '/topic',
+    icon: 'cil-address-book'
+  },
+  {
+    name: 'Book',
+    url: '/book',
+    icon: 'cil-address-book'
+  },
+  {
+    name: 'Page',
+    url: '/page',
+    icon: 'cil-address-book'
+  },
   // {
   //   name: 'Typography',
   //   url: '/theme/typography',

@@ -1,0 +1,99 @@
+<div class="row" *ngIf="showForm">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Add Book</strong>
+            </div>
+            <form name="form" [formGroup]="form">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-sm-4 col-lg-4 col-md-4">
+                            <label for="ccmonth">Subject</label>
+                            <select class="form-control" formControlName="subject">
+                                <option value="">Select</option>
+                                <option *ngFor="let subject of allSubject" [ngValue]="subject.docId">{{subject?.name}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-4 col-lg-4 col-md-4">
+                            <label for="ccmonth">Topic</label>
+                            <select class="form-control" formControlName="topic">
+                                <option value="">Select</option>
+                                <option *ngFor="let topic of allTopic" [ngValue]="topic.docId">{{topic?.topicName}}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="form-group">
+                                <label for="name">Book Name</label>
+                                <!-- <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" formControlName="bookName" placeholder="Enter your book"></textarea> -->
+                                <input type="text" formControlName="bookName" class="form-control" id="bookName"
+                                    placeholder="Enter your topic name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-sm btn-primary" [disabled]="!form.valid" (click)="saveData()">Submit</button>
+                    <button type="reset" class="btn btn-sm btn-danger ml-2" (click)="close()">Close</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-6">
+                        <strong>All Books</strong>
+                    </div>
+                    <div class="col-6" style="text-align: end;">
+                        <button type="submit" class="btn btn-sm btn-primary" (click)="open()">Add</button>
+                    </div>
+                </div>
+                <!-- <i class="fa fa-align-justify"></i> Combined All Table -->
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>S No.</th>
+                            <th>Subject</th>
+                            <th>Topic</th>
+                            <th>Book Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of dataList;let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{item?.subject?.name}}</td>
+                            <td>{{item?.topic?.topicName}}</td>
+                            <td>{{item?.bookName}}</td>
+                            <td>
+                                <i class="fa fa-pencil cursor_pointer color_green" (click)="updateData(item)"
+                                    aria-hidden="true"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav> -->
+            </div>
+        </div>
+    </div>
+    <!--/.col-->
+</div>
