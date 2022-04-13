@@ -69,7 +69,6 @@ export class ShortComponent implements OnInit {
   public getAllTopic(){
     this.topicService.getTopicByDocId(this.form.value.subject).subscribe(res => {
       this.allTopic = res;
-      console.log(this.allTopic , 'this.allTopic');
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
@@ -97,7 +96,6 @@ export class ShortComponent implements OnInit {
     this.appComponent.showLoader();
     this.shortService.getShort().subscribe(res => {
       this.dataList = res;
-      console.log(this.dataList , 'this.dataList');
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -177,7 +175,7 @@ export class ShortComponent implements OnInit {
 
   public deleteData(element: any) {
     this.appComponent.showLoader();
-    this.topicService.deleteTopic(element.docId).subscribe((res: any) => {
+    this.shortService.deleteShort(element.docId).subscribe((res: any) => {
       if (res.status === 200) {
       }
       this.appComponent.hideLoader();
