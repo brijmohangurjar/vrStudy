@@ -83,20 +83,19 @@ export class TopicService {
   //     );
   // }
 
-  // public getCategoryByDocId(): Observable<any> {
-  //   const docId = this.shopkeeperService.userData ? this.shopkeeperService.userData.shopType.docId : '';
-  //   return this.db.collection('category', ref => 
-  //   ref.where('shopCategory.docId' ,'==' , docId )
-  //   ).snapshotChanges()
-  //     .pipe(map((actions) => {
-  //       return actions.map(doc => {
-  //         const data: any = doc.payload.doc.data();
-  //         const docId = doc.payload.doc.id;
-  //         return { docId, ...data };
-  //       });
-  //     })
-  //     );
-  // }
+  public getTopicByDocId(docId): Observable<any> {
+    return this.db.collection('topic', ref => 
+    ref.where('subject.docId' ,'==' , docId)
+    ).snapshotChanges()
+      .pipe(map((actions) => {
+        return actions.map(doc => {
+          const data: any = doc.payload.doc.data();
+          const docId = doc.payload.doc.id;
+          return { docId, ...data };
+        });
+      })
+      );
+  }
 
 
   editTopic(id: string, data: any, ): Observable<any> {

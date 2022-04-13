@@ -2,23 +2,49 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <strong>Add Topic</strong>
+                <strong>Add Short</strong>
             </div>
             <form name="form" [formGroup]="form">
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-sm-4 col-lg-4 col-md-4">
                             <label for="ccmonth">Subject</label>
-                            <select class="form-control" formControlName="subject">
+                            <select class="form-control" formControlName="subject" (change)="getAllTopic()">
                                 <option value="">Select</option>
                                 <option *ngFor="let subject of allSubject" [ngValue]="subject.docId">{{subject?.name}}</option>
                             </select>
                         </div>
+                        <div class="form-group col-sm-4 col-lg-4 col-md-4">
+                            <label for="ccmonth">Topic</label>
+                            <select class="form-control" formControlName="topic" (change)="getAllBook()">
+                                <option value="">Select</option>
+                                <option *ngFor="let topic of allTopic" [ngValue]="topic.docId">{{topic?.topicName}}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-4 col-lg-4 col-md-4">
+                            <label for="ccmonth">Book</label>
+                            <select class="form-control" formControlName="book" (change)="getAllPage()">
+                                <option value="">Select</option>
+                                <option *ngFor="let book of allBook" [ngValue]="book.docId">{{book?.bookName}}</option>
+                            </select>
+                        </div>
+                        
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="name">Topic Name</label>
-                                <input type="text" formControlName="topicName" class="form-control" id="topicName"
-                                    placeholder="Enter your topic name">
+                                <label for="name">Page</label>
+                                <select class="form-control" formControlName="page">
+                                    <option value="">Select</option>
+                                    <option *ngFor="let page of allPage" [ngValue]="page.docId">{{page?.page}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="form-group">
+                                <label for="name">Short</label>
+                                <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" formControlName="short" placeholder="Enter your short"></textarea>
+                                <!-- <input type="text" formControlName="page" class="form-control" id="page"
+                                    placeholder="Enter your page"> -->
                             </div>
                         </div>
                     </div>
@@ -39,7 +65,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-6">
-                        <strong>All Topics</strong>
+                        <strong>All Short</strong>
                     </div>
                     <div class="col-6" style="text-align: end;">
                         <button type="submit" class="btn btn-sm btn-primary" (click)="open()">Add</button>
@@ -53,7 +79,10 @@
                         <tr>
                             <th>S No.</th>
                             <th>Subject</th>
-                            <th>Topic Name</th>
+                            <th>Topic</th>
+                            <th>Book</th>
+                            <th>Page</th>
+                            <th>Short</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -61,7 +90,10 @@
                         <tr *ngFor="let item of dataList;let i = index">
                             <td>{{i + 1}}</td>
                             <td>{{item?.subject?.name}}</td>
-                            <td>{{item?.topicName}}</td>
+                            <td>{{item?.topic?.topicName}}</td>
+                            <td>{{item?.book?.bookName}}</td>
+                            <td>{{item?.page?.page}}</td>
+                            <td>{{item?.short}}</td>
                             <td>
                                 <i class="fa fa-pencil cursor_pointer color_green" (click)="updateData(item)"
                                     aria-hidden="true"></i>

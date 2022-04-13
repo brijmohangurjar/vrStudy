@@ -83,20 +83,19 @@ export class PageService {
   //     );
   // }
 
-  // public getCategoryByDocId(): Observable<any> {
-  //   const docId = this.shopkeeperService.userData ? this.shopkeeperService.userData.shopType.docId : '';
-  //   return this.db.collection('category', ref => 
-  //   ref.where('shopCategory.docId' ,'==' , docId )
-  //   ).snapshotChanges()
-  //     .pipe(map((actions) => {
-  //       return actions.map(doc => {
-  //         const data: any = doc.payload.doc.data();
-  //         const docId = doc.payload.doc.id;
-  //         return { docId, ...data };
-  //       });
-  //     })
-  //     );
-  // }
+  public getPageByDocId(docId): Observable<any> {
+    return this.db.collection('page', ref => 
+    ref.where('book.docId' ,'==' , docId )
+    ).snapshotChanges()
+      .pipe(map((actions) => {
+        return actions.map(doc => {
+          const data: any = doc.payload.doc.data();
+          const docId = doc.payload.doc.id;
+          return { docId, ...data };
+        });
+      })
+      );
+  }
 
 
   editPage(id: string, data: any, ): Observable<any> {

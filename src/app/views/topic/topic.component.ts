@@ -113,6 +113,18 @@ export class TopicComponent implements OnInit {
       });
     }
   }
+  public deleteData(element: any) {
+    this.appComponent.showLoader();
+    this.topicService.deleteTopic(element.docId).subscribe((res: any) => {
+      if (res.status === 200) {
+      }
+      this.appComponent.showLoader();
+    }, (error: any) => {
+      this.appComponent.showLoader();
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error);
+    });
+  }
 
 
 

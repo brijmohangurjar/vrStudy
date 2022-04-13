@@ -7,8 +7,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class BookService {
-
+export class ShortService {
 
   constructor(
     private db: AngularFirestore,
@@ -16,12 +15,12 @@ export class BookService {
 
 
 
-  public addBook(credential: any): Observable<any> {
+  public addShort(credential: any): Observable<any> {
     const obj = new Observable((observer) => {
-      this.db.collection('book').add(credential).then((response) => {
+      this.db.collection('short').add(credential).then((response) => {
         observer.next({
           status: 200,
-          message: 'Book added successfuly.',
+          message: 'Short added successfuly.',
           id: response.id
         });
       }).catch((error) => {
@@ -35,11 +34,11 @@ export class BookService {
     return obj;
   }
 
-  deleteBook(docId: string): Observable<any> {
+  deleteShort(docId: string): Observable<any> {
     const obs = new Observable((observer) => {
-      this.db.collection('book').doc(docId).delete().then(async () => {
+      this.db.collection('short').doc(docId).delete().then(async () => {
         observer.next({
-          message: 'Book Delete Successfuly.',
+          message: 'Short Delete Successfuly.',
           status: 200,
         });
       }).catch((error) => {
@@ -53,8 +52,8 @@ export class BookService {
   }
 
   
-  public getBook(): Observable<any> {
-    return this.db.collection('book').snapshotChanges()
+  public getShort(): Observable<any> {
+    return this.db.collection('short').snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
           const data: any = doc.payload.doc.data();
@@ -84,26 +83,27 @@ export class BookService {
   //     );
   // }
 
-  public getBookByDocId(docId): Observable<any> {
-    return this.db.collection('book', ref => 
-    ref.where('topic.docId' ,'==' , docId )
-    ).snapshotChanges()
-      .pipe(map((actions) => {
-        return actions.map(doc => {
-          const data: any = doc.payload.doc.data();
-          const docId = doc.payload.doc.id;
-          return { docId, ...data };
-        });
-      })
-      );
-  }
+  // public getCategoryByDocId(): Observable<any> {
+  //   const docId = this.shopkeeperService.userData ? this.shopkeeperService.userData.shopType.docId : '';
+  //   return this.db.collection('category', ref => 
+  //   ref.where('shopCategory.docId' ,'==' , docId )
+  //   ).snapshotChanges()
+  //     .pipe(map((actions) => {
+  //       return actions.map(doc => {
+  //         const data: any = doc.payload.doc.data();
+  //         const docId = doc.payload.doc.id;
+  //         return { docId, ...data };
+  //       });
+  //     })
+  //     );
+  // }
 
 
-  editBook(id: string, data: any, ): Observable<any> {
+  editShort(id: string, data: any, ): Observable<any> {
     const obs = new Observable((observer) => {
-      this.db.collection('book').doc(id).update(data).then(async (response) => {
+      this.db.collection('short').doc(id).update(data).then(async (response) => {
         observer.next({
-          message: 'Book Update Successfuly.',
+          message: 'Shorts Update Successfuly.',
           status: 200,
           data: response
         });

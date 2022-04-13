@@ -53,6 +53,8 @@ import { SubjectsComponent } from './views/subjects/subjects.component';
 import { TopicComponent } from './views/topic/topic.component';
 import { BookComponent } from './views/book/book.component';
 import { PageComponent } from './views/page/page.component';
+import { ShortComponent } from './views/short/short.component';
+import { ConfirmationPopoverComponent } from './views/confirmation-popover/confirmation-popover.component';
 
 @NgModule({
   imports: [
@@ -91,7 +93,9 @@ import { PageComponent } from './views/page/page.component';
     SubjectsComponent,
     TopicComponent,
     BookComponent,
-    PageComponent
+    PageComponent,
+    ShortComponent,
+    ConfirmationPopoverComponent
   ],
   providers: [
     {

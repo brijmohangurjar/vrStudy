@@ -48,6 +48,19 @@ export class SubjectsComponent implements OnInit {
     });
   }
 
+  public deleteData(element: any) {
+    this.appComponent.showLoader();
+    this.subjectService.deleteSubject(element.docId).subscribe((res: any) => {
+      if (res.status === 200) {
+      }
+      this.appComponent.hideLoader();
+    }, (error: any) => {
+      this.appComponent.hideLoader();
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error);
+    });
+  }
+
   public close(){
     this.showForm = false;
   }

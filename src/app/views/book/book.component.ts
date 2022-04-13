@@ -36,7 +36,6 @@ export class BookComponent implements OnInit {
     this.createForm();
     this.getList();
     this.getAllSubject();
-    this.getAllTopic();
   }
 
   public createForm(data?: any) {
@@ -45,6 +44,9 @@ export class BookComponent implements OnInit {
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       bookName: [data && data.bookName ? data.bookName : '', [Validators.required]],
     });
+    if(data){
+      this.getAllTopic();
+    }
   }
   
   private getAllSubject(){
@@ -55,8 +57,8 @@ export class BookComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
-  private getAllTopic(){
-    this.topicService.getTopic().subscribe(res => {
+  public getAllTopic(){
+    this.topicService.getTopicByDocId(this.form.value.subject).subscribe(res => {
       this.allTopic = res;
       console.log(this.allTopic , 'this.allTopic');
     }, (error: HttpErrorResponse) => {
@@ -97,7 +99,11 @@ export class BookComponent implements OnInit {
     this.appComponent.showLoader();
     let formValue = this.form.value;
     formValue.subject = this.allSubject.find(res=> res.docId == this.form.value.subject);
-    formValue.topic = this.allTopic.find(res=> res.docId == this.form.value.topic);
+    const topic = this.allTopic.find(res=> res.docId == this.form.value.topic);
+    formValue.topic = {
+      topicName: topic.topicName,
+      docId: topic.docId
+    }
     if (this.DM_MODE == 'Add') {
       formValue.authStatus = true;
       formValue.createDate = new Date();
@@ -129,6 +135,20 @@ export class BookComponent implements OnInit {
       });
     }
   }
+
+  public deleteData(element: any) {
+    this.appComponent.showLoader();
+    this.bookService.deleteBook(element.docId).subscribe((res: any) => {
+      if (res.status === 200) {
+      }
+      this.appComponent.hideLoader();
+    }, (error: any) => {
+      this.appComponent.hideLoader();
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error);
+    });
+  }
+
 
 
 

@@ -9,14 +9,14 @@
                     <div class="row">
                         <div class="form-group col-sm-4 col-lg-4 col-md-4">
                             <label for="ccmonth">Subject</label>
-                            <select class="form-control" formControlName="subject">
+                            <select class="form-control" formControlName="subject" (change)="getAllTopic()">
                                 <option value="">Select</option>
                                 <option *ngFor="let subject of allSubject" [ngValue]="subject.docId">{{subject?.name}}</option>
                             </select>
                         </div>
                         <div class="form-group col-sm-4 col-lg-4 col-md-4">
                             <label for="ccmonth">Topic</label>
-                            <select class="form-control" formControlName="topic">
+                            <select class="form-control" formControlName="topic" (change)="getAllBook()">
                                 <option value="">Select</option>
                                 <option *ngFor="let topic of allTopic" [ngValue]="topic.docId">{{topic?.topicName}}</option>
                             </select>
@@ -33,9 +33,9 @@
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="name">Page</label>
-                                <!-- <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" formControlName="page" placeholder="Enter your page"></textarea> -->
-                                <input type="text" formControlName="page" class="form-control" id="page"
-                                    placeholder="Enter your page">
+                                <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" formControlName="page" placeholder="Enter your page"></textarea>
+                                <!-- <input type="text" formControlName="page" class="form-control" id="page"
+                                    placeholder="Enter your page"> -->
                             </div>
                         </div>
                     </div>
@@ -86,6 +86,8 @@
                             <td>
                                 <i class="fa fa-pencil cursor_pointer color_green" (click)="updateData(item)"
                                     aria-hidden="true"></i>
+                                <i class="fa fa-trash cursor_pointer color_green ml-2" aria-hidden="true" (click) = "deleteData(item)"></i>
+
                             </td>
                         </tr>
                     </tbody>

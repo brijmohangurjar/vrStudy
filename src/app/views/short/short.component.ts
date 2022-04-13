@@ -7,13 +7,14 @@ import { MatSnackBarService } from 'src/app/service/mat-snack-bar.service';
 import {TopicService} from '../../api-service/topic.service';
 import {BookService} from '../../api-service/book.service';
 import {PageService} from '../../api-service/page.service';
+import {ShortService} from '../../api-service/short.service'
 
 @Component({
-  selector: 'app-page',
-  templateUrl: './page.component.html',
-  styleUrls: ['./page.component.scss']
+  selector: 'app-short',
+  templateUrl: './short.component.html',
+  styleUrls: ['./short.component.scss']
 })
-export class PageComponent implements OnInit {
+export class ShortComponent implements OnInit {
 
   public showForm = false;
   public DM_MODE = 'Add';
@@ -23,6 +24,7 @@ export class PageComponent implements OnInit {
   public allSubject = [];
   public allTopic = [];
   public allBook = [];
+  public allPage = [];
 
   constructor(
     private subjectService: SubjectService,
@@ -31,7 +33,8 @@ export class PageComponent implements OnInit {
     private appComponent: AppComponent,
     private topicService: TopicService,
     private bookService: BookService,
-    private pageService: PageService
+    private pageService: PageService,
+    private shortService: ShortService
   ) { }
 
   ngOnInit(): void {
@@ -45,11 +48,13 @@ export class PageComponent implements OnInit {
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
-      page: [data && data.page ? data.page : '', [Validators.required]],
+      page: [data && data.page.docId ? data.page.docId : '', [Validators.required]],
+      short: [data && data.short ? data.short : '', [Validators.required]],
     });
     if(data){
       this.getAllTopic();
       this.getAllBook();
+      this.getAllPage();
     }
   }
   
@@ -79,11 +84,20 @@ export class PageComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
+  public getAllPage(){
+    this.pageService.getPageByDocId(this.form.value.book).subscribe(res => {
+      this.allPage = res;
+    }, (error: HttpErrorResponse) => {
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error.message);
+    });
+  }
 
   public getList(){
     this.appComponent.showLoader();
-    this.pageService.getPage().subscribe(res => {
+    this.shortService.getShort().subscribe(res => {
       this.dataList = res;
+      console.log(this.dataList , 'this.dataList');
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -123,11 +137,17 @@ export class PageComponent implements OnInit {
       bookName: book.bookName,
       docId: book.docId
     };
+    const page = this.allPage.find(res=> res.docId == this.form.value.page);
+    formValue.page = {
+      page: page.page,
+      docId: page.docId
+    };
+
     if (this.DM_MODE == 'Add') {
       formValue.authStatus = true;
       formValue.createDate = new Date();
 
-      this.pageService.addPage(formValue)
+      this.shortService.addShort(formValue)
         .subscribe((res: any) => {
           if (res.status === 200) {
             this.close();
@@ -141,7 +161,7 @@ export class PageComponent implements OnInit {
         });
     } else {
 
-      this.pageService.editPage(this.selectedElement.docId, formValue).subscribe((res: any) => {
+      this.shortService.editShort(this.selectedElement.docId, formValue).subscribe((res: any) => {
         if (res.status === 200) {
           this.close();
           this.matSnackBarService.showSuccessSnackBar(res.message);
@@ -157,7 +177,7 @@ export class PageComponent implements OnInit {
 
   public deleteData(element: any) {
     this.appComponent.showLoader();
-    this.pageService.deletePage(element.docId).subscribe((res: any) => {
+    this.topicService.deleteTopic(element.docId).subscribe((res: any) => {
       if (res.status === 200) {
       }
       this.appComponent.hideLoader();
@@ -167,6 +187,7 @@ export class PageComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error);
     });
   }
+  
 
 
 
