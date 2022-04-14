@@ -96,6 +96,20 @@ export class ShortComponent implements OnInit {
     this.appComponent.showLoader();
     this.shortService.getShort().subscribe(res => {
       this.dataList = res;
+      const allData = [];
+      res.map((page:any) => {
+        const isExist = allData.find(res => res.pageName ==  page.page.page);
+        if(isExist){
+          isExist.pageArray.push(page);
+        } else {
+          const obj = {
+            pageName: page.page.page,
+            pageArray: [page]
+          }
+          allData.push(obj);
+        }
+      });
+      this.dataList = allData;
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -108,10 +122,21 @@ export class ShortComponent implements OnInit {
     this.showForm = false;
   }
 
-  public open(){
+  public open(data){
     this.DM_MODE = 'Add';
     this.showForm = true;
-    this.createForm();
+    this.form = this.formBuilder.group({
+      subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
+      topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
+      book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
+      page: [data && data.page.docId ? data.page.docId : '', [Validators.required]],
+      short: ['', [Validators.required]],
+    });
+    if(data){
+      this.getAllTopic();
+      this.getAllBook();
+      this.getAllPage();
+    }
   }
 
   public updateData(element){

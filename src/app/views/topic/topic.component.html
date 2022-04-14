@@ -33,16 +33,16 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row" *ngFor = "let data of dataList">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
                 <div class="row">
                     <div class="col-6">
-                        <strong>All Topics</strong>
+                        <strong>{{data.subjectName}}</strong>
                     </div>
                     <div class="col-6" style="text-align: end;">
-                        <button type="submit" class="btn btn-sm btn-primary" (click)="open()">Add</button>
+                        <button type="submit" class="btn btn-sm btn-primary" (click)="open(data.subjectArray[0])">Add</button>
                     </div>
                 </div>
                 <!-- <i class="fa fa-align-justify"></i> Combined All Table -->
@@ -58,7 +58,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of dataList;let i = index">
+                        <tr *ngFor="let item of data.subjectArray;let i = index">
                             <td>{{i + 1}}</td>
                             <td>{{item?.subject?.name}}</td>
                             <td>{{item?.topicName}}</td>

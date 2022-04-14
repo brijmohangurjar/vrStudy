@@ -84,6 +84,20 @@ export class PageComponent implements OnInit {
     this.appComponent.showLoader();
     this.pageService.getPage().subscribe(res => {
       this.dataList = res;
+      const allData = [];
+      res.map((book:any) => {
+        const isExist = allData.find(res => res.bookName ==  book.book.bookName);
+        if(isExist){
+          isExist.bookArray.push(book);
+        } else {
+          const obj = {
+            bookName: book.book.bookName,
+            bookArray: [book]
+          }
+          allData.push(obj);
+        }
+      });
+      this.dataList = allData;
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -96,10 +110,19 @@ export class PageComponent implements OnInit {
     this.showForm = false;
   }
 
-  public open(){
+  public open(data){
     this.DM_MODE = 'Add';
     this.showForm = true;
-    this.createForm();
+    this.form = this.formBuilder.group({
+      subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
+      topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
+      book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
+      page: ['', [Validators.required]],
+    });
+    if(data){
+      this.getAllTopic();
+      this.getAllBook();
+    }
   }
 
   public updateData(element){

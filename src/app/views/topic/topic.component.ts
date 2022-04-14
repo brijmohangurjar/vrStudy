@@ -53,7 +53,20 @@ export class TopicComponent implements OnInit {
   public getList(){
     this.appComponent.showLoader();
     this.topicService.getTopic().subscribe(res => {
-      this.dataList = res;
+      const allData = [];
+      res.map((subject:any) => {
+        const isExist = allData.find(res => res.subjectName ==  subject.subject.name);
+        if(isExist){
+          isExist.subjectArray.push(subject);
+        } else {
+          const obj = {
+            subjectName: subject.subject.name,
+            subjectArray: [subject]
+          }
+          allData.push(obj);
+        }
+      });
+      this.dataList = allData;
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -66,9 +79,13 @@ export class TopicComponent implements OnInit {
     this.showForm = false;
   }
 
-  public open(){
+  public open(data){
     this.DM_MODE = 'Add';
     this.showForm = true;
+    this.form = this.formBuilder.group({
+      subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
+      topicName: ['', [Validators.required]],
+    });
   }
 
   public updateData(element){

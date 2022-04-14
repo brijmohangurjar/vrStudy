@@ -33,7 +33,6 @@ export class BookComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.createForm();
     this.getList();
     this.getAllSubject();
   }
@@ -60,7 +59,6 @@ export class BookComponent implements OnInit {
   public getAllTopic(){
     this.topicService.getTopicByDocId(this.form.value.subject).subscribe(res => {
       this.allTopic = res;
-      console.log(this.allTopic , 'this.allTopic');
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
@@ -70,7 +68,20 @@ export class BookComponent implements OnInit {
   public getList(){
     this.appComponent.showLoader();
     this.bookService.getBook().subscribe(res => {
-      this.dataList = res;
+      const allData = [];
+      res.map((topic:any) => {
+        const isExist = allData.find(res => res.topicName ==  topic.topic.topicName);
+        if(isExist){
+          isExist.topicArray.push(topic);
+        } else {
+          const obj = {
+            topicName: topic.topic.topicName,
+            topicArray: [topic]
+          }
+          allData.push(obj);
+        }
+      });
+      this.dataList = allData;
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -83,7 +94,15 @@ export class BookComponent implements OnInit {
     this.showForm = false;
   }
 
-  public open(){
+  public open(data){
+    this.form = this.formBuilder.group({
+      subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
+      topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
+      bookName: ['', [Validators.required]],
+    });
+    if(data){
+      this.getAllTopic();
+    }
     this.DM_MODE = 'Add';
     this.showForm = true;
   }
