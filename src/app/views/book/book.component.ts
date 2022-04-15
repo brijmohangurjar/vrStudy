@@ -6,6 +6,8 @@ import { AppComponent } from 'src/app/app.component';
 import { MatSnackBarService } from 'src/app/service/mat-snack-bar.service';
 import {TopicService} from '../../api-service/topic.service';
 import {BookService} from '../../api-service/book.service'
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 
 @Component({
@@ -22,6 +24,12 @@ export class BookComponent implements OnInit {
   public dataList = [];
   public allSubject = [];
   public allTopic = [];
+  public heading = '';
+  public onChangeSearch = new Subject<string>();
+  public originalData = [];
+  public selectedTopic = '';
+  public allTopicData  = [];
+  public allDataListForFilter = [];
 
   constructor(
     private subjectService: SubjectService,
@@ -35,6 +43,12 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
     this.getList();
     this.getAllSubject();
+    this.getTopic();
+    this.onChangeSearch
+    .pipe(debounceTime(1000))
+    .subscribe(() => {
+      this.search();
+    })
   }
 
   public createForm(data?: any) {
@@ -64,11 +78,77 @@ export class BookComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
+  public getTopic(){
+    this.topicService.getTopic().subscribe(res => {
+      this.allTopicData = res;
+    }, (error: HttpErrorResponse) => {
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error.message);
+    });
+  }
+
+  public changeSearchValue(): void {
+    this.onChangeSearch.next();
+  }
+
+  
+  public clearFilter(){
+    this.heading = '';
+    this.selectedTopic = '';
+    this.dataList = this.allDataListForFilter;
+  }
+
+
+  public filterData(){
+    let data =  [];
+    if(this.selectedTopic){
+      this.allDataListForFilter.map((res:any) => {
+        if(res.topicName == this.selectedTopic){
+          data.push(res);
+        }
+      });
+      this.dataList = data;
+    } else {
+      this.dataList = this.allDataListForFilter;
+    }
+  
+  }
+
+  public search(){
+    this.appComponent.showLoader();
+    const column = ['bookName'];
+    let searchList = this.originalData;
+    if(this.heading) {
+      searchList = this.originalData.filter((row: any) => {
+        return column.some(key => row.hasOwnProperty(key) && new RegExp(this.heading, 'gi').test(row[key]));
+      });
+    }
+ 
+    const allData = [];
+    searchList.map((topic:any) => {
+      const isExist = allData.find(res => res.topicName ==  topic.topic.topicName);
+      if(isExist){
+        isExist.topicArray.push(topic);
+      } else {
+        const obj = {
+          topicName: topic.topic.topicName,
+          topicArray: [topic]
+        }
+        allData.push(obj);
+      }
+    });
+    this.dataList = allData;
+    setTimeout(() => {
+      this.appComponent.hideLoader();
+    }, 1000);
+  }
+
 
   public getList(){
     this.appComponent.showLoader();
     this.bookService.getBook().subscribe(res => {
       const allData = [];
+      this.originalData = res;
       res.map((topic:any) => {
         const isExist = allData.find(res => res.topicName ==  topic.topic.topicName);
         if(isExist){
@@ -82,6 +162,8 @@ export class BookComponent implements OnInit {
         }
       });
       this.dataList = allData;
+      this.allDataListForFilter = allData;
+
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -92,9 +174,10 @@ export class BookComponent implements OnInit {
 
   public close(){
     this.showForm = false;
+    this.form.reset();
   }
 
-  public open(data){
+  public open(data?){
     this.form = this.formBuilder.group({
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],

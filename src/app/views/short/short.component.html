@@ -24,28 +24,32 @@
 
                         <div class="form-group col-sm-4 col-lg-4 col-md-4">
                             <label for="ccmonth">Book</label>
-                            <select class="form-control" formControlName="book" (change)="getAllPage()">
+                            <select class="form-control" formControlName="book">
                                 <option value="">Select</option>
                                 <option *ngFor="let book of allBook" [ngValue]="book.docId">{{book?.bookName}}</option>
                             </select>
                         </div>
-                        
+
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="form-group">
-                                <label for="name">Page</label>
-                                <select class="form-control" formControlName="page">
-                                    <option value="">Select</option>
-                                    <option *ngFor="let page of allPage" [ngValue]="page.docId">{{page?.page}}</option>
-                                </select>
+                                <label for="name">Heading</label>
+                                <input type="text" formControlName="heading" class="form-control" id="heading"
+                                    placeholder="Enter your heading">
                             </div>
                         </div>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="form-group">
-                                <label for="name">Short</label>
-                                <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" formControlName="short" placeholder="Enter your short"></textarea>
-                                <!-- <input type="text" formControlName="page" class="form-control" id="page"
-                                    placeholder="Enter your page"> -->
-                            </div>
+
+                        <div class="col-sm-12 col-lg-12 col-md-12 p-2">
+                            <label for="name">Short</label>
+                            <div class="NgxEditor__Wrapper ">
+                                <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                                <ngx-editor
+                                  [editor]="editor"
+                                  formControlName="short"
+                                  [toolbar]="toolbar"
+                                  [disabled]="false"
+                                  [placeholder]="'Type here...'"
+                                ></ngx-editor>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -59,16 +63,47 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-3">
+                    <strong>All Shorts</strong>
+                </div>
+                <div class="form-group col-sm-3 col-lg-3 col-md-3">
+                    <select class="form-control" [(ngModel)]="selectedBook" (change) = "filterData()" name = "selectedBook">
+                        <option value="">Select Book</option>
+                        <option *ngFor="let book of allBookData" [ngValue]="book?.bookName">{{book?.bookName}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 col-lg-3 col-md-3" style="text-align: end;">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)] = "heading" name = "heading" (ngModelChange)="changeSearchValue()" class="form-control" id="heading"
+                            placeholder="Search By Heading">
+                    </div>
+                </div>
+                <div class="col-3" style="text-align: end;">
+                    <button type="submit" class="btn btn-sm btn-danger mr-2" (click) = "clearFilter()">Clear Filter</button>
+
+                    <button type="submit" class="btn btn-sm btn-primary" (click) = "open()">Add</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div class="row" *ngFor = "let data of dataList">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
                 <div class="row">
                     <div class="col-6">
-                        <strong>{{data.pageName}}</strong>
+                        <strong>{{data.bookName}}</strong>
                     </div>
                     <div class="col-6" style="text-align: end;">
-                        <button type="submit" class="btn btn-sm btn-primary" (click)="open(data.pageArray[0])">Add</button>
+                        <button type="submit" class="btn btn-sm btn-primary" (click)="open(data.bookArray[0])">Add</button>
                     </div>
                 </div>
                 <!-- <i class="fa fa-align-justify"></i> Combined All Table -->
@@ -81,19 +116,19 @@
                             <th>Subject</th>
                             <th>Topic</th>
                             <th>Book</th>
-                            <th>Page</th>
+                            <th>Heading</th>
                             <th>Short</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of data.pageArray;let i = index">
+                        <tr *ngFor="let item of data.bookArray;let i = index">
                             <td>{{i + 1}}</td>
                             <td>{{item?.subject?.name}}</td>
                             <td>{{item?.topic?.topicName}}</td>
                             <td>{{item?.book?.bookName}}</td>
-                            <td>{{item?.page?.page}}</td>
-                            <td>{{item?.short}}</td>
+                            <td>{{item?.heading}}</td>
+                            <td [innerHtml]="item?.short | safeHtml">{{item?.short}}</td>
                             <td>
                                 <i class="fa fa-pencil cursor_pointer color_green" (click)="updateData(item)"
                                     aria-hidden="true"></i>

@@ -29,15 +29,37 @@
                                 <option *ngFor="let book of allBook" [ngValue]="book.docId">{{book?.bookName}}</option>
                             </select>
                         </div>
-                        
+
                         <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="form-group">
+                                <label for="name">Heading</label>
+                                <input type="text" formControlName="heading" class="form-control" id="heading"
+                                    placeholder="Enter your heading">
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="form-group">
                                 <label for="name">Page</label>
                                 <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" formControlName="page" placeholder="Enter your page"></textarea>
-                                <!-- <input type="text" formControlName="page" class="form-control" id="page"
-                                    placeholder="Enter your page"> -->
                             </div>
+                        </div> -->
+                        <div class="col-sm-12 col-lg-12 col-md-12 p-2">
+                            <label for="name">Page</label>
+                            <div class="NgxEditor__Wrapper ">
+                                <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                                <ngx-editor
+                                  [editor]="editor"
+                                  formControlName="page"
+                                  [toolbar]="toolbar"
+                                  [disabled]="false"
+                                  [placeholder]="'Type here...'"
+                                ></ngx-editor>
+                              </div>
                         </div>
+
+
+                     
                     </div>
                 </div>
                 <div class="card-footer">
@@ -49,6 +71,38 @@
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-3">
+                    <strong>All Pages</strong>
+                </div>
+                <div class="form-group col-sm-3 col-lg-3 col-md-3">
+                    <select class="form-control" [(ngModel)]="selectedBook" (change) = "filterData()" name = "selectedBook">
+                        <option value="">Select Book</option>
+                        <option *ngFor="let book of allBookData" [ngValue]="book?.bookName">{{book?.bookName}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 col-lg-3 col-md-3" style="text-align: end;">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)] = "heading" name = "heading" (ngModelChange)="changeSearchValue()" class="form-control" id="heading"
+                            placeholder="Search By Heading">
+                    </div>
+                </div>
+                <div class="col-3" style="text-align: end;">
+                    <button type="submit" class="btn btn-sm btn-danger mr-2" (click) = "clearFilter()">Clear Filter</button>
+
+                    <button type="submit" class="btn btn-sm btn-primary" (click) = "open()">Add</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <div class="row" *ngFor = "let data of dataList">
     <div class="col-lg-12">
@@ -72,6 +126,7 @@
                             <th>Subject</th>
                             <th>Topic</th>
                             <th>Book</th>
+                            <th>Heading</th>
                             <th>Page</th>
                             <th>Status</th>
                         </tr>
@@ -82,7 +137,8 @@
                             <td>{{item?.subject?.name}}</td>
                             <td>{{item?.topic?.topicName}}</td>
                             <td>{{item?.book?.bookName}}</td>
-                            <td>{{item?.page}}</td>
+                            <td>{{item?.heading}}</td>
+                            <td [innerHtml]="item?.page | safeHtml">{{item?.page}}</td>
                             <td>
                                 <i class="fa fa-pencil cursor_pointer color_green" (click)="updateData(item)"
                                     aria-hidden="true"></i>

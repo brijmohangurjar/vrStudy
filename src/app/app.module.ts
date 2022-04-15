@@ -55,7 +55,8 @@ import { BookComponent } from './views/book/book.component';
 import { PageComponent } from './views/page/page.component';
 import { ShortComponent } from './views/short/short.component';
 import { ConfirmationPopoverComponent } from './views/confirmation-popover/confirmation-popover.component';
-
+import { NgxEditorModule } from 'ngx-editor';
+import { SafeHtmlPipe } from './service/safe-html.pipe';
 @NgModule({
   imports: [
     BrowserModule,
@@ -78,7 +79,8 @@ import { ConfirmationPopoverComponent } from './views/confirmation-popover/confi
     AngularFireFunctionsModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxEditorModule
   ],
   exports:[
     MatSnackBarModule
@@ -95,7 +97,8 @@ import { ConfirmationPopoverComponent } from './views/confirmation-popover/confi
     BookComponent,
     PageComponent,
     ShortComponent,
-    ConfirmationPopoverComponent
+    ConfirmationPopoverComponent,
+    SafeHtmlPipe
   ],
   providers: [
     {

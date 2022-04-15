@@ -1,6 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 import { SubjectService } from 'src/app/api-service/subject.service';
 import { AppComponent } from 'src/app/app.component';
 import { MatSnackBarService } from 'src/app/service/mat-snack-bar.service';
@@ -19,6 +21,12 @@ export class TopicComponent implements OnInit {
   public selectedElement:any;
   public dataList = [];
   public allSubject = [];
+  public heading = '';
+  public onChangeSearch = new Subject<string>();
+  public originalData = [];
+  public selectedSubject = '';
+  public allSubjectData  = [];
+  public allDataListForFilter = [];
 
   constructor(
     private subjectService: SubjectService,
@@ -32,6 +40,12 @@ export class TopicComponent implements OnInit {
     this.createForm();
     this.getList();
     this.getAllSubject();
+    this.getSubject();
+    this.onChangeSearch
+    .pipe(debounceTime(1000))
+    .subscribe(() => {
+      this.search();
+    })
   }
 
   public createForm(data?: any) {
@@ -41,6 +55,7 @@ export class TopicComponent implements OnInit {
     });
   }
   
+  
   private getAllSubject(){
     this.subjectService.getSubject().subscribe(res => {
       this.allSubject = res;
@@ -49,11 +64,74 @@ export class TopicComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
+  private getSubject(){
+    this.subjectService.getSubject().subscribe(res => {
+      this.allSubjectData = res;
+    }, (error: HttpErrorResponse) => {
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error.message);
+    });
+  }
+
+  public changeSearchValue(): void {
+    this.onChangeSearch.next();
+  }
+
+  public clearFilter(){
+    this.heading = '';
+    this.selectedSubject = '';
+    this.dataList = this.allDataListForFilter;
+  }
+
+  public filterData(){
+    let data =  [];
+    if(this.selectedSubject){
+      this.allDataListForFilter.map((res:any) => {
+        if(res.subjectName == this.selectedSubject){
+          data.push(res);
+        }
+      });
+      this.dataList = data;
+    } else {
+      this.dataList = this.allDataListForFilter;
+    }
+  
+  }
+
+  public search(){
+    this.appComponent.showLoader();
+    const column = ['topicName'];
+    let searchList = this.originalData;
+    if(this.heading) {
+      searchList = this.originalData.filter((row: any) => {
+        return column.some(key => row.hasOwnProperty(key) && new RegExp(this.heading, 'gi').test(row[key]));
+      });
+    }
+ 
+    const allData = [];
+    searchList.map((subject:any) => {
+      const isExist = allData.find(res => res.subjectName ==  subject.subject.name);
+      if(isExist){
+        isExist.subjectArray.push(subject);
+      } else {
+        const obj = {
+          subjectName: subject.subject.name,
+          subjectArray: [subject]
+        }
+        allData.push(obj);
+      }
+    });
+    this.dataList = allData;
+    setTimeout(() => {
+      this.appComponent.hideLoader();
+    }, 1000);
+  }
 
   public getList(){
     this.appComponent.showLoader();
     this.topicService.getTopic().subscribe(res => {
       const allData = [];
+      this.originalData = res;
       res.map((subject:any) => {
         const isExist = allData.find(res => res.subjectName ==  subject.subject.name);
         if(isExist){
@@ -67,6 +145,7 @@ export class TopicComponent implements OnInit {
         }
       });
       this.dataList = allData;
+      this.allDataListForFilter = allData;
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -77,9 +156,10 @@ export class TopicComponent implements OnInit {
 
   public close(){
     this.showForm = false;
+    this.form.reset();
   }
 
-  public open(data){
+  public open(data?){
     this.DM_MODE = 'Add';
     this.showForm = true;
     this.form = this.formBuilder.group({
@@ -106,7 +186,6 @@ export class TopicComponent implements OnInit {
       this.topicService.addTopic(formValue)
         .subscribe((res: any) => {
           if (res.status === 200) {
-            this.close();
             this.matSnackBarService.showSuccessSnackBar(res.message);
           }
          this.appComponent.hideLoader();
@@ -120,6 +199,7 @@ export class TopicComponent implements OnInit {
       this.topicService.editTopic(this.selectedElement.docId, formValue).subscribe((res: any) => {
         if (res.status === 200) {
           this.close();
+          this.form.reset();
           this.matSnackBarService.showSuccessSnackBar(res.message);
         }
         this.appComponent.hideLoader();

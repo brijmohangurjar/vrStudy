@@ -63,6 +63,7 @@ export class SubjectsComponent implements OnInit {
 
   public close(){
     this.showForm = false;
+    this.form.reset();
   }
 
   public open(){

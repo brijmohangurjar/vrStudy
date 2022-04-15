@@ -7,6 +7,9 @@ import { MatSnackBarService } from 'src/app/service/mat-snack-bar.service';
 import {TopicService} from '../../api-service/topic.service';
 import {BookService} from '../../api-service/book.service';
 import {PageService} from '../../api-service/page.service';
+import { Editor, Toolbar } from 'ngx-editor';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page',
@@ -23,6 +26,24 @@ export class PageComponent implements OnInit {
   public allSubject = [];
   public allTopic = [];
   public allBook = [];
+  public heading = '';
+  public onChangeSearch = new Subject<string>();
+  public originalData = [];
+  public selectedBook = '';
+  public allBookData  = [];
+  public allDataListForFilter = [];
+
+  editor: Editor;
+  toolbar: Toolbar = [
+    ['bold', 'italic'],
+    ['underline', 'strike'],
+    ['code', 'blockquote'],
+    ['ordered_list', 'bullet_list'],
+    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+    ['link', 'image'],
+    ['text_color', 'background_color'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+  ];
 
   constructor(
     private subjectService: SubjectService,
@@ -37,7 +58,18 @@ export class PageComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
     this.getList();
-    this.getAllSubject();
+    this.getAllSubject()
+    this.getBook();
+    this.editor = new Editor();
+    this.onChangeSearch
+    .pipe(debounceTime(1000))
+    .subscribe(() => {
+      this.search();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.editor.destroy();
   }
 
   public createForm(data?: any) {
@@ -46,6 +78,7 @@ export class PageComponent implements OnInit {
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
       page: [data && data.page ? data.page : '', [Validators.required]],
+      heading: [data && data.heading ? data.heading : '', [Validators.required]],
     });
     if(data){
       this.getAllTopic();
@@ -71,6 +104,17 @@ export class PageComponent implements OnInit {
     });
   }
 
+  public changeSearchValue(): void {
+    this.onChangeSearch.next();
+  }
+
+  public clearFilter(){
+    this.heading = '';
+    this.selectedBook = '';
+    this.dataList = this.allDataListForFilter;
+  }
+
+
   public getAllBook(){
     this.bookService.getBookByDocId(this.form.value.topic).subscribe(res => {
       this.allBook = res;
@@ -80,10 +124,64 @@ export class PageComponent implements OnInit {
     });
   }
 
+  public getBook(){
+    this.bookService.getBook().subscribe(res => {
+      this.allBookData = res;
+    }, (error: HttpErrorResponse) => {
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error.message);
+    });
+  }
+  
+  public filterData(){
+    let data =  [];
+    if(this.selectedBook){
+      this.allDataListForFilter.map((res:any) => {
+        if(res.bookName == this.selectedBook){
+          data.push(res);
+        }
+      });
+      this.dataList = data;
+    } else {
+      this.dataList = this.allDataListForFilter;
+    }
+  
+  }
+
+  public search(){
+    this.appComponent.showLoader();
+    const column = ['heading'];
+    let searchList = this.originalData;
+    if(this.heading) {
+      searchList = this.originalData.filter((row: any) => {
+        return column.some(key => row.hasOwnProperty(key) && new RegExp(this.heading, 'gi').test(row[key]));
+      });
+    }
+ 
+    const allData = [];
+    searchList.map((book:any) => {
+      const isExist = allData.find(res => res.bookName ==  book.book.bookName);
+      if(isExist){
+        isExist.bookArray.push(book);
+      } else {
+        const obj = {
+          bookName: book.book.bookName,
+          bookArray: [book]
+        }
+        allData.push(obj);
+      }
+    });
+    this.dataList = allData;
+    setTimeout(() => {
+      this.appComponent.hideLoader();
+    }, 1000);
+  }
+
   public getList(){
     this.appComponent.showLoader();
     this.pageService.getPage().subscribe(res => {
       this.dataList = res;
+      this.originalData = res;
       const allData = [];
       res.map((book:any) => {
         const isExist = allData.find(res => res.bookName ==  book.book.bookName);
@@ -98,6 +196,8 @@ export class PageComponent implements OnInit {
         }
       });
       this.dataList = allData;
+      this.allDataListForFilter = allData;
+
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -108,9 +208,10 @@ export class PageComponent implements OnInit {
 
   public close(){
     this.showForm = false;
+    this.form.reset();
   }
 
-  public open(data){
+  public open(data?){
     this.DM_MODE = 'Add';
     this.showForm = true;
     this.form = this.formBuilder.group({
@@ -118,6 +219,7 @@ export class PageComponent implements OnInit {
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
       page: ['', [Validators.required]],
+      heading: ['', [Validators.required]],
     });
     if(data){
       this.getAllTopic();

@@ -8,6 +8,9 @@ import {TopicService} from '../../api-service/topic.service';
 import {BookService} from '../../api-service/book.service';
 import {PageService} from '../../api-service/page.service';
 import {ShortService} from '../../api-service/short.service'
+import { Editor, Toolbar } from 'ngx-editor';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-short',
@@ -25,6 +28,23 @@ export class ShortComponent implements OnInit {
   public allTopic = [];
   public allBook = [];
   public allPage = [];
+  public heading = '';
+  public onChangeSearch = new Subject<string>();
+  public originalData = [];
+  public selectedBook = '';
+  public allBookData  = [];
+  public allDataListForFilter = [];
+  editor: Editor;
+  toolbar: Toolbar = [
+    ['bold', 'italic'],
+    ['underline', 'strike'],
+    ['code', 'blockquote'],
+    ['ordered_list', 'bullet_list'],
+    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+    ['link', 'image'],
+    ['text_color', 'background_color'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+  ];
 
   constructor(
     private subjectService: SubjectService,
@@ -41,6 +61,21 @@ export class ShortComponent implements OnInit {
     this.createForm();
     this.getList();
     this.getAllSubject();
+    this.getBook();
+    this.editor = new Editor();
+    this.onChangeSearch
+    .pipe(debounceTime(1000))
+    .subscribe(() => {
+      this.search();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.editor.destroy();
+  }
+
+  public changeSearchValue(): void {
+    this.onChangeSearch.next();
   }
 
   public createForm(data?: any) {
@@ -48,14 +83,19 @@ export class ShortComponent implements OnInit {
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
-      page: [data && data.page.docId ? data.page.docId : '', [Validators.required]],
+      heading: [data && data.heading ? data.heading : ''],
       short: [data && data.short ? data.short : '', [Validators.required]],
     });
     if(data){
       this.getAllTopic();
       this.getAllBook();
-      this.getAllPage();
     }
+  }
+
+  public clearFilter(){
+    this.heading = '';
+    this.selectedBook = '';
+    this.dataList = this.allDataListForFilter;
   }
   
   private getAllSubject(){
@@ -83,33 +123,83 @@ export class ShortComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
-  public getAllPage(){
-    this.pageService.getPageByDocId(this.form.value.book).subscribe(res => {
-      this.allPage = res;
+
+  
+  public getBook(){
+    this.bookService.getBook().subscribe(res => {
+      this.allBookData = res;
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
+    
+  public filterData(){
+    let data =  [];
+    if(this.selectedBook){
+      this.allDataListForFilter.map((res:any) => {
+        if(res.bookName == this.selectedBook){
+          data.push(res);
+        }
+      });
+      this.dataList = data;
+    } else {
+      this.dataList = this.allDataListForFilter;
+    }
+  
+  }
+
+  public search(){
+    this.appComponent.showLoader();
+    const column = ['heading'];
+    let searchList = this.originalData;
+    if(this.heading) {
+      searchList = this.originalData.filter((row: any) => {
+        return column.some(key => row.hasOwnProperty(key) && new RegExp(this.heading, 'gi').test(row[key]));
+      });
+    }
+ 
+    const allData = [];
+    searchList.map((book:any) => {
+      const isExist = allData.find(res => res.bookName ==  book.book.bookName);
+      if(isExist){
+        isExist.bookArray.push(book);
+      } else {
+        const obj = {
+          bookName: book.book.bookName,
+          bookArray: [book]
+        }
+        allData.push(obj);
+      }
+    });
+    this.dataList = allData;
+    setTimeout(() => {
+      this.appComponent.hideLoader();
+    }, 1000);
+  }
+
 
   public getList(){
     this.appComponent.showLoader();
     this.shortService.getShort().subscribe(res => {
       this.dataList = res;
+      this.originalData = res;
       const allData = [];
-      res.map((page:any) => {
-        const isExist = allData.find(res => res.pageName ==  page.page.page);
+      res.map((book:any) => {
+        const isExist = allData.find(res => res.bookName ==  book.book.bookName);
         if(isExist){
-          isExist.pageArray.push(page);
+          isExist.bookArray.push(book);
         } else {
           const obj = {
-            pageName: page.page.page,
-            pageArray: [page]
+            bookName: book.book.bookName,
+            bookArray: [book]
           }
           allData.push(obj);
         }
       });
       this.dataList = allData;
+      this.allDataListForFilter = allData;
+
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -120,22 +210,22 @@ export class ShortComponent implements OnInit {
 
   public close(){
     this.showForm = false;
+    this.form.reset();
   }
 
-  public open(data){
+  public open(data?){
     this.DM_MODE = 'Add';
     this.showForm = true;
     this.form = this.formBuilder.group({
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
-      page: [data && data.page.docId ? data.page.docId : '', [Validators.required]],
+      heading: [''],
       short: ['', [Validators.required]],
     });
     if(data){
       this.getAllTopic();
       this.getAllBook();
-      this.getAllPage();
     }
   }
 
@@ -159,11 +249,6 @@ export class ShortComponent implements OnInit {
     formValue.book = {
       bookName: book.bookName,
       docId: book.docId
-    };
-    const page = this.allPage.find(res=> res.docId == this.form.value.page);
-    formValue.page = {
-      page: page.page,
-      docId: page.docId
     };
 
     if (this.DM_MODE == 'Add') {
