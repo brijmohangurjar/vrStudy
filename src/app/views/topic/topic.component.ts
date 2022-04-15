@@ -53,6 +53,12 @@ export class TopicComponent implements OnInit {
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topicName: [data && data.topicName ? data.topicName : '', [Validators.required]],
     });
+    setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
   
   
@@ -166,6 +172,13 @@ export class TopicComponent implements OnInit {
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topicName: ['', [Validators.required]],
     });
+    setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
+
   }
 
   public updateData(element){

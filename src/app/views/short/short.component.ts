@@ -90,6 +90,12 @@ export class ShortComponent implements OnInit {
       this.getAllTopic();
       this.getAllBook();
     }
+   setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
 
   public clearFilter(){
@@ -227,6 +233,12 @@ export class ShortComponent implements OnInit {
       this.getAllTopic();
       this.getAllBook();
     }
+   setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
 
   public updateData(element){

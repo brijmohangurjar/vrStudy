@@ -60,6 +60,12 @@ export class BookComponent implements OnInit {
     if(data){
       this.getAllTopic();
     }
+     setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
   
   private getAllSubject(){
@@ -188,6 +194,12 @@ export class BookComponent implements OnInit {
     }
     this.DM_MODE = 'Add';
     this.showForm = true;
+     setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
 
   public updateData(element){

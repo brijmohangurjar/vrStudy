@@ -1,157 +1,167 @@
-<div class="row" *ngIf="showForm">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <strong>Add Short</strong>
-            </div>
-            <form name="form" [formGroup]="form">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="form-group col-sm-4 col-lg-4 col-md-4">
-                            <label for="ccmonth">Subject</label>
-                            <select class="form-control" formControlName="subject" (change)="getAllTopic()">
-                                <option value="">Select</option>
-                                <option *ngFor="let subject of allSubject" [ngValue]="subject.docId">{{subject?.name}}</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-sm-4 col-lg-4 col-md-4">
-                            <label for="ccmonth">Topic</label>
-                            <select class="form-control" formControlName="topic" (change)="getAllBook()">
-                                <option value="">Select</option>
-                                <option *ngFor="let topic of allTopic" [ngValue]="topic.docId">{{topic?.topicName}}</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group col-sm-4 col-lg-4 col-md-4">
-                            <label for="ccmonth">Book</label>
-                            <select class="form-control" formControlName="book">
-                                <option value="">Select</option>
-                                <option *ngFor="let book of allBook" [ngValue]="book.docId">{{book?.bookName}}</option>
-                            </select>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="form-group">
-                                <label for="name">Heading</label>
-                                <input type="text" formControlName="heading" class="form-control" id="heading"
-                                    placeholder="Enter your heading">
+<div class="container">
+    <div id="scroll_stop">
+        <div class="row" *ngIf="showForm">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Add Short</strong>
+                    </div>
+                    <form name="form" [formGroup]="form">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-sm-4 col-lg-4 col-md-4">
+                                    <label for="ccmonth">Subject</label>
+                                    <select class="form-control" formControlName="subject" (change)="getAllTopic()">
+                                        <option value="">Select</option>
+                                        <option *ngFor="let subject of allSubject" [ngValue]="subject.docId">
+                                            {{subject?.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-4 col-lg-4 col-md-4">
+                                    <label for="ccmonth">Topic</label>
+                                    <select class="form-control" formControlName="topic" (change)="getAllBook()">
+                                        <option value="">Select</option>
+                                        <option *ngFor="let topic of allTopic" [ngValue]="topic.docId">{{topic?.topicName}}
+                                        </option>
+                                    </select>
+                                </div>
+    
+                                <div class="form-group col-sm-4 col-lg-4 col-md-4">
+                                    <label for="ccmonth">Book</label>
+                                    <select class="form-control" formControlName="book">
+                                        <option value="">Select</option>
+                                        <option *ngFor="let book of allBook" [ngValue]="book.docId">{{book?.bookName}}
+                                        </option>
+                                    </select>
+                                </div>
+    
+                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                    <div class="form-group">
+                                        <label for="name">Heading</label>
+                                        <input type="text" formControlName="heading" class="form-control" id="heading"
+                                            placeholder="Enter your heading">
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-12 col-lg-12 col-md-12 p-2">
+                                    <label for="name">Short</label>
+                                    <div class="NgxEditor__Wrapper ">
+                                        <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                                        <ngx-editor [editor]="editor" formControlName="short" [toolbar]="toolbar"
+                                            [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="col-sm-12 col-lg-12 col-md-12 p-2">
-                            <label for="name">Short</label>
-                            <div class="NgxEditor__Wrapper ">
-                                <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-                                <ngx-editor
-                                  [editor]="editor"
-                                  formControlName="short"
-                                  [toolbar]="toolbar"
-                                  [disabled]="false"
-                                  [placeholder]="'Type here...'"
-                                ></ngx-editor>
-                              </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-sm btn-primary" [disabled]="!form.valid"
+                                (click)="saveData()">Submit</button>
+                            <button type="reset" class="btn btn-sm btn-danger ml-2" (click)="close()">Close</button>
+                        </div>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-3">
+                                <strong>All Shorts</strong>
+                            </div>
+                            <div class="form-group col-sm-3 col-lg-3 col-md-3">
+                                <select class="form-control" [(ngModel)]="selectedBook" (change)="filterData()"
+                                    name="selectedBook">
+                                    <option value="">Select Book</option>
+                                    <option *ngFor="let book of allBookData" [ngValue]="book?.bookName">{{book?.bookName}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3 col-lg-3 col-md-3" style="text-align: end;">
+                                <div class="form-group">
+                                    <input type="text" [(ngModel)]="heading" name="heading"
+                                        (ngModelChange)="changeSearchValue()" class="form-control" id="heading"
+                                        placeholder="Search By Heading">
+                                </div>
+                            </div>
+                            <div class="col-3" style="text-align: end;">
+                                <button type="submit" class="btn btn-sm btn-danger mr-2" (click)="clearFilter()">Clear
+                                    Filter</button>
+    
+                                <button type="submit" class="btn btn-sm btn-primary" (click)="open()">Add</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-sm btn-primary" [disabled]="!form.valid" (click)="saveData()">Submit</button>
-                    <button type="reset" class="btn btn-sm btn-danger ml-2" (click)="close()">Close</button>
-                </div>
-            </form>
-
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-lg-12">
-      <div class="card">
-        <div class="card-header">
-            <div class="row">
-                <div class="col-3">
-                    <strong>All Shorts</strong>
-                </div>
-                <div class="form-group col-sm-3 col-lg-3 col-md-3">
-                    <select class="form-control" [(ngModel)]="selectedBook" (change) = "filterData()" name = "selectedBook">
-                        <option value="">Select Book</option>
-                        <option *ngFor="let book of allBookData" [ngValue]="book?.bookName">{{book?.bookName}}</option>
-                    </select>
-                </div>
-                <div class="col-sm-3 col-lg-3 col-md-3" style="text-align: end;">
-                    <div class="form-group">
-                        <input type="text" [(ngModel)] = "heading" name = "heading" (ngModelChange)="changeSearchValue()" class="form-control" id="heading"
-                            placeholder="Search By Heading">
-                    </div>
-                </div>
-                <div class="col-3" style="text-align: end;">
-                    <button type="submit" class="btn btn-sm btn-danger mr-2" (click) = "clearFilter()">Clear Filter</button>
-
-                    <button type="submit" class="btn btn-sm btn-primary" (click) = "open()">Add</button>
-                </div>
             </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-<div class="row" *ngFor = "let data of dataList">
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-6">
-                        <strong>{{data.bookName}}</strong>
+    
+        <div class="row" *ngFor="let data of dataList">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>{{data.bookName}}</strong>
+                            </div>
+                            <div class="col-6" style="text-align: end;">
+                                <button type="submit" class="btn btn-sm btn-primary"
+                                    (click)="open(data.bookArray[0])">Add</button>
+                            </div>
+                        </div>
+                        <!-- <i class="fa fa-align-justify"></i> Combined All Table -->
                     </div>
-                    <div class="col-6" style="text-align: end;">
-                        <button type="submit" class="btn btn-sm btn-primary" (click)="open(data.bookArray[0])">Add</button>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>S No.</th>
+                                    <th>Subject</th>
+                                    <th>Topic</th>
+                                    <th>Book</th>
+                                    <th>Heading</th>
+                                    <th>Short</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of data.bookArray;let i = index">
+                                    <td>{{i + 1}}</td>
+                                    <td>{{item?.subject?.name}}</td>
+                                    <td>{{item?.topic?.topicName}}</td>
+                                    <td>{{item?.book?.bookName}}</td>
+                                    <td>{{item?.heading}}</td>
+                                    <td [innerHtml]="item?.short | safeHtml">{{item?.short}}</td>
+                                    <td>
+                                        <i class="fa fa-pencil cursor_pointer color_green" (click)="updateData(item)"
+                                            aria-hidden="true"></i>
+                                        <i class="fa fa-trash cursor_pointer color_green ml-2" aria-hidden="true"
+                                            (click)="deleteData(item)"></i>
+    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <nav>
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </nav> -->
                     </div>
                 </div>
-                <!-- <i class="fa fa-align-justify"></i> Combined All Table -->
             </div>
-            <div class="card-body">
-                <table class="table table-bordered table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th>S No.</th>
-                            <th>Subject</th>
-                            <th>Topic</th>
-                            <th>Book</th>
-                            <th>Heading</th>
-                            <th>Short</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of data.bookArray;let i = index">
-                            <td>{{i + 1}}</td>
-                            <td>{{item?.subject?.name}}</td>
-                            <td>{{item?.topic?.topicName}}</td>
-                            <td>{{item?.book?.bookName}}</td>
-                            <td>{{item?.heading}}</td>
-                            <td [innerHtml]="item?.short | safeHtml">{{item?.short}}</td>
-                            <td>
-                                <i class="fa fa-pencil cursor_pointer color_green" (click)="updateData(item)"
-                                    aria-hidden="true"></i>
-                                <i class="fa fa-trash cursor_pointer color_green ml-2" aria-hidden="true" (click) = "deleteData(item)"></i>
-
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- <nav>
-                <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-              </nav> -->
-            </div>
+            <!--/.col-->
         </div>
     </div>
-    <!--/.col-->
+
 </div>

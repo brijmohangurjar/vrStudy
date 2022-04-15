@@ -73,6 +73,7 @@ export class PageComponent implements OnInit {
   }
 
   public createForm(data?: any) {
+    
     this.form = this.formBuilder.group({
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
@@ -84,6 +85,12 @@ export class PageComponent implements OnInit {
       this.getAllTopic();
       this.getAllBook();
     }
+    setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
   
   private getAllSubject(){
@@ -212,6 +219,7 @@ export class PageComponent implements OnInit {
   }
 
   public open(data?){
+    
     this.DM_MODE = 'Add';
     this.showForm = true;
     this.form = this.formBuilder.group({
@@ -225,6 +233,12 @@ export class PageComponent implements OnInit {
       this.getAllTopic();
       this.getAllBook();
     }
+     setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
 
   public updateData(element){

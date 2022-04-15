@@ -34,6 +34,12 @@ export class SubjectsComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: [data && data.name ? data.name : '', [Validators.required]],
     });
+    setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
 
   public getList(){
@@ -69,6 +75,12 @@ export class SubjectsComponent implements OnInit {
   public open(){
     this.DM_MODE = 'Add';
     this.showForm = true;
+    setTimeout(() => {
+      let elmnt:any = document.getElementById("scroll_stop");
+      if(elmnt){
+        elmnt.scrollIntoView();
+      }
+    }, 200);
   }
 
   public updateData(element){
