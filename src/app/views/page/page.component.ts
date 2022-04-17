@@ -24,7 +24,9 @@ export class PageComponent implements OnInit {
   public selectedElement:any;
   public dataList = [];
   public allSubject = [];
+  public selectTopic = '';
   public allTopic = [];
+  public allTopicData = [];
   public allBook = [];
   public heading = '';
   public onChangeSearch = new Subject<string>();
@@ -60,6 +62,7 @@ export class PageComponent implements OnInit {
     this.getList();
     this.getAllSubject()
     this.getBook();
+    this.getTopic();
     this.editor = new Editor();
     this.onChangeSearch
     .pipe(debounceTime(1000))
@@ -104,7 +107,15 @@ export class PageComponent implements OnInit {
   public getAllTopic(){
     this.topicService.getTopicByDocId(this.form.value.subject).subscribe(res => {
       this.allTopic = res;
-      console.log(this.allTopic , 'this.allTopic');
+    }, (error: HttpErrorResponse) => {
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error.message);
+    });
+  }
+
+  public getTopic(){
+    this.topicService.getTopic().subscribe(res => {
+      this.allTopicData = res;
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
@@ -142,10 +153,12 @@ export class PageComponent implements OnInit {
   
   public filterData(){
     let data =  [];
-    if(this.selectedBook){
+    if(this.selectedBook || this.selectTopic){
       this.allDataListForFilter.map((res:any) => {
-        if(res.bookName == this.selectedBook){
-          data.push(res);
+        if(res.topicName == this.selectTopic || (!this.selectTopic && this.selectedBook)){
+          if(res.bookName == this.selectedBook || (!this.selectedBook && this.selectTopic)){
+            data.push(res);
+          }
         }
       });
       this.dataList = data;
@@ -173,6 +186,7 @@ export class PageComponent implements OnInit {
       } else {
         const obj = {
           bookName: book.book.bookName,
+          topicName: book.topic.topicName,
           bookArray: [book]
         }
         allData.push(obj);
@@ -197,6 +211,7 @@ export class PageComponent implements OnInit {
         } else {
           const obj = {
             bookName: book.book.bookName,
+            topicName: book.topic.topicName,
             bookArray: [book]
           }
           allData.push(obj);
@@ -204,7 +219,7 @@ export class PageComponent implements OnInit {
       });
       this.dataList = allData;
       this.allDataListForFilter = allData;
-
+      this.filterData();
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();

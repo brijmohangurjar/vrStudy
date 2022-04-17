@@ -169,6 +169,7 @@ export class BookComponent implements OnInit {
       });
       this.dataList = allData;
       this.allDataListForFilter = allData;
+      this.filterData();
 
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {

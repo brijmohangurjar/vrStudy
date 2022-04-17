@@ -25,14 +25,16 @@ export class ShortComponent implements OnInit {
   public selectedElement:any;
   public dataList = [];
   public allSubject = [];
+  public selectTopic = '';
+  public allTopicData = [];
   public allTopic = [];
   public allBook = [];
   public allPage = [];
   public heading = '';
   public onChangeSearch = new Subject<string>();
   public originalData = [];
-  public selectedBook = '';
-  public allBookData  = [];
+  public selectedPage = '';
+  public allPageData  = [];
   public allDataListForFilter = [];
   editor: Editor;
   toolbar: Toolbar = [
@@ -61,7 +63,8 @@ export class ShortComponent implements OnInit {
     this.createForm();
     this.getList();
     this.getAllSubject();
-    this.getBook();
+    this.getPage();
+    this.getTopic();
     this.editor = new Editor();
     this.onChangeSearch
     .pipe(debounceTime(1000))
@@ -83,12 +86,14 @@ export class ShortComponent implements OnInit {
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
+      page: [data && data.page ? data.page.docId : '', [Validators.required]],
       heading: [data && data.heading ? data.heading : ''],
       short: [data && data.short ? data.short : '', [Validators.required]],
     });
     if(data){
       this.getAllTopic();
       this.getAllBook();
+      this.getAllPage();
     }
    setTimeout(() => {
       let elmnt:any = document.getElementById("scroll_stop");
@@ -100,7 +105,7 @@ export class ShortComponent implements OnInit {
 
   public clearFilter(){
     this.heading = '';
-    this.selectedBook = '';
+    this.selectedPage = '';
     this.dataList = this.allDataListForFilter;
   }
   
@@ -120,6 +125,14 @@ export class ShortComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
+  public getTopic(){
+    this.topicService.getTopic().subscribe(res => {
+      this.allTopicData = res;
+    }, (error: HttpErrorResponse) => {
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error.message);
+    });
+  }
 
   public getAllBook(){
     this.bookService.getBookByDocId(this.form.value.topic).subscribe(res => {
@@ -130,10 +143,19 @@ export class ShortComponent implements OnInit {
     });
   }
 
+  public getAllPage(){
+    this.pageService.getPageByDocId(this.form.value.book).subscribe(res => {
+      this.allPage = res;
+    }, (error: HttpErrorResponse) => {
+      console.log('error', error);
+      this.matSnackBarService.showErrorSnackBar(error.message);
+    });
+  }
+
   
-  public getBook(){
-    this.bookService.getBook().subscribe(res => {
-      this.allBookData = res;
+  public getPage(){
+    this.pageService.getPage().subscribe(res => {
+      this.allPageData = res;
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
@@ -142,10 +164,12 @@ export class ShortComponent implements OnInit {
     
   public filterData(){
     let data =  [];
-    if(this.selectedBook){
+    if(this.selectedPage || this.selectTopic){
       this.allDataListForFilter.map((res:any) => {
-        if(res.bookName == this.selectedBook){
-          data.push(res);
+        if(res.topicName == this.selectTopic || (!this.selectTopic && this.selectedPage)){
+          if(res.heading == this.selectedPage || (!this.selectedPage && this.selectTopic)){
+            data.push(res);
+          }
         }
       });
       this.dataList = data;
@@ -166,14 +190,16 @@ export class ShortComponent implements OnInit {
     }
  
     const allData = [];
-    searchList.map((book:any) => {
-      const isExist = allData.find(res => res.bookName ==  book.book.bookName);
+    searchList.map((page:any) => {
+      const isExist = allData.find(res => res.page ==  page.page.heading);
       if(isExist){
-        isExist.bookArray.push(book);
+        isExist.pageArray.push(page);
       } else {
         const obj = {
-          bookName: book.book.bookName,
-          bookArray: [book]
+          page: page.page.page,
+          heading: page.page.heading,
+          topicName: page.topic.topicName,
+          pageArray: [page]
         }
         allData.push(obj);
       }
@@ -191,21 +217,23 @@ export class ShortComponent implements OnInit {
       this.dataList = res;
       this.originalData = res;
       const allData = [];
-      res.map((book:any) => {
-        const isExist = allData.find(res => res.bookName ==  book.book.bookName);
+      res.map((page:any) => {
+        const isExist = allData.find(res => res.page ==  page.page.page);
         if(isExist){
-          isExist.bookArray.push(book);
+          isExist.pageArray.push(page);
         } else {
           const obj = {
-            bookName: book.book.bookName,
-            bookArray: [book]
+            page: page.page.page,
+            heading: page.page.heading,
+            topicName: page.topic.topicName,
+            pageArray: [page]
           }
           allData.push(obj);
         }
       });
       this.dataList = allData;
       this.allDataListForFilter = allData;
-
+      this.filterData();
       this.appComponent.hideLoader();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
@@ -226,12 +254,14 @@ export class ShortComponent implements OnInit {
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
+      page: [data && data.page.docId ? data.page.docId : '', [Validators.required]],
       heading: [''],
       short: ['', [Validators.required]],
     });
     if(data){
       this.getAllTopic();
       this.getAllBook();
+      this.getAllPage();
     }
    setTimeout(() => {
       let elmnt:any = document.getElementById("scroll_stop");
@@ -261,6 +291,13 @@ export class ShortComponent implements OnInit {
     formValue.book = {
       bookName: book.bookName,
       docId: book.docId
+    };
+
+    const page = this.allPage.find(res=> res.docId == this.form.value.page);
+    formValue.page = {
+      page: page.page,
+      heading: page.heading,
+      docId: page.docId
     };
 
     if (this.DM_MODE == 'Add') {

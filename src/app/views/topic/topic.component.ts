@@ -153,6 +153,7 @@ export class TopicComponent implements OnInit {
       this.dataList = allData;
       this.allDataListForFilter = allData;
       this.appComponent.hideLoader();
+      this.filterData();
     }, (error: HttpErrorResponse) => {
       this.appComponent.hideLoader();
       console.log('error', error);
