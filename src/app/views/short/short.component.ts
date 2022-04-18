@@ -108,6 +108,7 @@ export class ShortComponent implements OnInit {
   public clearFilter(){
     this.heading = '';
     this.selectedPage = '';
+    this.selectTopic = '';
     this.dataList = this.allDataListForFilter;
   }
   
