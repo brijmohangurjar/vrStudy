@@ -33,6 +33,7 @@ export class PageComponent implements OnInit {
   public originalData = [];
   public selectedBook = '';
   public allBookData  = [];
+  public bookOriginalData  = [];
   public allDataListForFilter = [];
 
   editor: Editor;
@@ -104,6 +105,7 @@ export class PageComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
+  
   public getAllTopic(){
     this.topicService.getTopicByDocId(this.form.value.subject).subscribe(res => {
       this.allTopic = res;
@@ -145,13 +147,30 @@ export class PageComponent implements OnInit {
   public getBook(){
     this.bookService.getBook().subscribe(res => {
       this.allBookData = res;
+      this.bookOriginalData = res;
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
   
+  public filterTopic() {
+    this.selectedBook = '';
+  }
+
   public filterData(){
+    let bookData = [];
+    if(this.selectTopic) {
+      this.bookOriginalData.map((res:any) => {
+        if(res.topic.topicName ==  this.selectTopic) {
+          bookData.push(res);
+        }
+      });
+      this.allBookData = bookData; 
+    } else {
+      bookData = this.bookOriginalData;
+    }
+
     let data =  [];
     if(this.selectedBook || this.selectTopic){
       this.allDataListForFilter.map((res:any) => {

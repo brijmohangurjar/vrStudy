@@ -36,6 +36,8 @@ export class ShortComponent implements OnInit {
   public selectedPage = '';
   public allPageData  = [];
   public allDataListForFilter = [];
+  public pageOriginalData  = [];
+
   editor: Editor;
   toolbar: Toolbar = [
     ['bold', 'italic'],
@@ -156,14 +158,31 @@ export class ShortComponent implements OnInit {
   public getPage(){
     this.pageService.getPage().subscribe(res => {
       this.allPageData = res;
+      this.pageOriginalData = res;
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
+
+  public filterTopic(){
+    this.selectedPage = '';
+  }
     
   public filterData(){
     let data =  [];
+    let pageData = [];
+    if(this.selectTopic) {
+      this.pageOriginalData.map((res:any) => {
+        if(res.topic.topicName == this.selectTopic){
+           pageData.push(res);
+        }
+      });
+      this.allPageData = pageData;
+    } else {
+      this.allPageData = this.pageOriginalData;
+    }
+    
     if(this.selectedPage || this.selectTopic){
       this.allDataListForFilter.map((res:any) => {
         if(res.topicName == this.selectTopic || (!this.selectTopic && this.selectedPage)){

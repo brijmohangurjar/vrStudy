@@ -203,6 +203,7 @@ export class TopicComponent implements OnInit {
             this.matSnackBarService.showSuccessSnackBar(res.message);
           }
          this.appComponent.hideLoader();
+         this.close();
         }, (error: HttpErrorResponse) => {
          this.appComponent.hideLoader();
           console.log('error', error);
@@ -227,11 +228,9 @@ export class TopicComponent implements OnInit {
   public deleteData(element: any) {
     this.appComponent.showLoader();
     this.topicService.deleteTopic(element.docId).subscribe((res: any) => {
-      if (res.status === 200) {
-      }
-      this.appComponent.showLoader();
+      this.appComponent.hideLoader();
     }, (error: any) => {
-      this.appComponent.showLoader();
+      this.appComponent.hideLoader();
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error);
     });
