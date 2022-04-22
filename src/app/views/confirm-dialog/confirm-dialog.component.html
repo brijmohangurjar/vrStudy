@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>
+    {{title}}
+  </h1>
+   
+  <div mat-dialog-content>
+    <p>{{message}}</p>
+  </div>
+   
+  <div mat-dialog-actions *ngIf = "!shopKeeperNotic">
+    <button mat-button (click)="onDismiss()">No</button>
+    <button mat-raised-button color="primary" (click)="onConfirm()">Yes</button>
+  </div>
+
+  <div mat-dialog-actions *ngIf = "shopKeeperNotic">
+    <button mat-button (click)="onDismiss()">Ok</button>
+  </div>
+  
+ 
+  
