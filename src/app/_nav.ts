@@ -39,6 +39,11 @@ export const navItems: INavData[] = [
     url: '/short',
     icon: 'cil-address-book'
   },
+  {
+    name: 'Note',
+    url: '/note',
+    icon: 'cil-address-book'
+  },
   // {
   //   name: 'Typography',
   //   url: '/theme/typography',

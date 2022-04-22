@@ -15,6 +15,7 @@ import { TopicComponent } from './views/topic/topic.component';
 import { BookComponent } from './views/book/book.component';
 import { PageComponent } from './views/page/page.component';
 import { ShortComponent } from './views/short/short.component';
+import { NotesComponent } from './views/notes/notes.component';
 
 
 export const routes: Routes = [
@@ -80,6 +81,10 @@ export const routes: Routes = [
       {
         path: 'short',
         component: ShortComponent
+      },
+      {
+        path: 'note',
+        component: NotesComponent
       },
       {
         path: 'base',

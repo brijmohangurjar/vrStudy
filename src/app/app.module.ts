@@ -57,6 +57,8 @@ import { ShortComponent } from './views/short/short.component';
 import { ConfirmationPopoverComponent } from './views/confirmation-popover/confirmation-popover.component';
 import { NgxEditorModule } from 'ngx-editor';
 import { SafeHtmlPipe } from './service/safe-html.pipe';
+import { ConfirmDialogComponent } from './views/confirm-dialog/confirm-dialog.component';
+import { NotesComponent } from './views/notes/notes.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -98,7 +100,9 @@ import { SafeHtmlPipe } from './service/safe-html.pipe';
     PageComponent,
     ShortComponent,
     ConfirmationPopoverComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    ConfirmDialogComponent,
+    NotesComponent
   ],
   providers: [
     {
@@ -107,6 +111,7 @@ import { SafeHtmlPipe } from './service/safe-html.pipe';
     },
     IconSetService,
   ],
+  entryComponents:[ConfirmDialogComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
