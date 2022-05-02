@@ -42,6 +42,50 @@
     position: relative;
     top: 50%;
 }
+
+.NgxEditor__Wrapper{
+  min-height: 350px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.btn-upload {
+  border: 2px solid #ddd;
+  color: #aaa;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+.btn-upload-small {
+  width: auto;
+}
+.btn-upload-small .btn-upload {
+  height: auto;
+  width: auto;
+  margin-top: 15px;
+}
+.btn-upload-small input[type="file"] {
+  margin-top: 0;
+  height: 100%;
+}
+.upload-btn-wrapper input[type="file"]:hover ~ .btn-upload {
+  border: 2px solid #43a047;
+  color: #43a047;
+}
+.upload-btn-wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
     
     @keyframes spin {
       0% { transform: rotate(0deg); }

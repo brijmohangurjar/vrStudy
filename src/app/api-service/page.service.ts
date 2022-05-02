@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +63,27 @@ export class PageService {
         });
       })
       );
+  }
+
+  public async uploadUserImage(photo: any,tableName:string,fileName?:any) {
+    const milliSecond = new Date().getTime();
+    const selfieRef = await firebase.default.storage().ref(`${tableName}/${milliSecond}`);
+    // UPDLOAD USER PROFILE PHOTO IN FIREBASE STORAGE
+    return selfieRef.putString(photo, 'base64', { contentType: 'image/jpeg' })
+      .then(async savedProfilePhoto => {
+        // GER DOWNLOAD URL FROM FIRBASE STORAGE OF PROFILE PHOTO
+        return savedProfilePhoto.task.snapshot.ref.getDownloadURL()
+          .then(async downloadURL => {
+            // UPDATE USER PROFILE PHOTO IN FIRBASE DATABASE
+            photo = downloadURL;
+            // const data = { photoURL: downloadURL };
+            // if (downloadURL) {
+            //   this.angularFireStorage.storage.refFromURL(this.userData.photoURL)
+            //   .delete().then((res: any) => {});
+            // }
+            return downloadURL
+          });
+      });
   }
 
   // public getCategoryByDocId(): Observable<any> {

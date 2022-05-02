@@ -52,6 +52,20 @@
                                             placeholder="Enter your heading">
                                     </div>
                                 </div>
+                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                    <div class="upload-btn-wrapper pr-8 flex-100 Upload-div">
+                                        <label for="name">Upload/Cover Photo</label>
+                                        <input #inputFile style="padding: 0;" accept="image/*" type="file" (change)="fileChangeEvent($event)" />
+                                        <button class="btn-upload">Upload/Cover Photo</button>
+                                        <span style="color: rgb(230, 72, 72);">{{imageError}}</span>
+                                        <span style="color: green;">{{coverPhotoName}}</span>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-4 col-lg-4 col-md-4">
+                                    <div class="pr-4 flex-20" *ngIf = "selectedPhoto">
+                                      <img  height="120" [src] = "selectedPhoto">
+                                     </div>
+                                  </div>
     
                                 <div class="col-sm-12 col-lg-12 col-md-12 p-2">
                                     <label for="name">Short</label>
@@ -143,6 +157,7 @@
                                     <th>Page</th>
                                     <th>Heading</th>
                                     <th>Short</th>
+                                    <th>Image</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -155,6 +170,12 @@
                                     <td [innerHtml]="item?.page?.page | safeHtml">{{item?.page?.page}}</td>
                                     <td>{{item?.heading}}</td>
                                     <td [innerHtml]="item?.short | safeHtml">{{item?.short}}</td>
+                                    <td>
+                                        <a matTooltip="View Image">
+                                            <img height="70" [src] = "item?.cover_photo">
+                                            <!-- <mat-icon>photo</mat-icon> -->
+                                          </a>
+                                    </td>
                                     <td>
                                         <i class="fa fa-pencil cursor_pointer color_green" (click)="updateData(item)"
                                             aria-hidden="true"></i>

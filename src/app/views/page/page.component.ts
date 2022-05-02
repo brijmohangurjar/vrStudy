@@ -35,7 +35,9 @@ export class PageComponent implements OnInit {
   public allBookData  = [];
   public bookOriginalData  = [];
   public allDataListForFilter = [];
-
+  public selectedPhoto: string | null = null;
+  public imageError: string | null = null;
+  public coverPhotoName = '';
   editor: Editor;
   toolbar: Toolbar = [
     ['bold', 'italic'],
@@ -83,11 +85,13 @@ export class PageComponent implements OnInit {
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
       page: [data && data.page ? data.page : '', [Validators.required]],
+      cover_photo: [data && data.cover_photo ? data.cover_photo : ''],
       heading: [data && data.heading ? data.heading : '', [Validators.required]],
     });
     if(data){
       this.getAllTopic();
       this.getAllBook();
+      this.selectedPhoto = data.cover_photo;
     }
     setTimeout(() => {
       let elmnt:any = document.getElementById("scroll_stop");
@@ -126,6 +130,64 @@ export class PageComponent implements OnInit {
 
   public changeSearchValue(): void {
     this.onChangeSearch.next();
+  }
+
+  public fileChangeEvent(fileInput: any): any{
+    this.selectedPhoto = '';
+    this.imageError = null;
+    if (fileInput.target.files && fileInput.target.files[0]) {
+      // Size Filter Bytes
+      const maxSize = 20971520;
+      const allowedTypes = ['image/png', 'image/jpeg', 'image/gif'];
+      const maxheight = 15200;
+      const maxWidth = 25600;
+
+      if (fileInput.target.files[0].size > maxSize) {
+        this.imageError =
+          'Maximum size allowed is ' + maxSize / 1000 + 'Mb';
+
+        return false;
+      }
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        const [file] = fileInput.target.files;
+        this.coverPhotoName = file.name;
+        const imgBase64Path = e.target.result;
+        this.selectedPhoto = imgBase64Path;
+        // this.form.controls["cover_photo"].setValue( this.selectedPhoto);
+        this.uploadUserImage(this.selectedPhoto , 'cover_photo');
+      };
+      reader.readAsDataURL(fileInput.target.files[0]);
+    }
+  }
+
+  private uploadUserImage(image:any,key:any): void {
+    this.appComponent.showLoader();
+    let imageArr: any;
+    const img = new Image();
+    img.src = image;
+    img.onload = () => {
+      const MAX_WIDTH = 1024;
+      const MAX_HEIGHT = 1024;
+      const canvas = document.createElement('canvas');
+      const IMAGE_WIDTH = img.width;
+      const IMAGE_HEIGHT = img.height;
+      const scale = Math.min((MAX_WIDTH / IMAGE_WIDTH), (MAX_HEIGHT / IMAGE_HEIGHT));
+      const iwScaled = IMAGE_WIDTH * scale;
+      const ihScaled = IMAGE_HEIGHT * scale;
+      canvas.width = iwScaled;
+      canvas.height = ihScaled;
+      const ctx: any = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, iwScaled, ihScaled);
+      imageArr = canvas.toDataURL('image/jpeg', 0.5).split(',');
+    const image = imageArr[1];
+    this.pageService.uploadUserImage(image,'page').then(res => {
+      this.appComponent.hideLoader();
+      this.form.controls[key].setValue(res);
+    });
+  }
   }
 
   public clearFilter(){
@@ -250,6 +312,8 @@ export class PageComponent implements OnInit {
   public close(){
     this.showForm = false;
     this.form.reset();
+    this.selectedPhoto = '';
+    this.coverPhotoName = '';
   }
 
   public open(data?){
@@ -261,11 +325,13 @@ export class PageComponent implements OnInit {
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
       page: ['', [Validators.required]],
+      cover_photo: [data && data.cover_photo ? data.cover_photo : ''],
       heading: ['', [Validators.required]],
     });
     if(data){
       this.getAllTopic();
       this.getAllBook();
+      this.selectedPhoto = data.cover_photo;
     }
      setTimeout(() => {
       let elmnt:any = document.getElementById("scroll_stop");
