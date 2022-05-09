@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/api-services';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  public loginForm: FormGroup;
 
-  ngOnInit() {
+  constructor(
+    private loginService: LoginService,
+    private formBuilder: FormBuilder,
+    private toastService: ToastService,
+    private router: Router,
+  ) { }
+
+  public ngOnInit(): void {
+    this.createForm();
   }
 
+
+  public loginSubmit(): void {
+    const formValue = this.loginForm.value;
+    // this.loginForm.logInUser(formValue.email, formValue.password)
+    //   .then((logInResponse: any) => {
+    //     if (logInResponse.status === 200) {
+    //       this.router.navigate(['dashboard']);
+    //       this.toastService.successToast(logInResponse.message);
+    //     } else {
+    //       this.toastService.errorToast(logInResponse.message);
+    //     }
+    //   }, (error: HttpErrorResponse) => {
+    //     console.log('error', error);
+    //     this.toastService.errorToast(error.message);
+    //   });
+  }
+
+  private createForm(): void {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+  }
 }
