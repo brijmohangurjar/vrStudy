@@ -1,0 +1,48 @@
+<ion-split-pane contentId="main-content">
+  <ion-menu contentId="main-content" type="overlay">
+    <!-- <div class="top-bg accent primary_color"></div> -->
+
+    <div class="content-card">
+      <ion-row class="mt-4 mb-4">
+        <ion-col class="ion-text-center">
+          <ion-menu-toggle>
+            <!-- <ion-spinner *ngIf="loading" name="bubbles"></ion-spinner> -->
+            <ion-avatar class="ion-no-margin m-auto" (click)="navigateTo({url: 'home/profile'})">
+              <ion-img [src]="userInfo && userInfo.photoURL
+              ? userInfo.photoURL : defaultUserPic" class="defaultUserPic"></ion-img>
+            </ion-avatar>
+            <h5 style="" class="ion-no-margin pt-1"
+              *ngIf="userInfo">
+              {{userInfo.firstName | titlecase}} {{userInfo.lastName | titlecase}}
+            </h5>
+          </ion-menu-toggle>
+        </ion-col>
+      </ion-row>
+
+      <br>
+      <br>
+
+      <ion-card class="mt-5">
+        <div class="">
+          <ion-list id="inbox-list" class="ion-no-margin"
+            *ngIf="sideMenuList && sideMenuList.length">
+            <ion-menu-toggle auto-hide="false"
+              *ngFor="let item of sideMenuList; let i = index;">
+              <a [routerLink]="item.url ? item.url : null">
+                <ion-item routerLinkActive="active-list-item"
+                    routerDirection="root" lines="none"
+                  detail="false" (click)="navigateBySidemenu(item, i)">
+                  <ion-icon slot="start" class="help-icon" [name]="item.icon">
+                  </ion-icon>
+                  <ion-label>{{ item.title }}</ion-label>
+                </ion-item>
+              </a>
+            </ion-menu-toggle>
+          </ion-list>
+        </div>
+      </ion-card>
+    </div>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-split-pane>

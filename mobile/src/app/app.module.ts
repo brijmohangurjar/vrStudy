@@ -10,6 +10,12 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { environment } from 'src/environments/environment';
+import { AuthGuard, IsLoggedInGuard } from './guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,9 +29,15 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireFunctionsModule,
   ],
   providers: [
     ConstantVariables,
+    AuthGuard,
+    IsLoggedInGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

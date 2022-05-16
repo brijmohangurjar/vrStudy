@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard, IsLoggedInGuard } from './guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'login',
-    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginPageModule)
+    canActivate: [IsLoggedInGuard],
+    loadChildren: () => import('./modules/auth/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./modules/home/home.module').then( m => m.HomePageModule)
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./modules/base/base.module').then(m => m.BasePageModule)
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./modules/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    canActivate: [IsLoggedInGuard],
+    loadChildren: () => import('./modules/auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   }
 ];
 @NgModule({

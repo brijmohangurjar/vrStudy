@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="loginForm" *ngIf="loginForm">
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" (click)="loginSubmit()" expand="block">Sign In</ion-button>
+          <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
