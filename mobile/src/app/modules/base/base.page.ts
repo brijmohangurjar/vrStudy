@@ -78,7 +78,8 @@ export class BasePage implements OnInit {
         SplashScreen.hide();
       }, 2000);
       this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-        if (this.location.isCurrentPathEqualTo('/home/dashboard')
+        console.log('this.location.',this.location.path())
+        if (this.location.isCurrentPathEqualTo('/home')
           || this.location.isCurrentPathEqualTo('/home/ready-for-delivery')
           || this.location.isCurrentPathEqualTo('/login')
           || this.location.isCurrentPathEqualTo('/registration')
@@ -135,10 +136,10 @@ export class BasePage implements OnInit {
 
   private async openSharePopup() {
     const shareRet = await Share.share({
-      title: 'Share Online Kirana',
+      title: 'Share Vr Study',
       text: 'Check',
-      url: 'https://onlineKirana.app',
-      dialogTitle: 'Share Better Today'
+      // url: 'https://onlineKirana.app',
+      dialogTitle: 'Share Vr Study'
     });
   }
 

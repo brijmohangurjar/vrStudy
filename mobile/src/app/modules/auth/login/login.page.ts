@@ -30,6 +30,7 @@ export class LoginPage implements OnInit {
     const formValue = this.loginForm.value;
     this.loginService.logInUser(formValue.email.toLowerCase(), formValue.password)
       .then((logInResponse: any) => {
+        console.log('logInResponse',logInResponse)
         if (logInResponse.status === 200) {
           this.router.navigate(['home']);
           this.toastService.successToast(logInResponse.message);
@@ -44,8 +45,8 @@ export class LoginPage implements OnInit {
 
   private createForm(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['',[ Validators.required]],
     });
   }
 }

@@ -4,3 +4,25 @@
   [showToggleButton]="true"
   [heading]="'Home'"
 ></app-header>
+
+<ion-content>
+  <ion-grid class="home_grid">
+    <ion-row class="pt-3">
+      <ion-col size="12">
+        <div class="ion-text-start">
+          <ion-title>Subject</ion-title>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="pt-2">
+      <ion-col size="4" *ngFor="let item of subjectList">
+        <ion-card class="list-card">
+            <div class="ion-text-center">
+              <span>{{item?.name}}</span>
+            </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
