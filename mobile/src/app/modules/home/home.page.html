@@ -5,24 +5,103 @@
   [heading]="'Home'"
 ></app-header>
 
-<ion-content>
-  <ion-grid class="home_grid">
-    <ion-row class="pt-3">
-      <ion-col size="12">
-        <div class="ion-text-start">
-          <ion-title>Subject</ion-title>
-        </div>
-      </ion-col>
-    </ion-row>
+<ion-content >
+  <ion-slides class="slides" [options]='slideOpts'>
+    <ion-slide *ngFor='let i of [1,2,3,4,5]'>
+      <div>
+        <img src="assets/images/nutcracker.jpg">
+        <p class="title">THE NUTCRACKER AND THE REALMS</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
 
-    <ion-row class="pt-2">
-      <ion-col size="4" *ngFor="let item of subjectList">
-        <ion-card class="list-card">
-            <div class="ion-text-center">
-              <span>{{item?.name}}</span>
-            </div>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+  <ion-slides [options]='slideOpts2'>
+    <ion-slide >
+      <div class="category">
+        <p>DISCOVERY</p>
+      </div>
+    </ion-slide>
+    <ion-slide >
+      <div class="category">
+        <p>POPULAR</p>
+      </div>
+    </ion-slide>
+    <ion-slide >
+      <div class="category">
+        <p>CATEGORIES</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item lines='none'>
+    Subjects
+    <ion-buttons slot="end">
+      <ion-button >
+        <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
+  <ion-slides class="listSlides" [options]='slideOpts3'>
+    <ion-slide *ngFor="let item of subjectList; let i=index">
+      <div>
+        <img src="{{item.image}}">
+        <p class="title">{{item.name}}</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item lines='none'>
+    Page Recents
+    <ion-buttons slot="end">
+      <ion-button >
+        <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
+  <ion-slides class="listSlides" [options]='slideOpts3'>
+    <ion-slide>
+      <div>
+        <img src="assets/images/book3.jpg">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/images/book2.jpg">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/images/book1.jpg">`
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item lines='none'>
+    Short Recents
+    <ion-buttons slot="end">
+      <ion-button >
+        <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
+  <ion-slides class="listSlides" [options]='slideOpts3'>
+    <ion-slide>
+      <div>
+        <img src="assets/images/book1.jpg">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/images/book2.jpg">`
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/images/book3.jpg">
+      </div>
+    </ion-slide>
+  </ion-slides>
+  </ion-content>

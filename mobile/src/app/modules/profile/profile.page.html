@@ -3,3 +3,83 @@
   [heading]="'Profile'"
 ></app-header>
 
+<ion-content >
+  <ion-slides class="slides" [options]='slideOpts'>
+    <ion-slide *ngFor='let i of [1,2,3,4,5]'>
+      <div>
+        <img src="assets/images/nutcracker.jpg">
+        <p class="title">THE NUTCRACKER AND THE REALMS</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-slides [options]='slideOpts2'>
+    <ion-slide >
+      <div class="category">
+        <p>DISCOVERY</p>
+      </div>
+    </ion-slide>
+    <ion-slide >
+      <div class="category">
+        <p>POPULAR</p>
+      </div>
+    </ion-slide>
+    <ion-slide >
+      <div class="category">
+        <p>CATEGORIES</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item lines='none'>
+    My list
+    <ion-buttons slot="end">
+      <ion-button >
+        <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-slides class="listSlides" [options]='slideOpts3'>
+    <ion-slide>
+      <div>
+        <img src="assets/images/vikings.png">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/images/flash.jpg">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/images/strangerthings.jpg">
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item lines='none'>
+    Popular on Netflix
+    <ion-buttons slot="end">
+      <ion-button >
+        <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-slides class="listSlides" [options]='slideOpts3'>
+    <ion-slide>
+      <div>
+        <img src="assets/images/lucifer.jpg">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/images/orange.jpg">
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/images/moneyheist.jpg">`
+      </div>
+    </ion-slide>
+  </ion-slides>
+  </ion-content>

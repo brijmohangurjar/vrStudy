@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/api-services';
 import { ToastService } from 'src/app/service';
@@ -13,6 +13,17 @@ import { ToastService } from 'src/app/service';
 export class LoginPage implements OnInit {
 
   public loginForm: FormGroup;
+
+  public validationUserMessage = {
+    email: [
+      { type: 'required', message: 'Please enter your Email' },
+      { type: 'pattern', message: 'The Email entered is Incorrect.Try again' }
+    ],
+    password: [
+      { type: 'required', message: 'please Enter your Password!' },
+      { type: 'minlength', message: 'The Password must be at least 5 characters or more' }
+    ]
+  }
 
   constructor(
     private loginService: LoginService,
@@ -30,7 +41,7 @@ export class LoginPage implements OnInit {
     const formValue = this.loginForm.value;
     this.loginService.logInUser(formValue.email.toLowerCase(), formValue.password)
       .then((logInResponse: any) => {
-        console.log('logInResponse',logInResponse)
+        console.log('logInResponse', logInResponse)
         if (logInResponse.status === 200) {
           this.router.navigate(['home']);
           this.toastService.successToast(logInResponse.message);
@@ -45,8 +56,14 @@ export class LoginPage implements OnInit {
 
   private createForm(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['',[ Validators.required]],
-    });
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ])),
+      password: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(5)
+      ]))
+    })
   }
 }
