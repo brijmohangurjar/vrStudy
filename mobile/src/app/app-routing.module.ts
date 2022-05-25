@@ -6,17 +6,17 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'login',
-    canActivate: [IsLoggedInGuard],
+    // canActivate: [IsLoggedInGuard],
     loadChildren: () => import('./modules/auth/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'home',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     loadChildren: () => import('./modules/base/base.module').then(m => m.BasePageModule)
   },
   {
     path: 'forgot-password',
-    canActivate: [IsLoggedInGuard],
+    // canActivate: [IsLoggedInGuard],
     loadChildren: () => import('./modules/auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   }
 ];

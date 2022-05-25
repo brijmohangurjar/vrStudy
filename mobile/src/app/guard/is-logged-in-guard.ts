@@ -34,6 +34,8 @@ export class IsLoggedInGuard implements CanActivate {
                 this.router.navigate(['home']);
                 resolve(false);
               } else {
+                localStorage.clear();
+                this.afAuth.signOut();
                 this.router.navigate(['login']);
                 resolve(false);
               }
