@@ -28,25 +28,61 @@ export class BasePage implements OnInit {
       icon: 'home-outline',
     },
     {
+      id: 1,
+      title: 'Subject',
+      url: '/home/subject',
+      icon: 'book-outline',
+    },
+    {
+      id: 2,
+      title: 'Topic',
+      url: '/home/topic',
+      icon: 'bookmark-outline',
+    },
+    {
+      id: 3,
+      title: 'Book',
+      url: '/home/book',
+      icon: 'person-outline',
+    },
+    {
+      id: 4,
+      title: 'Page',
+      url: '/home/page',
+      icon: 'person-outline',
+    },
+    {
       id: 5,
+      title: 'Short',
+      url: '/home/short',
+      icon: 'person-outline',
+    },
+    {
+      id: 6,
+      title: 'Current',
+      url: '/home/current',
+      icon: 'person-outline',
+    },
+    {
+      id: 7,
       title: 'Profile',
       url: '/home/profile',
       icon: 'person-outline',
     },
     {
-      id: 6,
+      id: 8,
       title: 'Share',
       url: null,
       icon: 'share-social-outline',
     },
     {
-      id: 7,
+      id: 9,
       title: 'Help',
       url: null,
       icon: 'help-circle-outline',
     },
     {
-      id: 8,
+      id: 10,
       title: 'Logout',
       url: null,
       icon: 'log-out-outline',
@@ -78,7 +114,7 @@ export class BasePage implements OnInit {
         SplashScreen.hide();
       }, 2000);
       this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-        console.log('this.location.',this.location.path())
+        console.log('this.location.', this.location.path())
         if (this.location.isCurrentPathEqualTo('/home')
           || this.location.isCurrentPathEqualTo('/home/ready-for-delivery')
           || this.location.isCurrentPathEqualTo('/login')
