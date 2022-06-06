@@ -1,0 +1,19 @@
+<ion-footer class="primary_color">
+  <ion-toolbar class="pt-2">
+    <ion-buttons slot="start">
+      <ion-menu-button *ngIf="showToggleButton">
+        <ion-icon name="menu"></ion-icon>
+      </ion-menu-button>
+
+      <ion-icon (click)="navigateToBack()"
+       *ngIf="!showToggleButton"
+       name="arrow-back-outline"
+      ></ion-icon>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center"
+      size="medium" style=""
+      *ngIf="heading">{{heading}}
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
