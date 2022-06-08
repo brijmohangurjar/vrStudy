@@ -24,7 +24,7 @@ export class BasePage implements OnInit {
     {
       id: 0,
       title: 'Home',
-      url: '/home/dashboard',
+      url: '/home',
       icon: 'home-outline',
     },
     {

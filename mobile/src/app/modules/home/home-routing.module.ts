@@ -8,10 +8,14 @@ const routes: Routes = [
     path: '',
     component: HomePage,
   },
-  // {
-  //   path: '',
-  //   loadChildren: () => import('../../tabs/tabs.module').then(m => m.TabsPageModule)
-  // },
+  {
+    path: 'book',
+    loadChildren: () => import('../../modules/books/books.module').then(m => m.BooksPageModule)
+  },
+  {
+    path: 'subject',
+    loadChildren: () => import('../../modules/subject/subject.module').then(m => m.SubjectPageModule)
+  },
 ];
 
 @NgModule({

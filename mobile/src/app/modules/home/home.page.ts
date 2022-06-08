@@ -121,12 +121,7 @@ export class HomePage implements OnInit {
   private getSubjectsList(): void {
     this.homeService.getSubjectList()
       .subscribe((result: any) => {
-        console.log('result', result);
         if (result && result.length) {
-          result.map((item: any, index: number) => {
-            console.log('index', index)
-            item.image = `assets/images/book${index + 1}.jpg`
-          })
           this.subjectList = result;
         }
       }, (error: HttpErrorResponse) => {

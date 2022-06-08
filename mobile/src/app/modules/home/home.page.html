@@ -1,6 +1,6 @@
 <ion-content>
   <ion-slides class="slides" [options]='slideOpts'>
-    <ion-slide *ngFor='let i of [1,2,3,4,5]'>
+    <ion-slide *ngFor='let i of [1,2]'>
       <div>
         <img src="assets/images/nutcracker.jpg">
         <p class="title">THE NUTCRACKER AND THE REALMS</p>
@@ -37,8 +37,9 @@
 
   <ion-slides class="listSlides" [options]='slideOpts3'>
     <ion-slide *ngFor="let item of subjectList; let i=index">
-      <div>
-        <img src="{{item.image}}">
+      <div class="card">
+        <img src="assets/images/book3.jpg">
+        <!-- <img src="{{item.image}}"> -->
         <p class="title">{{item.name}}</p>
       </div>
     </ion-slide>
