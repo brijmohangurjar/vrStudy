@@ -1,24 +1,27 @@
-.slides {
-  margin-top: 10px;
-  img {
-    border-radius: 10px;
-    box-shadow: -1px 11px 13px -6px rgb(87, 86, 86);
-  }
+// .slides {
+//   margin-top: 10px;
 
-  .title {
-    position: absolute;
-    bottom: 0;
-    color: white;
-    text-align: left;
-    font-weight: bold;
-    padding: 10px;
-    text-shadow: 1px 1px 2px grey;
-  }
-}
+//   img {
+//     border-radius: 10px;
+//     box-shadow: -1px 11px 13px -6px rgb(87, 86, 86);
+//   }
+
+//   .title {
+//     position: absolute;
+//     bottom: 0;
+//     color: white;
+//     text-align: left;
+//     font-weight: bold;
+//     padding: 10px;
+//     text-shadow: 1px 1px 2px grey;
+//   }
+// }
+
 ion-slide {
   padding-bottom: 20px;
   padding-left: 5px;
 }
+
 .category {
   margin-top: 15px;
   background-color: var(--ion-color-danger);
@@ -37,6 +40,7 @@ ion-slide {
     max-height: 200px;
     box-shadow: -1px 11px 13px -6px rgb(87, 86, 86);
   }
+
   .title {
     position: absolute;
     bottom: 0;
@@ -45,5 +49,88 @@ ion-slide {
     font-weight: bold;
     padding: 10px;
     text-shadow: 1px 1px 2px grey;
+  }
+
+  .card {
+    width: 160px;
+    height: 205px;
+  }
+}
+
+.all-memories-section {
+  ion-card {
+    border-radius: 0px;
+    padding-bottom: 0px;
+
+    // img {
+    //   width: 100%;
+    //   height: 100%;
+    //   object-fit: contain;
+    // }
+
+
+
+    ion-card-content {
+      padding: 5px 0px;
+
+      .information {
+        color: var(--ion-color-dark-gray);
+
+        ion-label {
+          text-shadow: 1px 1px 0px #fff;
+          text-transform: uppercase;
+          color: gray;
+          font-size: 12px;
+          margin-bottom: 5px;
+          display: inline-block;
+        }
+
+        p {
+          font-size: var(--ion-font-small);
+          text-shadow: 1px 1px 0px #fff;
+        }
+      }
+
+      .popover-button {
+        font-size: var(--ion-font-xl);
+        color: var(--ion-color-medium-tint);
+        cursor: pointer;
+        padding-top: 10px;
+      }
+    }
+  }
+
+  ion-card.onlyText {
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.container-background {
+  height: 24vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  // background-position: center center;
+  .bottom {
+    position: absolute;
+    width: 100%;
+    font-weight: 400;
+    text-align: left;
+    margin: 0px;
+    color: var(--ion-color-secondary-contrast);
+    padding: 0px 15px 10px 15px;
+    text-shadow: 1px 1px 0px var(--ion-color-black) !important;
+    background: linear-gradient(180deg, rgba(148, 144, 144, 0.1) 32%, #434445 100%, var(--ion-color-black) 50%);
+  }
+
+  .date {
+    bottom: 7%;
+  }
+
+  .text {
+    bottom: 15%;
   }
 }

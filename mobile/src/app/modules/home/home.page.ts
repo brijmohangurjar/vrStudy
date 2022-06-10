@@ -11,6 +11,7 @@ import { ToastService } from 'src/app/service';
 export class HomePage implements OnInit {
 
   public subjectList = [];
+  public currentDate = new Date();
 
   opts = {
     slidesPerView: 2.4,
