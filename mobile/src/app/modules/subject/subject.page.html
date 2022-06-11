@@ -1,5 +1,21 @@
 <ion-content>
-
+<ion-grid class="subject_page ion-no-padding">
+  <ion-row>
+    <ion-col size="4" *ngFor="let item of topicList; let i=index">
+      <ion-card style="margin: 10px;" routerLink="topic/{{item.docId}}">
+        <ion-card-header>
+          <ion-card-subtitle><b>{{item.topicName}}</b></ion-card-subtitle>
+        </ion-card-header>
+    
+        <ion-row class="card-footer ion-no-margin ion-no-padding">
+          <ion-col class="ion-no-margin ion-no-padding">
+            <p style="margin-bottom: 0px; color: #b7b7b7;">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
 
 <app-footer [showToggleButton]="true" [heading]="'subject'"></app-footer>

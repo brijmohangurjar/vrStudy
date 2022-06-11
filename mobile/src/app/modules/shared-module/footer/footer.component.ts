@@ -19,6 +19,6 @@ export class FooterComponent implements OnInit {
   public ngOnInit() { }
 
   public navigateToBack(): void {
-    this.router.navigateByUrl('home')
+    this.router.navigateByUrl('base')
   }
 }
