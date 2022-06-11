@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BooksPageRoutingModule } from './books-routing.module';
+import { PageDetailPageRoutingModule } from './page-detail-routing.module';
 
-import { BooksPage } from './books.page';
+import { PageDetailPage } from './page-detail.page';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    BooksPageRoutingModule,
+    PageDetailPageRoutingModule,
     SharedModuleModule,
   ],
-  declarations: [BooksPage]
+  declarations: [PageDetailPage]
 })
-export class BooksPageModule {}
+export class PageDetailPageModule { }

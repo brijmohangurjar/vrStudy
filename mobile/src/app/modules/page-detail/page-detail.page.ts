@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { BookService } from 'src/app/api-services';
+import { PageDetailService } from 'src/app/api-services';
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.page.html',
-  styleUrls: ['./books.page.scss'],
+  selector: 'app-page-detail',
+  templateUrl: './page-detail.page.html',
+  styleUrls: ['./page-detail.page.scss'],
 })
-export class BooksPage implements OnInit {
+export class PageDetailPage implements OnInit {
 
-  public bookList = [];
+  public pageDetail = [];
 
-  private topicId: string;
+  private bookId: string;
   private subscriptions: Subscription[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private bookService: BookService,
+    private pageDetailService: PageDetailService,
   ) { }
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       console.log('param', param);
-      this.topicId = param.get('topicId');
-      console.log('this.topicId', this.topicId);
-      if (this.topicId) {
-        this.getBookListByTopicId(this.topicId);
+      this.bookId = param.get('bookId');
+      console.log('this.bookId', this.bookId);
+      if (this.bookId) {
+        this.getPageDetailByBookId(this.bookId);
       }
     });
   }
@@ -38,15 +38,15 @@ export class BooksPage implements OnInit {
   }
 
 
-  private getBookListByTopicId(topicId: string): void {
+  private getPageDetailByBookId(bookId: string): void {
     this.subscriptions.push(
-      this.bookService.getBookListByTopicId(topicId)
+      this.pageDetailService.getPageDetailByBookId(bookId)
         .subscribe((responseData: any) => {
           console.log('responseData', responseData);
           if (responseData.length) {
-            this.bookList = responseData;
+            this.pageDetail = responseData;
           } else {
-            this.bookList = [];
+            this.pageDetail = [];
           }
         })
     );
