@@ -43,7 +43,7 @@ export class LoginPage implements OnInit {
       .then((logInResponse: any) => {
         console.log('logInResponse', logInResponse)
         if (logInResponse.status === 200) {
-          this.router.navigate(['home']);
+          this.router.navigate(['base']);
           this.toastService.successToast(logInResponse.message);
         } else {
           this.toastService.errorToast(logInResponse.message);

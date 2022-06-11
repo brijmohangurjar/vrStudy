@@ -132,6 +132,6 @@ export class HomePage implements OnInit {
 
   public clickOnSubject(item: any): void {
     console.log('item', item);
-    this.navigationService.navigateByUrl('subject', item.docId)
+    this.navigationService.navigateByRelativePath('subject', item.docId)
   }
 }

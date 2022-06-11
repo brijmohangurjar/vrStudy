@@ -8,7 +8,7 @@ const routes: Routes = [
     component: SubjectPage,
     children: [
       {
-        path: 'topic/:subjectId',
+        path: 'topic/:topicId',
         loadChildren: () => import('../../modules/topic/topic.module').then(m => m.TopicPageModule)
       }
     ]

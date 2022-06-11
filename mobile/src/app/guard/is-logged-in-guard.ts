@@ -30,7 +30,7 @@ export class IsLoggedInGuard implements CanActivate {
             .then((userData: any) => {
               console.log('userData', userData);
               if (userData && userData.length) {
-                this.router.navigate(['home']);
+                this.router.navigate(['base']);
                 resolve(false);
               } else {
                 localStorage.clear();

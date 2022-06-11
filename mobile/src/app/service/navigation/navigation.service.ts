@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -7,15 +7,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class NavigationService {
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+    // private activatedRoute: ActivatedRoute,
     private router: Router,
   ) { }
 
 
   public navigateByRelativePath(path: string, itemId: string): void {
-    this.router.navigate([`/${path}`, { id: itemId }], { relativeTo: this.activatedRoute });
+    this.router.navigate(['base', 'home', path, itemId]);
+    // this.router.navigate(['base', 'home', path, itemId], { relativeTo: this.activatedRoute });
   }
+
   public navigateByUrl(path: string, itemId: string): void {
-    this.router.navigate([`/${path}`, { id: itemId }]);
+    this.router.navigate([`/${path}`, itemId]);
   }
 }
