@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
+import { SafeHtmlPipe } from 'src/app/api-services/safe-html/safe-html.pipe';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     HomePageRoutingModule,
     SharedModuleModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, SafeHtmlPipe],
+  providers: [SafeHtmlPipe]
 })
 export class HomePageModule { }

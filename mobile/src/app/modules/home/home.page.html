@@ -30,7 +30,7 @@
          
          <ion-row class="card-footer ion-no-margin ion-no-padding">
             <ion-col class="ion-no-margin ion-no-padding">
-              <p style="margin-bottom: 0px; color: #b7b7b7;">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+              <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
             </ion-col>
          </ion-row>
         </ion-card>
@@ -38,7 +38,7 @@
     </ion-slides>
   
     <ion-item lines='none'>
-      Page Recents
+       Recent Pages
       <ion-buttons slot="end">
         <ion-button>
           <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
@@ -47,25 +47,23 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3'>
-      <ion-slide>
-        <div>
-          <img src="assets/images/book3.jpg">
-        </div>
-      </ion-slide>
-      <ion-slide>
-        <div>
-          <img src="assets/images/book2.jpg">
-        </div>
-      </ion-slide>
-      <ion-slide>
-        <div>
-          <img src="assets/images/book1.jpg">`
-        </div>
+      <ion-slide *ngFor="let item of pageList; let i=index" (click)="clickOnSubject(item)">
+        <ion-card  style="margin: 10px;">
+          <ion-card-header>
+            <ion-card-subtitle><b>{{item?.heading}}</b></ion-card-subtitle>
+          </ion-card-header>
+         
+         <ion-row class="card-footer ion-no-margin ion-no-padding">
+            <ion-col class="ion-no-margin ion-no-padding">
+              <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+            </ion-col>
+         </ion-row>
+        </ion-card>
       </ion-slide>
     </ion-slides>
   
     <ion-item lines='none'>
-      Short Recents
+       Recent Shorts
       <ion-buttons slot="end">
         <ion-button>
           <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
@@ -74,20 +72,18 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3'>
-      <ion-slide>
-        <div>
-          <img src="assets/images/book1.jpg">
-        </div>
-      </ion-slide>
-      <ion-slide>
-        <div>
-          <img src="assets/images/book2.jpg">`
-        </div>
-      </ion-slide>
-      <ion-slide>
-        <div>
-          <img src="assets/images/book3.jpg">
-        </div>
+      <ion-slide *ngFor="let item of shortList; let i=index" (click)="clickOnSubject(item)">
+        <ion-card  style="margin: 10px;">
+          <ion-card-header>
+            <ion-card-subtitle><b>{{item?.heading}}</b></ion-card-subtitle>
+          </ion-card-header>
+         
+         <ion-row class="card-footer ion-no-margin ion-no-padding">
+            <ion-col class="ion-no-margin ion-no-padding">
+              <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+            </ion-col>
+         </ion-row>
+        </ion-card>
       </ion-slide>
     </ion-slides>
   </ion-grid>
