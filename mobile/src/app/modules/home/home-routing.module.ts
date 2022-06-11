@@ -9,11 +9,7 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'book',
-    loadChildren: () => import('../../modules/books/books.module').then(m => m.BooksPageModule)
-  },
-  {
-    path: 'subject',
+    path: 'subject/:subjectId',
     loadChildren: () => import('../../modules/subject/subject.module').then(m => m.SubjectPageModule)
   },
 ];

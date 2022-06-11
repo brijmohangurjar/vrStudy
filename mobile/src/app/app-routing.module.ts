@@ -1,36 +1,24 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-// import { AuthGuard, IsLoggedInGuard } from './guard';
+import { AuthGuard, IsLoggedInGuard } from './guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'login',
-    // canActivate: [IsLoggedInGuard],
+    canActivate: [IsLoggedInGuard],
     loadChildren: () => import('./modules/auth/login/login.module').then(m => m.LoginPageModule)
   },
   {
-    path: 'home',
-    // canActivate: [AuthGuard],
+    path: 'base',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./modules/base/base.module').then(m => m.BasePageModule)
   },
   {
     path: 'forgot-password',
-    // canActivate: [IsLoggedInGuard],
+    canActivate: [IsLoggedInGuard],
     loadChildren: () => import('./modules/auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   },
-  {
-    path: 'subject',
-    loadChildren: () => import('./modules/subject/subject.module').then( m => m.SubjectPageModule)
-  },
-  {
-    path: 'books',
-    loadChildren: () => import('./modules/books/books.module').then( m => m.BooksPageModule)
-  },
-  {
-    path: 'topic',
-    loadChildren: () => import('./modules/topic/topic.module').then( m => m.TopicPageModule)
-  }
 ];
 @NgModule({
   imports: [
