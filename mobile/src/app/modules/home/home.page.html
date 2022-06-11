@@ -20,7 +20,7 @@
   
     <ion-slides class="listSlides" [options]='slideOpts3'>
       <ion-slide *ngFor="let item of subjectList; let i=index" 
-        (click)="clickOnSubject(item)" routerLink="subject/{{item.docId}}" >
+        (click)="clickOnSubject(item)" routerLink="topic/{{item.docId}}" >
         <ion-card  style="margin: 10px;">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.name}}</b></ion-card-subtitle>
