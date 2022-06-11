@@ -24,19 +24,19 @@ export class BasePage implements OnInit {
     {
       id: 0,
       title: 'Home',
-      url: '/home',
+      url: '/base',
       icon: 'home-outline',
     },
     {
       id: 1,
       title: 'Subject',
-      url: '/home/subject',
+      url: '/base/home/subject',
       icon: 'book-outline',
     },
     {
       id: 2,
       title: 'Topic',
-      url: '/home/topic',
+      url: '/base/home/topic',
       icon: 'bookmark-outline',
     },
     {
@@ -66,7 +66,7 @@ export class BasePage implements OnInit {
     {
       id: 7,
       title: 'Profile',
-      url: '/home/profile',
+      url: '/base/home/profile',
       icon: 'person-outline',
     },
     {

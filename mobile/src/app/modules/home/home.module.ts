@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { HomePageRoutingModule } from './home-routing.module';
-
 import { HomePage } from './home.page';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
-import { SafeHtmlPipe } from 'src/app/api-services/safe-html/safe-html.pipe';
+import { PipesModule } from 'src/app/pipes/pipes.module';
+import { SearchComponent } from '../shared-module/search/search.component';
 
 @NgModule({
   imports: [
@@ -16,9 +14,10 @@ import { SafeHtmlPipe } from 'src/app/api-services/safe-html/safe-html.pipe';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModuleModule
+    SharedModuleModule,
+    PipesModule,
   ],
-  declarations: [HomePage, SafeHtmlPipe],
-  providers: [SafeHtmlPipe]
+  declarations: [HomePage, SearchComponent],
+  providers: []
 })
 export class HomePageModule { }

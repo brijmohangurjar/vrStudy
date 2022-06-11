@@ -14,8 +14,9 @@ const routes: Routes = [
     component: SearchComponent,
   },
   {
-    path: 'subject/:subjectId',
-    loadChildren: () => import('../../modules/subject/subject.module').then(m => m.SubjectPageModule)
+    path: 'topic/:subjectId',
+    loadChildren: () => import('../../modules/topic/topic.module').then(m => m.TopicPageModule)
+    // loadChildren: () => import('../../modules/subject/subject.module').then(m => m.SubjectPageModule)
   },
 ];
 

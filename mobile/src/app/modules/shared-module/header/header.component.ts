@@ -11,6 +11,9 @@ export class HeaderComponent implements OnInit {
   @Input() showToggleButton: boolean;
   @Input() userDetail: any;
   @Input() heading: any;
+  @Input() searchBar: any;
+  public searchValue = '';
+
 
   constructor(
     private router: Router,
@@ -19,6 +22,11 @@ export class HeaderComponent implements OnInit {
   public ngOnInit() { }
 
   public navigateToBack(): void {
-    this.router.navigateByUrl('home')
+    this.router.navigateByUrl('base')
   }
+
+  clearSearchBar(){
+
+  }
+
 }

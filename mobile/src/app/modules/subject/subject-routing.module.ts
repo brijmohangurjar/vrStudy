@@ -6,13 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: SubjectPage,
-    children: [
-      {
-        path: 'topic/:topicId',
-        loadChildren: () => import('../../modules/topic/topic.module').then(m => m.TopicPageModule)
-      }
-    ]
-  }
+  },
 ];
 
 @NgModule({
