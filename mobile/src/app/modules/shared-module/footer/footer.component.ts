@@ -21,4 +21,9 @@ export class FooterComponent implements OnInit {
   public navigateToBack(): void {
     this.router.navigateByUrl('home')
   }
+
+  public navigateTo(){
+    this.router.navigate(['base/home/search']);
+  }
+
 }

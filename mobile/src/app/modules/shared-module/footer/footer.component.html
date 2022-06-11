@@ -11,9 +11,13 @@
       ></ion-icon>
     </ion-buttons>
 
-    <ion-title class="ion-text-center"
+    <!-- <ion-title class="ion-text-center"
       size="medium"
       *ngIf="heading">{{heading}}
-    </ion-title>
+    </ion-title> -->
+    
+    <ion-buttons slot="end" (click) = "navigateTo()" >
+      <ion-icon  class="search_icon" name="search-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-footer>
