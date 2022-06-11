@@ -18,8 +18,8 @@
 // }
 
 ion-slide {
-  padding-bottom: 20px;
-  padding-left: 5px;
+ margin: 0px !important;
+ margin-right: 0px !important;
 }
 
 .category {
@@ -51,9 +51,10 @@ ion-slide {
     text-shadow: 1px 1px 2px grey;
   }
 
-  .card {
+  ion-card {
     width: 160px;
-    height: 205px;
+    min-height: 165px;
+    max-height: 165px;
   }
 }
 
@@ -133,4 +134,19 @@ ion-slide {
   .text {
     bottom: 15%;
   }
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: start;
+  padding: 5px 12px;
+  background-color: white;
+}
+
+
+ion-card-header{
+  text-align: start;
+  padding: 15px;
 }
