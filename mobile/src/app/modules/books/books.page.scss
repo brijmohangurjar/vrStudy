@@ -1,0 +1,17 @@
+.book_page {
+  ion-card {
+    height: 165px;
+    ion-card-header {
+      text-align: start;
+      padding: 15px;
+    }
+    .card-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: start;
+      padding: 5px 12px;
+      background-color: white;
+    }
+  }
+}

@@ -18,8 +18,9 @@ import { environment } from 'src/environments/environment';
 import { AuthGuard, IsLoggedInGuard } from './guard';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
     CommonModule,
@@ -34,6 +35,7 @@ import { AuthGuard, IsLoggedInGuard } from './guard';
     AngularFirestoreModule,
     AngularFireFunctionsModule,
   ],
+  entryComponents: [],
   providers: [
     ConstantVariables,
     AuthGuard,

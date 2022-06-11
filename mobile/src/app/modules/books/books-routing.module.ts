@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: BooksPage
+  },
+  {
+    path: 'page-detail/:bookId',
+    loadChildren: () => import('../page-detail/page-detail.module').then(m => m.PageDetailPageModule)
   }
 ];
 
@@ -14,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class BooksPageRoutingModule {}
+export class BooksPageRoutingModule { }
