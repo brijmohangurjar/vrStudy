@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard, IsLoggedInGuard } from './guard';
+// import { AuthGuard, IsLoggedInGuard } from './guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'books',
     loadChildren: () => import('./modules/books/books.module').then( m => m.BooksPageModule)
+  },
+  {
+    path: 'topic',
+    loadChildren: () => import('./modules/topic/topic.module').then( m => m.TopicPageModule)
   }
 ];
 @NgModule({

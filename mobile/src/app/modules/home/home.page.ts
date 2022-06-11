@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { HomeService, LoginService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { NavigationService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-home',
@@ -52,8 +52,7 @@ export class HomePage implements OnInit {
       setTranslate() {
         const swiper = this;
         const {
-          width: swiperWidth, height: swiperHeight, slides, $wrapperEl, slidesSizesGrid, $
-        } = swiper;
+          width: swiperWidth, height: swiperHeight, slides, $wrapperEl, slidesSizesGrid, } = swiper;
         const params = swiper.params.coverflowEffect;
         const isHorizontal = swiper.isHorizontal();
         const transform$$1 = swiper.translate;
@@ -108,6 +107,7 @@ export class HomePage implements OnInit {
     private toastService: ToastService,
     private loginService: LoginService,
     private homeService: HomeService,
+    private navigationService: NavigationService,
   ) { }
 
   public ngOnInit() {
@@ -128,5 +128,10 @@ export class HomePage implements OnInit {
       }, (error: HttpErrorResponse) => {
         this.toastService.errorToast(error.message);
       });
+  }
+
+  public clickOnSubject(item: any): void {
+    console.log('item', item);
+    this.navigationService.navigateByUrl('subject', item.docId)
   }
 }

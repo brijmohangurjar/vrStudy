@@ -19,7 +19,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3'>
-      <ion-slide *ngFor="let item of subjectList; let i=index">
+      <ion-slide *ngFor="let item of subjectList; let i=index" (click)="clickOnSubject(item)">
         <div class="card">
           <p class="title">{{item.name}}</p>
         </div>

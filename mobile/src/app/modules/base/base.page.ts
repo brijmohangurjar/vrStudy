@@ -1,12 +1,12 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController, IonRouterOutlet, ModalController, Platform } from '@ionic/angular';
+import { AlertController, ModalController, Platform } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { LoginService } from 'src/app/api-services';
 import { ConstantVariables } from 'src/const/constant';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { Share } from '@capacitor/share';
+// import { Share } from '@capacitor/share';
 import { App } from '@capacitor/app';
 
 @Component({
@@ -97,7 +97,7 @@ export class BasePage implements OnInit {
     // private changeDetectorRef: ChangeDetectorRef,
     private modalController: ModalController,
     // private authService: AuthService,
-    private routerOutlet: IonRouterOutlet,
+    // private routerOutlet: IonRouterOutlet,
     private alertController: AlertController,
     private location: Location,
     private loginService: LoginService,
@@ -171,12 +171,12 @@ export class BasePage implements OnInit {
   }
 
   private async openSharePopup() {
-    const shareRet = await Share.share({
-      title: 'Share Vr Study',
-      text: 'Check',
-      // url: 'https://onlineKirana.app',
-      dialogTitle: 'Share Vr Study'
-    });
+    // const shareRet = await Share.share({
+    //   title: 'Share Vr Study',
+    //   text: 'Check',
+    //   // url: 'https://onlineKirana.app',
+    //   dialogTitle: 'Share Vr Study'
+    // });
   }
 
 
