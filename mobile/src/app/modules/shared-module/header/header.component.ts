@@ -50,7 +50,6 @@ export class HeaderComponent implements OnInit {
   transform(value: any, args: any): any {
     if(value){
       const array = args.split(' ');
-      console.log(array , 'array');
       if (!array && !array.length) {return value;}
       for(const text of array) {
           var reText = new RegExp(text, 'gi');

@@ -28,11 +28,11 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<div style="padding:0px 15px; font-size: 14px;">
-  <p class="ion-no-margin ion-no-padding pt-4">GO TO..</p><hr>
+<div style="padding:0px; font-size: 14px;">
+  <p class="ion-no-margin ion-no-padding pt-4" style="padding-left: 15px;">GO TO..</p><hr>
   <ion-list *ngIf="searchValue">
-    <ion-item *ngFor="let item of pageList">
-      <span [innerHTML]="transform(item.heading, searchValue)"></span>
+    <ion-item lines="none" *ngFor="let item of pageList">
+      <ion-icon style="font-size: 35px; margin-right: 5px;"  slot="start" name="document-outline"></ion-icon>  <span [innerHTML]="transform(item.heading, searchValue)"></span>
     </ion-item>
   </ion-list>
 </div>
