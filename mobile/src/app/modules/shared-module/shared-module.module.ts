@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { NoDataFoundComponent } from './no-data-found/no-data-found.component';
 
 
 
@@ -11,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
+    NoDataFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     FooterComponent,
     ReactiveFormsModule,
+    NoDataFoundComponent,
   ]
 })
 export class SharedModuleModule { }

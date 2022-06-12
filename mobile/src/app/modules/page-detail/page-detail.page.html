@@ -2,7 +2,7 @@
 
 <ion-content>
   <ion-grid class="ion-grid page_detail">
-    <div class="" *ngIf="pageDetail">
+    <div class="" *ngIf="pageDetail.length">
       <ion-row>
         <ion-col size="12" class="heading">
           <ion-label>{{pageDetail?.heading}}</ion-label>
@@ -19,6 +19,10 @@
           </div>
         </ion-col>
       </ion-row>
+    </div>
+
+    <div class="" *ngIf="!pageDetail.length">
+      <app-no-data-found [message]="'No Detail Found'"></app-no-data-found>
     </div>
   </ion-grid>
 </ion-content>
