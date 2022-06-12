@@ -24,7 +24,7 @@
        (ionCancel)="clearSearchBar()" #autofocus></ion-searchbar>
     </ion-title>
 
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" *ngIf="searchBar">
       <ion-icon name="filter-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
