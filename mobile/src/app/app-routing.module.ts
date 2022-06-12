@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'page-detail',
     loadChildren: () => import('./modules/page-detail/page-detail.module').then( m => m.PageDetailPageModule)
   },
+  {
+    path: 'recent-page',
+    loadChildren: () => import('./modules/recent-page/recent-page.module').then( m => m.RecentPagePageModule)
+  },
 ];
 @NgModule({
   imports: [

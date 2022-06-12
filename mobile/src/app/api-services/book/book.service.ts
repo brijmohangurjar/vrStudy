@@ -15,7 +15,8 @@ export class BookService {
 
   public getBookListByTopicId(subjectId: string): Observable<any> {
     return this.angularFirestore.collection('book', ref =>
-      ref.where('topic.docId', '==', subjectId)).snapshotChanges()
+      ref.where('topic.docId', '==', subjectId)
+        .orderBy('createDate', 'desc')).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
           const data: any = doc.payload.doc.data();
