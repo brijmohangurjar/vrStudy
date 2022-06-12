@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { NoDataFoundComponent } from './no-data-found/no-data-found.component';
 
 
 
@@ -12,6 +13,7 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
   declarations: [
     HeaderComponent,
     FooterComponent,
+    NoDataFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
     HeaderComponent,
     FooterComponent,
     ReactiveFormsModule,
+    NoDataFoundComponent,
   ]
 })
 export class SharedModuleModule { }

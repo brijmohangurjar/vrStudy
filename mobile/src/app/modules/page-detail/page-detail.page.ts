@@ -22,9 +22,7 @@ export class PageDetailPage implements OnInit {
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
-      console.log('param', param);
       this.bookId = param.get('bookId');
-      console.log('this.bookId', this.bookId);
       if (this.bookId) {
         this.getPageDetailByBookId(this.bookId);
       }
@@ -42,9 +40,8 @@ export class PageDetailPage implements OnInit {
     this.subscriptions.push(
       this.pageDetailService.getPageDetailByBookId(bookId)
         .subscribe((responseData: any) => {
-          console.log('responseData', responseData);
           if (responseData.length) {
-            this.pageDetail = responseData;
+            this.pageDetail = responseData[0];
           } else {
             this.pageDetail = [];
           }

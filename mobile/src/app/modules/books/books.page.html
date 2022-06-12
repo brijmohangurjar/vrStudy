@@ -2,7 +2,7 @@
 
 <ion-content>
   <ion-grid class="book_page ion-no-padding">
-    <ion-row>
+    <ion-row *ngIf="bookList.length">
       <ion-col size="4" *ngFor="let item of bookList; let i=index">
         <ion-card style="margin: 10px;" routerLink="page-detail/{{item.docId}}">
           <ion-card-header>
@@ -17,6 +17,10 @@
         </ion-card>
       </ion-col>
     </ion-row>
+    
+    <div class="" *ngIf="!bookList.length">
+      <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
+    </div>
   </ion-grid>
 </ion-content>
 
