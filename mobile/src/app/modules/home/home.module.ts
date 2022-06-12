@@ -7,7 +7,6 @@ import { HomePage } from './home.page';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import { SearchComponent } from '../shared-module/search/search.component';
-import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 @NgModule({
   imports: [
@@ -17,7 +16,6 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
     IonicModule,
     HomePageRoutingModule,
     SharedModuleModule,
-    AutocompleteLibModule,
     PipesModule,
   ],
   declarations: [HomePage, SearchComponent],
