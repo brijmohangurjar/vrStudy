@@ -1,5 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HomeService } from 'src/app/api-services';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-header',
@@ -15,12 +18,17 @@ export class HeaderComponent implements OnInit {
   @Input() searchBar: any;
 
   public searchValue = '';
+  public pageList = [];
 
   constructor(
     private router: Router,
+    private homeService: HomeService,
+    private toastService: ToastService
   ) { }
 
-  public ngOnInit() { }
+  public ngOnInit() {
+    this.getPageList();
+   }
 
   public navigateToBack(): void {
     this.router.navigateByUrl('base')
@@ -28,5 +36,20 @@ export class HeaderComponent implements OnInit {
 
   public clearSearchBar() {
 
+  }
+
+  public getItems() {
+
+  }
+
+  private getPageList(): void {
+    this.homeService.getPageList()
+      .subscribe((result: any) => {
+        if (result && result.length) {
+          this.pageList = result;
+        }
+      }, (error: HttpErrorResponse) => {
+        this.toastService.errorToast(error.message);
+      });
   }
 }
