@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
@@ -10,7 +10,7 @@ import { LoadingService } from 'src/app/service';
   templateUrl: './page-detail.page.html',
   styleUrls: ['./page-detail.page.scss'],
 })
-export class PageDetailPage implements OnInit {
+export class PageDetailPage implements OnInit, OnDestroy {
 
   public pageDetail: any;
 

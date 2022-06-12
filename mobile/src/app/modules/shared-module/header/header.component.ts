@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { HomeService } from 'src/app/api-services';
 import { ToastService } from 'src/app/service';
 
@@ -9,7 +10,7 @@ import { ToastService } from 'src/app/service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   @Input() showToggleButton: boolean;
   @Input() showFilter: boolean;
@@ -21,6 +22,8 @@ export class HeaderComponent implements OnInit {
   public pageList = [];
   public originalData = [];
 
+  private subscriptions: Subscription[] = [];
+
   constructor(
     private router: Router,
     private homeService: HomeService,
@@ -29,18 +32,20 @@ export class HeaderComponent implements OnInit {
 
   public ngOnInit() {
     this.getPageList();
-   }
+  }
+
+  public ngOnDestroy(): void {
+    this.subscriptions.forEach((sub: Subscription) => {
+      if (!sub.closed) { sub.unsubscribe(); }
+    });
+  }
 
   public navigateToBack(): void {
     this.router.navigateByUrl('base')
   }
 
-  public clearSearchBar() {
-
-  }
-
   public getItems() {
-    const column = ['heading' , 'page'];
+    const column = ['heading', 'page'];
     const searchList = this.originalData.filter((row: any) => {
       return column.some(key => row.hasOwnProperty(key) && new RegExp(this.searchValue, 'gi').test(row[key]));
     });
@@ -48,20 +53,16 @@ export class HeaderComponent implements OnInit {
   }
 
   transform(value: any, args: any): any {
-    if(value){
+    if (value) {
       const array = args.split(' ');
-      if (!array && !array.length) {return value;}
-      for(const text of array) {
-          var reText = new RegExp(text, 'gi');
-          value = value.replace(reText, '<b>' + text + '</b>');
-          //for your custom css
-          // value = value.replace(reText, "<span class='highlight-search-text'>" + text + "</span>"); 
-  
-  
+      if (!array && !array.length) { return value; }
+      for (const text of array) {
+        var reText = new RegExp(text, 'gi');
+        value = value.replace(reText, '<b>' + text + '</b>');
       }
       return value;
     }
-}
+  }
 
   private getPageList(): void {
     this.homeService.getPageList()

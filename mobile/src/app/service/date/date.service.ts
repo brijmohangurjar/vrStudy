@@ -13,7 +13,6 @@ export class DateService {
   public getTimeGreetings() {
     const newDate = new Date().getHours();
     let greetingText = '';
-    console.log('newDate', newDate)
     if (newDate >= 5 && newDate < 12) {
       greetingText = 'Good Morning';
     } else if (newDate >= 12 && newDate < 17) {
