@@ -1,7 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TopicService } from 'src/app/api-services';
+import { LoadingService } from 'src/app/service';
 
 @Component({
   selector: 'app-topic',
@@ -11,10 +13,6 @@ import { TopicService } from 'src/app/api-services';
 export class TopicPage implements OnInit {
 
   public topicList = [];
-  public slideOpts3 = {
-    slidesPerView: 2.4,
-    spaceBetween: 20,
-  }
 
   private subjectId: string;
   private subscriptions: Subscription[] = [];
@@ -22,13 +20,12 @@ export class TopicPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private topicService: TopicService,
+    private loadingService: LoadingService,
   ) { }
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
-      console.log('param', param);
       this.subjectId = param.get('subjectId');
-      console.log('this.subjectId', this.subjectId);
       if (this.subjectId) {
         this.getTopicListBySubjectId(this.subjectId);
       }
@@ -41,17 +38,19 @@ export class TopicPage implements OnInit {
     });
   }
 
-
   private getTopicListBySubjectId(subjectId: string): void {
+    this.loadingService.showLoading();
     this.subscriptions.push(
       this.topicService.getTopicListBySubjectId(subjectId)
         .subscribe((responseData: any) => {
-          console.log('responseData', responseData);
+          this.loadingService.hideLoading();
           if (responseData.length) {
             this.topicList = responseData;
           } else {
             this.topicList = [];
           }
+        }, (error: HttpErrorResponse) => {
+          this.loadingService.hideLoading();
         })
     );
   }
