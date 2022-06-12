@@ -1,9 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import {  Subscription } from 'rxjs';
 import { HomeService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { NavigationService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-header',
@@ -25,9 +24,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private router: Router,
     private homeService: HomeService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private navigationService: NavigationService
   ) { }
 
   public ngOnInit() {
@@ -41,7 +40,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public navigateToBack(): void {
-    this.router.navigateByUrl('base')
+    this.navigationService.navigateByUrl('base')
   }
 
   public getItems() {
@@ -50,6 +49,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
       return column.some(key => row.hasOwnProperty(key) && new RegExp(this.searchValue, 'gi').test(row[key]));
     });
     this.pageList = searchList;
+  }
+
+  public onSelect(item){
+    console.log('item', item);
+    this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.book.docId}/page-detail/${item.book.docId}`);
   }
 
   transform(value: any, args: any): any {

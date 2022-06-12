@@ -18,7 +18,7 @@ export class NavigationService {
     this.router.navigate([path], { relativeTo: this.activatedRoute });
   }
 
-  public navigateByUrl(path: string, itemId: string): void {
-    this.router.navigate([`/${path}`, itemId]);
+  public navigateByUrl(path: any, itemId?: string): void {
+    this.router.navigateByUrl(path);
   }
 }
