@@ -16,6 +16,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { environment } from 'src/environments/environment';
 import { AuthGuard, IsLoggedInGuard } from './guard';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AuthGuard, IsLoggedInGuard } from './guard';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireFunctionsModule,
+    AutocompleteLibModule
   ],
   entryComponents: [],
   providers: [

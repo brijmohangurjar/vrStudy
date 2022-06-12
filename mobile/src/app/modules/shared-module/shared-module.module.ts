@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 
 
@@ -17,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     IonicModule,
     FormsModule,
     ReactiveFormsModule,
+    AutocompleteLibModule
   ],
   exports: [
     HeaderComponent,
