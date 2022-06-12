@@ -21,7 +21,7 @@
   
     <ion-slides class="listSlides" [options]='slideOpts3'>
       <ion-slide *ngFor="let item of subjectList; let i=index" 
-        (click)="clickOnSubject(item)" routerLink="topic/{{item.docId}}" >
+       routerLink="topic/{{item.docId}}" >
         <ion-card  style="margin: 10px;">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.name}}</b></ion-card-subtitle>
@@ -48,7 +48,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3'>
-      <ion-slide *ngFor="let item of pageList; let i=index" (click)="clickOnSubject(item)">
+      <ion-slide *ngFor="let item of pageList; let i=index">
         <ion-card  style="margin: 10px;">
           <ion-card-header>
             <ion-card-subtitle><b>{{item?.heading}}</b></ion-card-subtitle>
@@ -73,7 +73,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3'>
-      <ion-slide *ngFor="let item of shortList; let i=index" (click)="clickOnSubject(item)">
+      <ion-slide *ngFor="let item of shortList; let i=index">
         <ion-card  style="margin: 10px;">
           <ion-card-header>
             <ion-card-subtitle><b>{{item?.heading}}</b></ion-card-subtitle>

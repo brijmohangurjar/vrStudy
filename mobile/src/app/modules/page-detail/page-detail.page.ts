@@ -1,7 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
+import { LoadingService } from 'src/app/service';
 
 @Component({
   selector: 'app-page-detail',
@@ -10,7 +12,7 @@ import { PageDetailService } from 'src/app/api-services';
 })
 export class PageDetailPage implements OnInit {
 
-  public pageDetail = [];
+  public pageDetail: any;
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
@@ -18,6 +20,7 @@ export class PageDetailPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private pageDetailService: PageDetailService,
+    private loadingService: LoadingService,
   ) { }
 
   public ngOnInit() {
@@ -35,16 +38,19 @@ export class PageDetailPage implements OnInit {
     });
   }
 
-
   private getPageDetailByBookId(bookId: string): void {
+    this.loadingService.showLoading();
     this.subscriptions.push(
       this.pageDetailService.getPageDetailByBookId(bookId)
         .subscribe((responseData: any) => {
+          this.loadingService.hideLoading();
           if (responseData.length) {
             this.pageDetail = responseData[0];
           } else {
-            this.pageDetail = [];
+            this.pageDetail = null;
           }
+        }, (error: HttpErrorResponse) => {
+          this.loadingService.hideLoading();
         })
     );
   }
