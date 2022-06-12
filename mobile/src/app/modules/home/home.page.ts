@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { HomeService, LoginService } from 'src/app/api-services';
-import { DateService, ToastService } from 'src/app/service';
+import { DateService, LoadingService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-home',
@@ -28,14 +28,12 @@ export class HomePage implements OnInit, OnDestroy {
     private loginService: LoginService,
     private homeService: HomeService,
     private dateService: DateService,
-    // private navigationService: NavigationService,
+    private loadingService: LoadingService,
   ) { }
 
   public ngOnInit() {
     this.greetingText = this.dateService.getTimeGreetings();
     this.getSubjectsList();
-    this.getPageList();
-    this.getShortList();
   }
 
   public ngOnDestroy(): void {
@@ -49,13 +47,18 @@ export class HomePage implements OnInit, OnDestroy {
   }
 
   private getSubjectsList(): void {
+    this.loadingService.showLoading();
     this.subscriptions.push(
       this.homeService.getSubjectList()
         .subscribe((result: any) => {
           if (result && result.length) {
             this.subjectList = result;
+            this.getPageList();
+          } else {
+            this.getPageList();
           }
         }, (error: HttpErrorResponse) => {
+          this.getPageList();
           this.toastService.errorToast(error.message);
         })
     )
@@ -68,8 +71,12 @@ export class HomePage implements OnInit, OnDestroy {
         .subscribe((result: any) => {
           if (result && result.length) {
             this.pageList = result;
+            this.getShortList();
+          } else {
+            this.getShortList();
           }
         }, (error: HttpErrorResponse) => {
+          this.getShortList();
           this.toastService.errorToast(error.message);
         })
     )
@@ -79,17 +86,14 @@ export class HomePage implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.homeService.getShortList()
         .subscribe((result: any) => {
+          this.loadingService.hideLoading();
           if (result && result.length) {
             this.shortList = result;
           }
         }, (error: HttpErrorResponse) => {
+          this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
     )
-  }
-
-  public clickOnSubject(item: any): void {
-    console.log('item', item);
-    // this.navigationService.navigateByRelativePath('subject', item.docId)
   }
 }
