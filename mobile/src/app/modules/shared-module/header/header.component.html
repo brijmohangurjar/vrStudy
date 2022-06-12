@@ -28,6 +28,12 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-list *ngIf="searchValue">
-  <ion-item *ngFor="let item of pageList">{{ item?.heading }}</ion-item>
-</ion-list>
+<div style="padding:0px 15px; font-size: 14px;">
+  <p class="ion-no-margin ion-no-padding pt-4">GO TO..</p><hr>
+  <ion-list *ngIf="searchValue">
+    <ion-item *ngFor="let item of pageList">
+      <span [innerHTML]="transform(item.heading, searchValue)"></span>
+    </ion-item>
+  </ion-list>
+</div>
+

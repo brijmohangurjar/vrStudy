@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
 
   public searchValue = '';
   public pageList = [];
+  public originalData = [];
 
   constructor(
     private router: Router,
@@ -39,14 +40,36 @@ export class HeaderComponent implements OnInit {
   }
 
   public getItems() {
-
+    const column = ['heading' , 'page'];
+    const searchList = this.originalData.filter((row: any) => {
+      return column.some(key => row.hasOwnProperty(key) && new RegExp(this.searchValue, 'gi').test(row[key]));
+    });
+    this.pageList = searchList;
   }
+
+  transform(value: any, args: any): any {
+    if(value){
+      const array = args.split(' ');
+      console.log(array , 'array');
+      if (!array && !array.length) {return value;}
+      for(const text of array) {
+          var reText = new RegExp(text, 'gi');
+          value = value.replace(reText, '<b>' + text + '</b>');
+          //for your custom css
+          // value = value.replace(reText, "<span class='highlight-search-text'>" + text + "</span>"); 
+  
+  
+      }
+      return value;
+    }
+}
 
   private getPageList(): void {
     this.homeService.getPageList()
       .subscribe((result: any) => {
         if (result && result.length) {
           this.pageList = result;
+          this.originalData = result;
         }
       }, (error: HttpErrorResponse) => {
         this.toastService.errorToast(error.message);
