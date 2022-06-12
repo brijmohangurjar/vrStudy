@@ -42,9 +42,9 @@ export class PageDetailPage implements OnInit {
     this.subscriptions.push(
       this.pageDetailService.getPageDetailByBookId(bookId)
         .subscribe((responseData: any) => {
-          console.log('responseData', responseData);
+          console.log('responseData', responseData[0]);
           if (responseData.length) {
-            this.pageDetail = responseData;
+            this.pageDetail = responseData[0];
           } else {
             this.pageDetail = [];
           }
