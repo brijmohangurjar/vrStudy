@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import {  Subscription } from 'rxjs';
 import { HomeService } from 'src/app/api-services';
 import { NavigationService, ToastService } from 'src/app/service';
@@ -9,7 +9,7 @@ import { NavigationService, ToastService } from 'src/app/service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input() showToggleButton: boolean;
   @Input() showFilter: boolean;
@@ -29,7 +29,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private navigationService: NavigationService
   ) { }
 
+  public ngOnChanges(changes:SimpleChanges){
+    console.log('changes',changes);
+    if(this.searchBar){
+       this.searchValue = '';
+       this.pageList = [];
+    }
+  }
+  
+
   public ngOnInit() {
+    console.log('testing');
+    this.searchValue = '';
     this.getPageList();
   }
 
