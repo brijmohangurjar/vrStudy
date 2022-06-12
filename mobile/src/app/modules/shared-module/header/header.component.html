@@ -20,7 +20,7 @@
     <ion-title class="ion-text-center" 
       style="width: 100%; padding: 26px;"
       size="medium"  *ngIf="searchBar">
-      <ion-searchbar color="light" placeholder="Search by heading" (ionChange)="getItems()" [(ngModel)]="searchValue" 
+      <ion-searchbar color="light" placeholder="Search" (ionChange)="getItems()" [(ngModel)]="searchValue" 
        (ionCancel)="clearSearchBar()" #autofocus></ion-searchbar>
     </ion-title>
     <ion-buttons slot="end" *ngIf="showFilter">
