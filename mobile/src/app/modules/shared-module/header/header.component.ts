@@ -1,16 +1,15 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import {  Subscription } from 'rxjs';
 import { HomeService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { NavigationService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input() showToggleButton: boolean;
   @Input() showFilter: boolean;
@@ -25,12 +24,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private router: Router,
     private homeService: HomeService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private navigationService: NavigationService
   ) { }
 
+  public ngOnChanges(changes:SimpleChanges){
+    console.log('changes',changes);
+    if(this.searchBar){
+       this.searchValue = '';
+       this.pageList = [];
+    }
+  }
+  
+
   public ngOnInit() {
+    console.log('testing');
+    this.searchValue = '';
     this.getPageList();
   }
 
@@ -41,7 +51,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public navigateToBack(): void {
-    this.router.navigateByUrl('base')
+    this.navigationService.navigateByUrl('base')
   }
 
   public getItems() {
@@ -52,10 +62,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.pageList = searchList;
   }
 
+  public onSelect(item){
+    console.log('item', item);
+    this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.book.docId}/page-detail/${item.book.docId}`);
+  }
+
   transform(value: any, args: any): any {
     if (value) {
       const array = args.split(' ');
-      console.log(array, 'array');
       if (!array && !array.length) { return value; }
       for (const text of array) {
         var reText = new RegExp(text, 'gi');
