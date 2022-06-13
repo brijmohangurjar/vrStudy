@@ -1,8 +1,12 @@
 <ion-content>
   <ion-card class="ion-no-margin">
-    <ion-img src="assets/images/book.jpg"></ion-img>
     <ion-card-content>
-
+      <div class="ion-text-center">
+        <img class="logo" src="assets/images/vr_logo.jpg">
+      </div>
+      <div class="ion-text-center">
+        <p class="card_header"><b>Login</b></p>
+      </div>
       <form [formGroup]="loginForm">
         <div class="wrapform">
           <ion-item>
@@ -21,7 +25,7 @@
             </ng-container>
           </div>
 
-          <ion-item>
+          <ion-item class="pt-4">
 
             <ion-input type="password" name="password" formControlName="password"
               placeholder="**************">
@@ -47,8 +51,8 @@
         </div>
 
         <div class="sign-btn-wrap">
-          <ion-button shape="round" type="submit"
-          fill="solid" class="sign-btn" (click)="loginSubmit()"
+          <ion-button  type="submit"
+          fill="solid" class="sign-btn btn-lg" (click)="loginSubmit()"
           [disabled]="!loginForm.valid">
             Login</ion-button>
         </div>

@@ -1,5 +1,5 @@
 ion-content {
-  --ion-background-color: #e1eaf9 !important;
+  // --ion-background-color: white !important;
   --ion-item-background: transparent !important;
 }
 
@@ -16,8 +16,7 @@ ion-item {
   --highlight-color-focused: #1248a0;
   --padding-start: 0;
   --inner-padding-end: 0;
-
-  font-size: 12px;
+  font-size: 16px;
   // --color-focused:#1248A0 !important;
   ion-input {
     color: #647b9d;
@@ -36,7 +35,7 @@ ion-item {
   text-align: right;
   // color:#0A4296
   ion-button {
-    font-size: 12px;
+    font-size: 16px;
     color: #0a4296;
   }
 }
@@ -44,16 +43,16 @@ ion-item {
 .sign-btn-wrap {
   text-align: center;
   padding-top: 20px;
-  .sign-btn {
-    --ion-primary-color: #215ab7;
-    --background-activated: #e1eaf9;
-    --background-focused: #e1eaf9;
-    --background-hover: #647b9d;
-    color: #f4f6fa;
-    border-radius: 25px;
-    --background: #215ab7;
-    background-color: #215ab7;
-  }
+  // .sign-btn {
+  //   --ion-primary-color: #215ab7;
+  //   --background-activated: #e1eaf9;
+  //   --background-focused: #e1eaf9;
+  //   --background-hover: #647b9d;
+  //   color: #f4f6fa;
+  //   border-radius: 25px;
+  //   --background: #215ab7;
+  //   background-color: #215ab7;
+  // }
 }
 
 .text-tag {
@@ -76,9 +75,11 @@ ion-item {
 }
 
 ion-card {
-  --ion-background-color: transparent !important;
+  height: 100%;
+  // --ion-background-color: transparent !important;
   box-shadow: none !important;
-  background-color: transparent !important;
+  background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
+  // background-color: transparent !important;
 }
 
 .ion-card-footer {
@@ -105,4 +106,18 @@ ion-card {
   button:hover {
     color: #969393;
   }
+}
+.card_header{
+  font-size: 18px !important;
+}
+
+.logo {
+  height: 126px;
+  margin: 5px auto;
+  margin-top: 35px;
+  border-radius: 10px;
+}
+
+.wrapform{
+  margin-top: 70px;
 }

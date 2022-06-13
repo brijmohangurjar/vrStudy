@@ -57,12 +57,12 @@ export class BasePage implements OnInit {
       url: '/home/short',
       icon: 'person-outline',
     },
-    {
-      id: 6,
-      title: 'Current',
-      url: '/home/current',
-      icon: 'person-outline',
-    },
+    // {
+    //   id: 6,
+    //   title: 'Current',
+    //   url: '/home/current',
+    //   icon: 'person-outline',
+    // },
     {
       id: 7,
       title: 'Profile',

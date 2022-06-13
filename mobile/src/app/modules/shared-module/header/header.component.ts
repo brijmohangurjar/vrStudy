@@ -3,6 +3,7 @@ import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@
 import {  Subscription } from 'rxjs';
 import { HomeService } from 'src/app/api-services';
 import { NavigationService, ToastService } from 'src/app/service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -26,7 +27,8 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   constructor(
     private homeService: HomeService,
     private toastService: ToastService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private location: Location
   ) { }
 
   public ngOnChanges(changes:SimpleChanges){
@@ -51,11 +53,12 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public navigateToBack(): void {
-    this.navigationService.navigateByUrl('base')
+    // this.navigationService.navigateByUrl('base')
+    this.location.back();
   }
 
   public getItems() {
-    const column = ['heading', 'page'];
+    const column = ['heading'];
     const searchList = this.originalData.filter((row: any) => {
       return column.some(key => row.hasOwnProperty(key) && new RegExp(this.searchValue, 'gi').test(row[key]));
     });
@@ -63,7 +66,6 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public onSelect(item){
-    console.log('item', item);
     this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.book.docId}/page-detail/${item.book.docId}`);
   }
 
