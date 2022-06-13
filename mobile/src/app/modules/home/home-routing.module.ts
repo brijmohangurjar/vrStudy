@@ -16,11 +16,18 @@ const routes: Routes = [
   {
     path: 'topic/:subjectId',
     loadChildren: () => import('../../modules/topic/topic.module').then(m => m.TopicPageModule)
-    // loadChildren: () => import('../../modules/subject/subject.module').then(m => m.SubjectPageModule)
   },
   {
     path: 'subject',
     loadChildren: () => import('../../modules/subject/subject.module').then(m => m.SubjectPageModule)
+  },
+  {
+    path: 'recent-page',
+    loadChildren: () => import('../../modules/recent-page/recent-page.module').then(m => m.RecentPagePageModule)
+  },
+  {
+    path: 'recent-short',
+    loadChildren: () => import('../../modules/recent-short/recent-short.module').then(m => m.RecentShortPageModule)
   },
 ];
 

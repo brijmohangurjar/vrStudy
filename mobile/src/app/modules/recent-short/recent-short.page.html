@@ -1,0 +1,27 @@
+<app-header [heading]="'Recent Short'"></app-header>
+
+<ion-content>
+  <ion-grid class="recent_short_page ion-no-padding">
+    <ion-row *ngIf="recentShort.length">
+      <ion-col size="4" *ngFor="let item of recentShort; let i=index">
+        <ion-card style="margin: 10px;">
+          <ion-card-header>
+            <ion-card-subtitle><b>{{item.heading}}</b></ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-row class="card-footer ion-no-margin ion-no-padding">
+            <ion-col class="ion-no-margin ion-no-padding">
+              <p style="margin-bottom: 0px; color: #b7b7b7;">
+                {{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <div class="" *ngIf="!recentShort.length">
+      <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
+    </div>
+  </ion-grid>
+</ion-content>

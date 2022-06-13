@@ -3,13 +3,11 @@ ion-content {
   --ion-item-background: transparent !important;
 }
 
-.wrapform {
-  margin-top: 15px;
-}
 .error_message {
   font-size: 9px;
   color: red;
 }
+
 ion-item {
   color: #647b9d;
   --border-color: #d4d7db;
@@ -17,10 +15,11 @@ ion-item {
   --padding-start: 0;
   --inner-padding-end: 0;
   font-size: 16px;
-  // --color-focused:#1248A0 !important;
+
   ion-input {
     color: #647b9d;
   }
+
   ion-icon {
     padding-right: 6px;
     font-size: 26px;
@@ -33,53 +32,18 @@ ion-item {
 
 .password_forgot {
   text-align: right;
-  // color:#0A4296
+
   ion-button {
     font-size: 16px;
     color: #0a4296;
-  }
-}
-
-.sign-btn-wrap {
-  text-align: center;
-  padding-top: 20px;
-  // .sign-btn {
-  //   --ion-primary-color: #215ab7;
-  //   --background-activated: #e1eaf9;
-  //   --background-focused: #e1eaf9;
-  //   --background-hover: #647b9d;
-  //   color: #f4f6fa;
-  //   border-radius: 25px;
-  //   --background: #215ab7;
-  //   background-color: #215ab7;
-  // }
-}
-
-.text-tag {
-  margin-top: 30px;
-  text-align: center;
-  span {
-    font-size: 13px;
-    font-weight: normal;
-    color: #898585;
-  }
-}
-
-.social-btns {
-  margin-top: 25px;
-  text-align: center;
-  ion-button {
-    width: 40px;
-    padding-left: 5px !important;
+    text-transform: unset;
   }
 }
 
 ion-card {
   height: 100%;
-  // --ion-background-color: transparent !important;
   box-shadow: none !important;
   background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
-  // background-color: transparent !important;
 }
 
 .ion-card-footer {
@@ -107,7 +71,8 @@ ion-card {
     color: #969393;
   }
 }
-.card_header{
+
+.card_header {
   font-size: 18px !important;
 }
 
@@ -118,6 +83,6 @@ ion-card {
   border-radius: 10px;
 }
 
-.wrapform{
+.wrapform {
   margin-top: 70px;
 }

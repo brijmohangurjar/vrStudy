@@ -59,10 +59,10 @@ export class HomePage implements OnInit, OnDestroy {
         this.navigationService.navigateByUrl('base/home/subject');
         break;
       case 'recentPage':
-        this.navigationService.navigateByUrl('recent-page');
+        this.navigationService.navigateByUrl('base/home/recent-page');
         break;
       case 'recentShort':
-        this.navigationService.navigateByUrl('recent-short');
+        this.navigationService.navigateByUrl('base/home/recent-short');
         break;
     }
   }

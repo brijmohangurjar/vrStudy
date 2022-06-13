@@ -12,6 +12,7 @@ import { LoginService } from '../api-services';
 
 @Injectable()
 export class IsLoggedInGuard implements CanActivate {
+  
   constructor(
     private router: Router,
     private afAuth: AngularFireAuth,

@@ -4,9 +4,11 @@
       <div class="ion-text-center">
         <img class="logo" src="assets/images/vr_logo.jpg">
       </div>
+
       <div class="ion-text-center">
         <p class="card_header"><b>Login</b></p>
       </div>
+      
       <form [formGroup]="loginForm">
         <div class="wrapform">
           <ion-item>
@@ -43,15 +45,15 @@
               </div>
             </ng-container>
           </div>
-
         </div>
+
         <div class="password_forgot">
           <ion-button fill="clear" [routerLink]="['/forgot-password']"
-          class="ion-no-padding">ForgotPasword?</ion-button>
+          class="ion-no-padding">Forgot Password?</ion-button>
         </div>
 
-        <div class="sign-btn-wrap">
-          <ion-button  type="submit"
+        <div class="sign-btn-wrap pt-5">
+          <ion-button  type="submit" mode="ios"
           fill="solid"  expand="block" (click)="loginSubmit()"
           [disabled]="!loginForm.valid">
             Login</ion-button>

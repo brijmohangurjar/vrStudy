@@ -5,3 +5,4 @@ export * from './subject/subject.service';
 export * from './topic/topic.service';
 export * from './book/book.service';
 export * from './page-detail/page-detail.service';
+export * from './recent-short/recent-short.service';
