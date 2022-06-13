@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { LoadingService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +30,7 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private toastService: ToastService,
     private router: Router,
+    private loadingService: LoadingService,
   ) { }
 
   public ngOnInit(): void {
@@ -39,9 +40,10 @@ export class LoginPage implements OnInit {
 
   public loginSubmit(): void {
     const formValue = this.loginForm.value;
+    this.loadingService.showLoading();
     this.loginService.logInUser(formValue.email.toLowerCase(), formValue.password)
       .then((logInResponse: any) => {
-        console.log('logInResponse', logInResponse)
+        this.loadingService.hideLoading();
         if (logInResponse.status === 200) {
           this.router.navigate(['base']);
           this.toastService.successToast(logInResponse.message);
@@ -50,6 +52,7 @@ export class LoginPage implements OnInit {
         }
       }, (error: HttpErrorResponse) => {
         console.log('error', error);
+        this.loadingService.hideLoading();
         this.toastService.errorToast(error.message);
       });
   }
