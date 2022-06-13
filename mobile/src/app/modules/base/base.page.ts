@@ -15,7 +15,7 @@ import { App } from '@capacitor/app';
   styleUrls: ['./base.page.scss'],
 })
 export class BasePage implements OnInit {
-
+  public activeIndex = 0;
   public userInfo: any;
   public defaultUserPic = '/assets/images/user_profile.jpg';
   private openConfirmationPopup = true;

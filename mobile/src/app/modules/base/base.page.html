@@ -28,7 +28,7 @@
               <a [routerLink]="item.url ? item.url : null">
                 <ion-item routerLinkActive="active-list-item"
                     routerDirection="root" lines="none"
-                  detail="false" (click)="navigateBySidemenu(item, i)">
+                  detail="false"  [class.selected]="activeIndex == i" (click)="navigateBySidemenu(item, i)">
                   <ion-icon slot="start" class="help-icon" [name]="item.icon">
                   </ion-icon>
                   <ion-label>{{ item.title }}</ion-label>
