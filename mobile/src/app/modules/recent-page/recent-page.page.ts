@@ -1,28 +1,28 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SubjectService } from 'src/app/api-services';
+import { PageDetailService } from 'src/app/api-services';
 import { LoadingService, ToastService } from 'src/app/service';
 
 @Component({
-  selector: 'app-subject',
-  templateUrl: './subject.page.html',
-  styleUrls: ['./subject.page.scss'],
+  selector: 'app-recent-page',
+  templateUrl: './recent-page.page.html',
+  styleUrls: ['./recent-page.page.scss'],
 })
-export class SubjectPage implements OnInit, OnDestroy {
+export class RecentPagePage implements OnInit {
 
-  public subjectList = [];
+  public pageList = [];
 
   private subscriptions: Subscription[] = [];
 
   constructor(
     private loadingService: LoadingService,
-    private subjectService: SubjectService,
+    private pageDetailService: PageDetailService,
     private toastService: ToastService,
   ) { }
 
   public ngOnInit() {
-    this.getSubjectsList();
+    this.getPageList();
   }
 
   public ngOnDestroy(): void {
@@ -31,16 +31,16 @@ export class SubjectPage implements OnInit, OnDestroy {
     });
   }
 
-  private getSubjectsList(): void {
+  private getPageList(): void {
     this.loadingService.showLoading();
     this.subscriptions.push(
-      this.subjectService.getSubjectList()
+      this.pageDetailService.getPageList()
         .subscribe((result: any) => {
           this.loadingService.hideLoading();
           if (result && result.length) {
-            this.subjectList = result;
+            this.pageList = result;
           } else {
-            this.subjectList = [];
+            this.pageList = [];
           }
         }, (error: HttpErrorResponse) => {
           this.loadingService.hideLoading();

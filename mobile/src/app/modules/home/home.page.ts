@@ -1,8 +1,13 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { HomeService, LoginService } from 'src/app/api-services';
-import { DateService, LoadingService, ToastService } from 'src/app/service';
+import { HomeService, LoginService, SubjectService } from 'src/app/api-services';
+import {
+  DateService,
+  LoadingService,
+  NavigationService,
+  ToastService,
+} from 'src/app/service';
 
 @Component({
   selector: 'app-home',
@@ -29,6 +34,8 @@ export class HomePage implements OnInit, OnDestroy {
     private homeService: HomeService,
     private dateService: DateService,
     private loadingService: LoadingService,
+    private subjectService: SubjectService,
+    private navigationService: NavigationService,
   ) { }
 
   public ngOnInit() {
@@ -46,10 +53,24 @@ export class HomePage implements OnInit, OnDestroy {
     this.loginService.logOutUser();
   }
 
+  public onClick(type: string): void {
+    switch (type) {
+      case 'subject':
+        this.navigationService.navigateByUrl('base/home/subject');
+        break;
+      case 'recentPage':
+        this.navigationService.navigateByUrl('recent-page');
+        break;
+      case 'recentShort':
+        this.navigationService.navigateByUrl('recent-short');
+        break;
+    }
+  }
+
   private getSubjectsList(): void {
     this.loadingService.showLoading();
     this.subscriptions.push(
-      this.homeService.getSubjectList()
+      this.subjectService.getSubjectList()
         .subscribe((result: any) => {
           if (result && result.length) {
             this.subjectList = result;

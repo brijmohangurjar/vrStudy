@@ -38,14 +38,12 @@ export class BooksPage implements OnInit {
     });
   }
 
-
   private getBookListByTopicId(topicId: string): void {
     this.loadingService.showLoading();
     this.subscriptions.push(
       this.bookService.getBookListByTopicId(topicId)
         .subscribe((responseData: any) => {
           this.loadingService.hideLoading();
-          console.log('responseData', responseData);
           if (responseData.length) {
             this.bookList = responseData;
           } else {
