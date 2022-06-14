@@ -19,10 +19,6 @@ const routes: Routes = [
     canActivate: [IsLoggedInGuard],
     loadChildren: () => import('./modules/auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   },
-  {
-    path: 'note',
-    loadChildren: () => import('./modules/note/note.module').then( m => m.NotePageModule)
-  },
 ];
 @NgModule({
   imports: [

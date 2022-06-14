@@ -15,11 +15,10 @@ import { App } from '@capacitor/app';
   styleUrls: ['./base.page.scss'],
 })
 export class BasePage implements OnInit {
+
   public activeIndex = 0;
   public userInfo: any;
   public defaultUserPic = '/assets/images/user_profile.jpg';
-  private openConfirmationPopup = true;
-  private subscriptions: Subscription[] = [];
   public sideMenuList: any = [
     {
       id: 0,
@@ -33,40 +32,34 @@ export class BasePage implements OnInit {
       url: '/base/home/subject',
       icon: 'book-outline',
     },
-    {
-      id: 2,
-      title: 'Topic',
-      url: '/base/home/topic',
-      icon: 'bookmark-outline',
-    },
-    {
-      id: 3,
-      title: 'Book',
-      url: '/home/book',
-      icon: 'person-outline',
-    },
-    {
-      id: 4,
-      title: 'Page',
-      url: '/home/page',
-      icon: 'person-outline',
-    },
-    {
-      id: 5,
-      title: 'Short',
-      url: '/home/short',
-      icon: 'person-outline',
-    },
     // {
-    //   id: 6,
-    //   title: 'Current',
-    //   url: '/home/current',
+    //   id: 2,
+    //   title: 'Topic',
+    //   url: '/base/home/topic',
+    //   icon: 'bookmark-outline',
+    // },
+    // {
+    //   id: 3,
+    //   title: 'Book',
+    //   url: '/home/book',
+    //   icon: 'person-outline',
+    // },
+    // {
+    //   id: 4,
+    //   title: 'Page',
+    //   url: '/home/page',
+    //   icon: 'person-outline',
+    // },
+    // {
+    //   id: 5,
+    //   title: 'Short',
+    //   url: '/home/short',
     //   icon: 'person-outline',
     // },
     {
       id: 7,
       title: 'Profile',
-      url: '/base/home/profile',
+      url: '/base/profile',
       icon: 'person-outline',
     },
     {
@@ -88,6 +81,9 @@ export class BasePage implements OnInit {
       icon: 'log-out-outline',
     }
   ];
+
+  private openConfirmationPopup = true;
+  private subscriptions: Subscription[] = [];
 
   constructor(
     public constVar: ConstantVariables,
