@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
 import { LoadingService, ToastService } from 'src/app/service';
@@ -9,7 +9,7 @@ import { LoadingService, ToastService } from 'src/app/service';
   templateUrl: './recent-page.page.html',
   styleUrls: ['./recent-page.page.scss'],
 })
-export class RecentPagePage implements OnInit {
+export class RecentPagePage implements OnInit, OnDestroy {
 
   public pageList = [];
 
@@ -36,7 +36,6 @@ export class RecentPagePage implements OnInit {
     this.subscriptions.push(
       this.pageDetailService.getPageList()
         .subscribe((result: any) => {
-          console.log('result', result)
           this.loadingService.hideLoading();
           if (result && result.length) {
             this.pageList = result;
@@ -44,10 +43,10 @@ export class RecentPagePage implements OnInit {
             this.pageList = [];
           }
         }, (error: HttpErrorResponse) => {
-          console.log('error', error)
+          console.log('error', error);
           this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
-    )
+    );
   }
 }

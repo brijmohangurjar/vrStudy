@@ -51,7 +51,7 @@ export class PageDetailPage implements OnInit, OnDestroy {
             this.pageDetail = null;
           }
         }, (error: HttpErrorResponse) => {
-          console.log('error', error)
+          console.log('error', error);
           this.toastService.errorToast(error.message);
           this.loadingService.hideLoading();
         })

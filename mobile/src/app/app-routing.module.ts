@@ -20,9 +20,9 @@ const routes: Routes = [
     loadChildren: () => import('./modules/auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   },
   {
-    path: 'short-detail',
-    loadChildren: () => import('./modules/short-detail/short-detail.module').then( m => m.ShortDetailPageModule)
-  }
+    path: 'note',
+    loadChildren: () => import('./modules/note/note.module').then( m => m.NotePageModule)
+  },
 ];
 @NgModule({
   imports: [

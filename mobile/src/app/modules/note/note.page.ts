@@ -2,25 +2,25 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ShortDetailService } from 'src/app/api-services';
+import { NoteService } from 'src/app/api-services';
 import { LoadingService, ToastService } from 'src/app/service';
 
 @Component({
-  selector: 'app-short-detail',
-  templateUrl: './short-detail.page.html',
-  styleUrls: ['./short-detail.page.scss'],
+  selector: 'app-note',
+  templateUrl: './note.page.html',
+  styleUrls: ['./note.page.scss'],
 })
-export class ShortDetailPage implements OnInit, OnDestroy {
+export class NotePage implements OnInit, OnDestroy {
 
-  public shortDetail: any;
+  public noteDetail: any;
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private shortDetailService: ShortDetailService,
     private loadingService: LoadingService,
+    private noteService: NoteService,
     private toastService: ToastService,
   ) { }
 
@@ -28,7 +28,7 @@ export class ShortDetailPage implements OnInit, OnDestroy {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.bookId = param.get('bookId');
       if (this.bookId) {
-        this.getPageDetailByBookId(this.bookId);
+        this.getNoteDetailByBookId(this.bookId);
       }
     });
   }
@@ -39,16 +39,16 @@ export class ShortDetailPage implements OnInit, OnDestroy {
     });
   }
 
-  private getPageDetailByBookId(bookId: string): void {
+  private getNoteDetailByBookId(bookId: string): void {
     this.loadingService.showLoading();
     this.subscriptions.push(
-      this.shortDetailService.getShortDetailByBookId(bookId)
+      this.noteService.getNoteDetailByBookId(bookId)
         .subscribe((responseData: any) => {
           this.loadingService.hideLoading();
           if (responseData.length) {
-            this.shortDetail = responseData[0];
+            this.noteDetail = responseData[0];
           } else {
-            this.shortDetail = null;
+            this.noteDetail = null;
           }
         }, (error: HttpErrorResponse) => {
           console.log('error', error);

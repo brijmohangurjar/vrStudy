@@ -83,11 +83,11 @@ export class HomePage implements OnInit, OnDestroy {
             this.getPageList();
           }
         }, (error: HttpErrorResponse) => {
-          console.log('error', error)
+          console.log('error', error);
           this.getPageList();
           this.toastService.errorToast(error.message);
         })
-    )
+    );
   }
 
 
@@ -102,11 +102,11 @@ export class HomePage implements OnInit, OnDestroy {
             this.getShortList();
           }
         }, (error: HttpErrorResponse) => {
-          console.log('error', error)
+          console.log('error', error);
           this.getShortList();
           this.toastService.errorToast(error.message);
         })
-    )
+    );
   }
 
   private getShortList(): void {
@@ -118,10 +118,10 @@ export class HomePage implements OnInit, OnDestroy {
             this.shortList = result;
           }
         }, (error: HttpErrorResponse) => {
-          console.log('error', error)
+          console.log('error', error);
           this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
-    )
+    );
   }
 }

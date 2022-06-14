@@ -7,3 +7,4 @@ export * from './book/book.service';
 export * from './page-detail/page-detail.service';
 export * from './recent-short/recent-short.service';
 export * from './short-detail/short-detail.service';
+export * from './note/note.service';

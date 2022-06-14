@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RecentShortService } from 'src/app/api-services';
 import { LoadingService, ToastService } from 'src/app/service';
@@ -9,7 +9,7 @@ import { LoadingService, ToastService } from 'src/app/service';
   templateUrl: './recent-short.page.html',
   styleUrls: ['./recent-short.page.scss'],
 })
-export class RecentShortPage implements OnInit {
+export class RecentShortPage implements OnInit, OnDestroy {
 
   public recentShort = [];
 
@@ -43,10 +43,10 @@ export class RecentShortPage implements OnInit {
             this.recentShort = [];
           }
         }, (error: HttpErrorResponse) => {
-          console.log('error', error)
+          console.log('error', error);
           this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
-    )
+    );
   }
 }

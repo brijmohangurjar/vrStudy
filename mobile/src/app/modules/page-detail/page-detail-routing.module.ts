@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: PageDetailPage
+  },
+  {
+    path: 'short-detail/:bookId',
+    loadChildren: () => import('../short-detail/short-detail.module').then(m => m.ShortDetailPageModule)
+  },
+  {
+    path: 'note-detail/:bookId',
+    loadChildren: () => import('../note/note.module').then(m => m.NotePageModule)
   }
 ];
 
@@ -14,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PageDetailPageRoutingModule {}
+export class PageDetailPageRoutingModule { }

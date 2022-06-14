@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ShortDetailPageRoutingModule } from './short-detail-routing.module';
+import { NotePageRoutingModule } from './note-routing.module';
 
-import { ShortDetailPage } from './short-detail.page';
+import { NotePage } from './note.page';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    ShortDetailPageRoutingModule,
+    NotePageRoutingModule,
     SharedModuleModule,
   ],
-  declarations: [ShortDetailPage]
+  declarations: [NotePage]
 })
-export class ShortDetailPageModule {}
+export class NotePageModule {}
