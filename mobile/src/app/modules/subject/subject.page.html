@@ -4,7 +4,7 @@
 <ion-grid class="subject_page ion-no-padding">
   <ion-row *ngIf="subjectList.length">
     <ion-col size="4" *ngFor="let item of subjectList; let i=index">
-      <ion-card style="margin: 10px;">
+      <ion-card style="margin: 10px;" routerLink="topic/{{item.docId}}" >
         <ion-card-header>
           <ion-card-subtitle><b>{{item.name}}</b></ion-card-subtitle>
         </ion-card-header>

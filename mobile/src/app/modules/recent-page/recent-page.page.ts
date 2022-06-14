@@ -36,6 +36,7 @@ export class RecentPagePage implements OnInit {
     this.subscriptions.push(
       this.pageDetailService.getPageList()
         .subscribe((result: any) => {
+          console.log('result', result)
           this.loadingService.hideLoading();
           if (result && result.length) {
             this.pageList = result;

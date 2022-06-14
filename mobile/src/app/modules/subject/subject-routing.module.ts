@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: SubjectPage,
   },
+  {
+    path: 'topic/:subjectId',
+    loadChildren: () => import('../topic/topic.module').then(m => m.TopicPageModule)
+  }
 ];
 
 @NgModule({

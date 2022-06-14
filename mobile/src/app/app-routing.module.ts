@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'forgot-password',
     canActivate: [IsLoggedInGuard],
     loadChildren: () => import('./modules/auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'short-detail',
+    loadChildren: () => import('./modules/short-detail/short-detail.module').then( m => m.ShortDetailPageModule)
   }
 ];
 @NgModule({
