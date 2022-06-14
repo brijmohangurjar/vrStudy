@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TopicService } from 'src/app/api-services';
-import { LoadingService } from 'src/app/service';
+import { LoadingService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-topic',
@@ -21,10 +21,12 @@ export class TopicPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private topicService: TopicService,
     private loadingService: LoadingService,
+    private toastService: ToastService,
   ) { }
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
+      console.log('param', param)
       this.subjectId = param.get('subjectId');
       if (this.subjectId) {
         this.getTopicListBySubjectId(this.subjectId);
@@ -43,6 +45,7 @@ export class TopicPage implements OnInit {
     this.subscriptions.push(
       this.topicService.getTopicListBySubjectId(subjectId)
         .subscribe((responseData: any) => {
+          console.log('responseData', responseData)
           this.loadingService.hideLoading();
           if (responseData.length) {
             this.topicList = responseData;
@@ -50,6 +53,8 @@ export class TopicPage implements OnInit {
             this.topicList = [];
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
+          this.toastService.errorToast(error.message);
           this.loadingService.hideLoading();
         })
     );

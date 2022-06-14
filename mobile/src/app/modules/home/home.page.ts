@@ -1,7 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { HomeService, LoginService, SubjectService } from 'src/app/api-services';
+import {
+  HomeService,
+  LoginService,
+  SubjectService,
+} from 'src/app/api-services';
 import {
   DateService,
   LoadingService,
@@ -79,6 +83,7 @@ export class HomePage implements OnInit, OnDestroy {
             this.getPageList();
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
           this.getPageList();
           this.toastService.errorToast(error.message);
         })
@@ -97,6 +102,7 @@ export class HomePage implements OnInit, OnDestroy {
             this.getShortList();
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
           this.getShortList();
           this.toastService.errorToast(error.message);
         })
@@ -112,6 +118,7 @@ export class HomePage implements OnInit, OnDestroy {
             this.shortList = result;
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
           this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })

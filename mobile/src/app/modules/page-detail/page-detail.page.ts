@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
-import { LoadingService } from 'src/app/service';
+import { LoadingService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-page-detail',
@@ -21,6 +21,7 @@ export class PageDetailPage implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private pageDetailService: PageDetailService,
     private loadingService: LoadingService,
+    private toastService: ToastService,
   ) { }
 
   public ngOnInit() {
@@ -50,6 +51,8 @@ export class PageDetailPage implements OnInit, OnDestroy {
             this.pageDetail = null;
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
+          this.toastService.errorToast(error.message);
           this.loadingService.hideLoading();
         })
     );

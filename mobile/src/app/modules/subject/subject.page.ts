@@ -43,6 +43,7 @@ export class SubjectPage implements OnInit, OnDestroy {
             this.subjectList = [];
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
           this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })

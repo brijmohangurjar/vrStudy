@@ -43,6 +43,7 @@ export class RecentShortPage implements OnInit {
             this.recentShort = [];
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
           this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })

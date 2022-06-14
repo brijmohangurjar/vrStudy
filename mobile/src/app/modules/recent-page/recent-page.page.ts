@@ -43,6 +43,7 @@ export class RecentPagePage implements OnInit {
             this.pageList = [];
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
           this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })

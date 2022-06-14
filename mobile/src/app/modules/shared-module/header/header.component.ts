@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import {  Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { HomeService } from 'src/app/api-services';
 import { NavigationService, ToastService } from 'src/app/service';
 import { Location } from '@angular/common';
@@ -31,14 +31,14 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
     private location: Location
   ) { }
 
-  public ngOnChanges(changes:SimpleChanges){
-    console.log('changes',changes);
-    if(this.searchBar){
-       this.searchValue = '';
-       this.pageList = [];
+  public ngOnChanges(changes: SimpleChanges) {
+    console.log('changes', changes);
+    if (this.searchBar) {
+      this.searchValue = '';
+      this.pageList = [];
     }
   }
-  
+
 
   public ngOnInit() {
     console.log('testing');
@@ -65,7 +65,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
     this.pageList = searchList;
   }
 
-  public onSelect(item){
+  public onSelect(item) {
     this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.book.docId}/page-detail/${item.book.docId}`);
   }
 
@@ -87,8 +87,12 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
         if (result && result.length) {
           this.pageList = result;
           this.originalData = result;
+        } else {
+          this.pageList = [];
+          this.originalData = [];
         }
       }, (error: HttpErrorResponse) => {
+        console.log('error', error)
         this.toastService.errorToast(error.message);
       });
   }

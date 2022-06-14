@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BookService } from 'src/app/api-services';
-import { LoadingService } from 'src/app/service';
+import { LoadingService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-books',
@@ -21,6 +21,7 @@ export class BooksPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private bookService: BookService,
     private loadingService: LoadingService,
+    private toastService: ToastService,
   ) { }
 
   public ngOnInit() {
@@ -50,6 +51,8 @@ export class BooksPage implements OnInit {
             this.bookList = [];
           }
         }, (error: HttpErrorResponse) => {
+          console.log('error', error)
+          this.toastService.errorToast(error.message);
           this.loadingService.hideLoading();
         })
     );

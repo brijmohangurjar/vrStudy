@@ -10,7 +10,6 @@ export class TopicService {
 
   constructor(
     private angularFirestore: AngularFirestore,
-    // private constVar: ConstantVariables,
   ) { }
 
   public getTopicListBySubjectId(subjectId: string): Observable<any> {
