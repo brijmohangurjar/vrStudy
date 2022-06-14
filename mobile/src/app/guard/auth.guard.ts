@@ -24,6 +24,7 @@ export class AuthGuard implements CanActivate {
   ): boolean | Observable<boolean> | Promise<boolean> {
     return new Promise((resolve, reject) => {
       this.afAuth.authState.subscribe((user: any) => {
+        console.log('user', user)
         if (user) {
           this.authService.getUserByAuthIdWithPromise(user.uid)
             .then((userData: any) => {
