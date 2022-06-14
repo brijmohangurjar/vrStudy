@@ -26,7 +26,6 @@ export class TopicPage implements OnInit {
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
-      console.log('param', param)
       this.subjectId = param.get('subjectId');
       if (this.subjectId) {
         this.getTopicListBySubjectId(this.subjectId);
@@ -45,7 +44,6 @@ export class TopicPage implements OnInit {
     this.subscriptions.push(
       this.topicService.getTopicListBySubjectId(subjectId)
         .subscribe((responseData: any) => {
-          console.log('responseData', responseData)
           this.loadingService.hideLoading();
           if (responseData.length) {
             this.topicList = responseData;

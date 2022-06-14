@@ -32,16 +32,13 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   ) { }
 
   public ngOnChanges(changes: SimpleChanges) {
-    console.log('changes', changes);
     if (this.searchBar) {
       this.searchValue = '';
       this.pageList = [];
     }
   }
 
-
   public ngOnInit() {
-    console.log('testing');
     this.searchValue = '';
     this.getPageList();
   }

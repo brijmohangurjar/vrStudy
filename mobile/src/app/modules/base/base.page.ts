@@ -114,7 +114,6 @@ export class BasePage implements OnInit {
         SplashScreen.hide();
       }, 2000);
       this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-        console.log('this.location.', this.location.path())
         if (this.location.isCurrentPathEqualTo('/home')
           || this.location.isCurrentPathEqualTo('/home/ready-for-delivery')
           || this.location.isCurrentPathEqualTo('/login')
