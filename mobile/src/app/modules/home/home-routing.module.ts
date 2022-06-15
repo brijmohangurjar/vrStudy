@@ -14,6 +14,10 @@ const routes: Routes = [
     component: SearchComponent,
   },
   {
+    path: 'topic',
+    loadChildren: () => import('../../modules/topic/topic.module').then(m => m.TopicPageModule)
+  },
+  {
     path: 'topic/:subjectId',
     loadChildren: () => import('../../modules/topic/topic.module').then(m => m.TopicPageModule)
   },
@@ -28,6 +32,10 @@ const routes: Routes = [
   {
     path: 'recent-short',
     loadChildren: () => import('../../modules/recent-short/recent-short.module').then(m => m.RecentShortPageModule)
+  },
+  {
+    path: 'books',
+    loadChildren: () => import('../../modules/books/books.module').then(m => m.BooksPageModule)
   },
 ];
 

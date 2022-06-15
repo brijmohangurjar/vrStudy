@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TopicService } from 'src/app/api-services';
@@ -10,7 +10,7 @@ import { LoadingService, ToastService } from 'src/app/service';
   templateUrl: './topic.page.html',
   styleUrls: ['./topic.page.scss'],
 })
-export class TopicPage implements OnInit {
+export class TopicPage implements OnInit, OnDestroy {
 
   public topicList = [];
 
@@ -29,6 +29,8 @@ export class TopicPage implements OnInit {
       this.subjectId = param.get('subjectId');
       if (this.subjectId) {
         this.getTopicListBySubjectId(this.subjectId);
+      } else {
+        this.getAllTopicList();
       }
     });
   }
@@ -51,7 +53,26 @@ export class TopicPage implements OnInit {
             this.topicList = [];
           }
         }, (error: HttpErrorResponse) => {
-          console.log('error', error)
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+          this.loadingService.hideLoading();
+        })
+    );
+  }
+
+  private getAllTopicList(): void {
+    this.loadingService.showLoading();
+    this.subscriptions.push(
+      this.topicService.getAllTopicList()
+        .subscribe((responseData: any) => {
+          this.loadingService.hideLoading();
+          if (responseData.length) {
+            this.topicList = responseData;
+          } else {
+            this.topicList = [];
+          }
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
           this.toastService.errorToast(error.message);
           this.loadingService.hideLoading();
         })

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from 'src/app/guard';
+// import { AuthGuard } from 'src/app/guard';
 import { BasePage } from './base.page';
 
 const routes: Routes = [
   {
     path: '',
     component: BasePage,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       {

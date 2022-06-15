@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BookService } from 'src/app/api-services';
@@ -10,7 +10,7 @@ import { LoadingService, ToastService } from 'src/app/service';
   templateUrl: './books.page.html',
   styleUrls: ['./books.page.scss'],
 })
-export class BooksPage implements OnInit {
+export class BooksPage implements OnInit, OnDestroy {
 
   public bookList = [];
 
@@ -29,6 +29,8 @@ export class BooksPage implements OnInit {
       this.topicId = param.get('topicId');
       if (this.topicId) {
         this.getBookListByTopicId(this.topicId);
+      } else {
+        this.getBookList();
       }
     });
   }
@@ -51,9 +53,28 @@ export class BooksPage implements OnInit {
             this.bookList = [];
           }
         }, (error: HttpErrorResponse) => {
-          console.log('error', error)
+          console.log('error', error);
           this.toastService.errorToast(error.message);
           this.loadingService.hideLoading();
+        })
+    );
+  }
+
+  private getBookList(): void {
+    this.loadingService.showLoading();
+    this.subscriptions.push(
+      this.bookService.getBookList()
+        .subscribe((result: any) => {
+          this.loadingService.hideLoading();
+          if (result && result.length) {
+            this.bookList = result;
+          } else {
+            this.bookList = [];
+          }
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
+          this.loadingService.hideLoading();
+          this.toastService.errorToast(error.message);
         })
     );
   }

@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { LoginService } from 'src/app/api-services';
 import { ConstantVariables } from 'src/const/constant';
 import { SplashScreen } from '@capacitor/splash-screen';
-// import { Share } from '@capacitor/share';
+import { Share } from '@capacitor/share';
 import { App } from '@capacitor/app';
 
 @Component({
@@ -32,30 +32,30 @@ export class BasePage implements OnInit {
       url: '/base/home/subject',
       icon: 'book-outline',
     },
-    // {
-    //   id: 2,
-    //   title: 'Topic',
-    //   url: '/base/home/topic',
-    //   icon: 'bookmark-outline',
-    // },
-    // {
-    //   id: 3,
-    //   title: 'Book',
-    //   url: '/home/book',
-    //   icon: 'person-outline',
-    // },
-    // {
-    //   id: 4,
-    //   title: 'Page',
-    //   url: '/home/page',
-    //   icon: 'person-outline',
-    // },
-    // {
-    //   id: 5,
-    //   title: 'Short',
-    //   url: '/home/short',
-    //   icon: 'person-outline',
-    // },
+    {
+      id: 2,
+      title: 'Topic',
+      url: '/base/home/topic',
+      icon: 'bookmark-outline',
+    },
+    {
+      id: 3,
+      title: 'Book',
+      url: '/base/home/books',
+      icon: 'person-outline',
+    },
+    {
+      id: 4,
+      title: 'Page',
+      url: '/base/home/recent-page',
+      icon: 'person-outline',
+    },
+    {
+      id: 5,
+      title: 'Short',
+      url: '/base/home/recent-short',
+      icon: 'person-outline',
+    },
     {
       id: 7,
       title: 'Profile',
@@ -89,11 +89,7 @@ export class BasePage implements OnInit {
     public constVar: ConstantVariables,
     private platform: Platform,
     private router: Router,
-    // private commonService: CommonService,
-    // private changeDetectorRef: ChangeDetectorRef,
     private modalController: ModalController,
-    // private authService: AuthService,
-    // private routerOutlet: IonRouterOutlet,
     private alertController: AlertController,
     private location: Location,
     private loginService: LoginService,
@@ -166,12 +162,12 @@ export class BasePage implements OnInit {
   }
 
   private async openSharePopup() {
-    // const shareRet = await Share.share({
-    //   title: 'Share Vr Study',
-    //   text: 'Check',
-    //   // url: 'https://onlineKirana.app',
-    //   dialogTitle: 'Share Vr Study'
-    // });
+    await Share.share({
+      title: 'Share Vr Study',
+      text: 'Check',
+      // url: 'https://onlineKirana.app',
+      dialogTitle: 'Share Vr Study'
+    });
   }
 
 

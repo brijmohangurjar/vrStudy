@@ -10,24 +10,48 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+@import '~@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
 
 
 .footer_date {
   font-size: 10px;
   margin-bottom: 0px;
   color: #b7b7b7;
+}
+
+.subject_page,
+.topic_page
+.recent_short_page,
+.recent_page
+.book_page {
+  ion-card {
+    height: 165px;
+
+    ion-card-header {
+      text-align: start;
+      padding: 15px;
+    }
+
+    .card-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: start;
+      padding: 5px 12px;
+      background-color: white;
+    }
+  }
 }

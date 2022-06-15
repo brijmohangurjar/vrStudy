@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +10,7 @@ export class LoginService {
   constructor(
     private angularFireAuth: AngularFireAuth,
     private angularFirestore: AngularFirestore,
+    private router: Router,
   ) { }
 
   public async logInUser(email: any, password: any): Promise<any> {
@@ -54,5 +56,6 @@ export class LoginService {
   public logOutUser() {
     localStorage.clear();
     this.angularFireAuth.signOut();
+    this.router.navigate(['login']);
   }
 }
