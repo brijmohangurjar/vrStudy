@@ -9,12 +9,10 @@ export class CommonService {
   public userProfileDataSource = new BehaviorSubject<any>(null);
   public userProfileData = this.userProfileDataSource.asObservable();
 
-  constructor(
-    // private authService: AuthService,
-  ) {  }
+  constructor() { }
 
-  public profileUpdate(data: any) {
-    // this.userProfileDataSource.next(data ? data : this.authService.userData);
+  public updateUserInfoObs(data: any) {
+    this.userProfileDataSource.next(data ? data : null);
   }
 
   public numberOnly(event: any): boolean {
@@ -22,7 +20,6 @@ export class CommonService {
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
       return false;
     }
-    // return ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 8 || charCode == 32 || (charCode >= 48 && charCode <= 57));
     return true;
   }
 }

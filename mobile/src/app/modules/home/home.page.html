@@ -4,7 +4,11 @@
       <ion-col class="ion-padding-bottom ion-no-padding all-memories-section" size="12">
         <div class="container-background" 
           [style.backgroundImage]="'url(assets/images/background1.jpg)'">
-          <p class="bottom text">{{greetingText}}, Nilesh!</p>
+          <p class="bottom text">{{greetingText}}, 
+            <span *ngIf="currentUserInfo?.firstName">
+              {{currentUserInfo?.firstName}}!
+            </span>
+          </p>
           <h5 class="bottom date">{{currentDate | date: 'EEEE MMM d, y'}}</h5>
         </div>
       </ion-col>

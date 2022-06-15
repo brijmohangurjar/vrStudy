@@ -8,6 +8,8 @@ import { ConstantVariables } from 'src/const/constant';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Share } from '@capacitor/share';
 import { App } from '@capacitor/app';
+import { HttpErrorResponse } from '@angular/common/http';
+import { CommonService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-base',
@@ -93,11 +95,14 @@ export class BasePage implements OnInit {
     private alertController: AlertController,
     private location: Location,
     private loginService: LoginService,
+    private toastService: ToastService,
+    private commonService: CommonService,
   ) {
     this.initializeApp();
   }
 
   public ngOnInit() {
+    this.getCurrentUserDetail();
   }
 
   public initializeApp(): void {
@@ -193,5 +198,22 @@ export class BasePage implements OnInit {
     }).then((alert: any) => {
       alert.present();
     });
+  }
+
+  private getCurrentUserDetail(): void {
+    this.subscriptions.push(
+      this.loginService.getUserData()
+        .subscribe((result: any) => {
+          if (result && result.length) {
+            this.userInfo = result[0];
+            this.commonService.updateUserInfoObs(this.userInfo);
+          } else {
+            this.userInfo = null;
+          }
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
   }
 }

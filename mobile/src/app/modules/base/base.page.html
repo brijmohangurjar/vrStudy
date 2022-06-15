@@ -7,11 +7,12 @@
         <ion-col class="ion-text-center">
           <ion-menu-toggle>
             <!-- <ion-spinner *ngIf="loading" name="bubbles"></ion-spinner> -->
-            <ion-avatar class="ion-no-margin m-auto defaultUserPic" (click)="navigateTo({url: 'home/profile'})">
+            <ion-avatar class="ion-no-margin m-auto defaultUserPic" 
+              (click)="navigateTo({url: 'base/home/profile'})">
               <ion-img [src]="userInfo && userInfo.photoURL
               ? userInfo.photoURL : defaultUserPic" class="defaultUserPic"></ion-img>
             </ion-avatar>
-            <h5 class="ion-no-margin pt-1"
+            <h5 class="ion-no-margin pt-3"
               *ngIf="userInfo">
               {{userInfo.firstName | titlecase}} {{userInfo.lastName | titlecase}}
             </h5>
@@ -28,7 +29,8 @@
               <a [routerLink]="item.url ? item.url : null">
                 <ion-item routerLinkActive="active-list-item"
                     routerDirection="root" lines="none"
-                  detail="false"  [class.selected]="activeIndex == i" (click)="navigateBySidemenu(item, i)">
+                  detail="false"  [class.selected]="activeIndex === i" 
+                    (click)="navigateBySidemenu(item, i)">
                   <ion-icon slot="start" class="help-icon" [name]="item.icon">
                   </ion-icon>
                   <ion-label>{{ item.title }}</ion-label>

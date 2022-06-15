@@ -7,6 +7,7 @@ import {
   SubjectService,
 } from 'src/app/api-services';
 import {
+  CommonService,
   DateService,
   LoadingService,
   NavigationService,
@@ -25,6 +26,7 @@ export class HomePage implements OnInit, OnDestroy {
   public shortList = [];
   public greetingText = '';
   public currentDate = new Date();
+  public currentUserInfo: any;
 
   public slideOpts3 = {
     slidesPerView: 2.4,
@@ -39,12 +41,14 @@ export class HomePage implements OnInit, OnDestroy {
     private dateService: DateService,
     private loadingService: LoadingService,
     private subjectService: SubjectService,
+    private commonService: CommonService,
     private navigationService: NavigationService,
   ) { }
 
   public ngOnInit() {
     this.greetingText = this.dateService.getTimeGreetings();
     this.getSubjectsList();
+    this.getCurrentUserDetail();
   }
 
   public ngOnDestroy(): void {
@@ -120,6 +124,22 @@ export class HomePage implements OnInit, OnDestroy {
         }, (error: HttpErrorResponse) => {
           console.log('error', error);
           this.loadingService.hideLoading();
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private getCurrentUserDetail(): void {
+    this.subscriptions.push(
+      this.commonService.userProfileData
+        .subscribe((result: any) => {
+          if (result) {
+            this.currentUserInfo = result;
+          } else {
+            this.currentUserInfo = null;
+          }
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
           this.toastService.errorToast(error.message);
         })
     );
