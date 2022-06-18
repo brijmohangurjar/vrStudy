@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-page-detail',
@@ -22,7 +22,6 @@ export class PageDetailPage implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private pageDetailService: PageDetailService,
-    private loadingService: LoadingService,
     private toastService: ToastService,
   ) { }
 
@@ -42,20 +41,20 @@ export class PageDetailPage implements OnInit, OnDestroy {
   }
 
   private getPageDetailByPageDocId(pageId: string): void {
-    this.loadingService.showLoading();
+    this.pageDetailLoading = true;
     this.subscriptions.push(
       this.pageDetailService.getPageDetailByPageDocId(pageId)
         .subscribe((responseData: any) => {
-          this.loadingService.hideLoading();
+          this.pageDetailLoading = false;
           if (responseData) {
-            this.pageDetail = responseData;
+            this.pageDetail = [responseData];
           } else {
             this.pageDetail = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.pageDetailLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
-          this.loadingService.hideLoading();
         })
     );
   }

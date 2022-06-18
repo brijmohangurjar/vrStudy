@@ -1,5 +1,6 @@
 <ion-grid class="ion-no-padding app_loading">
-  <ion-slides class="listSlides" [options]='slideOpts3' *ngIf="showSlideLoading">
+  <ion-slides class="listSlides show_slide_loading" 
+    [options]='slideOpts3' *ngIf="showSlideLoading">
     <ion-slide *ngFor="let item of loopForImageLoading; let i=index">
       <ion-card>
         <ion-label>
@@ -17,7 +18,7 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-row *ngIf="showCardLoading">
+  <ion-row *ngIf="showCardLoading" class="show_card_loading">
     <ion-col size="4" *ngFor="let item of loopForImageLoading; let i=index">
       <ion-card>
         <ion-label>
@@ -35,9 +36,33 @@
     </ion-col>
   </ion-row>
 
-  <ion-row *ngIf="fullPageLoading">
+  <ion-row *ngIf="fullPageLoading" class="full_page_loading">
     <ion-col *ngFor="let item of loopForImageLoading; let i=index">
       <ion-card>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+        
         <ion-label>
           <h3>
             <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>

@@ -2,33 +2,34 @@
 
 <ion-content>
   <ion-grid class="ion-grid page_detail">
-    <div class="" *ngIf="noteDetail && !notePageLoading">
+    <div class="" *ngIf="noteDetail.length && !notePageLoading;">
       <ion-row>
         <ion-col size="12" class="heading pt-3">
-          <ion-label>{{noteDetail?.heading}}</ion-label>
+          <ion-label>{{noteDetail[0]?.heading}}</ion-label>
         </ion-col>
 
-        <ion-col size="12" *ngIf="noteDetail?.cover_photo">
-          <div class="container-background" [style.backgroundImage]="'url('+ noteDetail.cover_photo +')'">
+        <ion-col size="12" *ngIf="noteDetail[0]?.cover_photo">
+          <div class="container-background" 
+            [style.backgroundImage]="'url('+ noteDetail[0].cover_photo +')'">
           </div>
         </ion-col>
 
-        <ion-col size="12" *ngIf="noteDetail?.note">
-          <div [innerHtml]="noteDetail.note">
+        <ion-col size="12" *ngIf="noteDetail[0]?.note">
+          <div [innerHtml]="noteDetail[0].note">
           </div>
         </ion-col>
       </ion-row>
     </div>
 
-    <div class="" *ngIf="!noteDetail && !notePageLoading">
+    <div class="" *ngIf="!noteDetail.length && !notePageLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
+    </div>
+
+    <div *ngIf="notePageLoading">
+      <app-loading 
+        [fullPageLoading]="true" 
+        [loopForImageLoading]="loopForImageLoading"
+      ></app-loading>
     </div>
   </ion-grid>
 </ion-content>
-
-<ng-template #loading>
-  <app-loading 
-    [fullPageLoading]="true" 
-    [loopForImageLoading]="loopForImageLoading"
-  ></app-loading>
-</ng-template>

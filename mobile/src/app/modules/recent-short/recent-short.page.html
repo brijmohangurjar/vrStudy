@@ -2,7 +2,7 @@
 
 <ion-content>
   <ion-grid class="recent_short_page ion-no-padding">
-    <ion-row *ngIf="recentShort.length && !recentShortLoading; else loading;">
+    <ion-row *ngIf="recentShort.length && !recentShortLoading;">
       <ion-col size="4" *ngFor="let item of recentShort; let i=index">
         <ion-card routerLink="short-detail/{{item.book.docId}}">
           <ion-card-header>
@@ -23,12 +23,12 @@
     <div class="" *ngIf="!recentShort.length && !recentShortLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
     </div>
+
+    <div *ngIf="recentShortLoading">
+      <app-loading 
+        [showCardLoading]="true"
+        [loopForImageLoading]="loopForImageLoading"
+      ></app-loading>
+    </div>
   </ion-grid>
 </ion-content>
-
-<ng-template #loading>
-  <app-loading 
-    [showCardLoading]="true"
-    [loopForImageLoading]="loopForImageLoading"
-  ></app-loading>
-</ng-template>

@@ -12,7 +12,7 @@ import { ToastService } from 'src/app/service';
 })
 export class NotePage implements OnInit, OnDestroy {
 
-  public noteDetail: any;
+  public noteDetail = [];
   public notePageLoading = true;
   public loopForImageLoading = new Array(1);
 
@@ -47,9 +47,9 @@ export class NotePage implements OnInit, OnDestroy {
         .subscribe((responseData: any) => {
           this.notePageLoading = false;
           if (responseData.length) {
-            this.noteDetail = responseData[0];
+            this.noteDetail = responseData;
           } else {
-            this.noteDetail = null;
+            this.noteDetail = [];
           }
         }, (error: HttpErrorResponse) => {
           this.notePageLoading = false;
