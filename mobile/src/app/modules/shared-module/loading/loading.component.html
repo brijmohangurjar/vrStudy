@@ -34,4 +34,22 @@
       </ion-card>
     </ion-col>
   </ion-row>
+
+  <ion-row *ngIf="fullPageLoading">
+    <ion-col *ngFor="let item of loopForImageLoading; let i=index">
+      <ion-card style="margin: 10px;">
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-grid>

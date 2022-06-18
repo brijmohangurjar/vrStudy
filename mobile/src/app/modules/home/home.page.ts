@@ -34,12 +34,7 @@ export class HomePage implements OnInit, OnDestroy {
     slidesPerView: 2.4,
     spaceBetween: 20,
   };
-  public loopForImageLoading = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-  ];
+  public loopForImageLoading = new Array(5);
   private subscriptions: Subscription[] = [];
 
   constructor(

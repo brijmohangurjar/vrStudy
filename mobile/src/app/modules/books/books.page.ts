@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BookService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-books',
@@ -13,6 +13,8 @@ import { LoadingService, ToastService } from 'src/app/service';
 export class BooksPage implements OnInit, OnDestroy {
 
   public bookList = [];
+  public bookListLoading = true;
+  public loopForImageLoading = new Array(15);
 
   private topicId: string;
   private subscriptions: Subscription[] = [];
@@ -20,7 +22,6 @@ export class BooksPage implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private bookService: BookService,
-    private loadingService: LoadingService,
     private toastService: ToastService,
   ) { }
 
@@ -42,11 +43,11 @@ export class BooksPage implements OnInit, OnDestroy {
   }
 
   private getBookListByTopicId(topicId: string): void {
-    this.loadingService.showLoading();
+    this.bookListLoading = true;
     this.subscriptions.push(
       this.bookService.getBookListByTopicId(topicId)
         .subscribe((responseData: any) => {
-          this.loadingService.hideLoading();
+          this.bookListLoading = false;
           if (responseData.length) {
             this.bookList = responseData;
           } else {
@@ -54,26 +55,26 @@ export class BooksPage implements OnInit, OnDestroy {
           }
         }, (error: HttpErrorResponse) => {
           console.log('error', error);
+          this.bookListLoading = false;
           this.toastService.errorToast(error.message);
-          this.loadingService.hideLoading();
         })
     );
   }
 
   private getBookList(): void {
-    this.loadingService.showLoading();
+    this.bookListLoading = true;
     this.subscriptions.push(
       this.bookService.getBookList()
         .subscribe((result: any) => {
-          this.loadingService.hideLoading();
+          this.bookListLoading = false;
           if (result && result.length) {
             this.bookList = result;
           } else {
             this.bookList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.bookListLoading = false;
           console.log('error', error);
-          this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
     );

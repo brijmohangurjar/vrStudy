@@ -1,7 +1,7 @@
 <ion-content>
-  <ion-grid class="ion-no-padding">
+  <ion-grid class="ion-no-padding home_page">
     <ion-row>
-      <ion-col class="ion-padding-bottom ion-no-padding all-memories-section" size="12">
+      <ion-col class="ion-padding-bottom ion-no-padding" size="12">
         <div class="container-background" 
           [style.backgroundImage]="'url(assets/images/background1.jpg)'">
           <p class="bottom text">{{greetingText}}, 
@@ -27,7 +27,7 @@
       *ngIf="!subjectListLoading; else loading1;">
       <ion-slide *ngFor="let item of subjectList; let i=index" 
        routerLink="topic/{{item.docId}}" >
-        <ion-card  style="margin: 10px;">
+        <ion-card>
           <ion-card-header>
             <ion-card-subtitle><b>{{item.name}}</b></ion-card-subtitle>
           </ion-card-header>
@@ -54,7 +54,7 @@
       *ngIf="!pageListLoading; else loading2;">
       <ion-slide *ngFor="let item of pageList; let i=index" 
         routerLink="recent-page/page-detail/{{item.book.docId}}">
-        <ion-card  style="margin: 10px;">
+        <ion-card>
           <ion-card-header>
             <ion-card-subtitle><b>{{item?.heading}}</b></ion-card-subtitle>
           </ion-card-header>
@@ -80,7 +80,7 @@
     <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!shortListLoading; else loading3;">
       <ion-slide *ngFor="let item of shortList; let i=index">
-        <ion-card  style="margin: 10px;" 
+        <ion-card 
           routerLink="recent-short/short-detail/{{item.book.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item?.heading}}</b></ion-card-subtitle>

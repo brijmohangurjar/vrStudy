@@ -36,9 +36,19 @@
 .topic_page,
 .recent_short_page,
 .recent_page,
-.book_page {
+.home_page,
+.subject_page .book_page {
+
+  ion-slide {
+    margin: 0px !important;
+    margin-right: 0px !important;
+  }
+
   ion-card {
     height: 165px;
+    min-height: 165px;
+    max-height: 165px;
+    margin: 10px;
 
     ion-card-header {
       text-align: start;
@@ -52,6 +62,13 @@
       text-align: start;
       padding: 5px 12px;
       background-color: white;
+      font-size: 10px;
+      color: #b7b7b7;
+
+      p {
+        margin-bottom: 0px;
+        color: #b7b7b7;
+      }
     }
   }
 }

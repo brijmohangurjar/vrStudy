@@ -2,7 +2,7 @@
 
 <ion-content>
   <ion-grid class="recent_short_page ion-no-padding">
-    <ion-row *ngIf="recentShort.length">
+    <ion-row *ngIf="recentShort.length && !recentShortLoading; else loading;">
       <ion-col size="4" *ngFor="let item of recentShort; let i=index">
         <ion-card style="margin: 10px;" 
           routerLink="short-detail/{{item.book.docId}}">
@@ -12,7 +12,7 @@
 
           <ion-row class="card-footer ion-no-margin ion-no-padding">
             <ion-col class="ion-no-margin ion-no-padding">
-              <p style="margin-bottom: 0px; color: #b7b7b7;">
+              <p>
                 {{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}
               </p>
             </ion-col>
@@ -26,3 +26,7 @@
     </div>
   </ion-grid>
 </ion-content>
+
+<ng-template #loading>
+  <app-loading [loopForImageLoading]="loopForImageLoading"></app-loading>
+</ng-template>

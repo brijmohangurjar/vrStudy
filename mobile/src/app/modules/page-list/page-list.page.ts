@@ -14,6 +14,7 @@ export class PageListPage implements OnInit, OnDestroy {
 
   public pageList = [];
   public pageListLoading = true;
+  public loopForImageLoading = new Array(15);
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
@@ -45,7 +46,6 @@ export class PageListPage implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.pageDetailService.getPageListByBookId(bookId)
         .subscribe((responseData: any) => {
-          console.log('responseData', responseData);
           this.pageListLoading = false;
           if (responseData.length) {
             this.pageList = responseData;

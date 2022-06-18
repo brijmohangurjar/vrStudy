@@ -13,7 +13,7 @@ export class SubjectPage implements OnInit, OnDestroy {
 
   public subjectList = [];
   public subjectListLoading = true;
-  public loopForImageLoading = new Array(12);
+  public loopForImageLoading = new Array(15);
 
   private subscriptions: Subscription[] = [];
 

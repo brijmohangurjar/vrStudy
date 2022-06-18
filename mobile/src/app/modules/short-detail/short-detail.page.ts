@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ShortDetailService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-short-detail',
@@ -13,6 +13,8 @@ import { LoadingService, ToastService } from 'src/app/service';
 export class ShortDetailPage implements OnInit, OnDestroy {
 
   public shortDetail: any;
+  public shortDetailLoading = true;
+  public loopForImageLoading = new Array(1);
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
@@ -20,7 +22,6 @@ export class ShortDetailPage implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private shortDetailService: ShortDetailService,
-    private loadingService: LoadingService,
     private toastService: ToastService,
   ) { }
 
@@ -40,20 +41,20 @@ export class ShortDetailPage implements OnInit, OnDestroy {
   }
 
   private getPageDetailByBookId(bookId: string): void {
-    this.loadingService.showLoading();
+    this.shortDetailLoading = true;
     this.subscriptions.push(
       this.shortDetailService.getShortDetailByBookId(bookId)
         .subscribe((responseData: any) => {
-          this.loadingService.hideLoading();
+          this.shortDetailLoading = false;
           if (responseData.length) {
             this.shortDetail = responseData[0];
           } else {
             this.shortDetail = null;
           }
         }, (error: HttpErrorResponse) => {
+          this.shortDetailLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
-          this.loadingService.hideLoading();
         })
     );
   }

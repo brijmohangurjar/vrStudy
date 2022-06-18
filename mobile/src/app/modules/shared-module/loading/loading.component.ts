@@ -9,6 +9,7 @@ export class LoadingComponent implements OnInit {
 
   @Input() loopForImageLoading = [];
   @Input() showSlides = false;
+  @Input() fullPageLoading = false;
 
   public slideOpts3 = {
     slidesPerView: 2.4,

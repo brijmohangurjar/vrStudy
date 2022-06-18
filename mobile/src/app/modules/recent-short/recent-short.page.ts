@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RecentShortService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-recent-short',
@@ -12,11 +12,12 @@ import { LoadingService, ToastService } from 'src/app/service';
 export class RecentShortPage implements OnInit, OnDestroy {
 
   public recentShort = [];
+  public recentShortLoading = true;
+  public loopForImageLoading = new Array(15);
 
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private loadingService: LoadingService,
     private recentShortService: RecentShortService,
     private toastService: ToastService,
   ) { }
@@ -32,19 +33,19 @@ export class RecentShortPage implements OnInit, OnDestroy {
   }
 
   private getRecentShortList(): void {
-    this.loadingService.showLoading();
+    this.recentShortLoading = true;
     this.subscriptions.push(
       this.recentShortService.getRecentShortList()
         .subscribe((result: any) => {
-          this.loadingService.hideLoading();
+          this.recentShortLoading = false;
           if (result && result.length) {
             this.recentShort = result;
           } else {
             this.recentShort = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.recentShortLoading = false;
           console.log('error', error);
-          this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
     );
