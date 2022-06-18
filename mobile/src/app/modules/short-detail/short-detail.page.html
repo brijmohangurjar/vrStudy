@@ -2,7 +2,7 @@
 
 <ion-content>
   <ion-grid class="ion-grid page_detail">
-    <div class="" *ngIf="shortDetail.length && !shortDetailLoading; else loading;">
+    <div class="" *ngIf="shortDetail.length && !shortDetailLoading;">
       <ion-row>
         <ion-col size="12" class="heading pt-3">
           <ion-label>{{shortDetail[0]?.heading}}</ion-label>
@@ -23,12 +23,12 @@
     <div class="" *ngIf="!shortDetail.length && !shortDetailLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
     </div>
+
+    <div *ngIf="shortDetailLoading">
+      <app-loading 
+        [fullPageLoading]="true"
+        [loopForImageLoading]="loopForImageLoading"
+      ></app-loading>
+    </div>
   </ion-grid>
 </ion-content>
-
-<ng-template #loading>
-  <app-loading 
-    [fullPageLoading]="true"
-    [loopForImageLoading]="loopForImageLoading"
-  ></app-loading>
-</ng-template>

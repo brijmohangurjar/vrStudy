@@ -2,7 +2,7 @@
 
 <ion-content>
   <ion-grid class="topic_page ion-no-padding">
-    <ion-row *ngIf="topicList.length && !topicListLoading;else loading;">
+    <ion-row *ngIf="topicList.length && !topicListLoading;">
       <ion-col size="4" *ngFor="let item of topicList; let i=index">
         <ion-card routerLink="book/{{item.docId}}">
           <ion-card-header>
@@ -23,14 +23,14 @@
     <div class="" *ngIf="!topicList.length && !topicListLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
     </div>
+
+    <div *ngIf="topicListLoading">
+      <app-loading 
+        [loopForImageLoading]="loopForImageLoading"
+        [showCardLoading]="true"
+      ></app-loading>
+    </div>
   </ion-grid>
 </ion-content>
 
 <app-footer [showToggleButton]="true"></app-footer>
-
-<ng-template #loading>
-  <app-loading 
-    [loopForImageLoading]="loopForImageLoading"
-    [showCardLoading]="true"
-  ></app-loading>
-</ng-template>
