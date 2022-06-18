@@ -4,7 +4,7 @@
   <ion-grid class="topic_page ion-no-padding">
     <ion-row *ngIf="pageList.length && !pageListLoading;else loading;">
       <ion-col size="4" *ngFor="let item of pageList; let i=index">
-        <ion-card style="margin: 10px;" routerLink="page-detail/{{item.docId}}">
+        <ion-card routerLink="page-detail/{{item.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.heading}}</b></ion-card-subtitle>
           </ion-card-header>
@@ -29,5 +29,8 @@
 <app-footer [showToggleButton]="true"></app-footer>
 
 <ng-template #loading>
-  <app-loading [loopForImageLoading]="loopForImageLoading"></app-loading>
+  <app-loading 
+    [showCardLoading]="true"
+    [loopForImageLoading]="loopForImageLoading"
+  ></app-loading>
 </ng-template>

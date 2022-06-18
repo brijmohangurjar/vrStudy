@@ -4,7 +4,7 @@
   <ion-grid class="book_page ion-no-padding">
     <ion-row *ngIf="bookList.length && !bookListLoading; else loading;">
       <ion-col size="4" *ngFor="let item of bookList; let i=index">
-        <ion-card style="margin: 10px;" routerLink="page-list/{{item.docId}}">
+        <ion-card routerLink="page-list/{{item.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.bookName}}</b></ion-card-subtitle>
           </ion-card-header>
@@ -18,7 +18,7 @@
       </ion-col>
     </ion-row>
     
-    <div class="" *ngIf="!bookList.length">
+    <div class="" *ngIf="!bookList.length && !bookListLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
     </div>
   </ion-grid>
@@ -27,5 +27,8 @@
 <app-footer [showToggleButton]="true" [heading]="'Books'"></app-footer>
 
 <ng-template #loading>
-  <app-loading [loopForImageLoading]="loopForImageLoading"></app-loading>
+  <app-loading 
+    [loopForImageLoading]="loopForImageLoading"
+    [showCardLoading]="true"
+  ></app-loading>
 </ng-template>

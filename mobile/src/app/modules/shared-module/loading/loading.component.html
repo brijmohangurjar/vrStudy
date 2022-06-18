@@ -1,7 +1,7 @@
 <ion-grid class="ion-no-padding app_loading">
-  <ion-slides class="listSlides" [options]='slideOpts3' *ngIf="showSlides">
+  <ion-slides class="listSlides" [options]='slideOpts3' *ngIf="showSlideLoading">
     <ion-slide *ngFor="let item of loopForImageLoading; let i=index">
-      <ion-card style="margin: 10px;">
+      <ion-card>
         <ion-label>
           <h3>
             <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
@@ -17,9 +17,9 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-row *ngIf="!showSlides">
+  <ion-row *ngIf="showCardLoading">
     <ion-col size="4" *ngFor="let item of loopForImageLoading; let i=index">
-      <ion-card style="margin: 10px;">
+      <ion-card>
         <ion-label>
           <h3>
             <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
@@ -37,7 +37,7 @@
 
   <ion-row *ngIf="fullPageLoading">
     <ion-col *ngFor="let item of loopForImageLoading; let i=index">
-      <ion-card style="margin: 10px;">
+      <ion-card>
         <ion-label>
           <h3>
             <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
