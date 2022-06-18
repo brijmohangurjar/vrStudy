@@ -12,7 +12,7 @@ import { ToastService } from 'src/app/service';
 })
 export class PageDetailPage implements OnInit, OnDestroy {
 
-  public pageDetail = [];
+  public pageDetail: any;
   public pageDetailLoading = true;
   public loopForImageLoading = new Array(1);
 
@@ -30,6 +30,8 @@ export class PageDetailPage implements OnInit, OnDestroy {
       this.pageId = param.get('pageId');
       if (this.pageId) {
         this.getPageDetailByPageDocId(this.pageId);
+      } else {
+        this.pageDetailLoading = false;
       }
     });
   }
@@ -45,9 +47,10 @@ export class PageDetailPage implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.pageDetailService.getPageDetailByPageDocId(pageId)
         .subscribe((responseData: any) => {
+          console.log('responseData', responseData);
           this.pageDetailLoading = false;
           if (responseData) {
-            this.pageDetail = [responseData];
+            this.pageDetail = responseData;
           } else {
             this.pageDetail = [];
           }
