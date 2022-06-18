@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SubjectService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-subject',
@@ -12,11 +12,12 @@ import { LoadingService, ToastService } from 'src/app/service';
 export class SubjectPage implements OnInit, OnDestroy {
 
   public subjectList = [];
+  public subjectListLoading = true;
+  public loopForImageLoading = new Array(12);
 
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private loadingService: LoadingService,
     private subjectService: SubjectService,
     private toastService: ToastService,
   ) { }
@@ -32,19 +33,19 @@ export class SubjectPage implements OnInit, OnDestroy {
   }
 
   private getSubjectsList(): void {
-    this.loadingService.showLoading();
+    this.subjectListLoading = true;
     this.subscriptions.push(
       this.subjectService.getSubjectList()
         .subscribe((result: any) => {
-          this.loadingService.hideLoading();
+          this.subjectListLoading = false;
           if (result && result.length) {
             this.subjectList = result;
           } else {
             this.subjectList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.subjectListLoading = false;
           console.log('error', error);
-          this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
     );

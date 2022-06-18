@@ -9,7 +9,6 @@ import {
 import {
   CommonService,
   DateService,
-  LoadingService,
   NavigationService,
   ToastService,
 } from 'src/app/service';
@@ -27,11 +26,20 @@ export class HomePage implements OnInit, OnDestroy {
   public greetingText = '';
   public currentDate = new Date();
   public currentUserInfo: any;
+  public subjectListLoading = true;
+  public pageListLoading = true;
+  public shortListLoading = true;
 
   public slideOpts3 = {
     slidesPerView: 2.4,
     spaceBetween: 20,
   };
+  public loopForImageLoading = [
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+  ];
   private subscriptions: Subscription[] = [];
 
   constructor(
@@ -39,7 +47,6 @@ export class HomePage implements OnInit, OnDestroy {
     private loginService: LoginService,
     private homeService: HomeService,
     private dateService: DateService,
-    private loadingService: LoadingService,
     private subjectService: SubjectService,
     private commonService: CommonService,
     private navigationService: NavigationService,
@@ -48,6 +55,8 @@ export class HomePage implements OnInit, OnDestroy {
   public ngOnInit() {
     this.greetingText = this.dateService.getTimeGreetings();
     this.getSubjectsList();
+    this.getPageList();
+    this.getShortList();
     this.getCurrentUserDetail();
   }
 
@@ -76,19 +85,19 @@ export class HomePage implements OnInit, OnDestroy {
   }
 
   private getSubjectsList(): void {
-    this.loadingService.showLoading();
+    this.subjectListLoading = true;
     this.subscriptions.push(
       this.subjectService.getSubjectList()
         .subscribe((result: any) => {
+          this.subjectListLoading = false;
           if (result && result.length) {
             this.subjectList = result;
-            this.getPageList();
           } else {
-            this.getPageList();
+            this.subjectList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.subjectListLoading = false;
           console.log('error', error);
-          this.getPageList();
           this.toastService.errorToast(error.message);
         })
     );
@@ -96,34 +105,38 @@ export class HomePage implements OnInit, OnDestroy {
 
 
   private getPageList(): void {
+    this.pageListLoading = true;
     this.subscriptions.push(
       this.homeService.getPageList()
         .subscribe((result: any) => {
+          this.pageListLoading = false;
           if (result && result.length) {
             this.pageList = result;
-            this.getShortList();
           } else {
-            this.getShortList();
+            this.pageList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.pageListLoading = false;
           console.log('error', error);
-          this.getShortList();
           this.toastService.errorToast(error.message);
         })
     );
   }
 
   private getShortList(): void {
+    this.shortListLoading = true;
     this.subscriptions.push(
       this.homeService.getShortList()
         .subscribe((result: any) => {
-          this.loadingService.hideLoading();
+          this.shortListLoading = false;
           if (result && result.length) {
             this.shortList = result;
+          } else {
+            this.shortList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.shortListLoading = false;
           console.log('error', error);
-          this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
     );
