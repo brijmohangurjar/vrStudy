@@ -13,28 +13,37 @@ export class PageDetailService {
     // private constVar: ConstantVariables,
   ) { }
 
-  public getPageList(): Observable<any> {
+  public getAllPageList(): Observable<any> {
     return this.angularFirestore.collection('page', ref =>
       ref.orderBy('createDate', 'desc')).snapshotChanges()
-      .pipe(map((actions) => {
-        return actions.map(doc => {
-          const data: any = doc.payload.doc.data();
-          const docId = doc.payload.doc.id;
-          return { docId, ...data };
-        });
-      }));
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
+      })
+      ));
   }
 
-  public getPageDetailByBookId(subjectId: string): Observable<any> {
-    return this.angularFirestore.collection('page', ref =>
-      ref.where('book.docId', '==', subjectId).orderBy('createDate', 'desc'))
+  public getPageDetailByPageDocId(pageId: string): Observable<any> {
+    return this.angularFirestore.collection('page').doc(pageId)
       .snapshotChanges()
       .pipe(map((actions) => {
-        return actions.map(doc => {
-          const data: any = doc.payload.doc.data();
-          const docId = doc.payload.doc.id;
-          return { docId, ...data };
-        });
-      }));
+        const data: any = actions.payload.data();
+        const docId = actions.payload.id;
+        return { docId, ...data };
+      }
+      ));
+  }
+
+  public getPageListByBookId(bookId: string): Observable<any> {
+    return this.angularFirestore.collection('page', ref =>
+      ref.where('book.docId', '==', bookId).orderBy('createDate', 'desc'))
+      .snapshotChanges()
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
+      })
+      ));
   }
 }

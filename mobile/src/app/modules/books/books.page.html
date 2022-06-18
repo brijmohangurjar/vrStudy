@@ -4,7 +4,7 @@
   <ion-grid class="book_page ion-no-padding">
     <ion-row *ngIf="bookList.length">
       <ion-col size="4" *ngFor="let item of bookList; let i=index">
-        <ion-card style="margin: 10px;" routerLink="page-detail/{{item.docId}}">
+        <ion-card style="margin: 10px;" routerLink="page-list/{{item.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.bookName}}</b></ion-card-subtitle>
           </ion-card-header>

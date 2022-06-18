@@ -3,32 +3,33 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
-  selector: 'app-page-detail',
-  templateUrl: './page-detail.page.html',
-  styleUrls: ['./page-detail.page.scss'],
+  selector: 'app-page-list',
+  templateUrl: './page-list.page.html',
+  styleUrls: ['./page-list.page.scss'],
 })
-export class PageDetailPage implements OnInit, OnDestroy {
+export class PageListPage implements OnInit, OnDestroy {
 
-  public pageDetail: any;
+  public pageList = [];
+  public pageListLoading = true;
 
-  private pageId: string;
+  private bookId: string;
   private subscriptions: Subscription[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private pageDetailService: PageDetailService,
-    private loadingService: LoadingService,
     private toastService: ToastService,
+    private pageDetailService: PageDetailService,
   ) { }
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
-      this.pageId = param.get('pageId');
-      if (this.pageId) {
-        this.getPageDetailByPageDocId(this.pageId);
+      console.log('param', param);
+      this.bookId = param.get('bookId');
+      if (this.bookId) {
+        this.getPageListByBookId(this.bookId);
       }
     });
   }
@@ -39,21 +40,22 @@ export class PageDetailPage implements OnInit, OnDestroy {
     });
   }
 
-  private getPageDetailByPageDocId(pageId: string): void {
-    this.loadingService.showLoading();
+  private getPageListByBookId(bookId: string): void {
+    this.pageListLoading = true;
     this.subscriptions.push(
-      this.pageDetailService.getPageDetailByPageDocId(pageId)
+      this.pageDetailService.getPageListByBookId(bookId)
         .subscribe((responseData: any) => {
-          this.loadingService.hideLoading();
-          if (responseData) {
-            this.pageDetail = responseData;
+          console.log('responseData', responseData);
+          this.pageListLoading = false;
+          if (responseData.length) {
+            this.pageList = responseData;
           } else {
-            this.pageDetail = null;
+            this.pageList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.pageListLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
-          this.loadingService.hideLoading();
         })
     );
   }

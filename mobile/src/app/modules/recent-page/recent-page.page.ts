@@ -22,7 +22,7 @@ export class RecentPagePage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
-    this.getPageList();
+    this.getAllPageList();
   }
 
   public ngOnDestroy(): void {
@@ -31,10 +31,10 @@ export class RecentPagePage implements OnInit, OnDestroy {
     });
   }
 
-  private getPageList(): void {
+  private getAllPageList(): void {
     this.loadingService.showLoading();
     this.subscriptions.push(
-      this.pageDetailService.getPageList()
+      this.pageDetailService.getAllPageList()
         .subscribe((result: any) => {
           this.loadingService.hideLoading();
           if (result && result.length) {

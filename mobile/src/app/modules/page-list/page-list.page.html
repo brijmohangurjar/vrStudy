@@ -1,10 +1,10 @@
-<app-header [heading]="'Topic'"></app-header>
+<app-header [heading]="'Page List'"></app-header>
 
 <ion-content>
   <ion-grid class="topic_page ion-no-padding">
-    <ion-row *ngIf="topicList.length && !topicListLoading;else loading;">
-      <ion-col size="4" *ngFor="let item of topicList; let i=index">
-        <ion-card style="margin: 10px;" routerLink="book/{{item.docId}}">
+    <ion-row *ngIf="pageList.length && !pageListLoading;else loading;">
+      <ion-col size="4" *ngFor="let item of pageList; let i=index">
+        <ion-card style="margin: 10px;" routerLink="page-detail/{{item.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.topicName}}</b></ion-card-subtitle>
           </ion-card-header>
@@ -20,7 +20,7 @@
       </ion-col>
     </ion-row>
 
-    <div class="" *ngIf="!topicList.length && !topicListLoading">
+    <div class="" *ngIf="!pageList.length && !pageListLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
     </div>
   </ion-grid>

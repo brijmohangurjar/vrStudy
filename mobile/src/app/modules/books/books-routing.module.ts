@@ -9,8 +9,8 @@ const routes: Routes = [
     component: BooksPage
   },
   {
-    path: 'page-detail/:bookId',
-    loadChildren: () => import('../page-detail/page-detail.module').then(m => m.PageDetailPageModule)
+    path: 'page-list/:bookId',
+    loadChildren: () => import('../page-list/page-list.module').then(m => m.PageListPageModule)
   }
 ];
 
