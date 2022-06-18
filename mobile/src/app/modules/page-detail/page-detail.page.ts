@@ -12,7 +12,9 @@ import { LoadingService, ToastService } from 'src/app/service';
 })
 export class PageDetailPage implements OnInit, OnDestroy {
 
-  public pageDetail: any;
+  public pageDetail = [];
+  public pageDetailLoading = true;
+  public loopForImageLoading = new Array(1);
 
   private pageId: string;
   private subscriptions: Subscription[] = [];
@@ -48,7 +50,7 @@ export class PageDetailPage implements OnInit, OnDestroy {
           if (responseData) {
             this.pageDetail = responseData;
           } else {
-            this.pageDetail = null;
+            this.pageDetail = [];
           }
         }, (error: HttpErrorResponse) => {
           console.log('error', error);

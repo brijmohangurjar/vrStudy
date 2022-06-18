@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-recent-page',
@@ -12,11 +12,12 @@ import { LoadingService, ToastService } from 'src/app/service';
 export class RecentPagePage implements OnInit, OnDestroy {
 
   public pageList = [];
+  public recentPageLoading = true;
+  public loopForImageLoading = new Array(15);
 
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private loadingService: LoadingService,
     private pageDetailService: PageDetailService,
     private toastService: ToastService,
   ) { }
@@ -32,19 +33,19 @@ export class RecentPagePage implements OnInit, OnDestroy {
   }
 
   private getAllPageList(): void {
-    this.loadingService.showLoading();
+    this.recentPageLoading = true;
     this.subscriptions.push(
       this.pageDetailService.getAllPageList()
         .subscribe((result: any) => {
-          this.loadingService.hideLoading();
+          this.recentPageLoading = false;
           if (result && result.length) {
             this.pageList = result;
           } else {
             this.pageList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.recentPageLoading = false;
           console.log('error', error);
-          this.loadingService.hideLoading();
           this.toastService.errorToast(error.message);
         })
     );

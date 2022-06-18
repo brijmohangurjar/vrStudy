@@ -8,8 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LoadingComponent implements OnInit {
 
   @Input() loopForImageLoading = [];
-  @Input() showSlides = false;
+  @Input() showSlideLoading = false;
   @Input() fullPageLoading = false;
+  @Input() showCardLoading = false;
 
   public slideOpts3 = {
     slidesPerView: 2.4,
@@ -19,6 +20,5 @@ export class LoadingComponent implements OnInit {
   constructor() { }
 
   public ngOnInit() {
-    console.log('loopForImageLoading', this.loopForImageLoading);
   }
 }

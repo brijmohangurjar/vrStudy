@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NoteService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-note',
@@ -13,13 +13,14 @@ import { LoadingService, ToastService } from 'src/app/service';
 export class NotePage implements OnInit, OnDestroy {
 
   public noteDetail: any;
+  public notePageLoading = true;
+  public loopForImageLoading = new Array(1);
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private loadingService: LoadingService,
     private noteService: NoteService,
     private toastService: ToastService,
   ) { }
@@ -40,20 +41,20 @@ export class NotePage implements OnInit, OnDestroy {
   }
 
   private getNoteDetailByBookId(bookId: string): void {
-    this.loadingService.showLoading();
+    this.notePageLoading = true;
     this.subscriptions.push(
       this.noteService.getNoteDetailByBookId(bookId)
         .subscribe((responseData: any) => {
-          this.loadingService.hideLoading();
+          this.notePageLoading = false;
           if (responseData.length) {
             this.noteDetail = responseData[0];
           } else {
             this.noteDetail = null;
           }
         }, (error: HttpErrorResponse) => {
+          this.notePageLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
-          this.loadingService.hideLoading();
         })
     );
   }

@@ -12,7 +12,7 @@ import { ToastService } from 'src/app/service';
 })
 export class ShortDetailPage implements OnInit, OnDestroy {
 
-  public shortDetail: any;
+  public shortDetail = [];
   public shortDetailLoading = true;
   public loopForImageLoading = new Array(1);
 
@@ -30,6 +30,8 @@ export class ShortDetailPage implements OnInit, OnDestroy {
       this.bookId = param.get('bookId');
       if (this.bookId) {
         this.getPageDetailByBookId(this.bookId);
+      } else {
+        this.shortDetailLoading = false;
       }
     });
   }
@@ -45,11 +47,12 @@ export class ShortDetailPage implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.shortDetailService.getShortDetailByBookId(bookId)
         .subscribe((responseData: any) => {
+          console.log('responseData', responseData);
           this.shortDetailLoading = false;
           if (responseData.length) {
-            this.shortDetail = responseData[0];
+            this.shortDetail = responseData;
           } else {
-            this.shortDetail = null;
+            this.shortDetail = [];
           }
         }, (error: HttpErrorResponse) => {
           this.shortDetailLoading = false;
