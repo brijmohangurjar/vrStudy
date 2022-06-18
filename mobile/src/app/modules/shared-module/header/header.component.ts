@@ -63,7 +63,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public onSelect(item) {
-    this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.book.docId}/page-detail/${item.book.docId}`);
+    this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.topic.docId}/page-list/${item.book.docId}/page-detail/${item.docId}`);
   }
 
   transform(value: any, args: any): any {

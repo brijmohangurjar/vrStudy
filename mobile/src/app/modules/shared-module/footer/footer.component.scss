@@ -1,5 +1,10 @@
 .search_icon{
     font-size: 28px;
     padding-right: 5px;
-    color: var(--ion-color-primary, #3880ff);
+    // color: var(--ion-color-primary, #3880ff);
+    color: red;
+}
+
+ion-menu-button{
+    color: red;
 }

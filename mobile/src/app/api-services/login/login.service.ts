@@ -22,7 +22,7 @@ export class LoginService {
       // return this.angularFireAuth.setPersistence('none').then(_ => {
       return this.angularFireAuth.signInWithEmailAndPassword(email, password)
         // eslint-disable-next-line arrow-body-style
-        .then((logInResponse: any) => {
+        .then((logInResponse: any) => {          console.log(logInResponse , 'logInResponse');
           return {
             status: 200,
             message: 'Logged in successfully.',
@@ -38,22 +38,26 @@ export class LoginService {
     }
   }
 
-  public async getUserByAuthIdWithPromise(uid: string): Promise<any> {
-    this.currentUserUid = uid;
-    try {
-      // tslint:disable-next-line: max-line-length
-      return this.angularFirestore.collection('Users', ref =>
-        ref.where('uid', '==', uid)).get()
-        .toPromise().then(res => res.docs.map(data => {
-          const id = data.id;
-          const info: any = data.data();
-          // const userData: any = { docId: id, ...info };
-          // this.userData = userData;
-          return { docId: id, ...info };
-        }));
-    } catch (e) {
-      return e;
+  
+
+  public setUserId(uid: string) {
+    if(uid){
+      this.currentUserUid = uid;
     }
+    // try {
+    //   // tslint:disable-next-line: max-line-length
+    //   return this.angularFirestore.collection('Users', ref =>
+    //     ref.where('uid', '==', uid)).get()
+    //     .toPromise().then(res => res.docs.map(data => {
+    //       const id = data.id;
+    //       const info: any = data.data();
+    //       // const userData: any = { docId: id, ...info };
+    //       // this.userData = userData;
+    //       return { docId: id, ...info };
+    //     }));
+    // } catch (e) {
+    //   return e;
+    // }
   }
 
   public logOutUser() {
@@ -64,6 +68,7 @@ export class LoginService {
   }
 
   public getUserData() {
+    console.log(this.currentUserUid, 'this.currentUserUid');
     if (this.currentUserUid) {
       const uid = this.currentUserUid;
       return this.angularFirestore.collection
