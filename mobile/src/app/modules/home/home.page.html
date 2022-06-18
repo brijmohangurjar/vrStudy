@@ -28,9 +28,9 @@
       <ion-slide *ngFor="let item of subjectList; let i=index" 
        routerLink="topic/{{item.docId}}" >
         <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle><b>{{item.name}}</b></ion-card-subtitle>
-          </ion-card-header>
+          <ion-card-content class="subject_content">
+            <b>{{item.name}}</b>
+          </ion-card-content>
         
          <ion-row class="card-footer ion-no-margin ion-no-padding">
             <ion-col class="ion-no-margin ion-no-padding">
