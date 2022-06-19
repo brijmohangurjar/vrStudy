@@ -1,9 +1,9 @@
-<app-header [heading]="'Page Detail'"></app-header>
+<app-header [heading]="'Page Detail'" [shortUrl] = "pageDetail?.book?.docId" [noteUrl] = "pageDetail?.book?.docId"></app-header>
 
 <ion-content>
   <ion-grid class="ion-grid page_detail">
     <div class="" *ngIf="pageDetail && !pageDetailLoading">
-      <ion-row>
+      <!-- <ion-row>
         <ion-col size="6" class="ion-no-padding">
           <ion-button fill="clear" class="ion-no-margin" 
             routerLink="short-detail/{{pageDetail.book.docId}}">
@@ -19,10 +19,10 @@
             <span>Note</span>
           </ion-button>
         </ion-col>
-      </ion-row>
+      </ion-row> -->
 
       <ion-row>
-        <ion-col size="12" class="heading pt-3">
+        <ion-col size="12" class="heading pt-3 pb-2">
           <ion-label>{{pageDetail?.heading}}</ion-label>
         </ion-col>
 

@@ -29,8 +29,14 @@
       ></ion-searchbar>
     </ion-title>
     
-    <ion-buttons slot="end" *ngIf="showFilter">
+    <!-- <ion-buttons slot="end" *ngIf="showFilter">
       <ion-icon name="filter-outline"></ion-icon>
+    </ion-buttons> -->
+    <ion-buttons slot="end" fill="clear"  routerLink="short-detail/{{shortUrl}}" *ngIf="shortUrl">
+      <ion-icon style="font-size: 28px; color: red;" name="card-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons style="margin: 0 10px;" slot="end" fill="clear" routerLink="note-detail/{{noteUrl}}" *ngIf="noteUrl">
+      <ion-icon style="font-size: 24px; color: red;" name="bookmarks-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

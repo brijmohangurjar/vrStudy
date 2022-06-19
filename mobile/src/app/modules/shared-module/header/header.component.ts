@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   @Input() userDetail: any;
   @Input() heading: any;
   @Input() searchBar: any;
+  @Input() shortUrl: any;
+  @Input() noteUrl: any;
+
+
 
   public searchValue = '';
   public pageList = [];

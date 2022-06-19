@@ -1,7 +1,7 @@
 <app-header [heading]="'Book'"></app-header>
 <app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
 <ion-item lines="none" *ngIf = "bookList && bookList.length">
-  <ion-icon slot="start" style="margin-inline-end: 9px; color: black;" class="help-icon" name="book-outline">
+  <ion-icon slot="start" style="margin-inline-end: 9px; color: black;" class="help-icon" name="receipt-outline">
   </ion-icon>
   <span class="bed_come"><b>{{bookList[0].topic.topicName}}</b> </span> <span>({{bookList.length}})</span>
 </ion-item>
