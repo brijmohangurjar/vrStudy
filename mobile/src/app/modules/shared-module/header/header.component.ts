@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { HomeService } from 'src/app/api-services';
+import { PageDetailService } from 'src/app/api-services';
 import { NavigationService, ToastService } from 'src/app/service';
 import { Location } from '@angular/common';
 
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private homeService: HomeService,
+    private pageDetailService: PageDetailService,
     private toastService: ToastService,
     private navigationService: NavigationService,
     private location: Location
@@ -63,16 +63,17 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
     this.pageList = searchList;
   }
 
-  public onSelect(item) {
+  public onSelect(item: any) {
+    // eslint-disable-next-line max-len
     this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.topic.docId}/page-list/${item.book.docId}/page-detail/${item.docId}`);
   }
 
-  transform(value: any, args: any): any {
+  public transform(value: any, args: any): any {
     if (value) {
       const array = args.split(' ');
       if (!array && !array.length) { return value; }
       for (const text of array) {
-        var reText = new RegExp(text, 'gi');
+        const reText = new RegExp(text, 'gi');
         value = value.replace(reText, '<b>' + text + '</b>');
       }
       return value;
@@ -80,7 +81,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private getPageList(): void {
-    this.homeService.getPageList()
+    this.pageDetailService.getAllPageList()
       .subscribe((result: any) => {
         if (result && result.length) {
           this.pageList = result;

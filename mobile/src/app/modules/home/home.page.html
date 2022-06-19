@@ -3,7 +3,7 @@
     <ion-row>
       <ion-col class="ion-padding-bottom ion-no-padding" size="12">
         <div class="container-background" 
-          [style.backgroundImage]="'url(assets/images/background1.jpg)'">
+          [style.backgroundImage]="'url(assets/images/home_background.jpg)'">
           <p class="bottom text">{{greetingText}}, 
             <span *ngIf="currentUserInfo?.firstName">
               {{currentUserInfo?.firstName}}!
@@ -24,7 +24,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
-      *ngIf="!subjectListLoading; else loading1;">
+      *ngIf="!subjectListLoading; else loading;">
       <ion-slide *ngFor="let item of subjectList; let i=index" 
        routerLink="topic/{{item.docId}}" >
         <ion-card>
@@ -51,7 +51,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
-      *ngIf="!pageListLoading; else loading2;">
+      *ngIf="!pageListLoading; else loading;">
       <ion-slide *ngFor="let item of pageList; let i=index" 
         routerLink="recent-page/page-detail/{{item.docId}}">
         <ion-card>
@@ -78,7 +78,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
-      *ngIf="!shortListLoading; else loading3;">
+      *ngIf="!shortListLoading; else loading;">
       <ion-slide *ngFor="let item of shortList; let i=index">
         <ion-card 
           routerLink="recent-short/short-detail/{{item.book.docId}}">
@@ -94,26 +94,64 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
+
+    <ion-item lines='none'>
+       Recent Book
+      <ion-buttons slot="end">
+        <ion-button (click)="onClick('recentBook')">
+          <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  
+    <ion-slides class="listSlides" [options]='slideOpts3' 
+      *ngIf="!bookListLoading; else loading;">
+      <ion-slide *ngFor="let item of bookList; let i=index">
+        <ion-card routerLink="books/page-list/{{item.docId}}">
+          <ion-card-header>
+            <ion-card-subtitle><b>{{item?.bookName}}</b></ion-card-subtitle>
+          </ion-card-header>
+         
+         <ion-row class="card-footer ion-no-margin ion-no-padding">
+            <ion-col class="ion-no-margin ion-no-padding">
+              <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+            </ion-col>
+         </ion-row>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-item lines='none'>
+       Recent Topic
+      <ion-buttons slot="end">
+        <ion-button (click)="onClick('recentTopic')">
+          <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  
+    <ion-slides class="listSlides" [options]='slideOpts3' 
+      *ngIf="!topicListLoading; else loading;">
+      <ion-slide *ngFor="let item of topicList; let i=index">
+        <ion-card routerLink="topic/book/{{item.docId}}">
+          <ion-card-header>
+            <ion-card-subtitle><b>{{item?.topicName}}</b></ion-card-subtitle>
+          </ion-card-header>
+         
+         <ion-row class="card-footer ion-no-margin ion-no-padding">
+            <ion-col class="ion-no-margin ion-no-padding">
+              <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+            </ion-col>
+         </ion-row>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
   </ion-grid>
 </ion-content>
 
 <app-footer [showToggleButton]="true" [heading]="'Home'"></app-footer>
 
-<ng-template #loading1>
-  <app-loading 
-    [loopForImageLoading]="loopForImageLoading"
-    [showSlideLoading]="true"
-  ></app-loading>
-</ng-template>
-
-<ng-template #loading2>
-  <app-loading 
-    [loopForImageLoading]="loopForImageLoading"
-    [showSlideLoading]="true"
-  ></app-loading>
-</ng-template>
-
-<ng-template #loading3>
+<ng-template #loading>
   <app-loading 
     [loopForImageLoading]="loopForImageLoading"
     [showSlideLoading]="true"

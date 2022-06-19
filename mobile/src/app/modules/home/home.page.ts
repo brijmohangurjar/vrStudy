@@ -2,9 +2,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {
-  HomeService,
+  ShortDetailService,
   LoginService,
+  PageDetailService,
   SubjectService,
+  BookService,
+  TopicService,
 } from 'src/app/api-services';
 import {
   CommonService,
@@ -23,12 +26,16 @@ export class HomePage implements OnInit, OnDestroy {
   public subjectList = [];
   public pageList = [];
   public shortList = [];
+  public bookList = [];
+  public topicList = [];
   public greetingText = '';
   public currentDate = new Date();
   public currentUserInfo: any;
   public subjectListLoading = true;
   public pageListLoading = true;
   public shortListLoading = true;
+  public bookListLoading = true;
+  public topicListLoading = true;
 
   public slideOpts3 = {
     slidesPerView: 2.4,
@@ -38,13 +45,16 @@ export class HomePage implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   constructor(
+    private dateService: DateService,
+    private bookService: BookService,
     private toastService: ToastService,
     private loginService: LoginService,
-    private homeService: HomeService,
-    private dateService: DateService,
-    private subjectService: SubjectService,
+    private topicService: TopicService,
     private commonService: CommonService,
+    private subjectService: SubjectService,
     private navigationService: NavigationService,
+    private pageDetailService: PageDetailService,
+    private shortDetailService: ShortDetailService,
   ) { }
 
   public ngOnInit() {
@@ -52,6 +62,8 @@ export class HomePage implements OnInit, OnDestroy {
     this.getSubjectsList();
     this.getPageList();
     this.getShortList();
+    this.getBookList();
+    this.getTopicList();
     this.getCurrentUserDetail();
   }
 
@@ -76,6 +88,12 @@ export class HomePage implements OnInit, OnDestroy {
         break;
       case 'recentShort':
         this.navigationService.navigateByUrl('base/home/recent-short');
+        break;
+      case 'recentBook':
+        this.navigationService.navigateByUrl('base/home/books');
+        break;
+      case 'recentTopic':
+        this.navigationService.navigateByUrl('base/home/topic');
         break;
     }
   }
@@ -103,7 +121,7 @@ export class HomePage implements OnInit, OnDestroy {
   private getPageList(): void {
     this.pageListLoading = true;
     this.subscriptions.push(
-      this.homeService.getPageList()
+      this.pageDetailService.getAllPageList()
         .subscribe((result: any) => {
           this.pageListLoading = false;
           if (result && result.length) {
@@ -122,7 +140,7 @@ export class HomePage implements OnInit, OnDestroy {
   private getShortList(): void {
     this.shortListLoading = true;
     this.subscriptions.push(
-      this.homeService.getShortList()
+      this.shortDetailService.getShortList()
         .subscribe((result: any) => {
           this.shortListLoading = false;
           if (result && result.length) {
@@ -132,6 +150,44 @@ export class HomePage implements OnInit, OnDestroy {
           }
         }, (error: HttpErrorResponse) => {
           this.shortListLoading = false;
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private getBookList(): void {
+    this.bookListLoading = true;
+    this.subscriptions.push(
+      this.bookService.getBookList()
+        .subscribe((result: any) => {
+          this.bookListLoading = false;
+          if (result && result.length) {
+            this.bookList = result;
+          } else {
+            this.bookList = [];
+          }
+        }, (error: HttpErrorResponse) => {
+          this.bookListLoading = false;
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private getTopicList(): void {
+    this.topicListLoading = true;
+    this.subscriptions.push(
+      this.topicService.getAllTopicList()
+        .subscribe((result: any) => {
+          this.topicListLoading = false;
+          if (result && result.length) {
+            this.topicList = result;
+          } else {
+            this.topicList = [];
+          }
+        }, (error: HttpErrorResponse) => {
+          this.topicListLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
         })
