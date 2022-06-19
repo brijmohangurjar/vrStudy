@@ -49,6 +49,7 @@ export class SubjectPage implements OnInit, OnDestroy {
           this.subjectListLoading = false;
           if (result && result.length) {
             this.subjectList = result;
+            console.log(this.subjectList , 'this.subjectList');
             this.originalData = result;
           } else {
             this.subjectList = [];
