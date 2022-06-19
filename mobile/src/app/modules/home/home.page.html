@@ -24,7 +24,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
-      *ngIf="!subjectListLoading; else loading1;">
+      *ngIf="!subjectListLoading; else loading;">
       <ion-slide *ngFor="let item of subjectList; let i=index" 
        routerLink="topic/{{item.docId}}" >
         <ion-card>
@@ -51,7 +51,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
-      *ngIf="!pageListLoading; else loading2;">
+      *ngIf="!pageListLoading; else loading;">
       <ion-slide *ngFor="let item of pageList; let i=index" 
         routerLink="recent-page/page-detail/{{item.docId}}">
         <ion-card>
@@ -78,7 +78,7 @@
     </ion-item>
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
-      *ngIf="!shortListLoading; else loading3;">
+      *ngIf="!shortListLoading; else loading;">
       <ion-slide *ngFor="let item of shortList; let i=index">
         <ion-card 
           routerLink="recent-short/short-detail/{{item.book.docId}}">
@@ -99,21 +99,7 @@
 
 <app-footer [showToggleButton]="true" [heading]="'Home'"></app-footer>
 
-<ng-template #loading1>
-  <app-loading 
-    [loopForImageLoading]="loopForImageLoading"
-    [showSlideLoading]="true"
-  ></app-loading>
-</ng-template>
-
-<ng-template #loading2>
-  <app-loading 
-    [loopForImageLoading]="loopForImageLoading"
-    [showSlideLoading]="true"
-  ></app-loading>
-</ng-template>
-
-<ng-template #loading3>
+<ng-template #loading>
   <app-loading 
     [loopForImageLoading]="loopForImageLoading"
     [showSlideLoading]="true"
