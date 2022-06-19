@@ -94,6 +94,58 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
+
+    <ion-item lines='none'>
+       Recent Book
+      <ion-buttons slot="end">
+        <ion-button (click)="onClick('recentBook')">
+          <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  
+    <ion-slides class="listSlides" [options]='slideOpts3' 
+      *ngIf="!bookListLoading; else loading;">
+      <ion-slide *ngFor="let item of bookList; let i=index">
+        <ion-card routerLink="books/page-list/{{item.docId}}">
+          <ion-card-header>
+            <ion-card-subtitle><b>{{item?.bookName}}</b></ion-card-subtitle>
+          </ion-card-header>
+         
+         <ion-row class="card-footer ion-no-margin ion-no-padding">
+            <ion-col class="ion-no-margin ion-no-padding">
+              <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+            </ion-col>
+         </ion-row>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-item lines='none'>
+       Recent Topic
+      <ion-buttons slot="end">
+        <ion-button (click)="onClick('recentTopic')">
+          <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  
+    <ion-slides class="listSlides" [options]='slideOpts3' 
+      *ngIf="!topicListLoading; else loading;">
+      <ion-slide *ngFor="let item of topicList; let i=index">
+        <ion-card routerLink="topic/book/{{item.docId}}">
+          <ion-card-header>
+            <ion-card-subtitle><b>{{item?.topicName}}</b></ion-card-subtitle>
+          </ion-card-header>
+         
+         <ion-row class="card-footer ion-no-margin ion-no-padding">
+            <ion-col class="ion-no-margin ion-no-padding">
+              <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+            </ion-col>
+         </ion-row>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
   </ion-grid>
 </ion-content>
 
