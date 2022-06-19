@@ -1,5 +1,6 @@
 <app-header [heading]="'Subject'"></app-header>
 <app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
+
 <ion-content>
 <ion-grid class="subject_page ion-no-padding">
   <ion-row *ngIf="subjectList.length && !subjectListLoading;">
