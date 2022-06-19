@@ -15,7 +15,7 @@ export class BooksPage implements OnInit, OnDestroy {
   public bookList = [];
   public bookListLoading = true;
   public loopForImageLoading = new Array(15);
-  public originalData:any = [];
+  public originalData: any = [];
 
   private topicId: string;
   private subscriptions: Subscription[] = [];
@@ -38,6 +38,7 @@ export class BooksPage implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
+    // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });

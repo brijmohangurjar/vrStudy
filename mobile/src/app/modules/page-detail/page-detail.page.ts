@@ -30,13 +30,12 @@ export class PageDetailPage implements OnInit, OnDestroy {
       this.pageId = param.get('pageId');
       if (this.pageId) {
         this.getPageDetailByPageDocId(this.pageId);
-      } else {
-        this.pageDetailLoading = false;
       }
     });
   }
 
   public ngOnDestroy(): void {
+    // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });
@@ -47,7 +46,6 @@ export class PageDetailPage implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.pageDetailService.getPageDetailByPageDocId(pageId)
         .subscribe((responseData: any) => {
-          console.log('responseData', responseData);
           this.pageDetailLoading = false;
           if (responseData) {
             this.pageDetail = responseData;
