@@ -12,16 +12,39 @@ export class NoteService {
     private angularFirestore: AngularFirestore,
   ) { }
 
-  public getNoteDetailByBookId(bookId: string): Observable<any> {
+  public getAllNoteList(): Observable<any> {
     return this.angularFirestore.collection('note', ref =>
-      ref.where('book.docId', '==', bookId).orderBy('createDate', 'desc'))
+      ref.orderBy('createDate', 'desc'))
+      .snapshotChanges()
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
+      })
+      ));
+  }
+
+  public getNoteDetailByDocId(noteId: string): Observable<any> {
+    return this.angularFirestore.collection('note').doc(noteId)
       .snapshotChanges()
       .pipe(map((actions) => {
-        return actions.map(doc => {
-          const data: any = doc.payload.doc.data();
-          const docId = doc.payload.doc.id;
-          return { docId, ...data };
-        });
-      }));
+        const data: any = actions.payload.data();
+        const docId = actions.payload.id;
+        return { docId, ...data };
+      }
+      ));
+  }
+
+  public getNoteListByBookId(bookId: string): Observable<any> {
+    return this.angularFirestore.collection('note', ref =>
+      ref.where('book.docId', '==', bookId)
+        .orderBy('createDate', 'desc'))
+      .snapshotChanges()
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
+      })
+      ));
   }
 }

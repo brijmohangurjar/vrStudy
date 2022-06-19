@@ -9,11 +9,15 @@ const routes: Routes = [
     component: PageDetailPage
   },
   {
-    path: 'short-detail/:bookId',
-    loadChildren: () => import('../short-detail/short-detail.module').then(m => m.ShortDetailPageModule)
+    path: 'short/:bookId',
+    loadChildren: () => import('../recent-short/recent-short.module').then(m => m.RecentShortPageModule)
   },
+  // {
+  //   path: 'note-detail/:bookId',
+  //   loadChildren: () => import('../note/note.module').then(m => m.NotePageModule)
+  // },
   {
-    path: 'note-detail/:bookId',
+    path: 'note/:bookId',
     loadChildren: () => import('../note/note.module').then(m => m.NotePageModule)
   }
 ];

@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'page-list',
     loadChildren: () => import('./modules/page-list/page-list.module').then( m => m.PageListPageModule)
   },
+  {
+    path: 'note-detail',
+    loadChildren: () => import('./modules/note-detail/note-detail.module').then( m => m.NoteDetailPageModule)
+  },
 ];
 @NgModule({
   imports: [
