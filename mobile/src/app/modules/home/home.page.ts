@@ -8,6 +8,7 @@ import {
   SubjectService,
   BookService,
   TopicService,
+  NoteService,
 } from 'src/app/api-services';
 import {
   CommonService,
@@ -28,6 +29,7 @@ export class HomePage implements OnInit, OnDestroy {
   public shortList = [];
   public bookList = [];
   public topicList = [];
+  public noteList = [];
   public greetingText = '';
   public currentDate = new Date();
   public currentUserInfo: any;
@@ -36,6 +38,7 @@ export class HomePage implements OnInit, OnDestroy {
   public shortListLoading = true;
   public bookListLoading = true;
   public topicListLoading = true;
+  public noteListLoading = true;
 
   public slideOpts3 = {
     slidesPerView: 2.4,
@@ -46,6 +49,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   constructor(
     private dateService: DateService,
+    private noteService: NoteService,
     private bookService: BookService,
     private toastService: ToastService,
     private loginService: LoginService,
@@ -64,6 +68,7 @@ export class HomePage implements OnInit, OnDestroy {
     this.getShortList();
     this.getBookList();
     this.getTopicList();
+    this.getNoteList();
     this.getCurrentUserDetail();
   }
 
@@ -87,13 +92,16 @@ export class HomePage implements OnInit, OnDestroy {
         this.navigationService.navigateByUrl('base/home/recent-page');
         break;
       case 'recentShort':
-        this.navigationService.navigateByUrl('base/home/recent-short');
+        this.navigationService.navigateByUrl('base/home/short');
         break;
       case 'recentBook':
         this.navigationService.navigateByUrl('base/home/books');
         break;
       case 'recentTopic':
         this.navigationService.navigateByUrl('base/home/topic');
+        break;
+      case 'recentNote':
+        this.navigationService.navigateByUrl('base/home/note');
         break;
     }
   }
@@ -188,6 +196,26 @@ export class HomePage implements OnInit, OnDestroy {
           }
         }, (error: HttpErrorResponse) => {
           this.topicListLoading = false;
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private getNoteList(): void {
+    this.noteListLoading = true;
+    this.subscriptions.push(
+      this.noteService.getAllNoteList()
+        .subscribe((result: any) => {
+          console.log('result', result);
+          this.noteListLoading = false;
+          if (result && result.length) {
+            this.noteList = result;
+          } else {
+            this.noteList = [];
+          }
+        }, (error: HttpErrorResponse) => {
+          this.noteListLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
         })

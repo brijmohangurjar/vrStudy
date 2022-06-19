@@ -55,7 +55,7 @@ export class BasePage implements OnInit {
     {
       id: 5,
       title: 'Short',
-      url: '/base/home/recent-short',
+      url: '/base/home/short',
       icon: 'filter-outline',
     },
     // {

@@ -12,24 +12,26 @@ import { ToastService } from 'src/app/service';
 })
 export class NotePage implements OnInit, OnDestroy {
 
-  public noteDetail = [];
+  public notePageList = [];
   public notePageLoading = true;
-  public loopForImageLoading = new Array(1);
+  public loopForImageLoading = new Array(15);
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private activatedRoute: ActivatedRoute,
     private noteService: NoteService,
     private toastService: ToastService,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.bookId = param.get('bookId');
       if (this.bookId) {
-        this.getNoteDetailByBookId(this.bookId);
+        this.getNoteListByBookId(this.bookId);
+      } else {
+        this.getAllPageList();
       }
     });
   }
@@ -41,16 +43,35 @@ export class NotePage implements OnInit, OnDestroy {
     });
   }
 
-  private getNoteDetailByBookId(bookId: string): void {
+  private getAllPageList(): void {
     this.notePageLoading = true;
     this.subscriptions.push(
-      this.noteService.getNoteDetailByBookId(bookId)
-        .subscribe((responseData: any) => {
+      this.noteService.getAllNoteList()
+        .subscribe((result: any) => {
           this.notePageLoading = false;
-          if (responseData.length) {
-            this.noteDetail = responseData;
+          if (result && result.length) {
+            this.notePageList = result;
           } else {
-            this.noteDetail = [];
+            this.notePageList = [];
+          }
+        }, (error: HttpErrorResponse) => {
+          this.notePageLoading = false;
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private getNoteListByBookId(bookId: string): void {
+    this.notePageLoading = true;
+    this.subscriptions.push(
+      this.noteService.getNoteListByBookId(bookId)
+        .subscribe((result: any) => {
+          this.notePageLoading = false;
+          if (result && result.length) {
+            this.notePageList = result;
+          } else {
+            this.notePageList = [];
           }
         }, (error: HttpErrorResponse) => {
           this.notePageLoading = false;

@@ -30,12 +30,16 @@ const routes: Routes = [
     loadChildren: () => import('../../modules/recent-page/recent-page.module').then(m => m.RecentPagePageModule)
   },
   {
-    path: 'recent-short',
+    path: 'short',
     loadChildren: () => import('../../modules/recent-short/recent-short.module').then(m => m.RecentShortPageModule)
   },
   {
     path: 'books',
     loadChildren: () => import('../../modules/books/books.module').then(m => m.BooksPageModule)
+  },
+  {
+    path: 'note',
+    loadChildren: () => import('../../modules/note/note.module').then(m => m.NotePageModule)
   },
 ];
 

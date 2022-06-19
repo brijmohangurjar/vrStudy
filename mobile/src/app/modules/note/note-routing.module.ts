@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: NotePage
+  },
+  {
+    path: 'note-detail/:noteDocId',
+    loadChildren: () => import('../note-detail/note-detail.module').then(m => m.NoteDetailPageModule)
   }
 ];
 
@@ -14,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class NotePageRoutingModule {}
+export class NotePageRoutingModule { }
