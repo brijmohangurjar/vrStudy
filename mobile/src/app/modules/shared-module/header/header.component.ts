@@ -44,6 +44,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public ngOnDestroy(): void {
+    // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });

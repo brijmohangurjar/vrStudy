@@ -15,7 +15,7 @@ export class TopicPage implements OnInit, OnDestroy {
   public topicList = [];
   public topicListLoading = true;
   public loopForImageLoading = new Array(15);
-  public originalData:any = [];
+  public originalData: any = [];
 
   private subjectId: string;
   private subscriptions: Subscription[] = [];
@@ -38,6 +38,7 @@ export class TopicPage implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
+    // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });

@@ -30,13 +30,12 @@ export class ShortDetailPage implements OnInit, OnDestroy {
       this.bookId = param.get('bookId');
       if (this.bookId) {
         this.getPageDetailByBookId(this.bookId);
-      } else {
-        this.shortDetailLoading = false;
       }
     });
   }
 
   public ngOnDestroy(): void {
+    // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });

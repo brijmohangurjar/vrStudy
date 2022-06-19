@@ -9,7 +9,7 @@ const routes: Routes = [
     component: RecentPagePage
   },
   {
-    path: 'page-detail/:bookId',
+    path: 'page-detail/:pageId',
     loadChildren: () => import('../page-detail/page-detail.module').then(m => m.PageDetailPageModule)
   }
 ];
