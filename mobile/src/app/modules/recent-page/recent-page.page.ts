@@ -14,6 +14,7 @@ export class RecentPagePage implements OnInit, OnDestroy {
   public pageList = [];
   public recentPageLoading = true;
   public loopForImageLoading = new Array(15);
+  public originalData:any = [];
 
   private subscriptions: Subscription[] = [];
 
@@ -40,6 +41,7 @@ export class RecentPagePage implements OnInit, OnDestroy {
           this.recentPageLoading = false;
           if (result && result.length) {
             this.pageList = result;
+            this.originalData = result;
           } else {
             this.pageList = [];
           }
@@ -49,5 +51,13 @@ export class RecentPagePage implements OnInit, OnDestroy {
           this.toastService.errorToast(error.message);
         })
     );
+  }
+  
+  public onChangeSearch(event) {
+    const column = ['heading'];
+    const searchList = this.originalData.filter((row: any) => {
+      return column.some(key => row.hasOwnProperty(key) && new RegExp(event, 'gi').test(row[key]));
+    });
+    this.pageList = searchList;
   }
 }

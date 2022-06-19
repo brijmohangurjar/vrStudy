@@ -15,6 +15,7 @@ export class TopicPage implements OnInit, OnDestroy {
   public topicList = [];
   public topicListLoading = true;
   public loopForImageLoading = new Array(15);
+  public originalData:any = [];
 
   private subjectId: string;
   private subscriptions: Subscription[] = [];
@@ -50,6 +51,7 @@ export class TopicPage implements OnInit, OnDestroy {
           this.topicListLoading = false;
           if (responseData.length) {
             this.topicList = responseData;
+            this.originalData = responseData;
           } else {
             this.topicList = [];
           }
@@ -69,6 +71,7 @@ export class TopicPage implements OnInit, OnDestroy {
           this.topicListLoading = false;
           if (responseData.length) {
             this.topicList = responseData;
+            this.originalData = responseData;
           } else {
             this.topicList = [];
           }
@@ -78,5 +81,13 @@ export class TopicPage implements OnInit, OnDestroy {
           this.toastService.errorToast(error.message);
         })
     );
+  }
+
+  public onChangeSearch(event) {
+    const column = ['topicName'];
+    const searchList = this.originalData.filter((row: any) => {
+      return column.some(key => row.hasOwnProperty(key) && new RegExp(event, 'gi').test(row[key]));
+    });
+    this.topicList = searchList;
   }
 }

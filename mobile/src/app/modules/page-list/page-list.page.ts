@@ -15,6 +15,7 @@ export class PageListPage implements OnInit, OnDestroy {
   public pageList = [];
   public pageListLoading = true;
   public loopForImageLoading = new Array(15);
+  public originalData:any = [];
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
@@ -27,7 +28,6 @@ export class PageListPage implements OnInit, OnDestroy {
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
-      console.log('param', param);
       this.bookId = param.get('bookId');
       if (this.bookId) {
         this.getPageListByBookId(this.bookId);
@@ -49,6 +49,7 @@ export class PageListPage implements OnInit, OnDestroy {
           this.pageListLoading = false;
           if (responseData.length) {
             this.pageList = responseData;
+            this.originalData = responseData;
           } else {
             this.pageList = [];
           }
@@ -59,4 +60,13 @@ export class PageListPage implements OnInit, OnDestroy {
         })
     );
   }
+
+  public onChangeSearch(event) {
+    const column = ['heading'];
+    const searchList = this.originalData.filter((row: any) => {
+      return column.some(key => row.hasOwnProperty(key) && new RegExp(event, 'gi').test(row[key]));
+    });
+    this.pageList = searchList;
+  }
+
 }

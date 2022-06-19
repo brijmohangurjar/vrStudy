@@ -1,4 +1,5 @@
 <app-header [heading]="'Book'"></app-header>
+<app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
 
 <ion-content>
   <ion-grid class="book_page ion-no-padding">

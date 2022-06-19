@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { NoDataFoundComponent } from './no-data-found/no-data-found.component';
 import { LoadingComponent } from './loading/loading.component';
+import { LocalSearchComponent } from './local-search/local-search.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { LoadingComponent } from './loading/loading.component';
     FooterComponent,
     NoDataFoundComponent,
     LoadingComponent,
+    LocalSearchComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { LoadingComponent } from './loading/loading.component';
     ReactiveFormsModule,
     NoDataFoundComponent,
     LoadingComponent,
+    LocalSearchComponent
   ]
 })
 export class SharedModuleModule { }

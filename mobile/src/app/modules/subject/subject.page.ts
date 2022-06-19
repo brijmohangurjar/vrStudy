@@ -10,12 +10,12 @@ import { ToastService } from 'src/app/service';
   styleUrls: ['./subject.page.scss'],
 })
 export class SubjectPage implements OnInit, OnDestroy {
+  private subscriptions: Subscription[] = [];
 
   public subjectList = [];
   public subjectListLoading = true;
   public loopForImageLoading = new Array(15);
-
-  private subscriptions: Subscription[] = [];
+  public originalData:any = [];
 
   constructor(
     private subjectService: SubjectService,
@@ -32,6 +32,14 @@ export class SubjectPage implements OnInit, OnDestroy {
     });
   }
 
+  public onChangeSearch(event) {
+    const column = ['name'];
+    const searchList = this.originalData.filter((row: any) => {
+      return column.some(key => row.hasOwnProperty(key) && new RegExp(event, 'gi').test(row[key]));
+    });
+    this.subjectList = searchList;
+  }
+
   private getSubjectsList(): void {
     this.subjectListLoading = true;
     this.subscriptions.push(
@@ -40,6 +48,7 @@ export class SubjectPage implements OnInit, OnDestroy {
           this.subjectListLoading = false;
           if (result && result.length) {
             this.subjectList = result;
+            this.originalData = result;
           } else {
             this.subjectList = [];
           }

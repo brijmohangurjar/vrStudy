@@ -15,6 +15,7 @@ export class BooksPage implements OnInit, OnDestroy {
   public bookList = [];
   public bookListLoading = true;
   public loopForImageLoading = new Array(15);
+  public originalData:any = [];
 
   private topicId: string;
   private subscriptions: Subscription[] = [];
@@ -50,6 +51,7 @@ export class BooksPage implements OnInit, OnDestroy {
           this.bookListLoading = false;
           if (responseData.length) {
             this.bookList = responseData;
+            this.originalData = responseData;
           } else {
             this.bookList = [];
           }
@@ -61,6 +63,14 @@ export class BooksPage implements OnInit, OnDestroy {
     );
   }
 
+  public onChangeSearch(event) {
+    const column = ['bookName'];
+    const searchList = this.originalData.filter((row: any) => {
+      return column.some(key => row.hasOwnProperty(key) && new RegExp(event, 'gi').test(row[key]));
+    });
+    this.bookList = searchList;
+  }
+
   private getBookList(): void {
     this.bookListLoading = true;
     this.subscriptions.push(
@@ -69,6 +79,7 @@ export class BooksPage implements OnInit, OnDestroy {
           this.bookListLoading = false;
           if (result && result.length) {
             this.bookList = result;
+            this.originalData = result;
           } else {
             this.bookList = [];
           }
