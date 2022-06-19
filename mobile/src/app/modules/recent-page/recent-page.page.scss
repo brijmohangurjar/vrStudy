@@ -1,1 +1,34 @@
-.recent_page {}
+b{
+    font-weight: bolder;
+}
+
+ion-card{
+    height: 227px;
+    ion-card-header{
+        padding-bottom: 5px;
+    }
+    ion-card-subtitle{
+        display: -webkit-box;
+        min-height: 41.2px;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.625;
+        padding-bottom: 0px;
+    }
+    ion-card-content{
+        display: -webkit-box;
+        min-height: 90.2px;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.625;
+        padding-bottom: 0px;
+    }
+}
+
+.detail{
+    color: #a59f9f;
+}

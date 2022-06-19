@@ -7,8 +7,12 @@
       <ion-col size="4" *ngFor="let item of pageList; let i=index">
         <ion-card routerLink="page-detail/{{item.docId}}" >
           <ion-card-header>
-            <ion-card-subtitle><b>{{item.heading}}</b></ion-card-subtitle>
+            <ion-card-subtitle><b>{{i+1}}. {{item.heading}}</b></ion-card-subtitle>
           </ion-card-header>
+
+          <ion-card-content >
+            <p class="detail" [innerHtml]="item.page">{{item.page}}</p>
+           </ion-card-content>
 
           <ion-row class="card-footer ion-no-margin ion-no-padding">
             <ion-col class="ion-no-margin ion-no-padding">
