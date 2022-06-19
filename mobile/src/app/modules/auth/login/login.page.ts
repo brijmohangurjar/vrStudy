@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +13,7 @@ import { LoadingService, ToastService } from 'src/app/service';
 export class LoginPage implements OnInit {
 
   public loginForm: FormGroup;
+  public loginLoading = false;;
 
   public validationUserMessage = {
     email: [
@@ -23,14 +24,13 @@ export class LoginPage implements OnInit {
       { type: 'required', message: 'please Enter your Password!' },
       { type: 'minlength', message: 'The Password must be at least 5 characters or more' }
     ]
-  }
+  };
 
   constructor(
     private loginService: LoginService,
     private formBuilder: FormBuilder,
     private toastService: ToastService,
     private router: Router,
-    private loadingService: LoadingService,
   ) { }
 
   public ngOnInit(): void {
@@ -40,10 +40,10 @@ export class LoginPage implements OnInit {
 
   public loginSubmit(): void {
     const formValue = this.loginForm.value;
-    this.loadingService.showLoading();
+    this.loginLoading = true;
     this.loginService.logInUser(formValue.email.toLowerCase(), formValue.password)
       .then((logInResponse: any) => {
-        this.loadingService.hideLoading();
+        this.loginLoading = false;
         if (logInResponse.status === 200) {
           this.router.navigate(['base']);
           this.toastService.successToast(logInResponse.message);
@@ -51,8 +51,8 @@ export class LoginPage implements OnInit {
           this.toastService.errorToast(logInResponse.message);
         }
       }, (error: HttpErrorResponse) => {
+        this.loginLoading = false;
         console.log('error', error);
-        this.loadingService.hideLoading();
         this.toastService.errorToast(error.message);
       });
   }
@@ -67,6 +67,6 @@ export class LoginPage implements OnInit {
         Validators.required,
         Validators.minLength(5)
       ]))
-    })
+    });
   }
 }

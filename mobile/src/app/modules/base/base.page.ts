@@ -58,24 +58,24 @@ export class BasePage implements OnInit {
       url: '/base/home/recent-short',
       icon: 'filter-outline',
     },
-    {
-      id: 7,
-      title: 'Profile',
-      url: '/base/profile',
-      icon: 'person-outline',
-    },
+    // {
+    //   id: 7,
+    //   title: 'Profile',
+    //   url: '/base/profile',
+    //   icon: 'person-outline',
+    // },
     {
       id: 8,
       title: 'Share',
       url: null,
       icon: 'share-social-outline',
     },
-    {
-      id: 9,
-      title: 'Help',
-      url: null,
-      icon: 'help-circle-outline',
-    },
+    // {
+    //   id: 9,
+    //   title: 'Help',
+    //   url: null,
+    //   icon: 'help-circle-outline',
+    // },
     {
       id: 10,
       title: 'Logout',
