@@ -1,4 +1,7 @@
-<app-header [heading]="'Page Detail'" [shortUrl] = "pageDetail?.book?.docId" [noteUrl] = "pageDetail?.book?.docId"></app-header>
+<app-header 
+  [heading]="'Page Detail'" 
+  [navigationUrl]="pageDetail?.book?.docId" 
+></app-header>
 
 <ion-content>
   <ion-grid class="ion-grid page_detail">

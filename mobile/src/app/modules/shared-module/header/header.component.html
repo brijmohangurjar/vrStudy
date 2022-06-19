@@ -29,23 +29,34 @@
       ></ion-searchbar>
     </ion-title>
     
-    <!-- <ion-buttons slot="end" *ngIf="showFilter">
-      <ion-icon name="filter-outline"></ion-icon>
-    </ion-buttons> -->
-    <ion-buttons slot="end" fill="clear"  routerLink="short-detail/{{shortUrl}}" *ngIf="shortUrl">
-      <ion-icon style="font-size: 28px; color: red;" name="card-outline"></ion-icon>
+    <ion-buttons class="navigation_button" slot="end" fill="clear" 
+      routerLink="short/{{navigationUrl}}" 
+      *ngIf="navigationUrl"
+    ><ion-icon style="font-size: 28px; color: red;" 
+      name="card-outline"
+    ></ion-icon>
     </ion-buttons>
-    <ion-buttons style="margin: 0 10px;" slot="end" fill="clear" routerLink="note-detail/{{noteUrl}}" *ngIf="noteUrl">
-      <ion-icon style="font-size: 24px; color: red;" name="bookmarks-outline"></ion-icon>
+
+    <ion-buttons class="navigation_button" style="margin: 0 10px;" 
+      slot="end" fill="clear" routerLink="note/{{navigationUrl}}" 
+      *ngIf="navigationUrl">
+      <ion-icon style="font-size: 24px; color: red;" 
+        name="bookmarks-outline"
+      ></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <div style="padding:10px 0px; font-size: 14px;"  *ngIf="searchBar">
-  <!-- <p class="ion-no-margin ion-no-padding pt-4" style="padding-left: 15px;">GO TO..</p><hr> -->
   <ion-list *ngIf="searchValue">
-    <ion-item lines="none" *ngFor="let item of pageList" (click) = "onSelect(item)">
-      <ion-icon style="font-size: 35px; margin-right: 5px;"  slot="start" name="document-outline"></ion-icon>  <span [innerHTML]="transform(item.heading, searchValue)"></span>
+    <ion-item lines="none" *ngFor="let item of pageList" 
+      (click)="onSelect(item)">
+      <ion-icon style="font-size: 35px; margin-right: 5px;"  
+        slot="start" name="document-outline"
+      ></ion-icon> 
+      <span [innerHTML]="transform(item.heading, searchValue)"></span>
     </ion-item>
+
   </ion-list>
   <div class="" *ngIf="!pageList.length && searchValue">
     <app-no-data-found [message]="'No Result Found'"></app-no-data-found>

@@ -1,5 +1,12 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
 import { NavigationService, ToastService } from 'src/app/service';
@@ -17,10 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   @Input() userDetail: any;
   @Input() heading: any;
   @Input() searchBar: any;
-  @Input() shortUrl: any;
-  @Input() noteUrl: any;
-
-
+  @Input() navigationUrl: any;
 
   public searchValue = '';
   public pageList = [];
@@ -95,7 +99,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
           this.originalData = [];
         }
       }, (error: HttpErrorResponse) => {
-        console.log('error', error)
+        console.log('error', error);
         this.toastService.errorToast(error.message);
       });
   }
