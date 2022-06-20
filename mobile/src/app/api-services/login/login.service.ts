@@ -38,22 +38,8 @@ export class LoginService {
     }
   }
 
-  public async getUserByAuthIdWithPromise(uid: string): Promise<any> {
-    this.currentUserUid = uid;
-    try {
-      // tslint:disable-next-line: max-line-length
-      return this.angularFirestore.collection('Users', ref =>
-        ref.where('uid', '==', uid)).get()
-        .toPromise().then(res => res.docs.map(data => {
-          const id = data.id;
-          const info: any = data.data();
-          // const userData: any = { docId: id, ...info };
-          // this.userData = userData;
-          return { docId: id, ...info };
-        }));
-    } catch (e) {
-      return e;
-    }
+  public setUserId(uid: string) {
+    if (uid) { this.currentUserUid = uid; }
   }
 
   public logOutUser() {

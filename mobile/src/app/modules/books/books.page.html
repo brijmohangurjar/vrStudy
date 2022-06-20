@@ -1,25 +1,37 @@
 <app-header [heading]="'Book'"></app-header>
-
+<app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
+<ion-item lines="none" *ngIf = "bookList && bookList.length">
+  <ion-icon slot="start" style="margin-inline-end: 9px; color: black;" class="help-icon" name="receipt-outline">
+  </ion-icon>
+  <span class="bed_come"><b>{{bookList[0].topic.topicName}}</b> </span> <span>({{bookList.length}})</span>
+</ion-item>
 <ion-content>
   <ion-grid class="book_page ion-no-padding">
-    <ion-row *ngIf="bookList.length">
+    <ion-row *ngIf="bookList.length && !bookListLoading;">
       <ion-col size="4" *ngFor="let item of bookList; let i=index">
-        <ion-card style="margin: 10px;" routerLink="page-detail/{{item.docId}}">
+        <ion-card routerLink="page-list/{{item.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.bookName}}</b></ion-card-subtitle>
           </ion-card-header>
   
           <ion-row class="card-footer ion-no-margin ion-no-padding">
             <ion-col class="ion-no-margin ion-no-padding">
-              <p style="margin-bottom: 0px; color: #b7b7b7;">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+              <p>{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
             </ion-col>
           </ion-row>
         </ion-card>
       </ion-col>
     </ion-row>
     
-    <div class="" *ngIf="!bookList.length">
+    <div class="" *ngIf="!bookList.length && !bookListLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
+    </div>
+
+    <div *ngIf="bookListLoading">
+      <app-loading 
+        [loopForImageLoading]="loopForImageLoading"
+        [showCardLoading]="true"
+      ></app-loading>
     </div>
   </ion-grid>
 </ion-content>

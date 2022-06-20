@@ -1,7 +1,14 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
-import { HomeService } from 'src/app/api-services';
+import { PageDetailService } from 'src/app/api-services';
 import { NavigationService, ToastService } from 'src/app/service';
 import { Location } from '@angular/common';
 
@@ -17,6 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   @Input() userDetail: any;
   @Input() heading: any;
   @Input() searchBar: any;
+  @Input() navigationUrl: any;
 
   public searchValue = '';
   public pageList = [];
@@ -25,7 +33,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private homeService: HomeService,
+    private pageDetailService: PageDetailService,
     private toastService: ToastService,
     private navigationService: NavigationService,
     private location: Location
@@ -44,6 +52,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public ngOnDestroy(): void {
+    // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });
@@ -62,16 +71,17 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
     this.pageList = searchList;
   }
 
-  public onSelect(item) {
-    this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.book.docId}/page-detail/${item.book.docId}`);
+  public onSelect(item: any) {
+    // eslint-disable-next-line max-len
+    this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.topic.docId}/page-list/${item.book.docId}/page-detail/${item.docId}`);
   }
 
-  transform(value: any, args: any): any {
+  public transform(value: any, args: any): any {
     if (value) {
       const array = args.split(' ');
       if (!array && !array.length) { return value; }
       for (const text of array) {
-        var reText = new RegExp(text, 'gi');
+        const reText = new RegExp(text, 'gi');
         value = value.replace(reText, '<b>' + text + '</b>');
       }
       return value;
@@ -79,7 +89,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private getPageList(): void {
-    this.homeService.getPageList()
+    this.pageDetailService.getAllPageList()
       .subscribe((result: any) => {
         if (result && result.length) {
           this.pageList = result;
@@ -89,7 +99,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
           this.originalData = [];
         }
       }, (error: HttpErrorResponse) => {
-        console.log('error', error)
+        console.log('error', error);
         this.toastService.errorToast(error.message);
       });
   }

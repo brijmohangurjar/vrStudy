@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NoteService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-note',
@@ -12,48 +12,71 @@ import { LoadingService, ToastService } from 'src/app/service';
 })
 export class NotePage implements OnInit, OnDestroy {
 
-  public noteDetail: any;
+  public notePageList = [];
+  public notePageLoading = true;
+  public loopForImageLoading = new Array(15);
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private loadingService: LoadingService,
     private noteService: NoteService,
     private toastService: ToastService,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.bookId = param.get('bookId');
       if (this.bookId) {
-        this.getNoteDetailByBookId(this.bookId);
+        this.getNoteListByBookId(this.bookId);
+      } else {
+        this.getAllPageList();
       }
     });
   }
 
   public ngOnDestroy(): void {
+    // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });
   }
 
-  private getNoteDetailByBookId(bookId: string): void {
-    this.loadingService.showLoading();
+  private getAllPageList(): void {
+    this.notePageLoading = true;
     this.subscriptions.push(
-      this.noteService.getNoteDetailByBookId(bookId)
-        .subscribe((responseData: any) => {
-          this.loadingService.hideLoading();
-          if (responseData.length) {
-            this.noteDetail = responseData[0];
+      this.noteService.getAllNoteList()
+        .subscribe((result: any) => {
+          this.notePageLoading = false;
+          if (result && result.length) {
+            this.notePageList = result;
           } else {
-            this.noteDetail = null;
+            this.notePageList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.notePageLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
-          this.loadingService.hideLoading();
+        })
+    );
+  }
+
+  private getNoteListByBookId(bookId: string): void {
+    this.notePageLoading = true;
+    this.subscriptions.push(
+      this.noteService.getNoteListByBookId(bookId)
+        .subscribe((result: any) => {
+          this.notePageLoading = false;
+          if (result && result.length) {
+            this.notePageList = result;
+          } else {
+            this.notePageList = [];
+          }
+        }, (error: HttpErrorResponse) => {
+          this.notePageLoading = false;
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
         })
     );
   }

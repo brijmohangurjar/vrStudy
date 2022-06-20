@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TopicService } from 'src/app/api-services';
-import { LoadingService, ToastService } from 'src/app/service';
+import { ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-topic',
@@ -13,6 +13,9 @@ import { LoadingService, ToastService } from 'src/app/service';
 export class TopicPage implements OnInit, OnDestroy {
 
   public topicList = [];
+  public topicListLoading = true;
+  public loopForImageLoading = new Array(15);
+  public originalData: any = [];
 
   private subjectId: string;
   private subscriptions: Subscription[] = [];
@@ -20,7 +23,6 @@ export class TopicPage implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private topicService: TopicService,
-    private loadingService: LoadingService,
     private toastService: ToastService,
   ) { }
 
@@ -36,46 +38,57 @@ export class TopicPage implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
+    // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });
   }
 
   private getTopicListBySubjectId(subjectId: string): void {
-    this.loadingService.showLoading();
+    this.topicListLoading = true;
     this.subscriptions.push(
       this.topicService.getTopicListBySubjectId(subjectId)
         .subscribe((responseData: any) => {
-          this.loadingService.hideLoading();
+          this.topicListLoading = false;
           if (responseData.length) {
             this.topicList = responseData;
+            this.originalData = responseData;
           } else {
             this.topicList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.topicListLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
-          this.loadingService.hideLoading();
         })
     );
   }
 
   private getAllTopicList(): void {
-    this.loadingService.showLoading();
+    this.topicListLoading = true;
     this.subscriptions.push(
       this.topicService.getAllTopicList()
         .subscribe((responseData: any) => {
-          this.loadingService.hideLoading();
+          this.topicListLoading = false;
           if (responseData.length) {
             this.topicList = responseData;
+            this.originalData = responseData;
           } else {
             this.topicList = [];
           }
         }, (error: HttpErrorResponse) => {
+          this.topicListLoading = false;
           console.log('error', error);
           this.toastService.errorToast(error.message);
-          this.loadingService.hideLoading();
         })
     );
+  }
+
+  public onChangeSearch(event) {
+    const column = ['topicName'];
+    const searchList = this.originalData.filter((row: any) => {
+      return column.some(key => row.hasOwnProperty(key) && new RegExp(event, 'gi').test(row[key]));
+    });
+    this.topicList = searchList;
   }
 }

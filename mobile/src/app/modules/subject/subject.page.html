@@ -1,17 +1,18 @@
 <app-header [heading]="'Subject'"></app-header>
+<app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
 
 <ion-content>
 <ion-grid class="subject_page ion-no-padding">
-  <ion-row *ngIf="subjectList.length">
+  <ion-row *ngIf="subjectList.length && !subjectListLoading;">
     <ion-col size="4" *ngFor="let item of subjectList; let i=index">
-      <ion-card style="margin: 10px;" routerLink="topic/{{item.docId}}" >
+      <ion-card routerLink="topic/{{item.docId}}" >
         <ion-card-header>
           <ion-card-subtitle><b>{{item.name}}</b></ion-card-subtitle>
         </ion-card-header>
   
         <ion-row class="card-footer ion-no-margin ion-no-padding">
           <ion-col class="ion-no-margin ion-no-padding">
-            <p style="margin-bottom: 0px; color: #b7b7b7;">
+            <p>
               {{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}
             </p>
           </ion-col>
@@ -20,8 +21,17 @@
     </ion-col>
   </ion-row>
   
-  <div class="" *ngIf="!subjectList.length">
+  <div class="" *ngIf="!subjectList.length && !subjectListLoading">
     <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
+  </div>
+
+  <div *ngIf="subjectListLoading">
+    <app-loading 
+      [loopForImageLoading]="loopForImageLoading"
+      [showCardLoading]="true"
+    ></app-loading>
   </div>
 </ion-grid>
 </ion-content>
+<app-footer [showToggleButton]="true" [heading]="'Home'"></app-footer>
+

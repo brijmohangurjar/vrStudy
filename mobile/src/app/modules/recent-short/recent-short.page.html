@@ -2,17 +2,16 @@
 
 <ion-content>
   <ion-grid class="recent_short_page ion-no-padding">
-    <ion-row *ngIf="recentShort.length">
+    <ion-row *ngIf="recentShort.length && !recentShortLoading;">
       <ion-col size="4" *ngFor="let item of recentShort; let i=index">
-        <ion-card style="margin: 10px;" 
-          routerLink="short-detail/{{item.book.docId}}">
+        <ion-card routerLink="short-detail/{{item.book.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.heading}}</b></ion-card-subtitle>
           </ion-card-header>
 
           <ion-row class="card-footer ion-no-margin ion-no-padding">
             <ion-col class="ion-no-margin ion-no-padding">
-              <p style="margin-bottom: 0px; color: #b7b7b7;">
+              <p>
                 {{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}
               </p>
             </ion-col>
@@ -21,8 +20,16 @@
       </ion-col>
     </ion-row>
 
-    <div class="" *ngIf="!recentShort.length">
+    <div class="" *ngIf="!recentShort.length && !recentShortLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
+    </div>
+
+    <div *ngIf="recentShortLoading">
+      <app-loading 
+        [showCardLoading]="true"
+        [loopForImageLoading]="loopForImageLoading"
+      ></app-loading>
     </div>
   </ion-grid>
 </ion-content>
+<app-footer [showToggleButton]="true" [heading]="'Home'"></app-footer>

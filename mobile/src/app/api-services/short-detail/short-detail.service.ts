@@ -16,12 +16,23 @@ export class ShortDetailService {
     return this.angularFirestore.collection('short', ref =>
       ref.where('book.docId', '==', bookId).orderBy('createDate', 'desc'))
       .snapshotChanges()
-      .pipe(map((actions) => {
-        return actions.map(doc => {
-          const data: any = doc.payload.doc.data();
-          const docId = doc.payload.doc.id;
-          return { docId, ...data };
-        });
-      }));
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
+      })
+      ));
+  }
+
+  public getShortList() {
+    return this.angularFirestore.collection('short', ref =>
+      ref.orderBy('createDate', 'desc')
+    ).snapshotChanges().pipe(map((actions) => actions.map(doc => {
+      const data: any = doc.payload.doc.data();
+      const docId = doc.payload.doc.id;
+      return { docId, ...data };
+    })
+    )
+    );
   }
 }

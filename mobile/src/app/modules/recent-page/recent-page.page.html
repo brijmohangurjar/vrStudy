@@ -1,17 +1,25 @@
-<app-header [heading]="'Recent Page'"></app-header>
-
+<app-header [heading]="'Page'"></app-header>
+<app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
+<!-- <ion-item lines="none" *ngIf = "pageList && pageList.length">
+  <ion-icon slot="start" style="margin-inline-end: 9px; color: black;" class="help-icon" name="book-outline">
+  </ion-icon>
+  <span class="bed_come"><b>{{pageList[0].book.bookName}}</b> </span> <span>({{pageList.length}})</span>
+</ion-item> -->
 <ion-content>
   <ion-grid class="recent_page ion-no-padding">
-    <ion-row *ngIf="pageList.length">
-      <ion-col size="4" *ngFor="let item of pageList; let i=index">
-        <ion-card style="margin: 10px;" routerLink="page-detail/{{item.book.docId}}" >
+    <ion-row *ngIf="pageList.length && !recentPageLoading;">
+      <ion-col size="6" *ngFor="let item of pageList; let i=index">
+        <ion-card routerLink="page-detail/{{item.docId}}">
           <ion-card-header>
-            <ion-card-subtitle><b>{{item.heading}}</b></ion-card-subtitle>
+            <ion-card-subtitle><b>{{i+1}}. {{item.heading}}</b></ion-card-subtitle>
           </ion-card-header>
+          <ion-card-content >
+           <p class="detail" [innerHtml]="item.page">{{item.page}}</p>
+          </ion-card-content>
 
           <ion-row class="card-footer ion-no-margin ion-no-padding">
             <ion-col class="ion-no-margin ion-no-padding">
-              <p style="margin-bottom: 0px; color: #b7b7b7;">
+              <p>
                 {{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}
               </p>
             </ion-col>
@@ -20,8 +28,16 @@
       </ion-col>
     </ion-row>
 
-    <div class="" *ngIf="!pageList.length">
+    <div class="" *ngIf="!pageList.length && !recentPageLoading">
       <app-no-data-found [message]="'No Data Found'"></app-no-data-found>
+    </div>
+    
+    <div *ngIf="recentPageLoading">
+      <app-loading 
+        [loopForImageLoading]="loopForImageLoading" 
+        [showCardLoading]="true"
+      ></app-loading>
     </div>
   </ion-grid>
 </ion-content>
+<app-footer [showToggleButton]="true" [heading]="'Home'"></app-footer>
