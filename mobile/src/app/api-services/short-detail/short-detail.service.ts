@@ -35,4 +35,15 @@ export class ShortDetailService {
     )
     );
   }
+  public getShortListByLimit() {
+    return this.angularFirestore.collection('short', ref =>
+      ref.orderBy('createDate', 'desc').limit(20)
+    ).snapshotChanges().pipe(map((actions) => actions.map(doc => {
+      const data: any = doc.payload.doc.data();
+      const docId = doc.payload.doc.id;
+      return { docId, ...data };
+    })
+    )
+    );
+  }
 }

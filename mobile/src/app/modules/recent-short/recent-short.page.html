@@ -1,4 +1,5 @@
 <app-header [heading]="'Recent Short'"></app-header>
+<app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
 
 <ion-content>
   <ion-grid class="recent_short_page ion-no-padding">

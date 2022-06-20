@@ -1,4 +1,5 @@
 <app-header [heading]="'Notes'"></app-header>
+<app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
 
 <ion-content>
   <ion-grid class="note_page ion-no-padding">

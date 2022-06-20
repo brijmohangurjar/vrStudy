@@ -53,6 +53,7 @@ export class RecentShortPage implements OnInit, OnDestroy {
           this.recentShortLoading = false;
           if (result && result.length) {
             this.recentShort = result;
+            this.originalData = result;
           } else {
             this.recentShort = [];
           }
@@ -72,6 +73,7 @@ export class RecentShortPage implements OnInit, OnDestroy {
           this.recentShortLoading = false;
           if (result && result.length) {
             this.recentShort = result;
+            this.originalData = result;
           } else {
             this.recentShort = [];
           }

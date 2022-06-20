@@ -129,7 +129,7 @@ export class HomePage implements OnInit, OnDestroy {
   private getPageList(): void {
     this.pageListLoading = true;
     this.subscriptions.push(
-      this.pageDetailService.getAllPageList()
+      this.pageDetailService.getPageListByLimit()
         .subscribe((result: any) => {
           this.pageListLoading = false;
           if (result && result.length) {
@@ -148,7 +148,7 @@ export class HomePage implements OnInit, OnDestroy {
   private getShortList(): void {
     this.shortListLoading = true;
     this.subscriptions.push(
-      this.shortDetailService.getShortList()
+      this.shortDetailService.getShortListByLimit()
         .subscribe((result: any) => {
           this.shortListLoading = false;
           if (result && result.length) {
@@ -167,7 +167,7 @@ export class HomePage implements OnInit, OnDestroy {
   private getBookList(): void {
     this.bookListLoading = true;
     this.subscriptions.push(
-      this.bookService.getBookList()
+      this.bookService.getBookListByLimit()
         .subscribe((result: any) => {
           this.bookListLoading = false;
           if (result && result.length) {
@@ -186,7 +186,7 @@ export class HomePage implements OnInit, OnDestroy {
   private getTopicList(): void {
     this.topicListLoading = true;
     this.subscriptions.push(
-      this.topicService.getAllTopicList()
+      this.topicService.getAllTopicListByList()
         .subscribe((result: any) => {
           this.topicListLoading = false;
           if (result && result.length) {
@@ -205,7 +205,7 @@ export class HomePage implements OnInit, OnDestroy {
   private getNoteList(): void {
     this.noteListLoading = true;
     this.subscriptions.push(
-      this.noteService.getAllNoteList()
+      this.noteService.getNoteListByLimit()
         .subscribe((result: any) => {
           console.log('result', result);
           this.noteListLoading = false;
