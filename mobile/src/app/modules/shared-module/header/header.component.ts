@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import {
   Component,
   Input,
@@ -8,8 +7,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { BookService, NoteService, PageDetailService, ShortDetailService, TopicService } from 'src/app/api-services';
-import { NavigationService, ToastService } from 'src/app/service';
+import { CommonService, NavigationService } from 'src/app/service';
 import { Location } from '@angular/common';
 
 @Component({
@@ -43,14 +41,9 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private pageDetailService: PageDetailService,
-    private toastService: ToastService,
     private navigationService: NavigationService,
     private location: Location,
-    private bookService: BookService,
-    private topicService: TopicService,
-    private noteService: NoteService,
-    private shortDetailService: ShortDetailService
+    private commonService: CommonService
   ) { }
 
   public ngOnChanges(changes: SimpleChanges) {
@@ -131,87 +124,115 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private getPageList(): void {
-    this.pageDetailService.getAllPageList()
-      .subscribe((result: any) => {
-        if (result && result.length) {
-          this.pageList = result;
-          this.originalData = result;
-        } else {
-          this.pageList = [];
-          this.originalData = [];
-        }
-      }, (error: HttpErrorResponse) => {
-        console.log('error', error);
-        this.toastService.errorToast(error.message);
-      });
+    this.commonService.pageData.subscribe(res => {
+      this.pageList = res;
+      this.originalData = res;
+    });
+    // this.pageDetailService.getAllPageList()
+    //   .subscribe((result: any) => {
+    //     if (result && result.length) {
+    //       this.pageList = result;
+    //       this.originalData = result;
+    //     } else {
+    //       this.pageList = [];
+    //       this.originalData = [];
+    //     }
+    //   }, (error: HttpErrorResponse) => {
+    //     console.log('error', error);
+    //     this.toastService.errorToast(error.message);
+    //   });
   }
 
   private getBookList(): void {
-    this.subscriptions.push(
-      this.bookService.getBookList()
-        .subscribe((result: any) => {
-          if (result && result.length) {
-            this.bookList = result;
-            this.originalBookData = result;
-          } else {
-            this.bookList = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
+    this.commonService.bookData.subscribe(res => {
+      if(res){
+        this.bookList = res;
+        this.originalBookData = res;
+      }
+    });
+    // this.subscriptions.push(
+    //   this.bookService.getBookList()
+    //     .subscribe((result: any) => {
+    //       if (result && result.length) {
+    //         this.bookList = result;
+    //         this.originalBookData = result;
+    //       } else {
+    //         this.bookList = [];
+    //       }
+    //     }, (error: HttpErrorResponse) => {
+    //       console.log('error', error);
+    //       this.toastService.errorToast(error.message);
+    //     })
+    // );
   }
 
   private getTopicList(): void {
-    this.subscriptions.push(
-      this.topicService.getAllTopicList()
-        .subscribe((result: any) => {
-          if (result && result.length) {
-            this.topicList = result;
-            this.originalTopicData = result;
-          } else {
-            this.topicList = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
+    this.commonService.topicData.subscribe(res => {
+      if(res) {
+        this.topicList = res;
+        this.originalTopicData = res;
+      }
+    });
+    // this.subscriptions.push(
+    //   this.topicService.getAllTopicList()
+    //     .subscribe((result: any) => {
+    //       if (result && result.length) {
+    //         this.topicList = result;
+    //         this.originalTopicData = result;
+    //       } else {
+    //         this.topicList = [];
+    //       }
+    //     }, (error: HttpErrorResponse) => {
+    //       console.log('error', error);
+    //       this.toastService.errorToast(error.message);
+    //     })
+    // );
   }
 
   private getNoteList(): void {
-    this.subscriptions.push(
-      this.noteService.getAllNoteList()
-        .subscribe((result: any) => {
-          if (result && result.length) {
-            this.noteList = result;
-            this.originalNoteData = result;
-          } else {
-            this.noteList = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
+    this.commonService.noteData.subscribe(res => {
+      if(res) {
+        this.noteList = res;
+        this.originalNoteData = res;
+      }
+    });
+    // this.subscriptions.push(
+    //   this.noteService.getAllNoteList()
+    //     .subscribe((result: any) => {
+    //       if (result && result.length) {
+    //         this.noteList = result;
+    //         this.originalNoteData = result;
+    //       } else {
+    //         this.noteList = [];
+    //       }
+    //     }, (error: HttpErrorResponse) => {
+    //       console.log('error', error);
+    //       this.toastService.errorToast(error.message);
+    //     })
+    // );
   }
 
   private getShortList(): void {
-    this.subscriptions.push(
-      this.shortDetailService.getShortList()
-        .subscribe((result: any) => {
-          if (result && result.length) {
-            this.shortList = result;
-            this.originalShortData = result;
-          } else {
-            this.shortList = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
+    this.commonService.shortData.subscribe(res => {
+      if(res) {
+        this.shortList = res;
+        this.originalShortData = res;
+      }
+    });
+    // this.subscriptions.push(
+    //   this.shortDetailService.getShortList()
+    //     .subscribe((result: any) => {
+    //       if (result && result.length) {
+    //         this.shortList = result;
+    //         this.originalShortData = result;
+    //       } else {
+    //         this.shortList = [];
+    //       }
+    //     }, (error: HttpErrorResponse) => {
+    //       console.log('error', error);
+    //       this.toastService.errorToast(error.message);
+    //     })
+    // );
   }
 
 }

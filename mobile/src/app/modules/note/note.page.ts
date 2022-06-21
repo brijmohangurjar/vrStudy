@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NoteService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { CommonService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-note',
@@ -24,6 +24,7 @@ export class NotePage implements OnInit, OnDestroy {
     private noteService: NoteService,
     private toastService: ToastService,
     private activatedRoute: ActivatedRoute,
+    private commonService: CommonService
   ) { }
 
   public ngOnInit() {
@@ -32,7 +33,7 @@ export class NotePage implements OnInit, OnDestroy {
       if (this.bookId) {
         this.getNoteListByBookId(this.bookId);
       } else {
-        this.getAllPageList();
+        this.getAllNoteList();
       }
     });
   }
@@ -44,24 +45,31 @@ export class NotePage implements OnInit, OnDestroy {
     });
   }
 
-  private getAllPageList(): void {
-    this.notePageLoading = true;
-    this.subscriptions.push(
-      this.noteService.getAllNoteList()
-        .subscribe((result: any) => {
-          this.notePageLoading = false;
-          if (result && result.length) {
-            this.notePageList = result;
-            this.originalData = result;
-          } else {
-            this.notePageList = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          this.notePageLoading = false;
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
+  private getAllNoteList(): void {
+    this.commonService.noteData.subscribe(res => {
+      if(res) {
+        this.notePageList = res;
+        this.originalData = res;
+        this.notePageLoading = false;
+      }
+    });
+    // this.notePageLoading = true;
+    // this.subscriptions.push(
+    //   this.noteService.getAllNoteList()
+    //     .subscribe((result: any) => {
+    //       this.notePageLoading = false;
+    //       if (result && result.length) {
+    //         this.notePageList = result;
+    //         this.originalData = result;
+    //       } else {
+    //         this.notePageList = [];
+    //       }
+    //     }, (error: HttpErrorResponse) => {
+    //       this.notePageLoading = false;
+    //       console.log('error', error);
+    //       this.toastService.errorToast(error.message);
+    //     })
+    // );
   }
 
   private getNoteListByBookId(bookId: string): void {

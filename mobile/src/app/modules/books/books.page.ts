@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BookService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { CommonService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-books',
@@ -24,15 +24,22 @@ export class BooksPage implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private bookService: BookService,
     private toastService: ToastService,
+    private commonService: CommonService
   ) { }
 
   public ngOnInit() {
+    this.commonService.bookData.subscribe(res => {
+      if(res){
+        this.bookList = res;
+        this.originalData = res;
+        this.bookListLoading = false;
+      }
+
+    });
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.topicId = param.get('topicId');
       if (this.topicId) {
         this.getBookListByTopicId(this.topicId);
-      } else {
-        this.getBookList();
       }
     });
   }
@@ -72,23 +79,23 @@ export class BooksPage implements OnInit, OnDestroy {
     this.bookList = searchList;
   }
 
-  private getBookList(): void {
-    this.bookListLoading = true;
-    this.subscriptions.push(
-      this.bookService.getBookList()
-        .subscribe((result: any) => {
-          this.bookListLoading = false;
-          if (result && result.length) {
-            this.bookList = result;
-            this.originalData = result;
-          } else {
-            this.bookList = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          this.bookListLoading = false;
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
-  }
+  // private getBookList(): void {
+  //   this.bookListLoading = true;
+  //   this.subscriptions.push(
+  //     this.bookService.getBookList()
+  //       .subscribe((result: any) => {
+  //         this.bookListLoading = false;
+  //         if (result && result.length) {
+  //           this.bookList = result;
+  //           this.originalData = result;
+  //         } else {
+  //           this.bookList = [];
+  //         }
+  //       }, (error: HttpErrorResponse) => {
+  //         this.bookListLoading = false;
+  //         console.log('error', error);
+  //         this.toastService.errorToast(error.message);
+  //       })
+  //   );
+  // }
 }
