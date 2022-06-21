@@ -6,24 +6,6 @@
 <ion-content>
   <ion-grid class="ion-grid page_detail">
     <div class="" *ngIf="pageDetail && !pageDetailLoading">
-      <!-- <ion-row>
-        <ion-col size="6" class="ion-no-padding">
-          <ion-button fill="clear" class="ion-no-margin" 
-            routerLink="short/{{pageDetail.book.docId}}">
-            <i class="fa-calendar-alt fas" aria-hidden="true"></i>
-            <span>Short</span>
-          </ion-button>
-        </ion-col>
-      
-        <ion-col size="6" class="ion-no-padding ion-text-end">
-          <ion-button fill="clear" class="ion-no-margin" 
-            routerLink="note/{{pageDetail.book.docId}}">
-            <i class="fa fa-heart" aria-hidden="true"></i>
-            <span>Note</span>
-          </ion-button>
-        </ion-col>
-      </ion-row> -->
-
       <ion-row>
         <ion-col size="12" class="heading pt-3 pb-2">
           <ion-label>{{pageDetail?.heading}}</ion-label>
