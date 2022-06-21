@@ -106,9 +106,27 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
     this.shortList = searchShortList;
   }
 
-  public onSelect(item: any) {
+  public onSelect(item: any, key) {
+    console.log(item,'item');
     // eslint-disable-next-line max-len
-    this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.topic.docId}/page-list/${item.book.docId}/page-detail/${item.docId}`);
+    switch (key) {
+      case 'Page':
+        this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.topic.docId}/page-list/${item.book.docId}/page-detail/${item.docId}`);
+        break;
+      case 'Book':
+        this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.topic.docId}/page-list/${item.docId}`);
+        break;
+      case 'Topic':
+        this.navigationService.navigateByUrl(`/base/home/topic/${item.subject.docId}/book/${item.docId}`);
+        break;
+      case 'Note':
+        this.navigationService.navigateByUrl(`base/home/note/note-detail/${item.docId}`);
+        break;
+      case 'Short':
+        this.navigationService.navigateByUrl(`base/home/short/short-detail/${item.docId}`);
+        break;
+          
+    }
   }
 
   public transform(value: any, args: any): any {
@@ -125,8 +143,11 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
 
   private getPageList(): void {
     this.commonService.pageData.subscribe(res => {
-      this.pageList = res;
-      this.originalData = res;
+      if(res){
+        this.pageList = res;
+        this.originalData = res;
+      }
+     
     });
     // this.pageDetailService.getAllPageList()
     //   .subscribe((result: any) => {

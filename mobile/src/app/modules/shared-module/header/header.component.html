@@ -49,28 +49,28 @@
 <div class="search_list" *ngIf="searchBar">
   <!-- <p class="ion-no-margin ion-no-padding pt-4" style="padding-left: 15px;">GO TO..</p><hr> -->
   <ion-list *ngIf="searchValue">
-    <ion-item lines="none" *ngFor="let item of pageList" (click) = "onSelect(item)">
+    <ion-item lines="none" *ngFor="let item of pageList" (click) = "onSelect(item, 'Page')">
       <ion-icon style="font-size: 35px; margin-right: 5px;"  slot="start" name="reader-outline"></ion-icon>  <span [innerHTML]="transform(item.heading, searchValue)"></span>
     </ion-item>
 
   </ion-list>
   <ion-list *ngIf="searchValue">
-    <ion-item lines="none" *ngFor="let item of bookList" (click) = "onSelect(item)">
+    <ion-item lines="none" *ngFor="let item of bookList" (click) = "onSelect(item,'Book')">
       <ion-icon style="font-size: 35px; margin-right: 5px;"  slot="start" name="book-outline"></ion-icon>  <span [innerHTML]="transform(item.bookName, searchValue)"></span>
     </ion-item>
   </ion-list>
   <ion-list *ngIf="searchValue">
-    <ion-item lines="none" *ngFor="let item of topicList" (click) = "onSelect(item)">
+    <ion-item lines="none" *ngFor="let item of topicList" (click) = "onSelect(item,'Topic')">
       <ion-icon style="font-size: 35px; margin-right: 5px;margin-left: -4px;"  slot="start" name="receipt-outline"></ion-icon>  <span [innerHTML]="transform(item.topicName, searchValue)"></span>
     </ion-item>
   </ion-list>
   <ion-list *ngIf="searchValue">
-    <ion-item lines="none" *ngFor="let item of noteList" (click) = "onSelect(item)">
+    <ion-item lines="none" *ngFor="let item of noteList" (click) = "onSelect(item,'Note')">
       <ion-icon style="font-size: 35px; margin-right: 5px;margin-left: -4px;"  slot="start" name="bookmarks-outline"></ion-icon>  <span [innerHTML]="transform(item.heading, searchValue)"></span>
     </ion-item>
   </ion-list>
   <ion-list *ngIf="searchValue">
-    <ion-item lines="none" *ngFor="let item of shortList" (click) = "onSelect(item)">
+    <ion-item lines="none" *ngFor="let item of shortList" (click) = "onSelect(item,'Short')">
       <ion-icon style="font-size: 35px; margin-right: 5px;margin-left: -4px;"  slot="start" name="card-outline"></ion-icon>  <span [innerHTML]="transform(item.heading, searchValue)"></span>
     </ion-item>
   </ion-list>
