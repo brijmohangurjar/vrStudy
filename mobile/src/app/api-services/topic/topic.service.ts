@@ -25,6 +25,19 @@ export class TopicService {
       }));
   }
 
+  public getAllTopicListByList(): Observable<any> {
+    return this.angularFirestore.collection('topic', ref =>
+      ref.orderBy('createDate', 'desc').limit(20)
+    ).snapshotChanges()
+      .pipe(map((actions) => {
+        return actions.map(doc => {
+          const data: any = doc.payload.doc.data();
+          const docId = doc.payload.doc.id;
+          return { docId, ...data };
+        });
+      }));
+  }
+
   public getTopicListBySubjectId(subjectId: string): Observable<any> {
     return this.angularFirestore.collection('topic', ref =>
       ref.where('subject.docId', '==', subjectId)

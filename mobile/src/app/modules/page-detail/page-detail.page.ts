@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
 import { ToastService } from 'src/app/service';
@@ -23,6 +23,7 @@ export class PageDetailPage implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private pageDetailService: PageDetailService,
     private toastService: ToastService,
+    private router: Router,
   ) { }
 
   public ngOnInit() {
@@ -49,6 +50,7 @@ export class PageDetailPage implements OnInit, OnDestroy {
           this.pageDetailLoading = false;
           if (responseData) {
             this.pageDetail = responseData;
+            this.setBreadcumb(responseData);
           } else {
             this.pageDetail = [];
           }
@@ -58,5 +60,30 @@ export class PageDetailPage implements OnInit, OnDestroy {
           this.toastService.errorToast(error.message);
         })
     );
+  }
+
+  private setBreadcumb(pageDetail: any): void {
+    const router = this.router.url.split('/');
+    console.log('router', router);
+    console.log('pageDetail', pageDetail);
+    if (router[3] === 'topic'
+      && router[5] === 'book' && router[7] === 'page-list'
+      && router[9] === 'page-detail'
+    ) {
+      console.log('By Home Subject Slider');
+    } else if (router[3] === 'subject' && router[4] === 'topic'
+      && router[6] === 'book' && router[8] === 'page-list'
+      && router[10] === 'page-detail') {
+      console.log('By SUbject Page');
+    } else if (router[3] === 'topic' && router[4] === 'book'
+      && router[6] === 'page-list'
+      && router[8] === 'page-detail') {
+      console.log('By Home Recent Page Slider');
+    } else if (router[3] === 'books' && router[4] === 'page-list'
+      && router[6] === 'page-detail') {
+      console.log('By Home Recent Book Slider');
+    } else if (router[3] === 'recent-page' && router[4] === 'page-detail') {
+      console.log('By Home Recent Page Slider');
+    }
   }
 }

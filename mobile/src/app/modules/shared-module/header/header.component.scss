@@ -14,3 +14,13 @@ ion-header {
     font-size: 24px;
   }
 }
+
+.search_list{
+  padding-top:10px; 
+  font-size: 14px;
+  max-height: 550px;
+  overflow: scroll;
+  ion-list{
+    padding: 0px;
+  }
+}

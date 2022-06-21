@@ -24,6 +24,18 @@ export class PageDetailService {
       ));
   }
 
+  
+  public getPageListByLimit(): Observable<any> {
+    return this.angularFirestore.collection('page', ref =>
+      ref.orderBy('createDate', 'desc').limit(20)).snapshotChanges()
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
+      })
+      ));
+  }
+
   public getPageDetailByPageDocId(pageId: string): Observable<any> {
     return this.angularFirestore.collection('page').doc(pageId)
       .snapshotChanges()

@@ -1,10 +1,11 @@
 <app-header [heading]="'Recent Short'"></app-header>
+<app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
 
 <ion-content>
   <ion-grid class="recent_short_page ion-no-padding">
     <ion-row *ngIf="recentShort.length && !recentShortLoading;">
       <ion-col size="4" *ngFor="let item of recentShort; let i=index">
-        <ion-card routerLink="short-detail/{{item.book.docId}}">
+        <ion-card routerLink="short-detail/{{item.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item.heading}}</b></ion-card-subtitle>
           </ion-card-header>

@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RecentShortService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { CommonService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-recent-short',
@@ -24,11 +24,11 @@ export class RecentShortPage implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private toastService: ToastService,
     private recentShortService: RecentShortService,
+    private commonService: CommonService
   ) { }
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
-      console.log('param', param);
       this.bookId = param.get('bookId');
       if (this.bookId) {
         this.getShortListByBookId(this.bookId);
@@ -46,22 +46,30 @@ export class RecentShortPage implements OnInit, OnDestroy {
   }
 
   private getRecentShortList(): void {
-    this.recentShortLoading = true;
-    this.subscriptions.push(
-      this.recentShortService.getRecentShortList()
-        .subscribe((result: any) => {
-          this.recentShortLoading = false;
-          if (result && result.length) {
-            this.recentShort = result;
-          } else {
-            this.recentShort = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          this.recentShortLoading = false;
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
+    this.commonService.shortData.subscribe(res => {
+      if(res) {
+        this.recentShort = res;
+        this.originalData = res;
+      }
+      this.recentShortLoading = false;
+    });
+    // this.recentShortLoading = true;
+    // this.subscriptions.push(
+    //   this.recentShortService.getRecentShortList()
+    //     .subscribe((result: any) => {
+    //       this.recentShortLoading = false;
+    //       if (result && result.length) {
+    //         this.recentShort = result;
+    //         this.originalData = result;
+    //       } else {
+    //         this.recentShort = [];
+    //       }
+    //     }, (error: HttpErrorResponse) => {
+    //       this.recentShortLoading = false;
+    //       console.log('error', error);
+    //       this.toastService.errorToast(error.message);
+    //     })
+    // );
   }
 
   private getShortListByBookId(bookId: string): void {
@@ -72,6 +80,7 @@ export class RecentShortPage implements OnInit, OnDestroy {
           this.recentShortLoading = false;
           if (result && result.length) {
             this.recentShort = result;
+            this.originalData = result;
           } else {
             this.recentShort = [];
           }
