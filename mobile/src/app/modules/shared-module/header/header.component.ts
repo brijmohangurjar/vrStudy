@@ -107,7 +107,6 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public onSelect(item: any, key) {
-    console.log(item,'item');
     // eslint-disable-next-line max-len
     switch (key) {
       case 'Page':

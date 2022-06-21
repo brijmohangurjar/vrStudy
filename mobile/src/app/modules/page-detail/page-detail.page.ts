@@ -28,7 +28,6 @@ export class PageDetailPage implements OnInit, OnDestroy {
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
-      console.log('param', param);
       this.pageId = param.get('pageId');
       if (this.pageId) {
         this.getPageDetailByPageDocId(this.pageId);

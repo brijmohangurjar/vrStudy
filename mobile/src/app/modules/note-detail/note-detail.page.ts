@@ -47,7 +47,6 @@ export class NoteDetailPage implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.noteService.getNoteDetailByDocId(noteDocId)
         .subscribe((responseData: any) => {
-          console.log('responseData', responseData);
           this.noteDetailLoading = false;
           if (responseData) {
             this.noteDetail = responseData;

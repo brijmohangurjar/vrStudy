@@ -21,7 +21,6 @@ export class MatSnackBarService {
   }
 
   public showErrorSnackBar(message: string): void {
-    console.log(message , 'message');
     this.matSnackBar.open(message, 'Error', {
       duration: 2500,
       horizontalPosition: 'right',

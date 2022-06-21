@@ -29,7 +29,6 @@ export class RecentShortPage implements OnInit, OnDestroy {
 
   public ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
-      console.log('param', param);
       this.bookId = param.get('bookId');
       if (this.bookId) {
         this.getShortListByBookId(this.bookId);

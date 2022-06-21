@@ -46,7 +46,6 @@ export class ShortDetailPage implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.shortDetailService.getShortDetailByShortDocId(bookId)
         .subscribe((responseData: any) => {
-          console.log('responseData', responseData);
           this.shortDetailLoading = false;
           if (responseData) {
             this.shortDetail = responseData;
