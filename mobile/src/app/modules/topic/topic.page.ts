@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TopicService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { CommonService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-topic',
@@ -24,6 +24,7 @@ export class TopicPage implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private topicService: TopicService,
     private toastService: ToastService,
+    private commonService: CommonService
   ) { }
 
   public ngOnInit() {
@@ -65,23 +66,30 @@ export class TopicPage implements OnInit, OnDestroy {
   }
 
   private getAllTopicList(): void {
-    this.topicListLoading = true;
-    this.subscriptions.push(
-      this.topicService.getAllTopicList()
-        .subscribe((responseData: any) => {
-          this.topicListLoading = false;
-          if (responseData.length) {
-            this.topicList = responseData;
-            this.originalData = responseData;
-          } else {
-            this.topicList = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          this.topicListLoading = false;
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
+    this.commonService.topicData.subscribe(res => {
+      if(res) {
+        this.topicList = res;
+        this.originalData = res;
+        this.topicListLoading = false;
+      }
+    });
+    // this.topicListLoading = true;
+    // this.subscriptions.push(
+    //   this.topicService.getAllTopicList()
+    //     .subscribe((responseData: any) => {
+    //       this.topicListLoading = false;
+    //       if (responseData.length) {
+    //         this.topicList = responseData;
+    //         this.originalData = responseData;
+    //       } else {
+    //         this.topicList = [];
+    //       }
+    //     }, (error: HttpErrorResponse) => {
+    //       this.topicListLoading = false;
+    //       console.log('error', error);
+    //       this.toastService.errorToast(error.message);
+    //     })
+    // );
   }
 
   public onChangeSearch(event) {

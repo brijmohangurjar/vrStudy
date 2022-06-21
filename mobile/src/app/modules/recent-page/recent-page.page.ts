@@ -1,8 +1,6 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { PageDetailService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { CommonService } from 'src/app/service';
 
 @Component({
   selector: 'app-recent-page',
@@ -19,8 +17,7 @@ export class RecentPagePage implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   constructor(
-    private pageDetailService: PageDetailService,
-    private toastService: ToastService,
+    private commonService: CommonService
   ) { }
 
   public ngOnInit() {
@@ -35,23 +32,30 @@ export class RecentPagePage implements OnInit, OnDestroy {
   }
 
   private getAllPageList(): void {
-    this.recentPageLoading = true;
-    this.subscriptions.push(
-      this.pageDetailService.getAllPageList()
-        .subscribe((result: any) => {
-          this.recentPageLoading = false;
-          if (result && result.length) {
-            this.pageList = result;
-            this.originalData = result;
-          } else {
-            this.pageList = [];
-          }
-        }, (error: HttpErrorResponse) => {
-          this.recentPageLoading = false;
-          console.log('error', error);
-          this.toastService.errorToast(error.message);
-        })
-    );
+    this.commonService.pageData.subscribe(res => {
+      if(res) {
+        this.pageList = res;
+        this.originalData = res;
+        this.recentPageLoading = false;
+      }
+    });
+    // this.recentPageLoading = true;
+    // this.subscriptions.push(
+    //   this.pageDetailService.getAllPageList()
+    //     .subscribe((result: any) => {
+    //       this.recentPageLoading = false;
+    //       if (result && result.length) {
+    //         this.pageList = result;
+    //         this.originalData = result;
+    //       } else {
+    //         this.pageList = [];
+    //       }
+    //     }, (error: HttpErrorResponse) => {
+    //       this.recentPageLoading = false;
+    //       console.log('error', error);
+    //       this.toastService.errorToast(error.message);
+    //     })
+    // );
   }
   
   public onChangeSearch(event) {
