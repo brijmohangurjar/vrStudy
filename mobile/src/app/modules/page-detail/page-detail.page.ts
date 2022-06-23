@@ -48,16 +48,18 @@ export class PageDetailPage implements OnInit, OnDestroy {
   public navigateByType(type: string): void {
     switch (type) {
       case 'subject':
-
+        this.navigationService.navigateByUrl(`base/home/subject/topic/${this.pageDetail.subject.docId}`);
         break;
       case 'topic':
-
+        this.navigationService.navigateByUrl(`base/home/topic/${this.pageDetail.subject.docId}/book/${this.pageDetail.topic.docId}`);
         break;
       case 'book':
-
+        // eslint-disable-next-line max-len
+        this.navigationService.navigateByUrl(`base/home/topic/${this.pageDetail.subject.docId}/book/${this.pageDetail.topic.docId}/page-list/${this.pageDetail.book.docId}`);
         break;
       case 'page':
-
+        // eslint-disable-next-line max-len
+        // this.navigationService.navigateByUrl(`base/home/topic/AkdjHgzIibh85Vk7qSVK/book/tuoqjsBgU60hM7ZGzfpM/page-list/wRo1q9PIQv9GHbOreY2h`);
         break;
     }
   }
