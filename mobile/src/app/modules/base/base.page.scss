@@ -3,6 +3,7 @@
   .defaultUserPic {
     height: 100px;
     width: 100px;
+    margin-left: 15px;
   }
 }
 
@@ -15,4 +16,11 @@ a{
 }
 ion-menu{
   --width: 245px;
+}
+
+ion-menu-toggle{
+  text-align: left;
+  h5{
+    padding-left: 35px;
+  }
 }

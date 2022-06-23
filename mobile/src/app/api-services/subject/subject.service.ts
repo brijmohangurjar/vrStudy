@@ -13,7 +13,7 @@ export class SubjectService {
 
   public getSubjectList() {
     return this.angularFirestore.collection('subjects', ref =>
-      ref.orderBy('createDate', 'desc')
+      ref.orderBy('createDate', 'asc')
     ).snapshotChanges().pipe(map((actions) => {
       return actions.map(doc => {
         const data: any = doc.payload.doc.data();

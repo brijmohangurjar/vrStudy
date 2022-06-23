@@ -14,7 +14,7 @@ export class ShortDetailService {
 
   public getShortDetailByBookId(bookId: string): Observable<any> {
     return this.angularFirestore.collection('short', ref =>
-      ref.where('book.docId', '==', bookId).orderBy('createDate', 'desc'))
+      ref.where('book.docId', '==', bookId).orderBy('createDate', 'asc'))
       .snapshotChanges()
       .pipe(map((actions) => actions.map(doc => {
         const data: any = doc.payload.doc.data();
@@ -38,7 +38,7 @@ export class ShortDetailService {
 
   public getShortList() {
     return this.angularFirestore.collection('short', ref =>
-      ref.orderBy('createDate', 'desc')
+      ref.orderBy('createDate', 'asc')
     ).snapshotChanges().pipe(map((actions) => actions.map(doc => {
       const data: any = doc.payload.doc.data();
       const docId = doc.payload.doc.id;
@@ -47,15 +47,15 @@ export class ShortDetailService {
     )
     );
   }
-  public getShortListByLimit() {
-    return this.angularFirestore.collection('short', ref =>
-      ref.orderBy('createDate', 'desc').limit(20)
-    ).snapshotChanges().pipe(map((actions) => actions.map(doc => {
-      const data: any = doc.payload.doc.data();
-      const docId = doc.payload.doc.id;
-      return { docId, ...data };
-    })
-    )
-    );
-  }
+  // public getShortListByLimit() {
+  //   return this.angularFirestore.collection('short', ref =>
+  //     ref.orderBy('createDate', 'asc').limit(20)
+  //   ).snapshotChanges().pipe(map((actions) => actions.map(doc => {
+  //     const data: any = doc.payload.doc.data();
+  //     const docId = doc.payload.doc.id;
+  //     return { docId, ...data };
+  //   })
+  //   )
+  //   );
+  // }
 }

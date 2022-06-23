@@ -15,7 +15,7 @@ export class BookService {
 
   public getBookList(): Observable<any> {
     return this.angularFirestore.collection('book', ref =>
-      ref.orderBy('createDate', 'desc').limit(10)).snapshotChanges()
+      ref.orderBy('createDate', 'asc')).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
           const data: any = doc.payload.doc.data();
@@ -25,22 +25,22 @@ export class BookService {
       }));
   }
 
-  public getBookListByLimit(): Observable<any> {
-    return this.angularFirestore.collection('book', ref =>
-      ref.orderBy('createDate', 'desc').limit(20)).snapshotChanges()
-      .pipe(map((actions) => {
-        return actions.map(doc => {
-          const data: any = doc.payload.doc.data();
-          const docId = doc.payload.doc.id;
-          return { docId, ...data };
-        });
-      }));
-  }
+  // public getBookListByLimit(): Observable<any> {
+  //   return this.angularFirestore.collection('book', ref =>
+  //     ref.orderBy('createDate', 'asc')).snapshotChanges()
+  //     .pipe(map((actions) => {
+  //       return actions.map(doc => {
+  //         const data: any = doc.payload.doc.data();
+  //         const docId = doc.payload.doc.id;
+  //         return { docId, ...data };
+  //       });
+  //     }));
+  // }
 
   public getBookListByTopicId(subjectId: string): Observable<any> {
     return this.angularFirestore.collection('book', ref =>
       ref.where('topic.docId', '==', subjectId)
-        .orderBy('createDate', 'desc')).snapshotChanges()
+        .orderBy('createDate', 'asc')).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
           const data: any = doc.payload.doc.data();

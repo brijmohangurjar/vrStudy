@@ -15,7 +15,7 @@ export class PageDetailService {
 
   public getAllPageList(): Observable<any> {
     return this.angularFirestore.collection('page', ref =>
-      ref.orderBy('createDate', 'desc')).snapshotChanges()
+      ref.orderBy('createDate', 'asc')).snapshotChanges()
       .pipe(map((actions) => actions.map(doc => {
         const data: any = doc.payload.doc.data();
         const docId = doc.payload.doc.id;
@@ -25,16 +25,16 @@ export class PageDetailService {
   }
 
   
-  public getPageListByLimit(): Observable<any> {
-    return this.angularFirestore.collection('page', ref =>
-      ref.orderBy('createDate', 'desc').limit(20)).snapshotChanges()
-      .pipe(map((actions) => actions.map(doc => {
-        const data: any = doc.payload.doc.data();
-        const docId = doc.payload.doc.id;
-        return { docId, ...data };
-      })
-      ));
-  }
+  // public getPageListByLimit(): Observable<any> {
+  //   return this.angularFirestore.collection('page', ref =>
+  //     ref.orderBy('createDate', 'asc')).snapshotChanges()
+  //     .pipe(map((actions) => actions.map(doc => {
+  //       const data: any = doc.payload.doc.data();
+  //       const docId = doc.payload.doc.id;
+  //       return { docId, ...data };
+  //     })
+  //     ));
+  // }
 
   public getPageDetailByPageDocId(pageId: string): Observable<any> {
     return this.angularFirestore.collection('page').doc(pageId)
@@ -49,7 +49,7 @@ export class PageDetailService {
 
   public getPageListByBookId(bookId: string): Observable<any> {
     return this.angularFirestore.collection('page', ref =>
-      ref.where('book.docId', '==', bookId).orderBy('createDate', 'desc'))
+      ref.where('book.docId', '==', bookId).orderBy('createDate', 'asc'))
       .snapshotChanges()
       .pipe(map((actions) => actions.map(doc => {
         const data: any = doc.payload.doc.data();

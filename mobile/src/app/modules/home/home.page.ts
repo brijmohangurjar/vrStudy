@@ -69,6 +69,10 @@ export class HomePage implements OnInit, OnDestroy {
     });
   }
 
+  sortFunc (a, b) {
+    return b.createDate - a.createDate;
+  }
+
   public logOutUser(): void {
     this.loginService.logOutUser();
   }
