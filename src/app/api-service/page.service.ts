@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -52,18 +51,29 @@ export class PageService {
     return obs;
   }
 
-  
+
   public getPage(): Observable<any> {
-    return this.db.collection('page').snapshotChanges()
-      .pipe(map((actions) => {
-        return actions.map(doc => {
-          const data: any = doc.payload.doc.data();
-          const docId = doc.payload.doc.id;
-          return { docId, ...data };
-        });
+    return this.db.collection('page', ref =>
+      ref.orderBy('createDate', 'desc')).snapshotChanges()
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
       })
-      );
+      ));
   }
+  
+  // public getPage(): Observable<any> {
+  //   return this.db.collection('page').snapshotChanges()
+  //     .pipe(map((actions) => {
+  //       return actions.map(doc => {
+  //         const data: any = doc.payload.doc.data();
+  //         const docId = doc.payload.doc.id;
+  //         return { docId, ...data };
+  //       });
+  //     })
+  //     );
+  // }
 
   public async uploadUserImage(photo: any,tableName:string,fileName?:any) {
     const milliSecond = new Date().getTime();
@@ -107,7 +117,7 @@ export class PageService {
 
   public getPageByDocId(docId): Observable<any> {
     return this.db.collection('page', ref => 
-    ref.where('book.docId' ,'==' , docId )
+    ref.where('book.docId' ,'==' , docId ).orderBy('createDate', 'desc')
     ).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {

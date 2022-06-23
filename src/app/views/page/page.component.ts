@@ -138,10 +138,6 @@ export class PageComponent implements OnInit {
     if (fileInput.target.files && fileInput.target.files[0]) {
       // Size Filter Bytes
       const maxSize = 20971520;
-      const allowedTypes = ['image/png', 'image/jpeg', 'image/gif'];
-      const maxheight = 15200;
-      const maxWidth = 25600;
-
       if (fileInput.target.files[0].size > maxSize) {
         this.imageError =
           'Maximum size allowed is ' + maxSize / 1000 + 'Mb';

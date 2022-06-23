@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -51,18 +50,30 @@ export class TopicService {
     return obs;
   }
 
-  
   public getTopic(): Observable<any> {
-    return this.db.collection('topic').snapshotChanges()
+    return this.db.collection('topic', ref =>
+      ref.orderBy('createDate', 'desc')
+    ).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
           const data: any = doc.payload.doc.data();
           const docId = doc.payload.doc.id;
           return { docId, ...data };
         });
-      })
-      );
+      }));
   }
+  
+  // public getTopic(): Observable<any> {
+  //   return this.db.collection('topic').snapshotChanges()
+  //     .pipe(map((actions) => {
+  //       return actions.map(doc => {
+  //         const data: any = doc.payload.doc.data();
+  //         const docId = doc.payload.doc.id;
+  //         return { docId, ...data };
+  //       });
+  //     })
+  //     );
+  // }
 
   // public getCategoryByDocId(): Observable<any> {
   //   return this.db.collection('category', ref =>
@@ -85,7 +96,7 @@ export class TopicService {
 
   public getTopicByDocId(docId): Observable<any> {
     return this.db.collection('topic', ref => 
-    ref.where('subject.docId' ,'==' , docId)
+    ref.where('subject.docId' ,'==' , docId).orderBy('createDate', 'desc')
     ).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
