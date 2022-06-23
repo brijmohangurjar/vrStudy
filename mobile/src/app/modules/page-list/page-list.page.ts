@@ -19,6 +19,7 @@ export class PageListPage implements OnInit, OnDestroy {
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
+  public title = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -51,6 +52,7 @@ export class PageListPage implements OnInit, OnDestroy {
           if (responseData.length) {
             this.pageList = responseData;
             this.originalData = responseData;
+            this.title = `Page - (${this.pageList.length})`;
           } else {
             this.pageList = [];
           }

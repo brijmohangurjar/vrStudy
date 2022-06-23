@@ -1,9 +1,9 @@
-<app-header [heading]="'Page'"></app-header>
+<app-header [heading]="title"></app-header>
 <app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
 <ion-item lines="none" *ngIf = "pageList && pageList.length">
   <ion-icon slot="start" style="margin-inline-end: 9px; color: black;" class="help-icon" name="book-outline">
   </ion-icon>
-  <span class="bed_come"><b>{{pageList[0].book.bookName}}</b> </span> <span>({{pageList.length}})</span>
+  <span class="bed_come"><b>{{pageList[0].book.bookName}}</b> </span>
 </ion-item>
 <ion-content>
   <ion-grid class="topic_page ion-no-padding">

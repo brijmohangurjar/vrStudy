@@ -1,10 +1,10 @@
-<app-header [heading]="'Topic'"></app-header>
+<app-header [heading]="title"></app-header>
 <app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
-<ion-item lines="none" *ngIf = "topicList && topicList.length">
+<ion-item lines="none" *ngIf = "topicList && topicList.length && subjectId">
   <ion-icon slot="start" style="margin-inline-end: 9px; color: black;" class="help-icon" name="clipboard-outline">
   </ion-icon>
   <!-- <ion-label ><b>{{topicList[0].subject.name}}</b> - ({{topicList.length}})</ion-label> -->
-  <span class="bed_come"><b>{{topicList[0].subject.name}} </b> </span> <span>({{topicList.length}})</span>
+  <span class="bed_come"><b>{{topicList[0].subject.name}} </b> </span>
 
 </ion-item>
 <ion-content>

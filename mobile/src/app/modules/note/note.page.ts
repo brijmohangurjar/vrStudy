@@ -16,6 +16,7 @@ export class NotePage implements OnInit, OnDestroy {
   public notePageLoading = true;
   public loopForImageLoading = new Array(15);
   public originalData:any = [];
+  public title = '';
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
@@ -51,6 +52,7 @@ export class NotePage implements OnInit, OnDestroy {
         this.notePageList = res;
         this.originalData = res;
         this.notePageLoading = false;
+        this.title = `Note - (${this.notePageList.length})`;
       }
     });
     // this.notePageLoading = true;
@@ -81,6 +83,7 @@ export class NotePage implements OnInit, OnDestroy {
           if (result && result.length) {
             this.notePageList = result;
             this.originalData = result;
+            this.title = `Note - (${this.notePageList.length})`;
           } else {
             this.notePageList = [];
           }

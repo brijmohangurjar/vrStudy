@@ -16,6 +16,7 @@ export class RecentShortPage implements OnInit, OnDestroy {
   public recentShortLoading = true;
   public loopForImageLoading = new Array(15);
   public originalData:any = [];
+  public title = '';
 
   private bookId: string;
   private subscriptions: Subscription[] = [];
@@ -50,6 +51,7 @@ export class RecentShortPage implements OnInit, OnDestroy {
       if(res) {
         this.recentShort = res;
         this.originalData = res;
+        this.title = `Recent Short - (${this.recentShort.length})`;
       }
       this.recentShortLoading = false;
     });
@@ -81,6 +83,7 @@ export class RecentShortPage implements OnInit, OnDestroy {
           if (result && result.length) {
             this.recentShort = result;
             this.originalData = result;
+            this.title = `Short - (${this.recentShort.length})`;
           } else {
             this.recentShort = [];
           }
