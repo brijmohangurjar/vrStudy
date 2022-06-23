@@ -7,7 +7,6 @@ import { MatSnackBarService } from 'src/app/service/mat-snack-bar.service';
 import {TopicService} from '../../api-service/topic.service';
 import {BookService} from '../../api-service/book.service';
 import {PageService} from '../../api-service/page.service';
-import {ShortService} from '../../api-service/short.service'
 import { Editor, Toolbar } from 'ngx-editor';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators'; 
@@ -62,7 +61,6 @@ export class NotesComponent implements OnInit {
     private topicService: TopicService,
     private bookService: BookService,
     private pageService: PageService,
-    private shortService: ShortService,
     private noteService: NoteService
   ) { }
 
@@ -184,10 +182,6 @@ export class NotesComponent implements OnInit {
     if (fileInput.target.files && fileInput.target.files[0]) {
       // Size Filter Bytes
       const maxSize = 20971520;
-      const allowedTypes = ['image/png', 'image/jpeg', 'image/gif'];
-      const maxheight = 15200;
-      const maxWidth = 25600;
-
       if (fileInput.target.files[0].size > maxSize) {
         this.imageError =
           'Maximum size allowed is ' + maxSize / 1000 + 'Mb';

@@ -3,5 +3,7 @@ export class ConstantVariables {
     SUCCESS: 'success',
     ERROR: 'danger',
   };
+  public limit = 5;
 }
+
 

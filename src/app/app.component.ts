@@ -3,7 +3,6 @@ import { Router, NavigationEnd } from '@angular/router';
 
 import { IconSetService } from '@coreui/icons-angular';
 import { cilUser } from '@coreui/icons';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   // tslint:disable-next-line
@@ -18,7 +17,6 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     public iconSet: IconSetService,
-    private spinnerService: NgxSpinnerService
   ) {
     // iconSet singleton
     iconSet.icons = { cilUser };

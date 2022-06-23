@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ConstantVariables } from 'src/const/constant';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,12 @@ export class TopicService {
 
   constructor(
     private angularFirestore: AngularFirestore,
+    private constVar: ConstantVariables
   ) { }
 
   public getAllTopicList(): Observable<any> {
     return this.angularFirestore.collection('topic', ref =>
-      ref.orderBy('createDate', 'asc')
+      ref.orderBy('createDate', 'asc').limit(this.constVar.limit)
     ).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
@@ -41,7 +43,7 @@ export class TopicService {
   public getTopicListBySubjectId(subjectId: string): Observable<any> {
     return this.angularFirestore.collection('topic', ref =>
       ref.where('subject.docId', '==', subjectId)
-        .orderBy('createDate', 'asc')
+        .orderBy('createDate', 'asc').limit(this.constVar.limit)
     ).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {

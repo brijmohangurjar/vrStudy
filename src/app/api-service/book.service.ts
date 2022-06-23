@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -51,19 +50,29 @@ export class BookService {
     });
     return obs;
   }
-
-  
   public getBook(): Observable<any> {
-    return this.db.collection('book').snapshotChanges()
+    return this.db.collection('book', ref =>
+      ref.orderBy('createDate', 'desc')).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
           const data: any = doc.payload.doc.data();
           const docId = doc.payload.doc.id;
           return { docId, ...data };
         });
-      })
-      );
+      }));
   }
+  
+  // public getBook(): Observable<any> {
+  //   return this.db.collection('book').snapshotChanges()
+  //     .pipe(map((actions) => {
+  //       return actions.map(doc => {
+  //         const data: any = doc.payload.doc.data();
+  //         const docId = doc.payload.doc.id;
+  //         return { docId, ...data };
+  //       });
+  //     })
+  //     );
+  // }
 
   // public getCategoryByDocId(): Observable<any> {
   //   return this.db.collection('category', ref =>
@@ -86,8 +95,7 @@ export class BookService {
 
   public getBookByDocId(docId): Observable<any> {
     return this.db.collection('book', ref => 
-    ref.where('topic.docId' ,'==' , docId )
-    ).snapshotChanges()
+    ref.where('topic.docId' ,'==' , docId ).orderBy('createDate', 'desc')).snapshotChanges()
       .pipe(map((actions) => {
         return actions.map(doc => {
           const data: any = doc.payload.doc.data();
