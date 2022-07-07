@@ -9,10 +9,10 @@
         <p class="card_header"><b>Login</b></p>
       </div>
       
-      <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm" autocomplete="off">
         <div class="wrapform">
           <ion-item>
-            <ion-input type="text" name="email" formControlName="email" placeholder="Email">
+            <ion-input autocomplete="off" type="text" name="email" formControlName="email" placeholder="Email">
               <ion-icon name="mail-outline"></ion-icon>
             </ion-input>
           </ion-item>
@@ -30,7 +30,7 @@
           <ion-item class="pt-4">
 
             <ion-input type="password" name="password" formControlName="password"
-              placeholder="**************">
+              placeholder="**************" autocomplete="off">
               <ion-icon name="lock-closed"></ion-icon>
             </ion-input>
           </ion-item>

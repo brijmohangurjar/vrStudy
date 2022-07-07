@@ -3,7 +3,7 @@
   [navigationUrl]="pageDetail?.book?.docId" 
 ></app-header>
 
-<ion-breadcrumbs *ngIf="pageDetail">
+<ion-breadcrumbs *ngIf="pageDetail" mode="ios">
   <ion-breadcrumb (click)="navigateByType('subject')">
     {{pageDetail?.subject?.name}}
   </ion-breadcrumb>
@@ -13,8 +13,8 @@
   <ion-breadcrumb (click)="navigateByType('book')">
     {{pageDetail?.book?.bookName}}
   </ion-breadcrumb>
-  <ion-breadcrumb (click)="navigateByType('page')">
-    {{pageDetail?.heading}}
+  <ion-breadcrumb>
+    <!-- {{pageDetail?.heading}} -->
   </ion-breadcrumb>
 </ion-breadcrumbs>
 
