@@ -57,8 +57,12 @@
 
     ion-card-header {
       text-align: start;
-      padding: 15px;
+      padding: 10px;
+      text-overflow: ellipsis;
+      height: 154px;
+      overflow: hidden;
     }
+
 
     .card-footer {
       position: absolute;
