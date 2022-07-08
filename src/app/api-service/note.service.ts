@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -51,18 +50,31 @@ export class NoteService {
     return obs;
   }
 
-  
   public getNote(): Observable<any> {
-    return this.db.collection('note').snapshotChanges()
-      .pipe(map((actions) => {
-        return actions.map(doc => {
-          const data: any = doc.payload.doc.data();
-          const docId = doc.payload.doc.id;
-          return { docId, ...data };
-        });
+    return this.db.collection('note', ref =>
+      ref.orderBy('createDate', 'desc'))
+      .snapshotChanges()
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
       })
-      );
+      ));
   }
+
+
+  
+  // public getNote(): Observable<any> {
+  //   return this.db.collection('note').snapshotChanges()
+  //     .pipe(map((actions) => {
+  //       return actions.map(doc => {
+  //         const data: any = doc.payload.doc.data();
+  //         const docId = doc.payload.doc.id;
+  //         return { docId, ...data };
+  //       });
+  //     })
+  //     );
+  // }
 
   // public getCategoryByDocId(): Observable<any> {
   //   return this.db.collection('category', ref =>

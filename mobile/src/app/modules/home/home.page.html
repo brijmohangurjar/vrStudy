@@ -3,7 +3,7 @@
     <ion-row>
       <ion-col class="ion-padding-bottom ion-no-padding" size="12">
         <div class="container-background" 
-          [style.backgroundImage]="'url(assets/images/home_background.jpg)'">
+          [style.backgroundImage]="'url(assets/images/' + backgoundImage + ')'">
           <p class="bottom text">{{greetingText}}, 
             <span *ngIf="currentUserInfo?.firstName">
               {{currentUserInfo?.firstName}}!
@@ -52,7 +52,7 @@
     
     <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!topicListLoading; else loading;">
-      <ion-slide *ngFor="let item of topicList; let i=index">
+      <ion-slide *ngFor="let item of topicList.sort(sortFunc); let i=index">
         <ion-card routerLink="topic/book/{{item.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item?.topicName}}</b></ion-card-subtitle>
@@ -78,7 +78,7 @@
     
     <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!bookListLoading; else loading;">
-      <ion-slide *ngFor="let item of bookList; let i=index">
+      <ion-slide *ngFor="let item of bookList.sort(sortFunc); let i=index">
         <ion-card routerLink="books/page-list/{{item.docId}}">
           <ion-card-header>
             <ion-card-subtitle><b>{{item?.bookName}}</b></ion-card-subtitle>
@@ -104,7 +104,7 @@
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!pageListLoading; else loading;">
-      <ion-slide *ngFor="let item of pageList; let i=index" 
+      <ion-slide *ngFor="let item of pageList.sort(sortFunc); let i=index" 
         routerLink="recent-page/page-detail/{{item.docId}}">
         <ion-card>
           <ion-card-header>
@@ -131,7 +131,7 @@
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!shortListLoading; else loading;">
-      <ion-slide *ngFor="let item of shortList; let i=index">
+      <ion-slide *ngFor="let item of shortList.sort(sortFunc); let i=index">
         <ion-card 
           routerLink="short/short-detail/{{item.book.docId}}">
           <ion-card-header>
@@ -158,7 +158,7 @@
   
     <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!noteListLoading; else loading;">
-      <ion-slide *ngFor="let item of noteList; let i=index">
+      <ion-slide *ngFor="let item of noteList.sort(sortFunc); let i=index">
         <ion-card 
           routerLink="note/note-detail/{{item.docId}}">
           <ion-card-header>

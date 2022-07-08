@@ -53,12 +53,16 @@
     height: 165px;
     // min-height: 165px;
     // max-height: 165px;
-    margin: 10px;
+    margin: 10px 5px;
 
     ion-card-header {
       text-align: start;
-      padding: 15px;
+      padding: 10px;
+      text-overflow: ellipsis;
+      height: 154px;
+      overflow: hidden;
     }
+
 
     .card-footer {
       position: absolute;
@@ -80,7 +84,7 @@
 }
 
 .bed_come{
-  max-width: 151px;
+  max-width: 251px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

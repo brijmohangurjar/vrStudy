@@ -19,6 +19,7 @@ export class TopicPage implements OnInit, OnDestroy {
 
   private subjectId: string;
   private subscriptions: Subscription[] = [];
+  public title = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -28,6 +29,10 @@ export class TopicPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
+   
+  }
+
+  ionViewWillEnter() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.subjectId = param.get('subjectId');
       if (this.subjectId) {
@@ -36,6 +41,11 @@ export class TopicPage implements OnInit, OnDestroy {
         this.getAllTopicList();
       }
     });
+  }
+
+  ionViewWillLeave() {
+    this.topicList = [];
+
   }
 
   public ngOnDestroy(): void {
@@ -54,6 +64,7 @@ export class TopicPage implements OnInit, OnDestroy {
           if (responseData.length) {
             this.topicList = responseData;
             this.originalData = responseData;
+            this.title = `Topic - (${this.topicList.length})`;
           } else {
             this.topicList = [];
           }
@@ -71,6 +82,7 @@ export class TopicPage implements OnInit, OnDestroy {
         this.topicList = res;
         this.originalData = res;
         this.topicListLoading = false;
+        this.title = `Topic - (${this.topicList.length})`;
       }
     });
     // this.topicListLoading = true;

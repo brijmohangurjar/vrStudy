@@ -16,6 +16,7 @@ export class SubjectPage implements OnInit, OnDestroy {
   public subjectListLoading = true;
   public loopForImageLoading = new Array(15);
   public originalData:any = [];
+  public title = '';
 
   constructor(
     private subjectService: SubjectService,
@@ -23,7 +24,15 @@ export class SubjectPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
+  }
+
+  ionViewWillEnter() {
     this.getSubjectsList();
+  }
+
+  ionViewWillLeave() {
+    this.subjectList = [];
+
   }
 
   public ngOnDestroy(): void {
@@ -49,7 +58,7 @@ export class SubjectPage implements OnInit, OnDestroy {
           this.subjectListLoading = false;
           if (result && result.length) {
             this.subjectList = result;
-            console.log(this.subjectList , 'this.subjectList');
+            this.title = `Subject - (${this.subjectList.length})` ;
             this.originalData = result;
           } else {
             this.subjectList = [];

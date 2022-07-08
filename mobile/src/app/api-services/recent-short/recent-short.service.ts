@@ -14,7 +14,7 @@ export class RecentShortService {
 
   public getRecentShortList(): Observable<any> {
     return this.angularFirestore.collection('short', ref =>
-      ref.orderBy('createDate', 'desc')).snapshotChanges()
+      ref.orderBy('createDate', 'asc')).snapshotChanges()
       .pipe(map((actions) => actions.map(doc => {
         const data: any = doc.payload.doc.data();
         const docId = doc.payload.doc.id;
@@ -25,7 +25,7 @@ export class RecentShortService {
 
   public getShortListByBookId(bookId: string): Observable<any> {
     return this.angularFirestore.collection('short', ref =>
-      ref.where('book.docId', '==', bookId).orderBy('createDate', 'desc'))
+      ref.where('book.docId', '==', bookId).orderBy('createDate', 'asc'))
       .snapshotChanges().pipe(map((actions) => actions.map(doc => {
         const data: any = doc.payload.doc.data();
         const docId = doc.payload.doc.id;

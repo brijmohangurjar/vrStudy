@@ -1,9 +1,9 @@
-<app-header [heading]="'Book'"></app-header>
+<app-header [heading]="title"></app-header>
 <app-local-search  (searchResult)="onChangeSearch($event)"></app-local-search>
-<ion-item lines="none" *ngIf = "bookList && bookList.length">
+<ion-item lines="none" *ngIf = "bookList && bookList.length && topicId">
   <ion-icon slot="start" style="margin-inline-end: 9px; color: black;" class="help-icon" name="receipt-outline">
   </ion-icon>
-  <span class="bed_come"><b>{{bookList[0].topic.topicName}}</b> </span> <span>({{bookList.length}})</span>
+  <span class="bed_come"><b>{{bookList[0].topic.topicName}}</b> </span>
 </ion-item>
 <ion-content>
   <ion-grid class="book_page ion-no-padding">
@@ -14,11 +14,11 @@
             <ion-card-subtitle><b>{{item.bookName}}</b></ion-card-subtitle>
           </ion-card-header>
   
-          <ion-row class="card-footer ion-no-margin ion-no-padding">
+          <!-- <ion-row class="card-footer ion-no-margin ion-no-padding">
             <ion-col class="ion-no-margin ion-no-padding">
               <p>{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
             </ion-col>
-          </ion-row>
+          </ion-row> -->
         </ion-card>
       </ion-col>
     </ion-row>

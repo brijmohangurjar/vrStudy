@@ -15,13 +15,21 @@ export class RecentPagePage implements OnInit, OnDestroy {
   public originalData:any = [];
 
   private subscriptions: Subscription[] = [];
+  public title = '';
 
   constructor(
     private commonService: CommonService
   ) { }
 
   public ngOnInit() {
+  }
+
+  ionViewWillEnter() {
     this.getAllPageList();
+  }
+
+  ionViewWillLeave() {
+    this.pageList = [];
   }
 
   public ngOnDestroy(): void {
@@ -37,6 +45,7 @@ export class RecentPagePage implements OnInit, OnDestroy {
         this.pageList = res;
         this.originalData = res;
         this.recentPageLoading = false;
+        this.title = `Page - (${this.pageList.length})`;
       }
     });
     // this.recentPageLoading = true;

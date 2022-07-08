@@ -14,7 +14,7 @@ export class NoteService {
 
   public getAllNoteList(): Observable<any> {
     return this.angularFirestore.collection('note', ref =>
-      ref.orderBy('createDate', 'desc'))
+      ref.orderBy('createDate', 'asc'))
       .snapshotChanges()
       .pipe(map((actions) => actions.map(doc => {
         const data: any = doc.payload.doc.data();
@@ -24,17 +24,17 @@ export class NoteService {
       ));
   }
 
-  public getNoteListByLimit(): Observable<any> {
-    return this.angularFirestore.collection('note', ref =>
-      ref.orderBy('createDate', 'desc').limit(20))
-      .snapshotChanges()
-      .pipe(map((actions) => actions.map(doc => {
-        const data: any = doc.payload.doc.data();
-        const docId = doc.payload.doc.id;
-        return { docId, ...data };
-      })
-      ));
-  }
+  // public getNoteListByLimit(): Observable<any> {
+  //   return this.angularFirestore.collection('note', ref =>
+  //     ref.orderBy('createDate', 'asc'))
+  //     .snapshotChanges()
+  //     .pipe(map((actions) => actions.map(doc => {
+  //       const data: any = doc.payload.doc.data();
+  //       const docId = doc.payload.doc.id;
+  //       return { docId, ...data };
+  //     })
+  //     ));
+  // }
 
   public getNoteDetailByDocId(noteId: string): Observable<any> {
     return this.angularFirestore.collection('note').doc(noteId)
@@ -50,7 +50,7 @@ export class NoteService {
   public getNoteListByBookId(bookId: string): Observable<any> {
     return this.angularFirestore.collection('note', ref =>
       ref.where('book.docId', '==', bookId)
-        .orderBy('createDate', 'desc'))
+        .orderBy('createDate', 'asc'))
       .snapshotChanges()
       .pipe(map((actions) => actions.map(doc => {
         const data: any = doc.payload.doc.data();

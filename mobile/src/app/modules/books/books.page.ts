@@ -16,6 +16,7 @@ export class BooksPage implements OnInit, OnDestroy {
   public bookListLoading = true;
   public loopForImageLoading = new Array(15);
   public originalData: any = [];
+  public title = '';
 
   private topicId: string;
   private subscriptions: Subscription[] = [];
@@ -28,11 +29,16 @@ export class BooksPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
+  
+  }
+
+  ionViewWillEnter(){
     this.commonService.bookData.subscribe(res => {
       if(res){
         this.bookList = res;
         this.originalData = res;
         this.bookListLoading = false;
+        this.title = `Book - (${this.bookList.length})` ;
       }
 
     });
@@ -42,6 +48,10 @@ export class BooksPage implements OnInit, OnDestroy {
         this.getBookListByTopicId(this.topicId);
       }
     });
+  }
+
+  ionViewWillLeave(){
+    this.bookList = [];
   }
 
   public ngOnDestroy(): void {
@@ -60,6 +70,7 @@ export class BooksPage implements OnInit, OnDestroy {
           if (responseData.length) {
             this.bookList = responseData;
             this.originalData = responseData;
+            this.title = `Book - (${this.bookList.length})` ;
           } else {
             this.bookList = [];
           }

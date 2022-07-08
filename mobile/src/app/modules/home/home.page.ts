@@ -34,6 +34,7 @@ export class HomePage implements OnInit, OnDestroy {
   public bookListLoading = true;
   public topicListLoading = true;
   public noteListLoading = true;
+  public backgoundImage = '';
 
   public slideOpts3 = {
     slidesPerView: 2.4,
@@ -52,7 +53,13 @@ export class HomePage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
+
+  }
+
+  public ionViewWillEnter() {
     this.greetingText = this.dateService.getTimeGreetings();
+    this.setBackgoundImage(this.greetingText);
+
     this.getSubjectsList();
     this.getPageList();
     this.getShortList();
@@ -62,11 +69,38 @@ export class HomePage implements OnInit, OnDestroy {
     this.getCurrentUserDetail();
   }
 
+  public ionViewWillLeave(){
+    this.subjectList = [];
+    this.pageList = [];
+    this.shortList = [];
+    this.bookList = [];
+    this.topicList = [];
+    this.noteList = [];
+  }
   public ngOnDestroy(): void {
+
     // console.log('Calling ngOnDestroy');
     this.subscriptions.forEach((sub: Subscription) => {
       if (!sub.closed) { sub.unsubscribe(); }
     });
+  }
+
+  public setBackgoundImage(value) {
+    switch (value) {
+      case 'Good Morning':
+        this.backgoundImage = 'home_background.jpg'
+        break;
+      case 'Good Afternoon':
+        this.backgoundImage = 'home_background-2.jpg'
+       break;
+      case 'Good Evening':
+        this.backgoundImage = 'home_background-3.jpg'
+       break;
+    }
+  }
+
+  sortFunc (a, b) {
+    return b.createDate - a.createDate;
   }
 
   public logOutUser(): void {

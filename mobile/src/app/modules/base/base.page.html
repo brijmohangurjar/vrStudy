@@ -7,12 +7,12 @@
         <ion-col class="ion-text-center">
           <ion-menu-toggle>
             <!-- <ion-spinner *ngIf="loading" name="bubbles"></ion-spinner> -->
-            <ion-avatar class="ion-no-margin m-auto defaultUserPic" 
+            <ion-avatar class="ion-no-margin defaultUserPic" 
               (click)="navigateTo({url: 'base/home/profile'})">
               <ion-img [src]="userInfo && userInfo.photoURL
               ? userInfo.photoURL : defaultUserPic" class="defaultUserPic"></ion-img>
             </ion-avatar>
-            <h5 class="ion-no-margin pt-3"
+            <h5 class="ion-no-margin pt-3 pl-3"
               *ngIf="userInfo">
               {{userInfo.firstName | titlecase}} {{userInfo.lastName | titlecase}}
             </h5>
@@ -20,7 +20,7 @@
         </ion-col>
       </ion-row>
 
-      <ion-card class="mt-5">
+      <ion-card class="mt-3">
         <div class="">
           <ion-list id="inbox-list" class="ion-no-margin"
             *ngIf="sideMenuList && sideMenuList.length">

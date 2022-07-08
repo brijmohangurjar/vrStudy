@@ -3,6 +3,21 @@
   [navigationUrl]="pageDetail?.book?.docId" 
 ></app-header>
 
+<ion-breadcrumbs *ngIf="pageDetail" mode="ios">
+  <ion-breadcrumb (click)="navigateByType('subject')">
+    {{pageDetail?.subject?.name}}
+  </ion-breadcrumb>
+  <ion-breadcrumb (click)="navigateByType('topic')">
+    {{pageDetail?.topic?.topicName}}
+  </ion-breadcrumb>
+  <ion-breadcrumb (click)="navigateByType('book')">
+    {{pageDetail?.book?.bookName}}
+  </ion-breadcrumb>
+  <ion-breadcrumb>
+    <!-- {{pageDetail?.heading}} -->
+  </ion-breadcrumb>
+</ion-breadcrumbs>
+
 <ion-content>
   <ion-grid class="ion-grid page_detail">
     <div class="" *ngIf="pageDetail && !pageDetailLoading">

@@ -1,6 +1,6 @@
 .home_page {
   .container-background {
-    height: 26vh;
+    height: 31vh;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@
       text-align: left;
       margin: 0px;
       color: var(--ion-color-secondary-contrast);
-      padding: 0px 15px 10px 15px;
+      padding: 0px 15px 0px 15px;
       text-shadow: 1px 1px 0px var(--ion-color-black) !important;
       background: linear-gradient(180deg, rgba(148, 144, 144, 0.1) 32%, #434445 100%, var(--ion-color-black) 50%);
     }
@@ -25,7 +25,7 @@
 
     .text {
       font-size: 20px;
-      bottom: 22%;
+      bottom: 20%;
     }
   }
 
