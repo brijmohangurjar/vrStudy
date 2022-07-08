@@ -29,6 +29,10 @@ export class BooksPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
+  
+  }
+
+  ionViewWillEnter(){
     this.commonService.bookData.subscribe(res => {
       if(res){
         this.bookList = res;
@@ -44,6 +48,10 @@ export class BooksPage implements OnInit, OnDestroy {
         this.getBookListByTopicId(this.topicId);
       }
     });
+  }
+
+  ionViewWillLeave(){
+    this.bookList = [];
   }
 
   public ngOnDestroy(): void {

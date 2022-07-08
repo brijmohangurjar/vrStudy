@@ -29,6 +29,10 @@ export class TopicPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
+   
+  }
+
+  ionViewWillEnter() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.subjectId = param.get('subjectId');
       if (this.subjectId) {
@@ -37,6 +41,11 @@ export class TopicPage implements OnInit, OnDestroy {
         this.getAllTopicList();
       }
     });
+  }
+
+  ionViewWillLeave() {
+    this.topicList = [];
+
   }
 
   public ngOnDestroy(): void {

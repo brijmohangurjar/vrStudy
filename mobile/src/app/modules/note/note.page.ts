@@ -29,6 +29,10 @@ export class NotePage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
+   
+  }
+
+  ionViewWillEnter(){
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.bookId = param.get('bookId');
       if (this.bookId) {
@@ -37,6 +41,11 @@ export class NotePage implements OnInit, OnDestroy {
         this.getAllNoteList();
       }
     });
+  }
+
+  ionViewWillLeave() {
+    this.notePageList = [];
+
   }
 
   public ngOnDestroy(): void {

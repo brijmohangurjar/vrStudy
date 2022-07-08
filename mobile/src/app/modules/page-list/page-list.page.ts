@@ -28,12 +28,20 @@ export class PageListPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
+    
+  }
+
+  ionViewWillEnter() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.bookId = param.get('bookId');
       if (this.bookId) {
         this.getPageListByBookId(this.bookId);
       }
     });
+  }
+
+  ionViewWillLeave() {
+    this.pageList = [];
   }
 
   public ngOnDestroy(): void {
