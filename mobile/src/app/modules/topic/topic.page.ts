@@ -82,7 +82,7 @@ export class TopicPage implements OnInit, OnDestroy {
         this.topicList = res;
         this.originalData = res;
         this.topicListLoading = false;
-        this.title = `Topic - (${this.topicList.length})s`;
+        this.title = `Topic - (${this.topicList.length})`;
       }
     });
     // this.topicListLoading = true;
