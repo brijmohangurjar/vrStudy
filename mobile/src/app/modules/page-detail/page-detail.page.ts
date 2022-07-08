@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageDetailService } from 'src/app/api-services';
-import { ToastService } from 'src/app/service';
+import { NavigationService, ToastService } from 'src/app/service';
 
 @Component({
   selector: 'app-page-detail',
@@ -13,6 +13,7 @@ import { ToastService } from 'src/app/service';
 export class PageDetailPage implements OnInit, OnDestroy {
 
   public pageDetail: any;
+  public breadcumbType = '';
   public pageDetailLoading = true;
   public loopForImageLoading = new Array(1);
 
@@ -23,7 +24,8 @@ export class PageDetailPage implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private pageDetailService: PageDetailService,
     private toastService: ToastService,
-    private router: Router,
+    private navigationService: NavigationService,
+    // private router: Router,
   ) { }
 
   public ngOnInit() {
@@ -42,6 +44,26 @@ export class PageDetailPage implements OnInit, OnDestroy {
     });
   }
 
+
+  public navigateByType(type: string): void {
+    switch (type) {
+      case 'subject':
+        this.navigationService.navigateByUrl(`base/home/subject/topic/${this.pageDetail.subject.docId}`);
+        break;
+      case 'topic':
+        this.navigationService.navigateByUrl(`base/home/topic/${this.pageDetail.subject.docId}/book/${this.pageDetail.topic.docId}`);
+        break;
+      case 'book':
+        // eslint-disable-next-line max-len
+        this.navigationService.navigateByUrl(`base/home/topic/${this.pageDetail.subject.docId}/book/${this.pageDetail.topic.docId}/page-list/${this.pageDetail.book.docId}`);
+        break;
+      case 'page':
+        // eslint-disable-next-line max-len
+        // this.navigationService.navigateByUrl(`base/home/topic/AkdjHgzIibh85Vk7qSVK/book/tuoqjsBgU60hM7ZGzfpM/page-list/wRo1q9PIQv9GHbOreY2h`);
+        break;
+    }
+  }
+
   private getPageDetailByPageDocId(pageId: string): void {
     this.pageDetailLoading = true;
     this.subscriptions.push(
@@ -50,7 +72,7 @@ export class PageDetailPage implements OnInit, OnDestroy {
           this.pageDetailLoading = false;
           if (responseData) {
             this.pageDetail = responseData;
-            this.setBreadcumb(responseData);
+            // this.setBreadcumb(responseData);
           } else {
             this.pageDetail = [];
           }
@@ -62,28 +84,29 @@ export class PageDetailPage implements OnInit, OnDestroy {
     );
   }
 
-  private setBreadcumb(pageDetail: any): void {
-    const router = this.router.url.split('/');
-    console.log('router', router);
-    console.log('pageDetail', pageDetail);
-    if (router[3] === 'topic'
-      && router[5] === 'book' && router[7] === 'page-list'
-      && router[9] === 'page-detail'
-    ) {
-      console.log('By Home Subject Slider');
-    } else if (router[3] === 'subject' && router[4] === 'topic'
-      && router[6] === 'book' && router[8] === 'page-list'
-      && router[10] === 'page-detail') {
-      console.log('By SUbject Page');
-    } else if (router[3] === 'topic' && router[4] === 'book'
-      && router[6] === 'page-list'
-      && router[8] === 'page-detail') {
-      console.log('By Home Recent Page Slider');
-    } else if (router[3] === 'books' && router[4] === 'page-list'
-      && router[6] === 'page-detail') {
-      console.log('By Home Recent Book Slider');
-    } else if (router[3] === 'recent-page' && router[4] === 'page-detail') {
-      console.log('By Home Recent Page Slider');
-    }
-  }
+  // private setBreadcumb(pageDetail: any): void {
+  //   const router = this.router.url.split('/');
+  //   console.log('router', router);
+  //   console.log('pageDetail', pageDetail);
+  //   if (router[3] === 'topic'
+  //     && router[5] === 'book' && router[7] === 'page-list'
+  //     && router[9] === 'page-detail'
+  //   ) {
+  //     this.breadcumbType = 'homeSubjectSlider';
+  //     console.log('By Home Subject Slider');
+  //   } else if (router[3] === 'subject' && router[4] === 'topic'
+  //     && router[6] === 'book' && router[8] === 'page-list'
+  //     && router[10] === 'page-detail') {
+  //     console.log('By SUbject Page');
+  //   } else if (router[3] === 'topic' && router[4] === 'book'
+  //     && router[6] === 'page-list'
+  //     && router[8] === 'page-detail') {
+  //     console.log('By Home Recent Page Slider');
+  //   } else if (router[3] === 'books' && router[4] === 'page-list'
+  //     && router[6] === 'page-detail') {
+  //     console.log('By Home Recent Book Slider');
+  //   } else if (router[3] === 'recent-page' && router[4] === 'page-detail') {
+  //     console.log('By Home Recent Page Slider');
+  //   }
+  // }
 }
