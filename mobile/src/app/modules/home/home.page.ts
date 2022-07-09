@@ -69,7 +69,7 @@ export class HomePage implements OnInit, OnDestroy {
     this.getCurrentUserDetail();
   }
 
-  public ionViewWillLeave(){
+  public ionViewWillLeave() {
     this.subjectList = [];
     this.pageList = [];
     this.shortList = [];
@@ -88,18 +88,21 @@ export class HomePage implements OnInit, OnDestroy {
   public setBackgoundImage(value) {
     switch (value) {
       case 'Good Morning':
-        this.backgoundImage = 'home_background.jpg'
+        this.backgoundImage = 'home_background.jpg';
         break;
       case 'Good Afternoon':
-        this.backgoundImage = 'home_background-2.jpg'
-       break;
+        this.backgoundImage = 'home_background-2.jpg';
+        break;
       case 'Good Evening':
-        this.backgoundImage = 'home_background-3.jpg'
-       break;
+        this.backgoundImage = 'home_background-3.jpg';
+        break;
+      default:
+        this.backgoundImage = 'home_background.jpg';
+        break;
     }
   }
 
-  sortFunc (a, b) {
+  sortFunc(a, b) {
     return b.createDate - a.createDate;
   }
 
@@ -152,7 +155,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   private getPageList(): void {
     this.commonService.pageData.subscribe(res => {
-      if(res){
+      if (res) {
         this.pageList = res;
         this.pageListLoading = false;
       }
@@ -177,7 +180,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   private getShortList(): void {
     this.commonService.shortData.subscribe(res => {
-      if(res) {
+      if (res) {
         this.shortList = res;
       }
       this.shortListLoading = false;
@@ -202,7 +205,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   private getBookList(): void {
     this.commonService.bookData.subscribe(res => {
-      if(res){
+      if (res) {
         this.bookList = res;
       }
       this.bookListLoading = false;
@@ -227,7 +230,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   private getTopicList(): void {
     this.commonService.topicData.subscribe(res => {
-      if(res) {
+      if (res) {
         this.topicList = res;
         this.topicListLoading = false;
       }
@@ -252,7 +255,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   private getNoteList(): void {
     this.commonService.noteData.subscribe(res => {
-      if(res) {
+      if (res) {
         this.noteList = res;
         this.noteListLoading = false;
       }
