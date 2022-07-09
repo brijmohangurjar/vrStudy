@@ -84,9 +84,24 @@
 }
 
 .bed_come{
-  max-width: 251px;
+  max-width: 290px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-right: 5px;
 }
+
+ion-popover {
+  --width: 100%;
+}
+
+
+// .popover_class {
+//   position: fixed !important;
+//   top: 50% !important;
+//   left: 50% !important;
+//   margin-top: -125px !important;
+//   margin-left: -100px !important;
+//   height: 250px !important;
+//   width: 200px !important;
+// }

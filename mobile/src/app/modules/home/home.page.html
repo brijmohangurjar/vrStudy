@@ -4,12 +4,14 @@
       <ion-col class="ion-padding-bottom ion-no-padding" size="12">
         <div class="container-background" 
           [style.backgroundImage]="'url(assets/images/' + backgoundImage + ')'">
-          <p class="bottom text">{{greetingText}}, 
+          <p class="bottom text"><b>
+            {{greetingText}}, 
             <span *ngIf="currentUserInfo?.firstName">
               {{currentUserInfo?.firstName}}!
             </span>
+          </b>
           </p>
-          <h5 class="bottom date">{{currentDate | date: 'EEEE MMM d, y'}}</h5>
+          <h5 class="bottom date"><b>{{currentDate | date: 'EEEE MMM d, y'}}</b></h5>
         </div>
       </ion-col>
     </ion-row>

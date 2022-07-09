@@ -8,6 +8,7 @@ import { NoDataFoundComponent } from './no-data-found/no-data-found.component';
 import { LoadingComponent } from './loading/loading.component';
 import { LocalSearchComponent } from './local-search/local-search.component';
 import { RouterModule } from '@angular/router';
+import { ViewImageComponent } from './view-image/view-image.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     NoDataFoundComponent,
     LoadingComponent,
-    LocalSearchComponent
+    LocalSearchComponent,
+    ViewImageComponent
   ],
   imports: [
     CommonModule,

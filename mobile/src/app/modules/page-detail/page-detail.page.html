@@ -3,7 +3,7 @@
   [navigationUrl]="pageDetail?.book?.docId" 
 ></app-header>
 
-<ion-breadcrumbs *ngIf="pageDetail" mode="ios">
+<!-- <ion-breadcrumbs max-items="3" *ngIf="pageDetail" mode="ios">
   <ion-breadcrumb (click)="navigateByType('subject')">
     {{pageDetail?.subject?.name}}
   </ion-breadcrumb>
@@ -14,9 +14,16 @@
     {{pageDetail?.book?.bookName}}
   </ion-breadcrumb>
   <ion-breadcrumb>
-    <!-- {{pageDetail?.heading}} -->
+    {{pageDetail?.heading}}
   </ion-breadcrumb>
-</ion-breadcrumbs>
+</ion-breadcrumbs> -->
+
+<ul class="breadcrumb mb-0" *ngIf="pageDetail">
+  <li><a (click)="navigateByType('subject')">{{pageDetail?.subject?.name}}</a></li>
+  <li><a (click)="navigateByType('topic')">{{pageDetail?.topic?.topicName}}</a></li>
+  <li><a (click)="navigateByType('book')">{{pageDetail?.book?.bookName}}</a></li>
+  <!-- <li class="d-none"></li> -->
+</ul>
 
 <ion-content>
   <ion-grid class="ion-grid page_detail">
@@ -26,7 +33,7 @@
           <ion-label>{{pageDetail?.heading}}</ion-label>
         </ion-col>
 
-        <ion-col size="12" *ngIf="pageDetail?.cover_photo">
+        <ion-col size="12" *ngIf="pageDetail?.cover_photo" (click) = "viewImage(pageDetail)">
           <div class="container-background" 
             [style.backgroundImage]="'url('+ pageDetail.cover_photo +')'">
           </div>
