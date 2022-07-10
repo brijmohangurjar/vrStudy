@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Vr Study</string>
     <string name="title_activity_main">Vr Study</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">app.vrstudy.com</string>
+    <string name="custom_url_scheme">app.vrstudy.com</string>
 </resources>
