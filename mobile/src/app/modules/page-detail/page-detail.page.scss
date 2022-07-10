@@ -29,6 +29,10 @@ ul.breadcrumb {
 ul.breadcrumb li {
   display: inline;
   font-size: 18px;
+
+  a {
+    max-width: 250px;
+  }
 }
 
 /* Add a slash symbol (/) before/behind each list item */
@@ -49,3 +53,17 @@ ul.breadcrumb li a {
 //   color: #01447e;
 //   text-decoration: underline;
 // }
+
+.temp_breadcumb {
+  display: inherit;
+  white-space: nowrap;
+  padding: 10px 7px 0px 7px;
+  font-weight: bold;
+
+  .breadcumb_text {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

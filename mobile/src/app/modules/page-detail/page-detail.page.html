@@ -18,12 +18,20 @@
   </ion-breadcrumb>
 </ion-breadcrumbs> -->
 
-<ul class="breadcrumb mb-0" *ngIf="pageDetail">
+<!-- <ul class="breadcrumb mb-0" *ngIf="pageDetail">
   <li><a (click)="navigateByType('subject')">{{pageDetail?.subject?.name}}</a></li>
   <li><a (click)="navigateByType('topic')">{{pageDetail?.topic?.topicName}}</a></li>
   <li><a (click)="navigateByType('book')">{{pageDetail?.book?.bookName}}</a></li>
-  <!-- <li class="d-none"></li> -->
-</ul>
+</ul> -->
+
+<div class="temp_breadcumb" *ngIf="pageDetail">
+  <span class="breadcumb_text" 
+    (click)="navigateByType('subject')">{{pageDetail?.subject?.name}}</span>&nbsp; / &nbsp;
+  <span class="breadcumb_text" 
+    (click)="navigateByType('topic')">{{pageDetail?.topic?.topicName}}</span>&nbsp; / &nbsp;
+  <span class="breadcumb_text" 
+    (click)="navigateByType('book')">{{pageDetail?.book?.bookName}}</span>
+</div>
 
 <ion-content>
   <ion-grid class="ion-grid page_detail">
