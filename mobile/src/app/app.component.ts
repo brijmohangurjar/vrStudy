@@ -5,7 +5,8 @@ import { Subscription } from 'rxjs';
 import { ConstantVariables } from 'src/const/constant';
 import { BookService, LoginService, NoteService, PageDetailService, RecentShortService, TopicService } from './api-services';
 import { CommonService, ToastService } from './service';
-import { Browser } from '@capacitor/browser';
+// import { Browser } from '@capacitor/browser';
+import { App } from '@capacitor/app';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -127,10 +128,10 @@ export class AppComponent {
       buttons: [{
         text: 'Update',
         handler: () => {
-          // App.exitApp();
           this.updateModelOpen = false;
+          App.exitApp();
           // const openCapacitorSite = async () => {
-          Browser.open({ url: updateUrl });
+          // Browser.open({ url: updateUrl });
           // };
         }
       }]
