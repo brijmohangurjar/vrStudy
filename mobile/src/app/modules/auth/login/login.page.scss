@@ -43,7 +43,7 @@ ion-item {
 ion-card {
   height: 100%;
   box-shadow: none !important;
-  background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
+  // background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
 }
 
 .ion-card-footer {
@@ -73,17 +73,18 @@ ion-card {
 }
 
 .card_header {
-  font-size: 18px !important;
+  font-size: 40px !important;
+  font-family: fangsong;
+  position: relative;
+  bottom: 5px;
 }
 
 .logo {
-  height: 126px;
-  margin: 5px auto;
-  margin-top: 35px;
+  height: 100px;
   border-radius: 10px;
   background: white;
 }
 
 .wrapform {
-  margin-top: 70px;
+  margin-top: 25px;
 }

@@ -6,11 +6,17 @@
       </div>
 
       <div class="ion-text-center">
-        <p class="card_header"><b>Login</b></p>
+        <h2 class="card_header"><b>VrStudy</b></h2>
       </div>
-      
+      <div class="ion-text-center">
+        <p style="font-size: 16px;position: relative;bottom: 5px;"><b>Learn something different way of study.</b></p>
+      </div>
+     
       <form [formGroup]="loginForm" autocomplete="off">
         <div class="wrapform">
+          <div class="ion-text-center">
+            <p style="font-size: 18px; margin-bottom: 20px;"><b>Login</b></p>
+          </div>
           <ion-item>
             <ion-input autocomplete="off" type="text" name="email" formControlName="email" placeholder="Email">
               <ion-icon name="mail-outline"></ion-icon>
@@ -53,7 +59,7 @@
         </div>
 
         <div class="sign-btn-wrap pt-5">
-          <ion-button  type="submit" mode="ios"
+          <ion-button  type="submit" style="--background:green" mode="ios"
           fill="solid"  expand="block" (click)="loginSubmit()"
           [disabled]="!loginForm.valid || loginLoading">
           <ion-spinner name="dots" *ngIf="loginLoading"></ion-spinner>
