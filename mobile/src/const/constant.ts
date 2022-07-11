@@ -5,6 +5,8 @@ export class ConstantVariables {
   };
 
   public limit = 10000;
+
+  public appVersion = 1;
 }
 
 
