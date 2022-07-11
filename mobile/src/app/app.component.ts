@@ -42,7 +42,7 @@ export class AppComponent {
     );
   }
 
-  
+
   private getAllTopicList(): void {
     this.subscriptions.push(
       this.topicService.getAllTopicList()
@@ -86,12 +86,11 @@ export class AppComponent {
       this.recentShortService.getRecentShortList()
         .subscribe((result: any) => {
           this.commonService.updareShortDate(result);
-        
+
         }, (error: HttpErrorResponse) => {
           console.log('error', error);
           this.toastService.errorToast(error.message);
         })
     );
   }
-
 }
