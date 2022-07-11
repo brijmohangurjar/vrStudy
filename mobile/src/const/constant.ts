@@ -4,7 +4,7 @@ export class ConstantVariables {
     ERROR: 'danger',
   };
 
-  public limit = 10000;
+  public limit = 7;
 }
 
 

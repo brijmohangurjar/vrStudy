@@ -14,6 +14,12 @@ ion-header {
     font-size: 24px;
   }
 }
+ .search_result{
+  max-width: 235px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
 
 .search_list{
   background: white;

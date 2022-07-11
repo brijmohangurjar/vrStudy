@@ -53,10 +53,6 @@ export class HomePage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
-
-  }
-
-  public ionViewWillEnter() {
     this.greetingText = this.dateService.getTimeGreetings();
     this.setBackgoundImage(this.greetingText);
 
@@ -69,14 +65,6 @@ export class HomePage implements OnInit, OnDestroy {
     this.getCurrentUserDetail();
   }
 
-  public ionViewWillLeave() {
-    this.subjectList = [];
-    this.pageList = [];
-    this.shortList = [];
-    this.bookList = [];
-    this.topicList = [];
-    this.noteList = [];
-  }
   public ngOnDestroy(): void {
 
     // console.log('Calling ngOnDestroy');

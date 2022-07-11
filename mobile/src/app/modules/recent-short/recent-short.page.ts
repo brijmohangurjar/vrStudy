@@ -29,10 +29,6 @@ export class RecentShortPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
-   
-  }
-
-  ionViewWillEnter() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.bookId = param.get('bookId');
       if (this.bookId) {
@@ -41,10 +37,6 @@ export class RecentShortPage implements OnInit, OnDestroy {
         this.getRecentShortList();
       }
     });
-  }
-
-  ionViewWillLeave() {
-    this.recentShort = [];
   }
 
   public ngOnDestroy(): void {

@@ -28,10 +28,6 @@ export class PageListPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
-    
-  }
-
-  ionViewWillEnter() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       this.bookId = param.get('bookId');
       if (this.bookId) {
@@ -40,9 +36,6 @@ export class PageListPage implements OnInit, OnDestroy {
     });
   }
 
-  ionViewWillLeave() {
-    this.pageList = [];
-  }
 
   public ngOnDestroy(): void {
     // console.log('Calling ngOnDestroy');

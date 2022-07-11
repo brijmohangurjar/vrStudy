@@ -17,18 +17,22 @@
 
 /* Style the list */
 ul.breadcrumb {
-  padding: 10px 16px;
+  padding: 10px;
   list-style: none;
   white-space: nowrap;
   overflow: hidden;
-  display: inline;
+  display: inline-flex;
   text-overflow: ellipsis;
 }
 
 /* Display list items side by side */
 ul.breadcrumb li {
-  display: inline;
+  display: block;
   font-size: 18px;
+  max-width: 132px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Add a slash symbol (/) before/behind each list item */

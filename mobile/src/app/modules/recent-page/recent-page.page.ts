@@ -22,15 +22,10 @@ export class RecentPagePage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
-  }
-
-  ionViewWillEnter() {
     this.getAllPageList();
+
   }
 
-  ionViewWillLeave() {
-    this.pageList = [];
-  }
 
   public ngOnDestroy(): void {
     // console.log('Calling ngOnDestroy');

@@ -1,4 +1,5 @@
 <app-header 
+  style="margin-bottom: 10px;"
   [heading]="'Page Detail'" 
   [navigationUrl]="pageDetail?.book?.docId" 
 ></app-header>
@@ -18,14 +19,15 @@
   </ion-breadcrumb>
 </ion-breadcrumbs> -->
 
-<ul class="breadcrumb mb-0" *ngIf="pageDetail">
-  <li><a (click)="navigateByType('subject')">{{pageDetail?.subject?.name}}</a></li>
-  <li><a (click)="navigateByType('topic')">{{pageDetail?.topic?.topicName}}</a></li>
-  <li><a (click)="navigateByType('book')">{{pageDetail?.book?.bookName}}</a></li>
-  <!-- <li class="d-none"></li> -->
-</ul>
+
 
 <ion-content>
+  <ul class="breadcrumb mb-0" *ngIf="pageDetail">
+    <li><a (click)="navigateByType('subject')">{{pageDetail?.subject?.name}}</a></li>
+    <li><a (click)="navigateByType('topic')">{{pageDetail?.topic?.topicName}}</a></li>
+    <li><a (click)="navigateByType('book')">{{pageDetail?.book?.bookName}}</a></li>
+    <!-- <li class="d-none"></li> -->
+  </ul>
   <ion-grid class="ion-grid page_detail">
     <div class="" *ngIf="pageDetail && !pageDetailLoading">
       <ion-row>

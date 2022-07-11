@@ -24,15 +24,7 @@ export class SubjectPage implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit() {
-  }
-
-  ionViewWillEnter() {
     this.getSubjectsList();
-  }
-
-  ionViewWillLeave() {
-    this.subjectList = [];
-
   }
 
   public ngOnDestroy(): void {
