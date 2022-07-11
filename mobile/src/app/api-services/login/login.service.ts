@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
@@ -64,5 +64,16 @@ export class LoginService {
     } else {
       return of();
     }
+  }
+
+
+  public getAppVersion(): Observable<any> {
+    return this.angularFirestore.collection('appVersion').snapshotChanges()
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
+      })
+      ));
   }
 }

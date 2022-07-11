@@ -64,24 +64,12 @@ export class BasePage implements OnInit {
       url: '/base/home/note',
       icon: 'bookmarks-outline',
     },
-    // {
-    //   id: 7,
-    //   title: 'Profile',
-    //   url: '/base/profile',
-    //   icon: 'person-outline',
-    // },
     {
       id: 8,
       title: 'Share',
       url: null,
       icon: 'share-social-outline',
     },
-    // {
-    //   id: 9,
-    //   title: 'Help',
-    //   url: null,
-    //   icon: 'help-circle-outline',
-    // },
     {
       id: 10,
       title: 'Logout',
@@ -117,11 +105,9 @@ export class BasePage implements OnInit {
         SplashScreen.hide();
       }, 2000);
       this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-        if (this.location.isCurrentPathEqualTo('/home')
-          || this.location.isCurrentPathEqualTo('/home/ready-for-delivery')
+        console.log('this.location', this.location);
+        if (this.location.isCurrentPathEqualTo('/base/home')
           || this.location.isCurrentPathEqualTo('/login')
-          || this.location.isCurrentPathEqualTo('/registration')
-          || this.location.isCurrentPathEqualTo('/forgot-password')
         ) {
           if (this.openConfirmationPopup) {
             this.openConfirmationPopup = false;
