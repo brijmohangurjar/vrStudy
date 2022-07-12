@@ -1,6 +1,6 @@
 {
 	"appId": "app.vrstudy.com",
-	"appName": "Vr Study",
+	"appName": "VrStudy",
 	"webDir": "www",
 	"bundledWebRuntime": false,
 	"plugins": {

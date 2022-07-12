@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'app.vrstudy.com',
-  appName: 'Vr Study',
+  appName: 'VrStudy',
   webDir: 'www',
   bundledWebRuntime: false,
   plugins: {

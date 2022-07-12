@@ -64,24 +64,12 @@ export class BasePage implements OnInit {
       url: '/base/home/note',
       icon: 'bookmarks-outline',
     },
-    // {
-    //   id: 7,
-    //   title: 'Profile',
-    //   url: '/base/profile',
-    //   icon: 'person-outline',
-    // },
     {
       id: 8,
       title: 'Share',
       url: null,
       icon: 'share-social-outline',
     },
-    // {
-    //   id: 9,
-    //   title: 'Help',
-    //   url: null,
-    //   icon: 'help-circle-outline',
-    // },
     {
       id: 10,
       title: 'Logout',
@@ -92,6 +80,7 @@ export class BasePage implements OnInit {
 
   private openConfirmationPopup = true;
   private subscriptions: Subscription[] = [];
+  private updateModelOpen = false;
 
   constructor(
     public constVar: ConstantVariables,
@@ -107,7 +96,7 @@ export class BasePage implements OnInit {
     private commonService: CommonService,
     private pageDetailService: PageDetailService,
     private noteService: NoteService,
-    private recentShortService: RecentShortService
+    private recentShortService: RecentShortService,
   ) {
     this.initializeApp();
     this.getBookList();
@@ -115,6 +104,7 @@ export class BasePage implements OnInit {
     this.getAllPageList();
     this.getAllNoteList();
     this.getRecentShortList();
+    this.checkAppVersion();
   }
 
   public ngOnInit() {
@@ -127,11 +117,9 @@ export class BasePage implements OnInit {
         SplashScreen.hide();
       }, 2000);
       this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-        if (this.location.isCurrentPathEqualTo('/home')
-          || this.location.isCurrentPathEqualTo('/home/ready-for-delivery')
+        console.log('this.location', this.location);
+        if (this.location.isCurrentPathEqualTo('/base/home')
           || this.location.isCurrentPathEqualTo('/login')
-          || this.location.isCurrentPathEqualTo('/registration')
-          || this.location.isCurrentPathEqualTo('/forgot-password')
         ) {
           if (this.openConfirmationPopup) {
             this.openConfirmationPopup = false;
@@ -294,6 +282,44 @@ export class BasePage implements OnInit {
           this.toastService.errorToast(error.message);
         })
     );
+  }
+
+  private checkAppVersion(): void {
+    this.subscriptions.push(
+      this.loginService.getAppVersion()
+        .subscribe((result: any) => {
+          if (result && result.length) {
+            if (result[0].currentVersion > this.constVar.appVersion
+              && !this.updateModelOpen) {
+              this.updateModelOpen = true;
+              this.updatePopup(result[0].playStoreUrl);
+            }
+          }
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private updatePopup(updateUrl: string): void {
+    this.alertController.create({
+      header: 'New Update Available',
+      message: 'Please Update Now',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Update',
+        handler: () => {
+          this.updateModelOpen = false;
+          App.exitApp();
+          // const openCapacitorSite = async () => {
+          // Browser.open({ url: updateUrl });
+          // };
+        }
+      }]
+    }).then((alert: any) => {
+      alert.present();
+    });
   }
 
   
