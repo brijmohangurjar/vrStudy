@@ -27,19 +27,19 @@ ul.breadcrumb {
 
 /* Display list items side by side */
 ul.breadcrumb li {
-  display: block;
-  font-size: 18px;
-  max-width: 132px;
-  white-space: nowrap;
+  display: contents;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
 ul.breadcrumb li+li:before {
-  padding: 8px;
+  padding: 0px 8px !important;
   color: black;
-  content: "/\00a0";
+  content: "/ ";
+  position: relative;
+  top: 4px;
 }
 
 /* Add a color to all links inside the list */
@@ -61,9 +61,9 @@ ul.breadcrumb li a {
   font-weight: bold;
 
   .breadcumb_text {
-    max-width: 200px;
+    display: contents;
+    font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
   }
 }

@@ -1,3 +1,6 @@
+.subject_lable{
+  font-size: 14px;
+}
 ion-header {
   padding: 0px 0px;
   ion-buttons {
@@ -15,11 +18,12 @@ ion-header {
   }
 }
  .search_result{
-  max-width: 232px;
-  white-space: nowrap;
+  max-width: 238px;
+  // white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
  }
+
 
 .search_list{
   background: white;
