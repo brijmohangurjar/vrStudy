@@ -60,13 +60,9 @@ export class BooksPage implements OnInit, OnDestroy {
       this.bookService.getBookListByTopicId(topicId)
         .subscribe((responseData: any) => {
           this.bookListLoading = false;
-          if (responseData.length) {
-            this.bookList = responseData;
-            this.originalData = responseData;
-            this.title = `Book - (${this.bookList.length})` ;
-          } else {
-            this.bookList = [];
-          }
+          this.bookList = responseData;
+          this.originalData = responseData;
+          this.title = `Book - (${this.bookList.length})` ;
         }, (error: HttpErrorResponse) => {
           console.log('error', error);
           this.bookListLoading = false;

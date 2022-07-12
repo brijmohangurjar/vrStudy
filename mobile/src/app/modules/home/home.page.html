@@ -16,7 +16,7 @@
       </ion-col>
     </ion-row>
   
-    <ion-item lines='none'>
+    <ion-item lines='none' *ngIf = "(subjectList && subjectList.length) || subjectListLoading">
       Subjects
       <ion-buttons slot="end">
         <ion-button (click)="onClick('subject')">
@@ -24,8 +24,9 @@
         </ion-button>
       </ion-buttons>
     </ion-item>
-  
-    <ion-slides class="listSlides" [options]='slideOpts3' 
+
+    <ng-container>
+      <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!subjectListLoading; else loading;">
       <ion-slide *ngFor="let item of subjectList; let i=index" 
        routerLink="topic/{{item.docId}}" >
@@ -43,7 +44,10 @@
       </ion-slide>
     </ion-slides>
 
-    <ion-item lines='none'>
+    </ng-container>
+  
+
+    <ion-item lines='none' *ngIf = "(topicList && topicList.length) || topicListLoading">
       Recent Topic
       <ion-buttons slot="end">
         <ion-button (click)="onClick('recentTopic')">
@@ -51,8 +55,9 @@
         </ion-button>
       </ion-buttons>
     </ion-item>
-    
-    <ion-slides class="listSlides" [options]='slideOpts3' 
+
+    <ng-container>
+      <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!topicListLoading; else loading;">
       <ion-slide *ngFor="let item of topicList.sort(sortFunc).slice(0,7); let i=index">
         <ion-card routerLink="topic/book/{{item.docId}}">
@@ -68,8 +73,11 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
+    </ng-container>
+    
 
-    <ion-item lines='none'>
+
+    <ion-item lines='none' *ngIf = "(bookList && bookList.length) || bookListLoading">
       Recent Book
       <ion-buttons slot="end">
         <ion-button (click)="onClick('recentBook')">
@@ -77,8 +85,9 @@
         </ion-button>
       </ion-buttons>
     </ion-item>
-    
-    <ion-slides class="listSlides" [options]='slideOpts3' 
+
+    <ng-container >
+      <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!bookListLoading; else loading;">
       <ion-slide *ngFor="let item of bookList.sort(sortFunc).slice(0,7); let i=index">
         <ion-card routerLink="books/page-list/{{item.docId}}">
@@ -94,8 +103,10 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
-  
-    <ion-item lines='none'>
+    </ng-container>
+    
+ 
+    <ion-item lines='none' *ngIf = "(pageList && pageList.length) || pageListLoading">
        Recent Pages
       <ion-buttons slot="end">
         <ion-button (click)="onClick('recentPage')">
@@ -103,8 +114,9 @@
         </ion-button>
       </ion-buttons>
     </ion-item>
-  
-    <ion-slides class="listSlides" [options]='slideOpts3' 
+
+    <ng-container>
+      <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!pageListLoading; else loading;">
       <ion-slide *ngFor="let item of pageList.sort(sortFunc).slice(0,7); let i=index" 
         routerLink="recent-page/page-detail/{{item.docId}}">
@@ -121,8 +133,11 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
+    </ng-container>
   
-    <ion-item lines='none' *ngIf = "shortList && shortList.length">
+  
+  
+    <ion-item lines='none' *ngIf = "(shortList && shortList.length) || shortListLoading">
        Recent Shorts
       <ion-buttons slot="end">
         <ion-button (click)="onClick('recentShort')">
@@ -131,7 +146,8 @@
       </ion-buttons>
     </ion-item>
   
-    <ion-slides class="listSlides" [options]='slideOpts3' 
+    <ng-container>
+      <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!shortListLoading; else loading;">
       <ion-slide *ngFor="let item of shortList.sort(sortFunc).slice(0,7); let i=index">
         <ion-card 
@@ -148,8 +164,10 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
+    </ng-container>
 
-    <ion-item lines='none' *ngIf = "noteList && noteList.length">
+
+    <ion-item lines='none' *ngIf = "(noteList && noteList.length) || noteListLoading">
        Recent Notes
       <ion-buttons slot="end">
         <ion-button (click)="onClick('recentNote')">
@@ -157,8 +175,9 @@
         </ion-button>
       </ion-buttons>
     </ion-item>
-  
-    <ion-slides class="listSlides" [options]='slideOpts3' 
+
+    <ng-container>
+      <ion-slides class="listSlides" [options]='slideOpts3' 
       *ngIf="!noteListLoading; else loading;">
       <ion-slide *ngFor="let item of noteList.sort(sortFunc).slice(0,7); let i=index">
         <ion-card 
@@ -175,6 +194,9 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
+    </ng-container>
+  
+
 
   </ion-grid>
 </ion-content>

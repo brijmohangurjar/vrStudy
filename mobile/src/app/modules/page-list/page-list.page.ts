@@ -50,13 +50,9 @@ export class PageListPage implements OnInit, OnDestroy {
       this.pageDetailService.getPageListByBookId(bookId)
         .subscribe((responseData: any) => {
           this.pageListLoading = false;
-          if (responseData.length) {
-            this.pageList = responseData;
-            this.originalData = responseData;
-            this.title = `Page - (${this.pageList.length})`;
-          } else {
-            this.pageList = [];
-          }
+          this.pageList = responseData;
+          this.originalData = responseData;
+          this.title = `Page - (${this.pageList.length})`;
         }, (error: HttpErrorResponse) => {
           this.pageListLoading = false;
           console.log('error', error);

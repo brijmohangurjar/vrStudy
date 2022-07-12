@@ -52,13 +52,9 @@ export class TopicPage implements OnInit, OnDestroy {
       this.topicService.getTopicListBySubjectId(subjectId)
         .subscribe((responseData: any) => {
           this.topicListLoading = false;
-          if (responseData.length) {
             this.topicList = responseData;
             this.originalData = responseData;
             this.title = `Topic - (${this.topicList.length})`;
-          } else {
-            this.topicList = [];
-          }
         }, (error: HttpErrorResponse) => {
           this.topicListLoading = false;
           console.log('error', error);

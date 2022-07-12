@@ -80,13 +80,9 @@ export class RecentShortPage implements OnInit, OnDestroy {
       this.recentShortService.getShortListByBookId(bookId)
         .subscribe((result: any) => {
           this.recentShortLoading = false;
-          if (result && result.length) {
-            this.recentShort = result;
-            this.originalData = result;
-            this.title = `Short - (${this.recentShort.length})`;
-          } else {
-            this.recentShort = [];
-          }
+          this.recentShort = result;
+          this.originalData = result;
+          this.title = `Short - (${this.recentShort.length})`;
         }, (error: HttpErrorResponse) => {
           this.recentShortLoading = false;
           console.log('error', error);

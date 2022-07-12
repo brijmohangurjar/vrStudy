@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController, Platform } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { LoginService } from 'src/app/api-services';
+import { BookService, LoginService, NoteService, PageDetailService, RecentShortService, TopicService } from 'src/app/api-services';
 import { ConstantVariables } from 'src/const/constant';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Share } from '@capacitor/share';
@@ -101,10 +101,20 @@ export class BasePage implements OnInit {
     private alertController: AlertController,
     private location: Location,
     private loginService: LoginService,
+    private bookService: BookService,
     private toastService: ToastService,
+    private topicService: TopicService,
     private commonService: CommonService,
+    private pageDetailService: PageDetailService,
+    private noteService: NoteService,
+    private recentShortService: RecentShortService
   ) {
     this.initializeApp();
+    this.getBookList();
+    this.getAllTopicList();
+    this.getAllPageList();
+    this.getAllNoteList();
+    this.getRecentShortList();
   }
 
   public ngOnInit() {
@@ -222,4 +232,69 @@ export class BasePage implements OnInit {
         })
     );
   }
+
+  private getBookList(): void {
+    this.subscriptions.push(
+      this.bookService.getBookList()
+        .subscribe((result: any) => {
+          this.commonService.updareBookDate(result);
+
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  
+  private getAllTopicList(): void {
+    this.subscriptions.push(
+      this.topicService.getAllTopicList()
+        .subscribe((responseData: any) => {
+          this.commonService.updareTopicDate(responseData);
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private getAllPageList(): void {
+    this.subscriptions.push(
+      this.pageDetailService.getAllPageList()
+        .subscribe((result: any) => {
+          this.commonService.updarePageDate(result);
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private getAllNoteList(): void {
+    this.subscriptions.push(
+      this.noteService.getAllNoteList()
+        .subscribe((result: any) => {
+          this.commonService.updareNoteDate(result);
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  private getRecentShortList(): void {
+    this.subscriptions.push(
+      this.recentShortService.getRecentShortList()
+        .subscribe((result: any) => {
+          this.commonService.updareShortDate(result);
+        
+        }, (error: HttpErrorResponse) => {
+          console.log('error', error);
+          this.toastService.errorToast(error.message);
+        })
+    );
+  }
+
+  
 }
