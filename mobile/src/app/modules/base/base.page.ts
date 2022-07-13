@@ -53,16 +53,16 @@ export class BasePage implements OnInit {
       icon: 'reader-outline',
     },
     {
-      id: 5,
-      title: 'Short',
-      url: '/base/home/short',
-      icon: 'card-outline',
-    },
-    {
       id: 6,
       title: 'Note',
       url: '/base/home/note',
       icon: 'bookmarks-outline',
+    },
+    {
+      id: 5,
+      title: 'Short',
+      url: '/base/home/short',
+      icon: 'card-outline',
     },
     {
       id: 8,

@@ -135,6 +135,36 @@
     </ion-slides>
     </ng-container>
   
+
+    <ion-item lines='none' *ngIf = "(noteList && noteList.length) || noteListLoading">
+      Recent Notes
+     <ion-buttons slot="end">
+       <ion-button (click)="onClick('recentNote')">
+         <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
+       </ion-button>
+     </ion-buttons>
+   </ion-item>
+
+   <ng-container>
+     <ion-slides class="listSlides" [options]='slideOpts3' 
+     *ngIf="!noteListLoading; else loading;">
+     <ion-slide *ngFor="let item of noteList.sort(sortFunc).slice(0,7); let i=index">
+       <ion-card 
+         routerLink="note/note-detail/{{item.docId}}">
+         <ion-card-header>
+           <ion-card-subtitle><b>{{item?.heading}}</b></ion-card-subtitle>
+         </ion-card-header>
+        
+        <ion-row class="card-footer ion-no-margin ion-no-padding">
+           <ion-col class="ion-no-margin ion-no-padding">
+             <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
+           </ion-col>
+        </ion-row>
+       </ion-card>
+     </ion-slide>
+   </ion-slides>
+   </ng-container>
+ 
   
   
     <ion-item lines='none' *ngIf = "(shortList && shortList.length) || shortListLoading">
@@ -167,35 +197,7 @@
     </ng-container>
 
 
-    <ion-item lines='none' *ngIf = "(noteList && noteList.length) || noteListLoading">
-       Recent Notes
-      <ion-buttons slot="end">
-        <ion-button (click)="onClick('recentNote')">
-          <ion-icon slot="icon-only" name="chevron-forward" size='small'></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
-
-    <ng-container>
-      <ion-slides class="listSlides" [options]='slideOpts3' 
-      *ngIf="!noteListLoading; else loading;">
-      <ion-slide *ngFor="let item of noteList.sort(sortFunc).slice(0,7); let i=index">
-        <ion-card 
-          routerLink="note/note-detail/{{item.docId}}">
-          <ion-card-header>
-            <ion-card-subtitle><b>{{item?.heading}}</b></ion-card-subtitle>
-          </ion-card-header>
-         
-         <ion-row class="card-footer ion-no-margin ion-no-padding">
-            <ion-col class="ion-no-margin ion-no-padding">
-              <p class="footer_date">{{item?.createDate?.seconds * 1000 | date: 'd MMM, y'}}</p>
-            </ion-col>
-         </ion-row>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-    </ng-container>
-  
+ 
 
 
   </ion-grid>
