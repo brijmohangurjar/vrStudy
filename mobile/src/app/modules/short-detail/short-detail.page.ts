@@ -1,9 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { PopoverController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { ShortDetailService } from 'src/app/api-services';
 import { ToastService } from 'src/app/service';
+import { ViewImageComponent } from '../shared-module/view-image/view-image.component';
 
 @Component({
   selector: 'app-short-detail',
@@ -23,6 +25,7 @@ export class ShortDetailPage implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private shortDetailService: ShortDetailService,
     private toastService: ToastService,
+    private popoverCtrl: PopoverController
   ) { }
 
   public ngOnInit() {
@@ -56,5 +59,20 @@ export class ShortDetailPage implements OnInit, OnDestroy {
           this.toastService.errorToast(error.message);
         })
     );
+  }
+
+  
+  public async viewImage(data: any): Promise<any> {
+    const popover = await this.popoverCtrl.create({
+      component: ViewImageComponent,
+      mode: 'ios',
+      componentProps: {
+        product: data,
+        showOffer: false
+      }
+    });
+    popover.onDidDismiss().then((dataReturned) => {
+    });
+    return await popover.present();
   }
 }

@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'page-detail/:pageId',
     loadChildren: () => import('../page-detail/page-detail.module').then(m => m.PageDetailPageModule)
+  },
+  {
+    path: 'note/:bookId',
+    loadChildren: () => import('../note/note.module').then(m => m.NotePageModule)
   }
 ];
 
