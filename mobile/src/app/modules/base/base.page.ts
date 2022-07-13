@@ -81,6 +81,7 @@ export class BasePage implements OnInit {
   private openConfirmationPopup = true;
   private subscriptions: Subscription[] = [];
   private updateModelOpen = false;
+  private appRelatedInfo: any;
 
   constructor(
     public constVar: ConstantVariables,
@@ -171,10 +172,10 @@ export class BasePage implements OnInit {
 
   private async openSharePopup() {
     await Share.share({
-      title: 'Share Vr Study',
-      text: 'Check',
-      // url: 'https://onlineKirana.app',
-      dialogTitle: 'Share Vr Study'
+      title: 'Share VrStudy',
+      text: 'Share VrStudy',
+      url: this.appRelatedInfo.shareUrl,
+      dialogTitle: 'Share VrStudy'
     });
   }
 
@@ -233,7 +234,7 @@ export class BasePage implements OnInit {
     );
   }
 
-  
+
   private getAllTopicList(): void {
     this.subscriptions.push(
       this.topicService.getAllTopicList()
@@ -275,7 +276,7 @@ export class BasePage implements OnInit {
       this.recentShortService.getRecentShortList()
         .subscribe((result: any) => {
           this.commonService.updareShortDate(result);
-        
+
         }, (error: HttpErrorResponse) => {
           console.log('error', error);
           this.toastService.errorToast(error.message);
@@ -288,6 +289,7 @@ export class BasePage implements OnInit {
       this.loginService.getAppVersion()
         .subscribe((result: any) => {
           if (result && result.length) {
+            this.appRelatedInfo = result[0];
             if (result[0].currentVersion > this.constVar.appVersion
               && !this.updateModelOpen) {
               this.updateModelOpen = true;
@@ -320,6 +322,4 @@ export class BasePage implements OnInit {
       alert.present();
     });
   }
-
-  
 }
