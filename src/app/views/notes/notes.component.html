@@ -28,14 +28,14 @@
     
                                 <div class="form-group col-sm-4 col-lg-4 col-md-4">
                                     <label for="ccmonth">Book</label>
-                                    <select class="form-control" formControlName="book" (change)="getAllPage()">
+                                    <select class="form-control" formControlName="book">
                                         <option value="">Select</option>
                                         <option *ngFor="let book of allBook" [ngValue]="book.docId">{{book?.bookName}}
                                         </option>
                                     </select>
                                 </div>
 
-                                <div class="form-group col-sm-4 col-lg-4 col-md-4">
+                                <!-- <div class="form-group col-sm-4 col-lg-4 col-md-4">
                                     <label for="ccmonth">Page</label>
                                     <select class="form-control" formControlName="page">
                                         <option value="">Select</option>
@@ -43,7 +43,7 @@
                                             <span [innerHtml]="page?.page | safeHtml">{{page?.page}}</span>
                                         </option>
                                     </select>
-                                </div>
+                                </div> -->
     
                                 <div class="col-sm-4 col-lg-4 col-md-4">
                                     <div class="form-group">
@@ -103,15 +103,20 @@
                                     <option *ngFor="let topic of allTopicData" [ngValue]="topic.topicName">{{topic?.topicName}}</option>
                                 </select>
                             </div>
-
-                            <div class="form-group col-sm-3 col-lg-3 col-md-3">
+                            <!-- <div class="form-group col-sm-3 col-lg-3 col-md-3">
+                                <select class="form-control" [(ngModel)]="selectedBook" (change) = "filterData()" name = "selectedBook">
+                                    <option value="">Select Book</option>
+                                    <option *ngFor="let book of allBook" [ngValue]="book?.bookName">{{book?.bookName}}</option>
+                                </select>
+                            </div> -->
+                            <!-- <div class="form-group col-sm-3 col-lg-3 col-md-3">
                                 <select class="form-control" [(ngModel)]="selectedPage" (change)="filterData()"
                                     name="selectedPage">
                                     <option value="">Select Page</option>
                                     <option *ngFor="let page of allPageData" [ngValue]="page?.heading">{{page?.heading}}
                                     </option>
                                 </select>
-                            </div>
+                            </div> -->
                             <div class="col-sm-3 col-lg-3 col-md-3" style="text-align: end;">
                                 <div class="form-group">
                                     <input type="text" [(ngModel)]="heading" name="heading"
@@ -137,11 +142,11 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-6">
-                                <strong>{{data.heading}}</strong>
+                                <strong>{{data.bookName}}</strong>
                             </div>
                             <div class="col-6" style="text-align: end;">
                                 <button type="submit" class="btn btn-sm btn-primary"
-                                    (click)="open(data.pageArray[0])">Add</button>
+                                    (click)="open(data.bookArray[0])">Add</button>
                             </div>
                         </div>
                         <!-- <i class="fa fa-align-justify"></i> Combined All Table -->
@@ -154,7 +159,7 @@
                                     <th>Subject</th>
                                     <th>Topic</th>
                                     <th>Book</th>
-                                    <th>Page</th>
+                                    <!-- <th>Page</th> -->
                                     <th>Heading</th>
                                     <th>Note</th>
                                     <th>Image</th>
@@ -162,12 +167,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item of data.pageArray;let i = index">
+                                <tr *ngFor="let item of data.bookArray;let i = index">
                                     <td>{{i + 1}}</td>
                                     <td>{{item?.subject?.name}}</td>
                                     <td>{{item?.topic?.topicName}}</td>
                                     <td>{{item?.book?.bookName}}</td>
-                                    <td [innerHtml]="item?.page?.page | safeHtml">{{item?.page?.page}}</td>
+                                    <!-- <td [innerHtml]="item?.page?.page | safeHtml">{{item?.page?.page}}</td> -->
                                     <td>{{item?.heading}}</td>
                                     <td [innerHtml]="item?.note | safeHtml">{{item?.note}}</td>
                                     <td>

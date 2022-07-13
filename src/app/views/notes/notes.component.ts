@@ -34,7 +34,7 @@ export class NotesComponent implements OnInit {
   public heading = '';
   public onChangeSearch = new Subject<string>();
   public originalData = [];
-  public selectedPage = '';
+  public selectedBook = '';
   public allPageData  = [];
   public allDataListForFilter = [];
   public pageOriginalData  = [];
@@ -91,7 +91,7 @@ export class NotesComponent implements OnInit {
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
-      page: [data && data.page ? data.page.docId : '', [Validators.required]],
+      // page: [data && data.page ? data.page.docId : '', [Validators.required]],
       heading: [data && data.heading ? data.heading : ''],
       cover_photo: [data && data.cover_photo ? data.cover_photo : ''],
       note: [data && data.note ? data.note : '', [Validators.required]],
@@ -99,7 +99,7 @@ export class NotesComponent implements OnInit {
     if(data){
       this.getAllTopic();
       this.getAllBook();
-      this.getAllPage();
+      // this.getAllPage();
       this.selectedPhoto = data.cover_photo;
     }
    setTimeout(() => {
@@ -112,7 +112,7 @@ export class NotesComponent implements OnInit {
 
   public clearFilter(){
     this.heading = '';
-    this.selectedPage = '';
+    this.selectedBook = '';
     this.selectTopic = '';
     this.dataList = this.allDataListForFilter;
   }
@@ -145,20 +145,21 @@ export class NotesComponent implements OnInit {
   public getAllBook(){
     this.bookService.getBookByDocId(this.form.value.topic).subscribe(res => {
       this.allBook = res;
+      console.log(this.allBook , 'allBook');
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
 
-  public getAllPage(){
-    this.pageService.getPageByDocId(this.form.value.book).subscribe(res => {
-      this.allPage = res;
-    }, (error: HttpErrorResponse) => {
-      console.log('error', error);
-      this.matSnackBarService.showErrorSnackBar(error.message);
-    });
-  }
+  // public getAllPage(){
+  //   this.pageService.getPageByDocId(this.form.value.book).subscribe(res => {
+  //     this.allPage = res;
+  //   }, (error: HttpErrorResponse) => {
+  //     console.log('error', error);
+  //     this.matSnackBarService.showErrorSnackBar(error.message);
+  //   });
+  // }
 
   
   public getPage(){
@@ -172,7 +173,7 @@ export class NotesComponent implements OnInit {
   }
 
   public filterTopic(){
-    this.selectedPage = '';
+    this.selectedBook = '';
   }
 
   
@@ -245,10 +246,10 @@ export class NotesComponent implements OnInit {
       this.allPageData = this.pageOriginalData;
     }
     
-    if(this.selectedPage || this.selectTopic){
+    if(this.selectedBook || this.selectTopic){
       this.allDataListForFilter.map((res:any) => {
-        if(res.topicName == this.selectTopic || (!this.selectTopic && this.selectedPage)){
-          if(res.heading == this.selectedPage || (!this.selectedPage && this.selectTopic)){
+        if(res.topicName == this.selectTopic || (!this.selectTopic && this.selectedBook)){
+          if(res.bookName == this.selectedBook || (!this.selectedBook && this.selectTopic)){
             data.push(res);
           }
         }
@@ -271,16 +272,15 @@ export class NotesComponent implements OnInit {
     }
  
     const allData = [];
-    searchList.map((page:any) => {
-      const isExist = allData.find(res => res.page ==  page.page.heading);
+    searchList.map((book:any) => {
+      const isExist = allData.find(res => res.bookName ==  book.book.bookName);
       if(isExist){
-        isExist.pageArray.push(page);
+        isExist.bookArray.push(book);
       } else {
         const obj = {
-          page: page.page.page,
-          heading: page.page.heading,
-          topicName: page.topic.topicName,
-          pageArray: [page]
+          bookName: book.book.bookName,
+          topicName: book.topic.topicName,
+          bookArray: [book]
         }
         allData.push(obj);
       }
@@ -298,17 +298,26 @@ export class NotesComponent implements OnInit {
       this.dataList = res;
       this.originalData = res;
       const allData = [];
-      res.map((page:any) => {
-        const isExist = allData.find(res => res.page ==  page.page.page);
+      res.map((book:any) => {
+        const isExist = allData.find(res => res.bookName ==  book.book.bookName);
         if(isExist){
-          isExist.pageArray.push(page);
+          isExist.bookArray.push(book);
         } else {
           const obj = {
-            page: page.page.page,
-            heading: page.page.heading,
-            topicName: page.topic.topicName,
-            pageArray: [page]
+            bookName: book.book.bookName,
+            topicName: book.topic.topicName,
+            bookArray: [book]
           }
+        // const isExist = allData.find(res => res.page ==  page.page.page);
+        // if(isExist){
+        //   isExist.pageArray.push(page);
+        // } else {
+        //   const obj = {
+        //     page: page.page.page,
+        //     heading: page.page.heading,
+        //     topicName: page.topic.topicName,
+        //     pageArray: [page]
+        //   }
           allData.push(obj);
         }
       });
@@ -337,7 +346,7 @@ export class NotesComponent implements OnInit {
       subject: [data && data.subject.docId ? data.subject.docId : '', [Validators.required]],
       topic: [data && data.topic.docId ? data.topic.docId : '', [Validators.required]],
       book: [data && data.book.docId ? data.book.docId : '', [Validators.required]],
-      page: [data && data.page.docId ? data.page.docId : '', [Validators.required]],
+      // page: [data && data.page.docId ? data.page.docId : '', [Validators.required]],
       heading: [''],
       cover_photo: [data && data.cover_photo ? data.cover_photo : ''],
       note: ['', [Validators.required]],
@@ -345,7 +354,7 @@ export class NotesComponent implements OnInit {
     if(data){
       this.getAllTopic();
       this.getAllBook();
-      this.getAllPage();
+      // this.getAllPage();
       this.selectedPhoto = data.cover_photo;
     }
    setTimeout(() => {
@@ -378,12 +387,12 @@ export class NotesComponent implements OnInit {
       docId: book.docId
     };
 
-    const page = this.allPage.find(res=> res.docId == this.form.value.page);
-    formValue.page = {
-      page: page.page,
-      heading: page.heading,
-      docId: page.docId
-    };
+    // const page = this.allPage.find(res=> res.docId == this.form.value.page);
+    // formValue.page = {
+    //   page: page.page,
+    //   heading: page.heading,
+    //   docId: page.docId
+    // };
 
     if (this.DM_MODE == 'Add') {
       formValue.authStatus = true;
