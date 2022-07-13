@@ -145,7 +145,6 @@ export class NotesComponent implements OnInit {
   public getAllBook(){
     this.bookService.getBookByDocId(this.form.value.topic).subscribe(res => {
       this.allBook = res;
-      console.log(this.allBook , 'allBook');
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
