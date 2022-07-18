@@ -160,7 +160,7 @@
                                     <td>{{item?.topic?.topicName}}</td>
                                     <td>{{item?.book?.bookName}}</td>
                                     <td>{{item?.heading}}</td>
-                                    <td [innerHtml]="item?.page | safeHtml">{{item?.page}}</td>
+                                    <td class="ellipsis" [innerHtml]="item?.page | safeHtml">{{item?.page}}</td>
                                     <td>
                                         <a matTooltip="View Image" >
                                             <img height="70" [src] = "item?.cover_photo">

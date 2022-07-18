@@ -167,9 +167,9 @@
                                     <td>{{item?.subject?.name}}</td>
                                     <td>{{item?.topic?.topicName}}</td>
                                     <td>{{item?.book?.bookName}}</td>
-                                    <td [innerHtml]="item?.page?.page | safeHtml">{{item?.page?.page}}</td>
+                                    <td class="ellipsis" [innerHtml]="item?.page?.page | safeHtml">{{item?.page?.page}}</td>
                                     <td>{{item?.heading}}</td>
-                                    <td [innerHtml]="item?.short | safeHtml">{{item?.short}}</td>
+                                    <td class="ellipsis" [innerHtml]="item?.short | safeHtml">{{item?.short}}</td>
                                     <td>
                                         <a matTooltip="View Image">
                                             <img height="70" [src] = "item?.cover_photo">
