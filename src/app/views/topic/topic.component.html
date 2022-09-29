@@ -44,8 +44,8 @@
                         <strong>All Topics</strong>
                     </div>
                     <div class="form-group col-sm-3 col-lg-3 col-md-3">
-                        <select class="form-control" [(ngModel)]="selectedSubject" (change) = "filterData()" name = "selectedSubject">
-                            <option value="">Select Subject</option>
+                        <select class="form-control" [(ngModel)]="selectedSubject" (change) = "getList()" name = "selectedSubject">
+                            <option value="">All Subjects</option>
                             <option *ngFor="let subject of allSubjectData" [ngValue]="subject?.name">{{subject?.name}}</option>
                         </select>
                     </div>

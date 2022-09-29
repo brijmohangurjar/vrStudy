@@ -27,7 +27,7 @@ export class BookComponent implements OnInit {
   public heading = '';
   public onChangeSearch = new Subject<string>();
   public originalData = [];
-  public selectedTopic = '';
+  public selectedTopic = 'मध्यप्रदेश का भूगोल';
   public allTopicData  = [];
   public allDataListForFilter = [];
 
@@ -152,7 +152,7 @@ export class BookComponent implements OnInit {
 
   public getList(){
     this.appComponent.showLoader();
-    this.bookService.getBook().subscribe(res => {
+    this.bookService.getBookByTopic(this.selectedTopic).subscribe(res => {
       const allData = [];
       this.originalData = res;
       res.map((topic:any) => {

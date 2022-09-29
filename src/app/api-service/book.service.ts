@@ -74,24 +74,24 @@ export class BookService {
   //     );
   // }
 
-  // public getCategoryByDocId(): Observable<any> {
-  //   return this.db.collection('category', ref =>
-  //    {
-  //     let query: any = ref;
-  //     if (this.shopkeeperService.userData && this.shopkeeperService.userData.userType == 'ShopKeeper') {
-  //       query = query.where('shopCategory.docId', '==', this.shopkeeperService.userData.shop_type.docId);
-  //     }
-  //     return query;
-  //   }).snapshotChanges()
-  //     .pipe(map((actions) => {
-  //       return actions.map(doc => {
-  //         const data: any = doc.payload.doc.data();
-  //         const docId = doc.payload.doc.id;
-  //         return { docId, ...data };
-  //       });
-  //     })
-  //     );
-  // }
+  public getBookByTopic(topic?): Observable<any> {
+    return this.db.collection('book', ref =>
+     {
+      let query: any = ref;
+      if (topic) {
+        query = query.where('topic.topicName', '==', topic);
+      }
+      return query;
+    }).snapshotChanges()
+      .pipe(map((actions) => {
+        return actions.map(doc => {
+          const data: any = doc.payload.doc.data();
+          const docId = doc.payload.doc.id;
+          return { docId, ...data };
+        });
+      })
+      );
+  }
 
   public getBookByDocId(docId): Observable<any> {
     return this.db.collection('book', ref => 

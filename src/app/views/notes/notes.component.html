@@ -69,11 +69,13 @@
     
                                 <div class="col-sm-12 col-lg-12 col-md-12 p-2">
                                     <label for="name">Note</label>
-                                    <div class="NgxEditor__Wrapper ">
+                                     <angular-editor  formControlName="note" [config]="config"></angular-editor>
+
+                                    <!-- <div class="NgxEditor__Wrapper ">
                                         <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
                                         <ngx-editor [editor]="editor" formControlName="note" [toolbar]="toolbar"
                                             [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -98,8 +100,8 @@
                             </div>
 
                             <div class="form-group col-sm-3 col-lg-3 col-md-3">
-                                <select class="form-control" [(ngModel)]="selectTopic" (change) = "filterData();filterTopic()" name = "selectTopic">
-                                    <option value="">Select Topic</option>
+                                <select class="form-control" [(ngModel)]="selectTopic" (change) = "getList()" name = "selectTopic">
+                                    <option value="">All Topic</option>
                                     <option *ngFor="let topic of allTopicData" [ngValue]="topic.topicName">{{topic?.topicName}}</option>
                                 </select>
                             </div>

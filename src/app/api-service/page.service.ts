@@ -96,24 +96,24 @@ export class PageService {
       });
   }
 
-  // public getCategoryByDocId(): Observable<any> {
-  //   return this.db.collection('category', ref =>
-  //    {
-  //     let query: any = ref;
-  //     if (this.shopkeeperService.userData && this.shopkeeperService.userData.userType == 'ShopKeeper') {
-  //       query = query.where('shopCategory.docId', '==', this.shopkeeperService.userData.shop_type.docId);
-  //     }
-  //     return query;
-  //   }).snapshotChanges()
-  //     .pipe(map((actions) => {
-  //       return actions.map(doc => {
-  //         const data: any = doc.payload.doc.data();
-  //         const docId = doc.payload.doc.id;
-  //         return { docId, ...data };
-  //       });
-  //     })
-  //     );
-  // }
+  public getPageByBook(book?): Observable<any> {
+    return this.db.collection('page', ref =>
+     {
+      let query: any = ref;
+      if (book) {
+        query = query.where('book.bookName', '==', book);
+      }
+      return query;
+    }).snapshotChanges()
+      .pipe(map((actions) => {
+        return actions.map(doc => {
+          const data: any = doc.payload.doc.data();
+          const docId = doc.payload.doc.id;
+          return { docId, ...data };
+        });
+      })
+      );
+  }
 
   public getPageByDocId(docId): Observable<any> {
     return this.db.collection('page', ref => 

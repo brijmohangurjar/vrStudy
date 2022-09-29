@@ -57,9 +57,9 @@
                                 <strong>All Books</strong>
                             </div>
                             <div class="form-group col-sm-3 col-lg-3 col-md-3">
-                                <select class="form-control" [(ngModel)]="selectedTopic" (change)="filterData()"
+                                <select class="form-control" [(ngModel)]="selectedTopic" (change)="getList()"
                                     name="selectedTopic">
-                                    <option value="">Select Topic</option>
+                                    <option value="">All Topic</option>
                                     <option *ngFor="let topic of allTopicData" [ngValue]="topic?.topicName">
                                         {{topic?.topicName}}</option>
                                 </select>

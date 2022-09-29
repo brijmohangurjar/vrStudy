@@ -110,6 +110,25 @@ export class NoteService {
   //     );
   // }
 
+  public getNoteByTopic(topic?): Observable<any> {
+    return this.db.collection('note', ref =>
+     {
+      let query: any = ref;
+      if (topic) {
+        query = query.where('topic.topicName', '==', topic);
+      }
+      return query;
+    }).snapshotChanges()
+      .pipe(map((actions) => {
+        return actions.map(doc => {
+          const data: any = doc.payload.doc.data();
+          const docId = doc.payload.doc.id;
+          return { docId, ...data };
+        });
+      })
+      );
+  }
+
 
   editNote(id: string, data: any, ): Observable<any> {
     const obs = new Observable((observer) => {

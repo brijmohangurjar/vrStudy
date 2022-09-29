@@ -50,10 +50,12 @@ import { BookComponent } from './views/book/book.component';
 import { PageComponent } from './views/page/page.component';
 import { ShortComponent } from './views/short/short.component';
 import { ConfirmationPopoverComponent } from './views/confirmation-popover/confirmation-popover.component';
-import { NgxEditorModule } from 'ngx-editor';
+// import { NgxEditorModule } from 'ngx-editor';
 import { SafeHtmlPipe } from './service/safe-html.pipe';
 import { ConfirmDialogComponent } from './views/confirm-dialog/confirm-dialog.component';
 import { NotesComponent } from './views/notes/notes.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     BrowserModule,
@@ -75,9 +77,11 @@ import { NotesComponent } from './views/notes/notes.component';
     AngularFirestoreModule,
     AngularFireFunctionsModule,
     MatSnackBarModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxEditorModule
+    AngularEditorModule
+    // NgxEditorModule
   ],
   exports:[
     MatSnackBarModule

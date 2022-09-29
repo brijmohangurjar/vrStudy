@@ -69,11 +69,13 @@
     
                                 <div class="col-sm-12 col-lg-12 col-md-12 p-2">
                                     <label for="name">Short</label>
-                                    <div class="NgxEditor__Wrapper ">
+                                    <angular-editor  formControlName="short"  [config]="config"></angular-editor>
+
+                                    <!-- <div class="NgxEditor__Wrapper ">
                                         <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
                                         <ngx-editor [editor]="editor" formControlName="short" [toolbar]="toolbar"
                                             [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

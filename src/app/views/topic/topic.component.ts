@@ -24,7 +24,7 @@ export class TopicComponent implements OnInit {
   public heading = '';
   public onChangeSearch = new Subject<string>();
   public originalData = [];
-  public selectedSubject = '';
+  public selectedSubject = 'Geography';
   public allSubjectData  = [];
   public allDataListForFilter = [];
 
@@ -135,7 +135,7 @@ export class TopicComponent implements OnInit {
 
   public getList(){
     this.appComponent.showLoader();
-    this.topicService.getTopic().subscribe(res => {
+    this.topicService.getTopicBySubject(this.selectedSubject).subscribe(res => {
       const allData = [];
       this.originalData = res;
       res.map((subject:any) => {

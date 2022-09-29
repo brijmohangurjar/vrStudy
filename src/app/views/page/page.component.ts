@@ -7,9 +7,10 @@ import { MatSnackBarService } from 'src/app/service/mat-snack-bar.service';
 import {TopicService} from '../../api-service/topic.service';
 import {BookService} from '../../api-service/book.service';
 import {PageService} from '../../api-service/page.service';
-import { Editor, Toolbar } from 'ngx-editor';
+// import { Editor, Toolbar } from 'ngx-editor';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-page',
@@ -31,24 +32,52 @@ export class PageComponent implements OnInit {
   public heading = '';
   public onChangeSearch = new Subject<string>();
   public originalData = [];
-  public selectedBook = '';
+  public selectedBook = 'मध्यप्रदेश राज्य निर्वाचन आयोग';
   public allBookData  = [];
   public bookOriginalData  = [];
   public allDataListForFilter = [];
   public selectedPhoto: string | null = null;
   public imageError: string | null = null;
   public coverPhotoName = '';
-  editor: Editor;
-  toolbar: Toolbar = [
-    ['bold', 'italic'],
-    ['underline', 'strike'],
-    ['code', 'blockquote'],
-    ['ordered_list', 'bullet_list'],
-    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
-    ['link', 'image'],
-    ['text_color', 'background_color'],
-    ['align_left', 'align_center', 'align_right', 'align_justify'],
-  ];
+  // editor: Editor;
+  // toolbar: Toolbar = [
+  //   ['bold', 'italic'],
+  //   ['underline', 'strike'],
+  //   ['code', 'blockquote'],
+  //   ['ordered_list', 'bullet_list'],
+  //   [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+  //   ['link', 'image'],
+  //   ['text_color', 'background_color'],
+  //   ['align_left', 'align_center', 'align_right', 'align_justify'],
+  // ];
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+    toolbarHiddenButtons: [
+      ['bold']
+      ],
+    customClasses: [
+      {
+        name: "quote",
+        class: "quote",
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: "titleText",
+        class: "titleText",
+        tag: "h1",
+      },
+    ]
+  };
 
   constructor(
     private subjectService: SubjectService,
@@ -66,7 +95,7 @@ export class PageComponent implements OnInit {
     this.getAllSubject()
     this.getBook();
     this.getTopic();
-    this.editor = new Editor();
+    // this.editor = new Editor();
     this.onChangeSearch
     .pipe(debounceTime(1000))
     .subscribe(() => {
@@ -75,7 +104,7 @@ export class PageComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.editor.destroy();
+    // this.editor.destroy();
   }
 
   public createForm(data?: any) {
@@ -277,7 +306,7 @@ export class PageComponent implements OnInit {
 
   public getList(){
     this.appComponent.showLoader();
-    this.pageService.getPage().subscribe(res => {
+    this.pageService.getPageByBook(this.selectedBook).subscribe(res => {
       this.dataList = res;
       this.originalData = res;
       const allData = [];
