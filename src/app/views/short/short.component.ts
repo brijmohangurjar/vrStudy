@@ -12,6 +12,8 @@ import {ShortService} from '../../api-service/short.service'
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ConfirmationPopoverComponent } from '../confirmation-popover/confirmation-popover.component';
 
 
 @Component({
@@ -82,7 +84,7 @@ export class ShortComponent implements OnInit {
       },
     ]
   };
-
+  modelRef : BsModalRef;
   constructor(
     private subjectService: SubjectService,
     private formBuilder: FormBuilder,
@@ -91,8 +93,9 @@ export class ShortComponent implements OnInit {
     private topicService: TopicService,
     private bookService: BookService,
     private pageService: PageService,
-    private shortService: ShortService
-  ) { }
+    private shortService: ShortService,
+    private modalService: BsModalService
+    ) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -115,6 +118,16 @@ export class ShortComponent implements OnInit {
   public changeSearchValue(): void {
     this.onChangeSearch.next();
   }
+
+  openModal(element) {
+    this.modelRef= this.modalService.show(ConfirmationPopoverComponent);
+    this.modelRef.content.event.subscribe(res => {
+      if(res == true) {
+        this.deleteData(element);
+      }
+    });
+    }
+    
 
   public createForm(data?: any) {
     this.form = this.formBuilder.group({

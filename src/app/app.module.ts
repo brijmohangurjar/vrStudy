@@ -56,6 +56,9 @@ import { ConfirmDialogComponent } from './views/confirm-dialog/confirm-dialog.co
 import { NotesComponent } from './views/notes/notes.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 @NgModule({
   imports: [
     BrowserModule,
@@ -80,7 +83,11 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    AngularEditorModule
+    AngularEditorModule,
+    ModalModule.forRoot(),
+    ButtonsModule.forRoot(), 
+    TooltipModule.forRoot(),
+
     // NgxEditorModule
   ],
   exports:[

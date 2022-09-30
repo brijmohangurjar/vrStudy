@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +14,7 @@ export class UserService {
 
   constructor(
     private angularFireAuth: AngularFireAuth,
+    private db: AngularFirestore
   ) {
   }
   public async logInUser(email: any, password: any): Promise<any> {
@@ -55,4 +59,17 @@ export class UserService {
       };
     }
   }
+
+
+  public getAppVersion(): Observable<any> {
+    return this.db.collection('appVersion')
+      .snapshotChanges()
+      .pipe(map((actions) => actions.map(doc => {
+        const data: any = doc.payload.doc.data();
+        const docId = doc.payload.doc.id;
+        return { docId, ...data };
+      })
+      ));
+  }
+
 }
