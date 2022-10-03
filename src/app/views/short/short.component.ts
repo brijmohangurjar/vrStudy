@@ -160,7 +160,7 @@ export class ShortComponent implements OnInit {
     this.dataList = this.allDataListForFilter;
   }
   
-  private getAllSubject(){
+  public getAllSubject(){
     this.subjectService.getSubject().subscribe(res => {
       this.allSubject = res;
     }, (error: HttpErrorResponse) => {
@@ -463,6 +463,7 @@ export class ShortComponent implements OnInit {
     this.appComponent.showLoader();
     this.shortService.deleteShort(element.docId).subscribe((res: any) => {
       if (res.status === 200) {
+        this.matSnackBarService.showSuccessSnackBar(res.message);
       }
       this.appComponent.hideLoader();
     }, (error: any) => {

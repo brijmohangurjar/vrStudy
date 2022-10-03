@@ -50,6 +50,7 @@ export class ConfirmationPopoverComponent implements OnInit {
   }
 
   public changeSearchValue(): void {
+    this.errorMsg = '';
     this.onChangeSearch.next();
   }
 
