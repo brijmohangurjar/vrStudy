@@ -1,12 +1,14 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { SubjectService } from 'src/app/api-service/subject.service';
 import { AppComponent } from 'src/app/app.component';
 import { MatSnackBarService } from 'src/app/service/mat-snack-bar.service';
 import {TopicService} from '../../api-service/topic.service'
+import { ConfirmationPopoverComponent } from '../confirmation-popover/confirmation-popover.component';
 
 @Component({
   selector: 'app-topic',
@@ -27,13 +29,15 @@ export class TopicComponent implements OnInit {
   public selectedSubject = 'Geography';
   public allSubjectData  = [];
   public allDataListForFilter = [];
+  modelRef : BsModalRef;
 
   constructor(
     private subjectService: SubjectService,
     private formBuilder: FormBuilder,
     private matSnackBarService: MatSnackBarService,
     private appComponent: AppComponent,
-    private topicService: TopicService
+    private topicService: TopicService,
+    private modalService: BsModalService
   ) { }
 
   ngOnInit(): void {
@@ -76,6 +80,15 @@ export class TopicComponent implements OnInit {
     }, (error: HttpErrorResponse) => {
       console.log('error', error);
       this.matSnackBarService.showErrorSnackBar(error.message);
+    });
+  }
+
+  openModal(element) {
+    this.modelRef= this.modalService.show(ConfirmationPopoverComponent);
+    this.modelRef.content.event.subscribe(res => {
+      if(res == true) {
+        this.deleteData(element);
+      }
     });
   }
 
@@ -228,6 +241,9 @@ export class TopicComponent implements OnInit {
   public deleteData(element: any) {
     this.appComponent.showLoader();
     this.topicService.deleteTopic(element.docId).subscribe((res: any) => {
+      if (res.status === 200) {
+        this.matSnackBarService.showSuccessSnackBar(res.message);
+      }
       this.appComponent.hideLoader();
     }, (error: any) => {
       this.appComponent.hideLoader();

@@ -8,6 +8,8 @@ import {TopicService} from '../../api-service/topic.service';
 import {BookService} from '../../api-service/book.service'
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ConfirmationPopoverComponent } from '../confirmation-popover/confirmation-popover.component';
 
 
 @Component({
@@ -30,6 +32,8 @@ export class BookComponent implements OnInit {
   public selectedTopic = 'मध्यप्रदेश का भूगोल';
   public allTopicData  = [];
   public allDataListForFilter = [];
+  modelRef : BsModalRef;
+
 
   constructor(
     private subjectService: SubjectService,
@@ -37,7 +41,8 @@ export class BookComponent implements OnInit {
     private matSnackBarService: MatSnackBarService,
     private appComponent: AppComponent,
     private topicService: TopicService,
-    private bookService: BookService
+    private bookService: BookService,
+    private modalService: BsModalService
   ) { }
 
   ngOnInit(): void {
@@ -76,6 +81,16 @@ export class BookComponent implements OnInit {
       this.matSnackBarService.showErrorSnackBar(error.message);
     });
   }
+
+  openModal(element) {
+    this.modelRef= this.modalService.show(ConfirmationPopoverComponent);
+    this.modelRef.content.event.subscribe(res => {
+      if(res == true) {
+        this.deleteData(element);
+      }
+    });
+  }
+  
   public getAllTopic(){
     this.topicService.getTopicByDocId(this.form.value.subject).subscribe(res => {
       this.allTopic = res;
@@ -255,6 +270,8 @@ export class BookComponent implements OnInit {
     this.appComponent.showLoader();
     this.bookService.deleteBook(element.docId).subscribe((res: any) => {
       if (res.status === 200) {
+        this.matSnackBarService.showSuccessSnackBar(res.message);
+
       }
       this.appComponent.hideLoader();
     }, (error: any) => {

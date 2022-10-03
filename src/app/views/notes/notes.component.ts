@@ -12,6 +12,8 @@ import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators'; 
 import { NoteService } from '../../api-service/note.service'
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ConfirmationPopoverComponent } from '../confirmation-popover/confirmation-popover.component';
 
 
 @Component({
@@ -82,6 +84,8 @@ export class NotesComponent implements OnInit {
       },
     ]
   };
+  modelRef : BsModalRef;
+
 
   constructor(
     private subjectService: SubjectService,
@@ -91,7 +95,9 @@ export class NotesComponent implements OnInit {
     private topicService: TopicService,
     private bookService: BookService,
     private pageService: PageService,
-    private noteService: NoteService
+    private noteService: NoteService,
+    private modalService: BsModalService
+
   ) { }
 
   ngOnInit(): void {
@@ -368,6 +374,15 @@ export class NotesComponent implements OnInit {
     this.coverPhotoName = '';
   }
 
+  openModal(element) {
+    this.modelRef= this.modalService.show(ConfirmationPopoverComponent);
+    this.modelRef.content.event.subscribe(res => {
+      if(res == true) {
+        this.deleteData(element);
+      }
+    });
+    }
+
   public open(data?){
     this.DM_MODE = 'Add';
     this.showForm = true;
@@ -459,6 +474,7 @@ export class NotesComponent implements OnInit {
     this.appComponent.showLoader();
     this.noteService.deleteNote(element.docId).subscribe((res: any) => {
       if (res.status === 200) {
+        this.matSnackBarService.showSuccessSnackBar(res.message);
       }
       this.appComponent.hideLoader();
     }, (error: any) => {

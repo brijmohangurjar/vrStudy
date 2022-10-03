@@ -126,7 +126,7 @@ export class ShortComponent implements OnInit {
         this.deleteData(element);
       }
     });
-    }
+  }
     
 
   public createForm(data?: any) {
