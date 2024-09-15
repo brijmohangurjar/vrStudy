@@ -1,0 +1,159 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "book",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "topic.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "book",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "topic.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "note",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "book.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "note",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "book.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "page",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "book.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "page",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "book.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "short",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "book.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "short",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "book.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "short",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "page.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "topic",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "subject.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "topic",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "subject.docId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDate",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

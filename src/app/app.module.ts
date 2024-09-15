@@ -60,64 +60,62 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 @NgModule({
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    AppAsideModule,
-    AppBreadcrumbModule.forRoot(),
-    AppFooterModule,
-    AppHeaderModule,
-    AppSidebarModule,
-    PerfectScrollbarModule,
-    BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
-    ChartsModule,
-    IconModule,
-    IconSetModule.forRoot(),
-    AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireFunctionsModule,
-    MatSnackBarModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AngularEditorModule,
-    ModalModule.forRoot(),
-    ButtonsModule.forRoot(), 
-    TooltipModule.forRoot(),
-
-    // NgxEditorModule
-  ],
-  exports:[
-    MatSnackBarModule
-  ],
-  declarations: [
-    AppComponent,
-    ...APP_CONTAINERS,
-    P404Component,
-    P500Component,
-    LoginComponent,
-    RegisterComponent,
-    SubjectsComponent,
-    TopicComponent,
-    BookComponent,
-    PageComponent,
-    ShortComponent,
-    ConfirmationPopoverComponent,
-    SafeHtmlPipe,
-    ConfirmDialogComponent,
-    NotesComponent
-  ],
-  providers: [
-    {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    },
-    IconSetService,
-  ],
-  entryComponents:[ConfirmDialogComponent],
-  bootstrap: [ AppComponent ]
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        AppAsideModule,
+        AppBreadcrumbModule.forRoot(),
+        AppFooterModule,
+        AppHeaderModule,
+        AppSidebarModule,
+        PerfectScrollbarModule,
+        BsDropdownModule.forRoot(),
+        TabsModule.forRoot(),
+        ChartsModule,
+        IconModule,
+        IconSetModule.forRoot(),
+        AngularFireAuthModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        AngularFireFunctionsModule,
+        MatSnackBarModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        AngularEditorModule,
+        ModalModule.forRoot(),
+        ButtonsModule.forRoot(),
+        TooltipModule.forRoot(),
+        // NgxEditorModule
+    ],
+    exports: [
+        MatSnackBarModule
+    ],
+    declarations: [
+        AppComponent,
+        ...APP_CONTAINERS,
+        P404Component,
+        P500Component,
+        LoginComponent,
+        RegisterComponent,
+        SubjectsComponent,
+        TopicComponent,
+        BookComponent,
+        PageComponent,
+        ShortComponent,
+        ConfirmationPopoverComponent,
+        SafeHtmlPipe,
+        ConfirmDialogComponent,
+        NotesComponent
+    ],
+    providers: [
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy
+        },
+        IconSetService,
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
