@@ -1,0 +1,154 @@
+[
+    {
+        "docId": "p3GeAqULMoz8f1meG1Zv",
+        "createDate": {
+            "seconds": 1708748554,
+            "nanoseconds": 159000000
+        },
+        "name": "CLASS "
+    },
+    {
+        "docId": "2ALZHUMuF5iNkyJS1Eho",
+        "name": "CURRENT",
+        "createDate": {
+            "seconds": 1708835060,
+            "nanoseconds": 297000000
+        }
+    },
+    {
+        "docId": "ysSo1mdXAQSFw5ZQbKv0",
+        "createDate": {
+            "seconds": 1708921476,
+            "nanoseconds": 751000000
+        },
+        "name": "NCERT"
+    },
+    {
+        "docId": "GLZXkH24dPFr2HUClw7X",
+        "createDate": {
+            "seconds": 1709177717,
+            "nanoseconds": 550000000
+        },
+        "name": "HISTORY "
+    },
+    {
+        "docId": "yPo0aEL8rVdLVgpmQ2tq",
+        "createDate": {
+            "seconds": 1709310952,
+            "nanoseconds": 674000000
+        },
+        "name": "GEOGRAPHY"
+    },
+    {
+        "docId": "v1nAPYacV2OClXaKBp4c",
+        "name": "POLITY",
+        "createDate": {
+            "seconds": 1709395508,
+            "nanoseconds": 449000000
+        }
+    },
+    {
+        "docId": "opXybMynr2Nt4gUSlGgv",
+        "createDate": {
+            "seconds": 1709395587,
+            "nanoseconds": 824000000
+        },
+        "name": "ECONOMY"
+    },
+    {
+        "docId": "eDd2bYBgRKnYVAmUIr9H",
+        "name": "SOCIETY",
+        "createDate": {
+            "seconds": 1709395609,
+            "nanoseconds": 107000000
+        }
+    },
+    {
+        "docId": "KS0c3UQn8w1neSTDQucz",
+        "name": "CULTURE",
+        "createDate": {
+            "seconds": 1709395628,
+            "nanoseconds": 139000000
+        }
+    },
+    {
+        "docId": "NjCcYOSB9wKAAdSn9TXx",
+        "createDate": {
+            "seconds": 1709397688,
+            "nanoseconds": 513000000
+        },
+        "name": "TECHNOLOGY"
+    },
+    {
+        "docId": "D49yluIuks5typ4Sitdu",
+        "name": "ETHICS",
+        "createDate": {
+            "seconds": 1709397738,
+            "nanoseconds": 944000000
+        }
+    },
+    {
+        "docId": "cJ9jrdW9AqK8lY2dygaf",
+        "createDate": {
+            "seconds": 1709397751,
+            "nanoseconds": 450000000
+        },
+        "name": "ESSAY"
+    },
+    {
+        "docId": "e4581k6ibAdoUIkrxypV",
+        "createDate": {
+            "seconds": 1709484109,
+            "nanoseconds": 377000000
+        },
+        "name": "CSAT"
+    },
+    {
+        "docId": "kNAMNKU4vt7bWLuCxMdL",
+        "createDate": {
+            "seconds": 1724996531,
+            "nanoseconds": 66000000
+        },
+        "name": "HISTORY OPTIONAL "
+    },
+    {
+        "docId": "R5lXVNL9aYOaBiYceE2h",
+        "createDate": {
+            "seconds": 1725726078,
+            "nanoseconds": 277000000
+        },
+        "name": "SYLLABUS "
+    },
+    {
+        "docId": "E9ktkSuYAreQfCamMo3I",
+        "name": "BOOK",
+        "createDate": {
+            "seconds": 1725894956,
+            "nanoseconds": 43000000
+        }
+    },
+    {
+        "docId": "E63QMk4oYDbne0QHpncy",
+        "createDate": {
+            "seconds": 1726401490,
+            "nanoseconds": 752000000
+        },
+        "name": "MAP"
+    },
+    {
+        "docId": "Pb87PQvuQ7pSZ1fMW0np",
+        "createDate": {
+            "seconds": 1726401753,
+            "nanoseconds": 29000000
+        },
+        "name": "STORY "
+    },
+    {
+        "docId": "Rda6B1ywsENSIx96EVDU",
+        "name": "OLD",
+        "createDate": {
+            "seconds": 1726401780,
+            "nanoseconds": 514000000
+        }
+    }
+]

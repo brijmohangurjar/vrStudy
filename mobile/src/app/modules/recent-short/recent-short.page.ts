@@ -77,11 +77,16 @@ export class RecentShortPage implements OnInit, OnDestroy {
   private getShortListByBookId(bookId: string): void {
     this.recentShortLoading = true;
     this.subscriptions.push(
-      this.recentShortService.getShortListByBookId(bookId)
+      this.recentShortService.getRecentShortList()
         .subscribe((result: any) => {
           this.recentShortLoading = false;
-          this.recentShort = result;
-          this.originalData = result;
+          if(result && result.length){
+            const allData = result.filter(res => res?.page?.docId == bookId);
+            this.recentShort = allData && allData.length ? allData : [];
+            this.originalData = allData && allData.length ? allData : [];;
+          }
+          // this.recentShort = result;
+          // this.originalData = result;
           this.title = `Short - (${this.recentShort.length})`;
         }, (error: HttpErrorResponse) => {
           this.recentShortLoading = false;

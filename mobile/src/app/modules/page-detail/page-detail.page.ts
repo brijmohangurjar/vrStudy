@@ -70,14 +70,15 @@ export class PageDetailPage implements OnInit, OnDestroy {
   private getPageDetailByPageDocId(pageId: string): void {
     this.pageDetailLoading = true;
     this.subscriptions.push(
-      this.pageDetailService.getPageDetailByPageDocId(pageId)
+      this.pageDetailService.getAllPageList()
         .subscribe((responseData: any) => {
           this.pageDetailLoading = false;
-          if (responseData) {
-            this.pageDetail = responseData;
+          if (responseData && responseData.length) {
+            const result = responseData.find(res => res?.docId == pageId);
+            this.pageDetail = result ? result : null;
             // this.setBreadcumb(responseData);
           } else {
-            this.pageDetail = [];
+            this.pageDetail = null;
           }
         }, (error: HttpErrorResponse) => {
           this.pageDetailLoading = false;

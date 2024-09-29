@@ -49,11 +49,16 @@ export class TopicPage implements OnInit, OnDestroy {
   private getTopicListBySubjectId(subjectId: string): void {
     this.topicListLoading = true;
     this.subscriptions.push(
-      this.topicService.getTopicListBySubjectId(subjectId)
+      this.topicService.getAllTopicList()
         .subscribe((responseData: any) => {
           this.topicListLoading = false;
-            this.topicList = responseData;
-            this.originalData = responseData;
+          if(responseData && responseData.length){
+            const result = responseData.filter(res => res?.subject?.docId == subjectId);
+            this.topicList = result && result.length ? result : [];
+            this.originalData = result && result.length ? result : [];;
+          }
+            // this.topicList = responseData;
+            // this.originalData = responseData;
             this.title = `Topic - (${this.topicList.length})`;
         }, (error: HttpErrorResponse) => {
           this.topicListLoading = false;

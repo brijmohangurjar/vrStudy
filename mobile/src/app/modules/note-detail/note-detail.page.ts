@@ -48,14 +48,18 @@ export class NoteDetailPage implements OnInit, OnDestroy {
   private getNoteDetailByDocId(noteDocId: string): void {
     this.noteDetailLoading = true;
     this.subscriptions.push(
-      this.noteService.getNoteDetailByDocId(noteDocId)
+      this.noteService.getAllNoteList()
         .subscribe((responseData: any) => {
           this.noteDetailLoading = false;
-          if (responseData) {
-            this.noteDetail = responseData;
-          } else {
-            this.noteDetail = [];
+          if(responseData && responseData.length){
+            const result = responseData.find(res => res?.docId == noteDocId);
+            this.noteDetail = result ? result : null;
           }
+          // if (responseData) {
+          //   this.noteDetail = responseData;
+          // } else {
+          //   this.noteDetail = [];
+          // }
         }, (error: HttpErrorResponse) => {
           this.noteDetailLoading = false;
           console.log('error', error);

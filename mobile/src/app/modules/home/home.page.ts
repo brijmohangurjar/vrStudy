@@ -126,6 +126,7 @@ export class HomePage implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.subjectService.getSubjectList()
         .subscribe((result: any) => {
+          console.log(result,'getSubjectsList');
           this.subjectListLoading = false;
           if (result && result.length) {
             this.subjectList = result;
@@ -144,6 +145,8 @@ export class HomePage implements OnInit, OnDestroy {
   private getPageList(): void {
     this.commonService.pageData.subscribe(res => {
       if (res) {
+        console.log(res,'getPageList');
+
         this.pageList = res;
         this.pageListLoading = false;
       }
@@ -169,6 +172,7 @@ export class HomePage implements OnInit, OnDestroy {
   private getShortList(): void {
     this.commonService.shortData.subscribe(res => {
       if (res) {
+        console.log(res,'shortList');
         this.shortList = res;
       }
       this.shortListLoading = false;
@@ -195,6 +199,8 @@ export class HomePage implements OnInit, OnDestroy {
     this.commonService.bookData.subscribe(res => {
       if (res) {
         this.bookList = res;
+        console.log(res,'bookList');
+
       }
       this.bookListLoading = false;
     });
@@ -220,6 +226,8 @@ export class HomePage implements OnInit, OnDestroy {
     this.commonService.topicData.subscribe(res => {
       if (res) {
         this.topicList = res;
+        console.log(res,'topicList');
+
         this.topicListLoading = false;
       }
     });
@@ -245,6 +253,8 @@ export class HomePage implements OnInit, OnDestroy {
     this.commonService.noteData.subscribe(res => {
       if (res) {
         this.noteList = res;
+        console.log(res,'noteList');
+
         this.noteListLoading = false;
       }
     });

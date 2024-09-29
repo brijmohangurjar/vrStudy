@@ -77,11 +77,16 @@ export class NotePage implements OnInit, OnDestroy {
   private getNoteListByBookId(bookId: string): void {
     this.notePageLoading = true;
     this.subscriptions.push(
-      this.noteService.getNoteListByBookId(bookId)
+      this.noteService.getAllNoteList()
         .subscribe((result: any) => {
           this.notePageLoading = false;
-          this.notePageList = result;
-          this.originalData = result;
+          if(result && result.length){
+            const allData = result.find(res => res?.book?.docId == bookId);
+            this.notePageList = allData && allData.length ? allData : [];
+            this.originalData = allData && allData.length ? allData : [];;
+          }
+          // this.notePageList = result;
+          // this.originalData = result;
           this.title = `Note - (${this.notePageList.length})`;
         }, (error: HttpErrorResponse) => {
           this.notePageLoading = false;

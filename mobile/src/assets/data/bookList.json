@@ -1,0 +1,6239 @@
+[
+    {
+        "docId": "U8e1VCZAFinduv8Z3lkE",
+        "topic": {
+            "topicName": "STORY 01",
+            "docId": "61kTPLNGcA0Wtx54Frci"
+        },
+        "bookName": "पुरापाषाण - काल ",
+        "createDate": {
+            "seconds": 1726407163,
+            "nanoseconds": 765000000
+        },
+        "subject": {
+            "docId": "Pb87PQvuQ7pSZ1fMW0np",
+            "createDate": {
+                "seconds": 1726401753,
+                "nanoseconds": 29000000
+            },
+            "name": "STORY "
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "jn5QwV5IVgVBGOF1jY7Z",
+        "authStatus": true,
+        "topic": {
+            "topicName": "STORY 01",
+            "docId": "61kTPLNGcA0Wtx54Frci"
+        },
+        "subject": {
+            "docId": "Pb87PQvuQ7pSZ1fMW0np",
+            "createDate": {
+                "seconds": 1726401753,
+                "nanoseconds": 29000000
+            },
+            "name": "STORY "
+        },
+        "bookName": "12000 साल से पहले",
+        "createDate": {
+            "seconds": 1726407107,
+            "nanoseconds": 212000000
+        }
+    },
+    {
+        "docId": "Kz9VaaOfMioEdJuXw42o",
+        "bookName": "COMPULSORY - PRE MAINS",
+        "createDate": {
+            "seconds": 1726367479,
+            "nanoseconds": 715000000
+        },
+        "topic": {
+            "topicName": "SYLLABUS - All SUB",
+            "docId": "gsGZycFNkoYlVAUbheIV"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        }
+    },
+    {
+        "docId": "n0hHZrP1BRHL9nqGR1LT",
+        "createDate": {
+            "seconds": 1726367466,
+            "nanoseconds": 195000000
+        },
+        "bookName": "ETHICS - MAINS ",
+        "topic": {
+            "docId": "gsGZycFNkoYlVAUbheIV",
+            "topicName": "SYLLABUS - All SUB"
+        },
+        "authStatus": true,
+        "subject": {
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        }
+    },
+    {
+        "docId": "lwYW0udOOTx5ycpDyFmU",
+        "createDate": {
+            "seconds": 1726367445,
+            "nanoseconds": 825000000
+        },
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "name": "CLASS "
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "gsGZycFNkoYlVAUbheIV",
+            "topicName": "SYLLABUS - All SUB"
+        },
+        "bookName": "CURRENT - PRE MAINS"
+    },
+    {
+        "docId": "YqmN8IjQJNG6oINJDPJO",
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv"
+        },
+        "topic": {
+            "docId": "gsGZycFNkoYlVAUbheIV",
+            "topicName": "SYLLABUS - All SUB"
+        },
+        "authStatus": true,
+        "bookName": "SCIENCE - PRE MAINS",
+        "createDate": {
+            "seconds": 1726367228,
+            "nanoseconds": 553000000
+        }
+    },
+    {
+        "docId": "H4NFUQYAwI43Kj6F466C",
+        "authStatus": true,
+        "subject": {
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        },
+        "topic": {
+            "docId": "gsGZycFNkoYlVAUbheIV",
+            "topicName": "SYLLABUS - All SUB"
+        },
+        "createDate": {
+            "seconds": 1726367150,
+            "nanoseconds": 395000000
+        },
+        "bookName": "SOCIETY - PRE MAINS"
+    },
+    {
+        "docId": "3t3vO8Z9p4Nnlvj8ncoS",
+        "authStatus": true,
+        "topic": {
+            "docId": "gsGZycFNkoYlVAUbheIV",
+            "topicName": "SYLLABUS - All SUB"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        },
+        "createDate": {
+            "seconds": 1726366986,
+            "nanoseconds": 538000000
+        },
+        "bookName": "ECONOMY - PRE MAINS"
+    },
+    {
+        "docId": "QwLToz6YpaeHDTH1bTIz",
+        "bookName": "POLITY - PRE MAINS",
+        "createDate": {
+            "seconds": 1726366968,
+            "nanoseconds": 172000000
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "SYLLABUS - All SUB",
+            "docId": "gsGZycFNkoYlVAUbheIV"
+        },
+        "subject": {
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv"
+        }
+    },
+    {
+        "docId": "i1y4jtbXqOsOjLBm7i6w",
+        "topic": {
+            "topicName": "SYLLABUS - All SUB",
+            "docId": "gsGZycFNkoYlVAUbheIV"
+        },
+        "subject": {
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1726366926,
+            "nanoseconds": 861000000
+        },
+        "bookName": "GEOGRAPHY - PRE MAINS"
+    },
+    {
+        "docId": "M0Op0Fe8sq1ufuW69Biu",
+        "subject": {
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv"
+        },
+        "createDate": {
+            "seconds": 1726366705,
+            "nanoseconds": 489000000
+        },
+        "bookName": "HISTORY - PRE MAINS",
+        "topic": {
+            "topicName": "SYLLABUS - All SUB",
+            "docId": "gsGZycFNkoYlVAUbheIV"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "HOLflah2jl8rvfBiPZ6A",
+        "subject": {
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv"
+        },
+        "createDate": {
+            "seconds": 1726209348,
+            "nanoseconds": 414000000
+        },
+        "bookName": "WG Class 12",
+        "authStatus": true,
+        "topic": {
+            "topicName": "WORLD - GEOGRAPHY",
+            "docId": "dcNGVYdNfMzPjFzTl0fZ"
+        }
+    },
+    {
+        "docId": "xHS2sLsYIlFhV4r4ciNg",
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        },
+        "topic": {
+            "docId": "dcNGVYdNfMzPjFzTl0fZ",
+            "topicName": "WORLD - GEOGRAPHY"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1726209339,
+            "nanoseconds": 117000000
+        },
+        "bookName": "WG Class 11"
+    },
+    {
+        "docId": "TTyU6FcUGAWPGJSuTy5c",
+        "createDate": {
+            "seconds": 1726209328,
+            "nanoseconds": 483000000
+        },
+        "authStatus": true,
+        "bookName": "WG Class 10",
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        },
+        "topic": {
+            "topicName": "WORLD - GEOGRAPHY",
+            "docId": "dcNGVYdNfMzPjFzTl0fZ"
+        }
+    },
+    {
+        "docId": "GVijiyBfTspHSn0shRBO",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1726209321,
+            "nanoseconds": 576000000
+        },
+        "topic": {
+            "docId": "dcNGVYdNfMzPjFzTl0fZ",
+            "topicName": "WORLD - GEOGRAPHY"
+        },
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "name": "CLASS "
+        },
+        "bookName": "WG Class 09"
+    },
+    {
+        "docId": "DKLPtfgNq1EYwgH57LUd",
+        "createDate": {
+            "seconds": 1726209316,
+            "nanoseconds": 209000000
+        },
+        "bookName": "WG Class 08",
+        "topic": {
+            "docId": "dcNGVYdNfMzPjFzTl0fZ",
+            "topicName": "WORLD - GEOGRAPHY"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "f18ufymRTF3kfapKXhKI",
+        "topic": {
+            "docId": "dcNGVYdNfMzPjFzTl0fZ",
+            "topicName": "WORLD - GEOGRAPHY"
+        },
+        "subject": {
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        },
+        "bookName": "WG Class 07",
+        "createDate": {
+            "seconds": 1726209310,
+            "nanoseconds": 500000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "ASAspSAvp8Mfty3TxA6I",
+        "createDate": {
+            "seconds": 1726209278,
+            "nanoseconds": 580000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv"
+        },
+        "bookName": "WH Class 15",
+        "topic": {
+            "docId": "QiTb053uGX2iejY1xJ6x",
+            "topicName": "WORLD - HISTORY"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "TWrhRimJ3MxL4TGCwOEG",
+        "bookName": "WH Class 14",
+        "createDate": {
+            "seconds": 1726209271,
+            "nanoseconds": 895000000
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "WORLD - HISTORY",
+            "docId": "QiTb053uGX2iejY1xJ6x"
+        },
+        "subject": {
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        }
+    },
+    {
+        "docId": "hbfHNJIz6cS3fxnKAQaK",
+        "bookName": "WH Class 13",
+        "createDate": {
+            "seconds": 1726209264,
+            "nanoseconds": 346000000
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "QiTb053uGX2iejY1xJ6x",
+            "topicName": "WORLD - HISTORY"
+        },
+        "subject": {
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        }
+    },
+    {
+        "docId": "uMd2aPGUslFu5TprIFwT",
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "WORLD - HISTORY",
+            "docId": "QiTb053uGX2iejY1xJ6x"
+        },
+        "bookName": "WH Class 12",
+        "createDate": {
+            "seconds": 1726209258,
+            "nanoseconds": 880000000
+        }
+    },
+    {
+        "docId": "hFnUouB4iYje8gO2J9OQ",
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        },
+        "topic": {
+            "topicName": "WORLD - HISTORY",
+            "docId": "QiTb053uGX2iejY1xJ6x"
+        },
+        "bookName": "WH Class 11",
+        "createDate": {
+            "seconds": 1726209253,
+            "nanoseconds": 112000000
+        }
+    },
+    {
+        "docId": "t88XaVzdajypggdib3jr",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1726209245,
+            "nanoseconds": 180000000
+        },
+        "topic": {
+            "topicName": "WORLD - HISTORY",
+            "docId": "QiTb053uGX2iejY1xJ6x"
+        },
+        "bookName": "WH Class 10",
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        }
+    },
+    {
+        "docId": "1FoQTNiBrQvVQmclOcbm",
+        "createDate": {
+            "seconds": 1726209234,
+            "nanoseconds": 189000000
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "QiTb053uGX2iejY1xJ6x",
+            "topicName": "WORLD - HISTORY"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        },
+        "bookName": "WH Class 09"
+    },
+    {
+        "docId": "QDLxHGgPtdsdknsDWLNn",
+        "topic": {
+            "docId": "456eNMqapvDIMdWN8OU8",
+            "topicName": "HISTORY NCERT"
+        },
+        "bookName": "8th.H chap 09",
+        "createDate": {
+            "seconds": 1726136625,
+            "nanoseconds": 537000000
+        },
+        "authStatus": true,
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        }
+    },
+    {
+        "docId": "ipeTkMkpjYKVehPKzXkQ",
+        "topic": {
+            "docId": "456eNMqapvDIMdWN8OU8",
+            "topicName": "HISTORY NCERT"
+        },
+        "createDate": {
+            "seconds": 1726136620,
+            "nanoseconds": 526000000
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "bookName": "8th.H chap 08"
+    },
+    {
+        "docId": "RAj1HuKcho9I55er5QuE",
+        "bookName": "8th.H chap 07",
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "createDate": {
+            "seconds": 1726136610,
+            "nanoseconds": 301000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "9TtmPxLRlZKIDfLgoK46",
+        "bookName": "WH Class 08",
+        "createDate": {
+            "seconds": 1726032688,
+            "nanoseconds": 766000000
+        },
+        "topic": {
+            "docId": "QiTb053uGX2iejY1xJ6x",
+            "topicName": "WORLD - HISTORY"
+        },
+        "subject": {
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "r8XYPuyj72TYl07d7jIg",
+        "bookName": "8th.H chap 06",
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT"
+        },
+        "createDate": {
+            "seconds": 1725981776,
+            "nanoseconds": 132000000
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        }
+    },
+    {
+        "docId": "T7r93e1Q2pH809j4ucpN",
+        "createDate": {
+            "seconds": 1725981769,
+            "nanoseconds": 555000000
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "bookName": "8th.H chap 05",
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        }
+    },
+    {
+        "docId": "LJepZLDxaQEz4DPptw5K",
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725981764,
+            "nanoseconds": 142000000
+        },
+        "bookName": "8th.H chap 04"
+    },
+    {
+        "docId": "eEiK2TjzuNk74WHWUEGG",
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "bookName": "8th.H chap 03",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725981758,
+            "nanoseconds": 890000000
+        },
+        "topic": {
+            "docId": "456eNMqapvDIMdWN8OU8",
+            "topicName": "HISTORY NCERT"
+        }
+    },
+    {
+        "docId": "TWiwPaqQemoM4I8ihlKz",
+        "bookName": "8th.H chap 02",
+        "createDate": {
+            "seconds": 1725981751,
+            "nanoseconds": 695000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT"
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "456eNMqapvDIMdWN8OU8",
+            "topicName": "HISTORY NCERT"
+        }
+    },
+    {
+        "docId": "1ZwNnDIO8zjFZRaPN5yj",
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        },
+        "createDate": {
+            "seconds": 1725981742,
+            "nanoseconds": 256000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "authStatus": true,
+        "bookName": "8th.H chap 01"
+    },
+    {
+        "docId": "BqnkDxUhoZDXsT0Gk2L3",
+        "createDate": {
+            "seconds": 1725960224,
+            "nanoseconds": 450000000
+        },
+        "bookName": "WH Class 07",
+        "subject": {
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv"
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "WORLD - HISTORY",
+            "docId": "QiTb053uGX2iejY1xJ6x"
+        }
+    },
+    {
+        "docId": "DKD2CTyWEtgakb4b2Px5",
+        "bookName": "Topic-27-P2",
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "createDate": {
+            "seconds": 1725889894,
+            "nanoseconds": 502000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "wlzWL0wgjHXG4lRKxgrc",
+        "bookName": "Topic-26-P2",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725889884,
+            "nanoseconds": 315000000
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        }
+    },
+    {
+        "docId": "SLFcZajsbSTheMvRktKn",
+        "createDate": {
+            "seconds": 1725889873,
+            "nanoseconds": 538000000
+        },
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "bookName": "Topic-25-P2"
+    },
+    {
+        "docId": "YTdYnDSfnGW8fwbq53U0",
+        "createDate": {
+            "seconds": 1725889861,
+            "nanoseconds": 784000000
+        },
+        "bookName": "Topic-24-P2",
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "VttzHzeeEDH83tXngFwg",
+        "authStatus": true,
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "createDate": {
+            "seconds": 1725889852,
+            "nanoseconds": 209000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "bookName": "Topic-23-P2"
+    },
+    {
+        "docId": "Wons5Y27eBGbFkp222CK",
+        "createDate": {
+            "seconds": 1725889837,
+            "nanoseconds": 931000000
+        },
+        "bookName": "Topic-22-P2",
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        }
+    },
+    {
+        "docId": "bizEfY0IMu230tXniE9s",
+        "createDate": {
+            "seconds": 1725889830,
+            "nanoseconds": 508000000
+        },
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true,
+        "bookName": "Topic-21-P2"
+    },
+    {
+        "docId": "mkzhY7VeOkYTTzjysh7O",
+        "createDate": {
+            "seconds": 1725889813,
+            "nanoseconds": 827000000
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "bookName": "Topic-20-P2"
+    },
+    {
+        "docId": "WI2OBkAqzlBIBiuAmZjy",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725889806,
+            "nanoseconds": 847000000
+        },
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "bookName": "Topic-19-P2",
+        "authStatus": true
+    },
+    {
+        "docId": "ZXqZu9mPegnf1uCOdCB5",
+        "createDate": {
+            "seconds": 1725889796,
+            "nanoseconds": 907000000
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "bookName": "Topic-18-P2",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "06EfIfmnkn9CPHg8sp1M",
+        "bookName": "Topic-17-P2",
+        "createDate": {
+            "seconds": 1725889788,
+            "nanoseconds": 109000000
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "vvo5PgzMCoAWZB426EIX",
+        "authStatus": true,
+        "bookName": "Topic-16-P2",
+        "createDate": {
+            "seconds": 1725889779,
+            "nanoseconds": 23000000
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        }
+    },
+    {
+        "docId": "ez1BcHJUQVN7anolospY",
+        "authStatus": true,
+        "bookName": "Topic-15-P2",
+        "createDate": {
+            "seconds": 1725889769,
+            "nanoseconds": 167000000
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        }
+    },
+    {
+        "docId": "r2TqdoUeF3dRyN3nOlcA",
+        "bookName": "Topic-14-P2",
+        "createDate": {
+            "seconds": 1725889746,
+            "nanoseconds": 536000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        }
+    },
+    {
+        "docId": "oGwgjWQipiNfVBxmTxBC",
+        "createDate": {
+            "seconds": 1725889740,
+            "nanoseconds": 806000000
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "bookName": "Topic-13-P2",
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        }
+    },
+    {
+        "docId": "7vJGYb7Sj72OHJBODUAU",
+        "bookName": "Topic-12-P2",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725889732,
+            "nanoseconds": 926000000
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "7cVr4GUQLkRkoNJsoaKA",
+        "createDate": {
+            "seconds": 1725889720,
+            "nanoseconds": 567000000
+        },
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "authStatus": true,
+        "bookName": "Topic-11-P2"
+    },
+    {
+        "docId": "jenHEUzWeIiRJieqGgAg",
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "bookName": "Topic-10-P2",
+        "createDate": {
+            "seconds": 1725889709,
+            "nanoseconds": 370000000
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        }
+    },
+    {
+        "docId": "jrasMPvBf0Scy63pxeE9",
+        "bookName": "Topic-09-P2",
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "authStatus": true,
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725889702,
+            "nanoseconds": 862000000
+        }
+    },
+    {
+        "docId": "2Yi5tULGvJKhuF1jFa3K",
+        "bookName": "Topic-08-P2",
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725889661,
+            "nanoseconds": 813000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        }
+    },
+    {
+        "docId": "Y3gpPW8ocigO9I4iENhf",
+        "createDate": {
+            "seconds": 1725889649,
+            "nanoseconds": 231000000
+        },
+        "bookName": "Topic-07-P2",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "nOpQscCVADaC9fytSxm4",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "bookName": "Topic-06-P2",
+        "createDate": {
+            "seconds": 1725889643,
+            "nanoseconds": 679000000
+        }
+    },
+    {
+        "docId": "WBIlFDGGqSxwnIJPKYsE",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "createDate": {
+            "seconds": 1725889628,
+            "nanoseconds": 456000000
+        },
+        "bookName": "Topic-05-P2",
+        "authStatus": true
+    },
+    {
+        "docId": "AfNx0zb8I0JbHpbbbYWC",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "authStatus": true,
+        "bookName": "Topic-04-P2",
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "createDate": {
+            "seconds": 1725889621,
+            "nanoseconds": 310000000
+        }
+    },
+    {
+        "docId": "QHywSAdECpYbUikQXLRD",
+        "bookName": "Topic-03-P2",
+        "authStatus": true,
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725889611,
+            "nanoseconds": 79000000
+        }
+    },
+    {
+        "docId": "fM3VAAfbkfODAeaKglgE",
+        "createDate": {
+            "seconds": 1725889603,
+            "nanoseconds": 879000000
+        },
+        "topic": {
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI",
+            "topicName": "History OP-2"
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "bookName": "Topic-02-P2",
+        "authStatus": true
+    },
+    {
+        "docId": "Qp7K2fmhuy4Kk2as1cyD",
+        "createDate": {
+            "seconds": 1725889339,
+            "nanoseconds": 644000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "topic": {
+            "topicName": "History OP-2",
+            "docId": "ZQyZDw1mxIwSmJOa7ZfI"
+        },
+        "bookName": "Topic-01-P2",
+        "authStatus": true
+    },
+    {
+        "docId": "E1e2viTjNonSuoQWsA8I",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725864834,
+            "nanoseconds": 180000000
+        },
+        "topic": {
+            "topicName": "WORLD - GEOGRAPHY",
+            "docId": "dcNGVYdNfMzPjFzTl0fZ"
+        },
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "name": "CLASS "
+        },
+        "bookName": "WG Class 06"
+    },
+    {
+        "docId": "8S6wlStOswYb89danAgd",
+        "authStatus": true,
+        "bookName": "WG Class 05",
+        "createDate": {
+            "seconds": 1725864823,
+            "nanoseconds": 789000000
+        },
+        "topic": {
+            "docId": "dcNGVYdNfMzPjFzTl0fZ",
+            "topicName": "WORLD - GEOGRAPHY"
+        },
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        }
+    },
+    {
+        "docId": "XeDWD1EUf3Qn0llDnWj5",
+        "topic": {
+            "docId": "dcNGVYdNfMzPjFzTl0fZ",
+            "topicName": "WORLD - GEOGRAPHY"
+        },
+        "authStatus": true,
+        "bookName": "WG Class 04",
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        },
+        "createDate": {
+            "seconds": 1725862790,
+            "nanoseconds": 607000000
+        }
+    },
+    {
+        "docId": "qa2EQmaQUD0BEunU1xKO",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725816206,
+            "nanoseconds": 225000000
+        },
+        "bookName": "Topic-24-P1",
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "ecMotExDsi3wb0eaOePp",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725816198,
+            "nanoseconds": 860000000
+        },
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "bookName": "Topic-23-P1"
+    },
+    {
+        "docId": "4Z0WmbwGGF1pPNSrs1A7",
+        "createDate": {
+            "seconds": 1725816192,
+            "nanoseconds": 209000000
+        },
+        "bookName": "Topic-22-P1",
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "J2NU7I6eNhjT7TciHuAL",
+        "createDate": {
+            "seconds": 1725816184,
+            "nanoseconds": 257000000
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "bookName": "Topic-21-P1",
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "Xl9EaJvHdQQRvD5AqaUd",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "bookName": "Topic-20-P1",
+        "createDate": {
+            "seconds": 1725816168,
+            "nanoseconds": 303000000
+        },
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "WybiOf2LSFi92KGlQXda",
+        "authStatus": true,
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "createDate": {
+            "seconds": 1725816154,
+            "nanoseconds": 229000000
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "bookName": "Topic-19-P1"
+    },
+    {
+        "docId": "eqsv4rToMggGQ5d5un5q",
+        "createDate": {
+            "seconds": 1725816147,
+            "nanoseconds": 723000000
+        },
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "bookName": "Topic-18-P1",
+        "authStatus": true,
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "uxDk2gwtORlrAhY4maWM",
+        "createDate": {
+            "seconds": 1725816141,
+            "nanoseconds": 414000000
+        },
+        "bookName": "Topic-17-P1",
+        "authStatus": true,
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "QwKgm7KgyhDVbBP3YOnt",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725816126,
+            "nanoseconds": 317000000
+        },
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "bookName": "Topic-16-P1",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "P4Gk7rN3lYayOtaJeFf2",
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "bookName": "Topic-15-P1",
+        "createDate": {
+            "seconds": 1725816119,
+            "nanoseconds": 899000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "FhG50OXF33nARtkxTgxi",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "bookName": "Topic-14-P1",
+        "createDate": {
+            "seconds": 1725816111,
+            "nanoseconds": 495000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "a6S0wCHZiTmffLJw32vA",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "bookName": "Topic-13-P1",
+        "createDate": {
+            "seconds": 1725816104,
+            "nanoseconds": 2000000
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        }
+    },
+    {
+        "docId": "QvwSMz9kEaD79NFSDSSg",
+        "authStatus": true,
+        "bookName": "Topic-12-P1",
+        "createDate": {
+            "seconds": 1725816098,
+            "nanoseconds": 28000000
+        },
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "Gyu6TryOz8wdC93DQNmn",
+        "authStatus": true,
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "bookName": "Topic-11-P1",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725816087,
+            "nanoseconds": 882000000
+        }
+    },
+    {
+        "docId": "3rkUrs96azOQRP4ATtC5",
+        "createDate": {
+            "seconds": 1725816078,
+            "nanoseconds": 1000000
+        },
+        "bookName": "Topic-10-P1",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "7CFg7H4AzKqxw8VKnbGK",
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "bookName": "Topic-09-P1",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725816064,
+            "nanoseconds": 981000000
+        }
+    },
+    {
+        "docId": "cDZW38ptLDYHeacqx8V0",
+        "authStatus": true,
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "bookName": "Topic-08-P1",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725816059,
+            "nanoseconds": 437000000
+        }
+    },
+    {
+        "docId": "ymvoqQPQa29LXFiHkFM3",
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "bookName": "Topic-07-P1",
+        "createDate": {
+            "seconds": 1725816053,
+            "nanoseconds": 853000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "1msoTNtCbXaOGgkgjmjU",
+        "bookName": "Topic-06-P1",
+        "createDate": {
+            "seconds": 1725816003,
+            "nanoseconds": 484000000
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        }
+    },
+    {
+        "docId": "Hs4UNTgtQAPQHEN2Hoif",
+        "authStatus": true,
+        "bookName": "Topic-05-P1",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "topicName": "History OP-1",
+            "docId": "MtK0J4VlpXGFaQTETHqP"
+        },
+        "createDate": {
+            "seconds": 1725815988,
+            "nanoseconds": 356000000
+        }
+    },
+    {
+        "docId": "ytoZrbMeuhf7WnQFd8TX",
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "createDate": {
+            "seconds": 1725815980,
+            "nanoseconds": 29000000
+        },
+        "bookName": "Topic-04-P1",
+        "authStatus": true,
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "UsoRciWNilfk3tjiRgy7",
+        "bookName": "Topic-03-P1",
+        "createDate": {
+            "seconds": 1725815967,
+            "nanoseconds": 765000000
+        },
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "5O0IbSOLJMcIMs8OuDDM",
+        "createDate": {
+            "seconds": 1725815955,
+            "nanoseconds": 118000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "bookName": "Topic-02-P1",
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "gdP0zquSmJfxTuCTae3X",
+        "bookName": "Topic-01-P1",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "docId": "MtK0J4VlpXGFaQTETHqP",
+            "topicName": "History OP-1"
+        },
+        "createDate": {
+            "seconds": 1725815678,
+            "nanoseconds": 759000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "UwuGSG4t9tgMx2a02Pzf",
+        "bookName": "Topic-08-Gs4",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725815030,
+            "nanoseconds": 654000000
+        },
+        "topic": {
+            "docId": "OG9qkTodXlRTrDkD0l8Y",
+            "topicName": "Gs paper 4"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        }
+    },
+    {
+        "docId": "OlIH4ht1HlLhwC1sAy7t",
+        "createDate": {
+            "seconds": 1725815017,
+            "nanoseconds": 179000000
+        },
+        "authStatus": true,
+        "bookName": "Topic-07-Gs4",
+        "topic": {
+            "docId": "OG9qkTodXlRTrDkD0l8Y",
+            "topicName": "Gs paper 4"
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "ltMjaOrn4dLAgMRrXlsI",
+        "authStatus": true,
+        "bookName": "Topic-06-Gs4",
+        "topic": {
+            "docId": "OG9qkTodXlRTrDkD0l8Y",
+            "topicName": "Gs paper 4"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725815009,
+            "nanoseconds": 126000000
+        }
+    },
+    {
+        "docId": "j3m5t1DlfsfUbTFJvEtA",
+        "topic": {
+            "topicName": "Gs paper 4",
+            "docId": "OG9qkTodXlRTrDkD0l8Y"
+        },
+        "bookName": "Topic-05-Gs4",
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725815000,
+            "nanoseconds": 814000000
+        }
+    },
+    {
+        "docId": "TMvtEkA12vVvJeoEYfTR",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725814991,
+            "nanoseconds": 253000000
+        },
+        "topic": {
+            "docId": "OG9qkTodXlRTrDkD0l8Y",
+            "topicName": "Gs paper 4"
+        },
+        "bookName": "Topic-04-Gs4"
+    },
+    {
+        "docId": "Oz2acmcghmrYRaPaAmye",
+        "createDate": {
+            "seconds": 1725814978,
+            "nanoseconds": 367000000
+        },
+        "topic": {
+            "topicName": "Gs paper 4",
+            "docId": "OG9qkTodXlRTrDkD0l8Y"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "bookName": "Topic-03-Gs4"
+    },
+    {
+        "docId": "EJE6X7ViKz1s9m81PXod",
+        "bookName": "Topic-02-Gs4",
+        "authStatus": true,
+        "topic": {
+            "docId": "OG9qkTodXlRTrDkD0l8Y",
+            "topicName": "Gs paper 4"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725814966,
+            "nanoseconds": 640000000
+        }
+    },
+    {
+        "docId": "nWUqjufNUfw8K81ib6Ws",
+        "authStatus": true,
+        "topic": {
+            "docId": "OG9qkTodXlRTrDkD0l8Y",
+            "topicName": "Gs paper 4"
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725814948,
+            "nanoseconds": 323000000
+        },
+        "bookName": "Topic-01-Gs4"
+    },
+    {
+        "docId": "RPmKm6aNWam0sFvQRy8Y",
+        "topic": {
+            "docId": "LH6DFyLZIZhRJUGVKclP",
+            "topicName": "Gs paper 3"
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true,
+        "bookName": "Topic-20-Gs3",
+        "createDate": {
+            "seconds": 1725813579,
+            "nanoseconds": 93000000
+        }
+    },
+    {
+        "docId": "Q6Iz82jfMnozfVxPQnIU",
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813569,
+            "nanoseconds": 948000000
+        },
+        "bookName": "Topic-19-Gs3",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        }
+    },
+    {
+        "docId": "K4avXFt7bUDfVmfJf0Ka",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813563,
+            "nanoseconds": 125000000
+        },
+        "bookName": "Topic-18-Gs3",
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        }
+    },
+    {
+        "docId": "0PreCdS06xoB22SBPPVo",
+        "createDate": {
+            "seconds": 1725813554,
+            "nanoseconds": 180000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "authStatus": true,
+        "bookName": "Topic-17-Gs3",
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        }
+    },
+    {
+        "docId": "V9wcKUZgeuZrbWsEbl5N",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725813542,
+            "nanoseconds": 900000000
+        },
+        "bookName": "Topic-16-Gs3",
+        "authStatus": true,
+        "topic": {
+            "docId": "LH6DFyLZIZhRJUGVKclP",
+            "topicName": "Gs paper 3"
+        }
+    },
+    {
+        "docId": "1mR1dWopKoYSrSCUWg6c",
+        "authStatus": true,
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "bookName": "Topic-15-Gs3",
+        "createDate": {
+            "seconds": 1725813536,
+            "nanoseconds": 382000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "cvWVIIUAxk2FebwCHwVN",
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813526,
+            "nanoseconds": 937000000
+        },
+        "bookName": "Topic-14-Gs3",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        }
+    },
+    {
+        "docId": "s8Sx7ABjVKIQW1eLBK7x",
+        "bookName": "Topic-13-Gs3",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813519,
+            "nanoseconds": 417000000
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        }
+    },
+    {
+        "docId": "1IIFkbswzvRB4Oo7dE5y",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "bookName": "Topic-12-Gs3",
+        "topic": {
+            "docId": "LH6DFyLZIZhRJUGVKclP",
+            "topicName": "Gs paper 3"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813511,
+            "nanoseconds": 3000000
+        }
+    },
+    {
+        "docId": "2pg2zAFS8QPJuXjtdZot",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "bookName": "Topic-11-Gs3",
+        "createDate": {
+            "seconds": 1725813502,
+            "nanoseconds": 651000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "TmHUMGCHdkshdK1GsPtN",
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "bookName": "Topic-10-Gs3",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813496,
+            "nanoseconds": 626000000
+        }
+    },
+    {
+        "docId": "CD6PKV3xfo30DLROgAoZ",
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725813489,
+            "nanoseconds": 843000000
+        },
+        "topic": {
+            "docId": "LH6DFyLZIZhRJUGVKclP",
+            "topicName": "Gs paper 3"
+        },
+        "bookName": "Topic-09-Gs3"
+    },
+    {
+        "docId": "U7NJO77P6AEhHT0mWQyA",
+        "authStatus": true,
+        "bookName": "Topic-08-Gs3",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "docId": "LH6DFyLZIZhRJUGVKclP",
+            "topicName": "Gs paper 3"
+        },
+        "createDate": {
+            "seconds": 1725813484,
+            "nanoseconds": 61000000
+        }
+    },
+    {
+        "docId": "4ZZloqahGNLET94W2Qbh",
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "createDate": {
+            "seconds": 1725813475,
+            "nanoseconds": 891000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true,
+        "bookName": "Topic-07-Gs3"
+    },
+    {
+        "docId": "Ytu2QWwXOXZc1Vci05kr",
+        "createDate": {
+            "seconds": 1725813441,
+            "nanoseconds": 570000000
+        },
+        "bookName": "Topic-06-Gs3",
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "ryQCP3JcvlPoBgsufRNz",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813435,
+            "nanoseconds": 446000000
+        },
+        "bookName": "Topic-05-Gs3"
+    },
+    {
+        "docId": "bKRmTou7HIpU9krmLIth",
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813426,
+            "nanoseconds": 718000000
+        },
+        "bookName": "Topic-04-Gs3",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        }
+    },
+    {
+        "docId": "2GcSInW845xSohO64vDq",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        },
+        "bookName": "Topic-03-Gs3",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725813418,
+            "nanoseconds": 385000000
+        }
+    },
+    {
+        "docId": "fdyVOXzLQVUbPn82w3kU",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "LH6DFyLZIZhRJUGVKclP",
+            "topicName": "Gs paper 3"
+        },
+        "bookName": "Topic-02-Gs3",
+        "createDate": {
+            "seconds": 1725813409,
+            "nanoseconds": 327000000
+        }
+    },
+    {
+        "docId": "GZajtfLzhNQWeYYyAjQJ",
+        "authStatus": true,
+        "bookName": "Topic-01-Gs3",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725813129,
+            "nanoseconds": 899000000
+        },
+        "topic": {
+            "topicName": "Gs paper 3",
+            "docId": "LH6DFyLZIZhRJUGVKclP"
+        }
+    },
+    {
+        "docId": "rRD84FAC3dPuW078cxV2",
+        "createDate": {
+            "seconds": 1725811415,
+            "nanoseconds": 422000000
+        },
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "bookName": "Topic-20-Gs2"
+    },
+    {
+        "docId": "LFUepdXC0qTEgL5yiuqm",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "bookName": "Topic-19-Gs2",
+        "createDate": {
+            "seconds": 1725811400,
+            "nanoseconds": 331000000
+        },
+        "topic": {
+            "docId": "YEzO3FUM6KIugUbPOqxN",
+            "topicName": "Gs paper 2"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "7D4XPzj1d8dg7nKcP46e",
+        "authStatus": true,
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725811380,
+            "nanoseconds": 974000000
+        },
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "bookName": "Topic-18-Gs2"
+    },
+    {
+        "docId": "VMGTEuuh3toByC25eIlh",
+        "bookName": "Topic-17-Gs2",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725811327,
+            "nanoseconds": 159000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "docId": "YEzO3FUM6KIugUbPOqxN",
+            "topicName": "Gs paper 2"
+        }
+    },
+    {
+        "docId": "X0CzoEJ0NtjD8XF8eW5L",
+        "topic": {
+            "docId": "YEzO3FUM6KIugUbPOqxN",
+            "topicName": "Gs paper 2"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "bookName": "Topic-16-Gs2",
+        "createDate": {
+            "seconds": 1725811313,
+            "nanoseconds": 404000000
+        }
+    },
+    {
+        "docId": "2pit2TWO38AuVo4bqXpZ",
+        "createDate": {
+            "seconds": 1725811294,
+            "nanoseconds": 717000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "docId": "YEzO3FUM6KIugUbPOqxN",
+            "topicName": "Gs paper 2"
+        },
+        "bookName": "Topic-15-Gs2",
+        "authStatus": true
+    },
+    {
+        "docId": "TFnYfMQ43o9VWrdFjeTh",
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725811225,
+            "nanoseconds": 274000000
+        },
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "bookName": "Topic-14-Gs2"
+    },
+    {
+        "docId": "sgtNwhOGwMFw7zkwkPKm",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "createDate": {
+            "seconds": 1725811191,
+            "nanoseconds": 357000000
+        },
+        "bookName": "Topic-13-Gs2"
+    },
+    {
+        "docId": "HUNVfpqQX7hJ1a5P1J8f",
+        "bookName": "Topic-12-Gs2",
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725811182,
+            "nanoseconds": 980000000
+        }
+    },
+    {
+        "docId": "cE0sF9Fjx79SXXsCiGyG",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "topic": {
+            "docId": "YEzO3FUM6KIugUbPOqxN",
+            "topicName": "Gs paper 2"
+        },
+        "authStatus": true,
+        "bookName": "Topic-11-Gs2",
+        "createDate": {
+            "seconds": 1725811173,
+            "nanoseconds": 518000000
+        }
+    },
+    {
+        "docId": "OT68AwG1BhnxUDXhXv8Y",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725811163,
+            "nanoseconds": 91000000
+        },
+        "bookName": "Topic-10-Gs2",
+        "topic": {
+            "docId": "YEzO3FUM6KIugUbPOqxN",
+            "topicName": "Gs paper 2"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "JtDv08TepFBWLJjgfRd2",
+        "authStatus": true,
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "bookName": "Topic-09-Gs2",
+        "createDate": {
+            "seconds": 1725811154,
+            "nanoseconds": 226000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        }
+    },
+    {
+        "docId": "pgEZ38xbr5QBMjv4B4wp",
+        "bookName": "Topic-08-Gs2",
+        "topic": {
+            "docId": "YEzO3FUM6KIugUbPOqxN",
+            "topicName": "Gs paper 2"
+        },
+        "createDate": {
+            "seconds": 1725811146,
+            "nanoseconds": 273000000
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "j2NlsTr06eCPD15Ub1bT",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "bookName": "Topic-07-Gs2",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725811138,
+            "nanoseconds": 937000000
+        }
+    },
+    {
+        "docId": "XTOfoO18I11n3nOGeYk6",
+        "createDate": {
+            "seconds": 1725811131,
+            "nanoseconds": 962000000
+        },
+        "bookName": "Topic-06-Gs2",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        }
+    },
+    {
+        "docId": "xscYIFVFzt8TaNkHGdIi",
+        "createDate": {
+            "seconds": 1725811125,
+            "nanoseconds": 238000000
+        },
+        "bookName": "Topic-05-Gs2",
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        }
+    },
+    {
+        "docId": "GvvVE15us7XT9AfqkWnX",
+        "createDate": {
+            "seconds": 1725811105,
+            "nanoseconds": 111000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "authStatus": true,
+        "bookName": "Topic-04-Gs2"
+    },
+    {
+        "docId": "7PgaXJhjJqVyA6xSL9pu",
+        "authStatus": true,
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        },
+        "createDate": {
+            "seconds": 1725811097,
+            "nanoseconds": 765000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "bookName": "Topic-03-Gs2"
+    },
+    {
+        "docId": "p1FlF4ZE1pH9qBze1hTE",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725811091,
+            "nanoseconds": 268000000
+        },
+        "bookName": "Topic-02-Gs2",
+        "topic": {
+            "topicName": "Gs paper 2",
+            "docId": "YEzO3FUM6KIugUbPOqxN"
+        }
+    },
+    {
+        "docId": "HBze5pryICnAtQXojSAy",
+        "createDate": {
+            "seconds": 1725811074,
+            "nanoseconds": 136000000
+        },
+        "topic": {
+            "docId": "YEzO3FUM6KIugUbPOqxN",
+            "topicName": "Gs paper 2"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true,
+        "bookName": "Topic-01-Gs2"
+    },
+    {
+        "docId": "Xjj6BJ9y24tYz7tGJY1u",
+        "bookName": "Topic-12-Gs1",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725809722,
+            "nanoseconds": 957000000
+        },
+        "topic": {
+            "docId": "OiVHsSTpHFFpgNjQPVN7",
+            "topicName": "Gs paper 1"
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "N5WGqZ1tXrcx3JPHPyhi",
+        "topic": {
+            "topicName": "Gs paper 1",
+            "docId": "OiVHsSTpHFFpgNjQPVN7"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725809710,
+            "nanoseconds": 714000000
+        },
+        "bookName": "Topic-11-Gs1",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        }
+    },
+    {
+        "docId": "aI9FSzwhCep2A0WIcjeh",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725809701,
+            "nanoseconds": 626000000
+        },
+        "bookName": "Topic-10-Gs1",
+        "topic": {
+            "docId": "OiVHsSTpHFFpgNjQPVN7",
+            "topicName": "Gs paper 1"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "EH1l5JAyTc37QoRP81AL",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "OiVHsSTpHFFpgNjQPVN7",
+            "topicName": "Gs paper 1"
+        },
+        "createDate": {
+            "seconds": 1725809683,
+            "nanoseconds": 777000000
+        },
+        "bookName": "Topic-09-Gs1"
+    },
+    {
+        "docId": "ljwmzgubMMj8ciD7OYai",
+        "authStatus": true,
+        "bookName": "Topic-08-Gs1",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "topic": {
+            "docId": "OiVHsSTpHFFpgNjQPVN7",
+            "topicName": "Gs paper 1"
+        },
+        "createDate": {
+            "seconds": 1725809670,
+            "nanoseconds": 991000000
+        }
+    },
+    {
+        "docId": "qiI3axr7cZ9qD7Yt3NjW",
+        "authStatus": true,
+        "topic": {
+            "docId": "OiVHsSTpHFFpgNjQPVN7",
+            "topicName": "Gs paper 1"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725809658,
+            "nanoseconds": 310000000
+        },
+        "bookName": "Topic-07-Gs1"
+    },
+    {
+        "docId": "aLIaogK2wWXLCxuCnxhh",
+        "createDate": {
+            "seconds": 1725809651,
+            "nanoseconds": 236000000
+        },
+        "topic": {
+            "docId": "OiVHsSTpHFFpgNjQPVN7",
+            "topicName": "Gs paper 1"
+        },
+        "authStatus": true,
+        "bookName": "Topic-06-Gs1",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        }
+    },
+    {
+        "docId": "KPjMPrz43xugnTJZc4yw",
+        "bookName": "Topic-05-Gs1",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725809635,
+            "nanoseconds": 787000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "topicName": "Gs paper 1",
+            "docId": "OiVHsSTpHFFpgNjQPVN7"
+        }
+    },
+    {
+        "docId": "3dWOaef3ow8d1F00biw6",
+        "bookName": "Topic-04-Gs1",
+        "topic": {
+            "docId": "OiVHsSTpHFFpgNjQPVN7",
+            "topicName": "Gs paper 1"
+        },
+        "authStatus": true,
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725809628,
+            "nanoseconds": 959000000
+        }
+    },
+    {
+        "docId": "9q3KgufMezcZbMirDHbu",
+        "authStatus": true,
+        "topic": {
+            "topicName": "Gs paper 1",
+            "docId": "OiVHsSTpHFFpgNjQPVN7"
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725809621,
+            "nanoseconds": 754000000
+        },
+        "bookName": "Topic-03-Gs1"
+    },
+    {
+        "docId": "AkH3o7rmT9OgIbuzpRn3",
+        "topic": {
+            "topicName": "Gs paper 1",
+            "docId": "OiVHsSTpHFFpgNjQPVN7"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725809610,
+            "nanoseconds": 438000000
+        },
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "bookName": "Topic-02-Gs1"
+    },
+    {
+        "docId": "WVYEdBBUGOnUZkBvsVaz",
+        "authStatus": true,
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725809124,
+            "nanoseconds": 960000000
+        },
+        "bookName": "Topic-01-Gs1",
+        "topic": {
+            "docId": "OiVHsSTpHFFpgNjQPVN7",
+            "topicName": "Gs paper 1"
+        }
+    },
+    {
+        "docId": "VpmcWu6C3pvbtoeWRQsD",
+        "bookName": "16/09/2024",
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        },
+        "subject": {
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT"
+        },
+        "createDate": {
+            "seconds": 1725787654,
+            "nanoseconds": 162000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "y7gWPFjVZMGjsscufnYm",
+        "createDate": {
+            "seconds": 1725787640,
+            "nanoseconds": 34000000
+        },
+        "subject": {
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            }
+        },
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        },
+        "bookName": "15/09/2024",
+        "authStatus": true
+    },
+    {
+        "docId": "3mx61NHyLswkGuHQgQvX",
+        "bookName": "14/09/2024",
+        "createDate": {
+            "seconds": 1725787626,
+            "nanoseconds": 740000000
+        },
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        },
+        "authStatus": true,
+        "subject": {
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            }
+        }
+    },
+    {
+        "docId": "n37lezTtp3hXfDlmllRy",
+        "bookName": "13/09/2024",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725787618,
+            "nanoseconds": 285000000
+        },
+        "topic": {
+            "docId": "dL9VZ821iSLkxGTjk7Rl",
+            "topicName": "SEPTEMBER 2024"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT"
+        }
+    },
+    {
+        "docId": "HEDKFsGNg0G5IBQParJi",
+        "subject": {
+            "name": "CURRENT",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "createDate": {
+            "seconds": 1725787605,
+            "nanoseconds": 917000000
+        },
+        "authStatus": true,
+        "bookName": "12/09/2024",
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        }
+    },
+    {
+        "docId": "rsbwKtP3kpaVRSKjDMBt",
+        "authStatus": true,
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        },
+        "bookName": "11/09/2024",
+        "createDate": {
+            "seconds": 1725787593,
+            "nanoseconds": 443000000
+        },
+        "subject": {
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            }
+        }
+    },
+    {
+        "docId": "TDTct6IJNIV9hNoyrZEz",
+        "bookName": "10/09/2024",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725787582,
+            "nanoseconds": 32000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT"
+        },
+        "topic": {
+            "docId": "dL9VZ821iSLkxGTjk7Rl",
+            "topicName": "SEPTEMBER 2024"
+        }
+    },
+    {
+        "docId": "2UrZyoN9KMbkGiiewune",
+        "subject": {
+            "name": "CURRENT",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "createDate": {
+            "seconds": 1725787559,
+            "nanoseconds": 710000000
+        },
+        "topic": {
+            "docId": "dL9VZ821iSLkxGTjk7Rl",
+            "topicName": "SEPTEMBER 2024"
+        },
+        "authStatus": true,
+        "bookName": "09/09/2024"
+    },
+    {
+        "docId": "G7bpCBvnRqyu28x3VZfx",
+        "createDate": {
+            "seconds": 1725787552,
+            "nanoseconds": 914000000
+        },
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        },
+        "bookName": "08/09/2024",
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT"
+        }
+    },
+    {
+        "docId": "PeNItpVoBcO6FIReZEKn",
+        "bookName": "आधारभूत संख्ययन",
+        "subject": {
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "topic": {
+            "topicName": "Pre CSAT",
+            "docId": "JVwBHMkDolIn4TFLGTHo"
+        },
+        "createDate": {
+            "seconds": 1725727268,
+            "nanoseconds": 870000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "17O0GmAXiOVHWgWPUi2G",
+        "bookName": "निर्णय लेना और समस्या समाधान",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725727257,
+            "nanoseconds": 970000000
+        },
+        "topic": {
+            "topicName": "Pre CSAT",
+            "docId": "JVwBHMkDolIn4TFLGTHo"
+        }
+    },
+    {
+        "docId": "YsvFTM5iLA0qg5aEGw4C",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS ",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "authStatus": true,
+        "bookName": "तार्किक कौशल एवं विश्लेषणात्मक क्षमता",
+        "topic": {
+            "docId": "JVwBHMkDolIn4TFLGTHo",
+            "topicName": "Pre CSAT"
+        },
+        "createDate": {
+            "seconds": 1725727247,
+            "nanoseconds": 828000000
+        }
+    },
+    {
+        "docId": "qb3zLl8rCaPPcQP4qLWc",
+        "topic": {
+            "docId": "JVwBHMkDolIn4TFLGTHo",
+            "topicName": "Pre CSAT"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725727239,
+            "nanoseconds": 199000000
+        },
+        "bookName": "संचार कौशल सहित अंतर-वैयक्तिक कौशल"
+    },
+    {
+        "docId": "tFvw4ZroRgyRmljDoKx9",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "topic": {
+            "docId": "JVwBHMkDolIn4TFLGTHo",
+            "topicName": "Pre CSAT"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725727220,
+            "nanoseconds": 837000000
+        },
+        "bookName": "बोधगम्यता"
+    },
+    {
+        "docId": "rdcWJaMNxTFUTywznXS7",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725727168,
+            "nanoseconds": 623000000
+        },
+        "subject": {
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            }
+        },
+        "topic": {
+            "topicName": "Pre GS",
+            "docId": "gs9bBytmhhB76LEvt6PX"
+        },
+        "bookName": "सामान्य विज्ञान"
+    },
+    {
+        "docId": "2qNqsdpDce6fkGfoALUq",
+        "authStatus": true,
+        "topic": {
+            "docId": "gs9bBytmhhB76LEvt6PX",
+            "topicName": "Pre GS"
+        },
+        "bookName": "पर्यावरणीय पारिस्थितिकी",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS ",
+            "docId": "R5lXVNL9aYOaBiYceE2h"
+        },
+        "createDate": {
+            "seconds": 1725727159,
+            "nanoseconds": 116000000
+        }
+    },
+    {
+        "docId": "TWj19q9NghsJBhXzBzKA",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725727140,
+            "nanoseconds": 155000000
+        },
+        "bookName": "आर्थिक और सामाजिक विकास",
+        "authStatus": true,
+        "topic": {
+            "topicName": "Pre GS",
+            "docId": "gs9bBytmhhB76LEvt6PX"
+        }
+    },
+    {
+        "docId": "OP2rM8SOs7Tmw2Y1Ay8D",
+        "subject": {
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725727122,
+            "nanoseconds": 344000000
+        },
+        "topic": {
+            "docId": "gs9bBytmhhB76LEvt6PX",
+            "topicName": "Pre GS"
+        },
+        "authStatus": true,
+        "bookName": "भारतीय राज्यतंत्र और शासन"
+    },
+    {
+        "docId": "txXKh3cL9sJB51O1CUFe",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725727111,
+            "nanoseconds": 382000000
+        },
+        "bookName": "भारत एवं विश्व का भूगोल",
+        "topic": {
+            "docId": "gs9bBytmhhB76LEvt6PX",
+            "topicName": "Pre GS"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "CypKndHXIElVOYOdkd18",
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "topic": {
+            "topicName": "Pre GS",
+            "docId": "gs9bBytmhhB76LEvt6PX"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725727097,
+            "nanoseconds": 39000000
+        },
+        "bookName": "भारत का इतिहास और भारतीय राष्ट्रीय आंदोलन"
+    },
+    {
+        "docId": "vtYhHT76sVA8vCpyLeCD",
+        "topic": {
+            "topicName": "Pre GS",
+            "docId": "gs9bBytmhhB76LEvt6PX"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1725726078,
+                "nanoseconds": 277000000
+            },
+            "docId": "R5lXVNL9aYOaBiYceE2h",
+            "name": "SYLLABUS "
+        },
+        "createDate": {
+            "seconds": 1725727079,
+            "nanoseconds": 808000000
+        },
+        "bookName": "राष्ट्रीय और अंतर्राष्ट्रीय महत्त्व की सामयिक घटनाएँ"
+    },
+    {
+        "docId": "R7pO4ErcTN5yr6KzWW4I",
+        "authStatus": true,
+        "bookName": "7th.H chap 08",
+        "createDate": {
+            "seconds": 1725715329,
+            "nanoseconds": 750000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        }
+    },
+    {
+        "docId": "AFumj6l3SodSWjXwNuEY",
+        "bookName": "7th.H chap 07",
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT"
+        },
+        "createDate": {
+            "seconds": 1725715322,
+            "nanoseconds": 811000000
+        }
+    },
+    {
+        "docId": "OyEGFprjVHvPGtW3QCQI",
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725715314,
+            "nanoseconds": 979000000
+        },
+        "bookName": "7th.H chap 06",
+        "authStatus": true,
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        }
+    },
+    {
+        "docId": "iDb3wT6cYnv30rEaYf2c",
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "topic": {
+            "docId": "456eNMqapvDIMdWN8OU8",
+            "topicName": "HISTORY NCERT"
+        },
+        "bookName": "7th.H chap 05",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725715306,
+            "nanoseconds": 883000000
+        }
+    },
+    {
+        "docId": "0kPXhUXPgIuKFDF9PPwr",
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "createDate": {
+            "seconds": 1725715299,
+            "nanoseconds": 826000000
+        },
+        "bookName": "7th.H chap 04"
+    },
+    {
+        "docId": "SiXXCxcCveFNiP9tB3ME",
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "bookName": "7th.H chap 03",
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725715279,
+            "nanoseconds": 330000000
+        }
+    },
+    {
+        "docId": "zHg04k2zOKhHRztIvFU9",
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "bookName": "7th.H chap 02",
+        "topic": {
+            "docId": "456eNMqapvDIMdWN8OU8",
+            "topicName": "HISTORY NCERT"
+        },
+        "createDate": {
+            "seconds": 1725715270,
+            "nanoseconds": 672000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "qgNQ1oY4p50cjFNSXvgS",
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "topic": {
+            "docId": "dL9VZ821iSLkxGTjk7Rl",
+            "topicName": "SEPTEMBER 2024"
+        },
+        "bookName": "07/09/2024",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725712765,
+            "nanoseconds": 865000000
+        }
+    },
+    {
+        "docId": "SK5haLOEXd65wZOrS5Nf",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725712756,
+            "nanoseconds": 97000000
+        },
+        "topic": {
+            "docId": "dL9VZ821iSLkxGTjk7Rl",
+            "topicName": "SEPTEMBER 2024"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT"
+        },
+        "bookName": "06/09/2024"
+    },
+    {
+        "docId": "U756CUrUq8cg2Gtja8Ip",
+        "authStatus": true,
+        "bookName": "05/09/2024",
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        },
+        "subject": {
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT"
+        },
+        "createDate": {
+            "seconds": 1725712697,
+            "nanoseconds": 38000000
+        }
+    },
+    {
+        "docId": "KSrn0BjEvnyOs7hugFph",
+        "subject": {
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725712686,
+            "nanoseconds": 749000000
+        },
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        },
+        "bookName": "04/09/2024"
+    },
+    {
+        "docId": "BPAAt4SXErPxGw5wTSwV",
+        "createDate": {
+            "seconds": 1725712671,
+            "nanoseconds": 160000000
+        },
+        "subject": {
+            "name": "CURRENT",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "topic": {
+            "docId": "dL9VZ821iSLkxGTjk7Rl",
+            "topicName": "SEPTEMBER 2024"
+        },
+        "authStatus": true,
+        "bookName": "03/09/2024"
+    },
+    {
+        "docId": "f6IndgTYfVm6H2bECL7m",
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT"
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "SEPTEMBER 2024",
+            "docId": "dL9VZ821iSLkxGTjk7Rl"
+        },
+        "createDate": {
+            "seconds": 1725701613,
+            "nanoseconds": 772000000
+        },
+        "bookName": "02/09/2024"
+    },
+    {
+        "docId": "TJlfJrA3aODHsDpW0awO",
+        "createDate": {
+            "seconds": 1725614399,
+            "nanoseconds": 495000000
+        },
+        "topic": {
+            "topicName": "WORLD - GEOGRAPHY",
+            "docId": "dcNGVYdNfMzPjFzTl0fZ"
+        },
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "name": "CLASS "
+        },
+        "bookName": "WG Class 03",
+        "authStatus": true
+    },
+    {
+        "docId": "9rXy7qkVZkJFsgNSZZoN",
+        "authStatus": true,
+        "bookName": "WH Class 06",
+        "topic": {
+            "docId": "QiTb053uGX2iejY1xJ6x",
+            "topicName": "WORLD - HISTORY"
+        },
+        "createDate": {
+            "seconds": 1725609231,
+            "nanoseconds": 169000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        }
+    },
+    {
+        "docId": "9yLx0x5JLpKaOMmi0UrB",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725524449,
+            "nanoseconds": 281000000
+        },
+        "topic": {
+            "topicName": "JANUARY 2024",
+            "docId": "1e8ej9GY5CLahWIaiDLf"
+        },
+        "bookName": "डिजास्टर मैनेजमेंट 9/24",
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT"
+        }
+    },
+    {
+        "docId": "e0Wjq3WnVAOAfIZGFkP7",
+        "topic": {
+            "topicName": "JANUARY 2024",
+            "docId": "1e8ej9GY5CLahWIaiDLf"
+        },
+        "subject": {
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            }
+        },
+        "bookName": "पर्यवारण 9/24",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725524442,
+            "nanoseconds": 679000000
+        }
+    },
+    {
+        "docId": "hc2xzI2pYC1Lk9mTtEOK",
+        "bookName": "विज्ञान एवं प्रौद्योगिकी 9/24",
+        "topic": {
+            "topicName": "JANUARY 2024",
+            "docId": "1e8ej9GY5CLahWIaiDLf"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725524435,
+            "nanoseconds": 165000000
+        }
+    },
+    {
+        "docId": "iq0zeDvFbqhoAMBB7hQU",
+        "subject": {
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            }
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725524425,
+            "nanoseconds": 971000000
+        },
+        "bookName": "निबंध 9/24",
+        "topic": {
+            "docId": "1e8ej9GY5CLahWIaiDLf",
+            "topicName": "JANUARY 2024"
+        }
+    },
+    {
+        "docId": "sUA1qyKUZqsubGZyPV1L",
+        "subject": {
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT"
+        },
+        "topic": {
+            "docId": "1e8ej9GY5CLahWIaiDLf",
+            "topicName": "JANUARY 2024"
+        },
+        "createDate": {
+            "seconds": 1725524417,
+            "nanoseconds": 662000000
+        },
+        "authStatus": true,
+        "bookName": "इथिक्स 9/24"
+    },
+    {
+        "docId": "kq6IX4IfvJC38VKPJ3KS",
+        "authStatus": true,
+        "bookName": "अर्थशास्त्र 9/24",
+        "createDate": {
+            "seconds": 1725524408,
+            "nanoseconds": 510000000
+        },
+        "subject": {
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            }
+        },
+        "topic": {
+            "docId": "1e8ej9GY5CLahWIaiDLf",
+            "topicName": "JANUARY 2024"
+        }
+    },
+    {
+        "docId": "DWjTSvbhB4QVxE4M741Q",
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT"
+        },
+        "topic": {
+            "topicName": "JANUARY 2024",
+            "docId": "1e8ej9GY5CLahWIaiDLf"
+        },
+        "bookName": "सामाजिक न्याय 9/24",
+        "createDate": {
+            "seconds": 1725524399,
+            "nanoseconds": 707000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "azibAKuXMD4A3LELFmvI",
+        "bookName": "आंतरिक सुरक्षा 9/24",
+        "createDate": {
+            "seconds": 1725524391,
+            "nanoseconds": 435000000
+        },
+        "topic": {
+            "docId": "1e8ej9GY5CLahWIaiDLf",
+            "topicName": "JANUARY 2024"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        }
+    },
+    {
+        "docId": "jafvwEXmUPBD4GvOlQsY",
+        "authStatus": true,
+        "topic": {
+            "docId": "1e8ej9GY5CLahWIaiDLf",
+            "topicName": "JANUARY 2024"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "bookName": "समाज 9/24",
+        "createDate": {
+            "seconds": 1725524384,
+            "nanoseconds": 129000000
+        }
+    },
+    {
+        "docId": "69aWwXoc4QKXdd7If9xX",
+        "createDate": {
+            "seconds": 1725524378,
+            "nanoseconds": 14000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "topic": {
+            "topicName": "JANUARY 2024",
+            "docId": "1e8ej9GY5CLahWIaiDLf"
+        },
+        "bookName": "गवर्नेंस 9/24",
+        "authStatus": true
+    },
+    {
+        "docId": "o1HLufGvscz7MJWAGU1G",
+        "subject": {
+            "name": "CURRENT",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "topic": {
+            "topicName": "JANUARY 2024",
+            "docId": "1e8ej9GY5CLahWIaiDLf"
+        },
+        "createDate": {
+            "seconds": 1725524359,
+            "nanoseconds": 329000000
+        },
+        "authStatus": true,
+        "bookName": "अंतरराष्ट्रीय सम्बंध 9/24"
+    },
+    {
+        "docId": "ZtHymP7bRTzwDQiezynv",
+        "bookName": "राज्यव्यवस्था 9/24",
+        "subject": {
+            "name": "CURRENT",
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            }
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725524352,
+            "nanoseconds": 591000000
+        },
+        "topic": {
+            "topicName": "JANUARY 2024",
+            "docId": "1e8ej9GY5CLahWIaiDLf"
+        }
+    },
+    {
+        "docId": "eKVIthCHw67DSVLCbu8P",
+        "topic": {
+            "docId": "1e8ej9GY5CLahWIaiDLf",
+            "topicName": "JANUARY 2024"
+        },
+        "createDate": {
+            "seconds": 1725524340,
+            "nanoseconds": 777000000
+        },
+        "subject": {
+            "name": "CURRENT",
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho"
+        },
+        "bookName": "भूगोल 9/24",
+        "authStatus": true
+    },
+    {
+        "docId": "Xr4rRr1HGgBWiCByx4C5",
+        "bookName": "इतिहास 9/24",
+        "topic": {
+            "docId": "1e8ej9GY5CLahWIaiDLf",
+            "topicName": "JANUARY 2024"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725523797,
+            "nanoseconds": 44000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708835060,
+                "nanoseconds": 297000000
+            },
+            "docId": "2ALZHUMuF5iNkyJS1Eho",
+            "name": "CURRENT"
+        }
+    },
+    {
+        "docId": "SQ19ha6QT0JaqzjHleFS",
+        "bookName": "WH Class 05",
+        "authStatus": true,
+        "topic": {
+            "docId": "QiTb053uGX2iejY1xJ6x",
+            "topicName": "WORLD - HISTORY"
+        },
+        "createDate": {
+            "seconds": 1725516896,
+            "nanoseconds": 568000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS "
+        }
+    },
+    {
+        "docId": "Sc5CmqoP3v98hiebpEBN",
+        "topic": {
+            "docId": "EnVN5xj6tBBvypGTl4e0",
+            "topicName": "GEOGRAPHY NCERT"
+        },
+        "createDate": {
+            "seconds": 1725446876,
+            "nanoseconds": 339000000
+        },
+        "subject": {
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        },
+        "authStatus": true,
+        "bookName": "7th.G chap 07"
+    },
+    {
+        "docId": "lgqWKi2d0tsGFwfNz1Pc",
+        "authStatus": true,
+        "bookName": "7th.G chap 06",
+        "createDate": {
+            "seconds": 1725446859,
+            "nanoseconds": 449000000
+        },
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "topic": {
+            "docId": "EnVN5xj6tBBvypGTl4e0",
+            "topicName": "GEOGRAPHY NCERT"
+        }
+    },
+    {
+        "docId": "UNFRfTefiGQ9H1sOE6XA",
+        "createDate": {
+            "seconds": 1725446851,
+            "nanoseconds": 213000000
+        },
+        "bookName": "7th.G chap 05",
+        "authStatus": true,
+        "topic": {
+            "docId": "EnVN5xj6tBBvypGTl4e0",
+            "topicName": "GEOGRAPHY NCERT"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        }
+    },
+    {
+        "docId": "alS4OhZksbkk6NxdoSQl",
+        "authStatus": true,
+        "subject": {
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        },
+        "topic": {
+            "docId": "EnVN5xj6tBBvypGTl4e0",
+            "topicName": "GEOGRAPHY NCERT"
+        },
+        "bookName": "7th.G chap 04",
+        "createDate": {
+            "seconds": 1725446834,
+            "nanoseconds": 612000000
+        }
+    },
+    {
+        "docId": "AfwqO4e7vEcPtNpiO0xJ",
+        "authStatus": true,
+        "bookName": "7th.G chap 03",
+        "topic": {
+            "docId": "EnVN5xj6tBBvypGTl4e0",
+            "topicName": "GEOGRAPHY NCERT"
+        },
+        "createDate": {
+            "seconds": 1725446825,
+            "nanoseconds": 152000000
+        },
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        }
+    },
+    {
+        "docId": "2nNbSdSKRKlvA0hlXKc3",
+        "bookName": "7th.G chap 02",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725446819,
+            "nanoseconds": 282000000
+        },
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "topic": {
+            "topicName": "GEOGRAPHY NCERT",
+            "docId": "EnVN5xj6tBBvypGTl4e0"
+        }
+    },
+    {
+        "docId": "EvGPBzNswQb1qCmZDRDP",
+        "topic": {
+            "topicName": "GEOGRAPHY NCERT",
+            "docId": "EnVN5xj6tBBvypGTl4e0"
+        },
+        "createDate": {
+            "seconds": 1725446812,
+            "nanoseconds": 771000000
+        },
+        "bookName": "7th.G chap 01",
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "KyJmSvvUQrSEIFaD2zXj",
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "topic": {
+            "docId": "EnVN5xj6tBBvypGTl4e0",
+            "topicName": "GEOGRAPHY NCERT"
+        },
+        "bookName": "6th.G chap 06",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725446770,
+            "nanoseconds": 143000000
+        }
+    },
+    {
+        "docId": "41gQdXqvfX5kKa7rTa7b",
+        "createDate": {
+            "seconds": 1725446763,
+            "nanoseconds": 356000000
+        },
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "topic": {
+            "topicName": "GEOGRAPHY NCERT",
+            "docId": "EnVN5xj6tBBvypGTl4e0"
+        },
+        "bookName": "6th.G chap 05",
+        "authStatus": true
+    },
+    {
+        "docId": "3RwZ4pKEh4jMPA9xrOTL",
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "bookName": "6th.G chap 04",
+        "topic": {
+            "topicName": "GEOGRAPHY NCERT",
+            "docId": "EnVN5xj6tBBvypGTl4e0"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725446755,
+            "nanoseconds": 951000000
+        }
+    },
+    {
+        "docId": "eQxeVJKqncMiMztZQEVM",
+        "authStatus": true,
+        "topic": {
+            "topicName": "GEOGRAPHY NCERT",
+            "docId": "EnVN5xj6tBBvypGTl4e0"
+        },
+        "createDate": {
+            "seconds": 1725446747,
+            "nanoseconds": 752000000
+        },
+        "bookName": "6th.G chap 03",
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "name": "NCERT"
+        }
+    },
+    {
+        "docId": "GOO51xgZZ0GaJX8xgvbE",
+        "createDate": {
+            "seconds": 1725446709,
+            "nanoseconds": 77000000
+        },
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "authStatus": true,
+        "bookName": "6th.G chap 02",
+        "topic": {
+            "docId": "EnVN5xj6tBBvypGTl4e0",
+            "topicName": "GEOGRAPHY NCERT"
+        }
+    },
+    {
+        "docId": "xuJwOgQ1APyKwNK3R77h",
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "createDate": {
+            "seconds": 1725443954,
+            "nanoseconds": 672000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "bookName": "7th.H chap 01",
+        "authStatus": true
+    },
+    {
+        "docId": "CDkfsaSsnE362BkPus3g",
+        "authStatus": true,
+        "bookName": "6th.H chap 10",
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725443925,
+            "nanoseconds": 66000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        }
+    },
+    {
+        "docId": "oKhwDd22v1jTJA1Uo0Zv",
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "bookName": "6th.H chap 09",
+        "createDate": {
+            "seconds": 1725443881,
+            "nanoseconds": 496000000
+        }
+    },
+    {
+        "docId": "xLoY67j2UymUr8v44bkX",
+        "authStatus": true,
+        "bookName": "6th.H chap 08",
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "createDate": {
+            "seconds": 1725443873,
+            "nanoseconds": 669000000
+        }
+    },
+    {
+        "docId": "c82lctqXGbakHPXqKvX9",
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "456eNMqapvDIMdWN8OU8",
+            "topicName": "HISTORY NCERT"
+        },
+        "bookName": "6th.H chap 07",
+        "createDate": {
+            "seconds": 1725443856,
+            "nanoseconds": 996000000
+        }
+    },
+    {
+        "docId": "gqyq3Dl49QySPEryWetM",
+        "topic": {
+            "docId": "456eNMqapvDIMdWN8OU8",
+            "topicName": "HISTORY NCERT"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        },
+        "createDate": {
+            "seconds": 1725443849,
+            "nanoseconds": 586000000
+        },
+        "authStatus": true,
+        "bookName": "6th.H chap 06"
+    },
+    {
+        "docId": "fcqimysKpGVANrqJzika",
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "bookName": "6th.H chap 05",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725443843,
+            "nanoseconds": 501000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        }
+    },
+    {
+        "docId": "20yv6iGG82Omor2hKQeA",
+        "createDate": {
+            "seconds": 1725443836,
+            "nanoseconds": 973000000
+        },
+        "authStatus": true,
+        "bookName": "6th.H chap 04",
+        "subject": {
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        }
+    },
+    {
+        "docId": "4PU7aA1rskkEgO15Ztvu",
+        "bookName": "6th.H chap 03",
+        "authStatus": true,
+        "subject": {
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        },
+        "createDate": {
+            "seconds": 1725443829,
+            "nanoseconds": 789000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        }
+    },
+    {
+        "docId": "uHeq37wqB5hWlxvL3Kbt",
+        "bookName": "6th.H chap 02",
+        "subject": {
+            "name": "NCERT",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "docId": "ysSo1mdXAQSFw5ZQbKv0"
+        },
+        "createDate": {
+            "seconds": 1725443822,
+            "nanoseconds": 854000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "Mx0nADo5NZanjO2MiUuA",
+        "authStatus": true,
+        "topic": {
+            "docId": "EnVN5xj6tBBvypGTl4e0",
+            "topicName": "GEOGRAPHY NCERT"
+        },
+        "subject": {
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            },
+            "name": "NCERT"
+        },
+        "createDate": {
+            "seconds": 1725443656,
+            "nanoseconds": 483000000
+        },
+        "bookName": "6th.G chap 01"
+    },
+    {
+        "docId": "zCj8TBxOFAzSGrxF7ncl",
+        "authStatus": true,
+        "subject": {
+            "name": "NCERT",
+            "docId": "ysSo1mdXAQSFw5ZQbKv0",
+            "createDate": {
+                "seconds": 1708921476,
+                "nanoseconds": 751000000
+            }
+        },
+        "bookName": "6th.H chap 01",
+        "createDate": {
+            "seconds": 1725438102,
+            "nanoseconds": 266000000
+        },
+        "topic": {
+            "topicName": "HISTORY NCERT",
+            "docId": "456eNMqapvDIMdWN8OU8"
+        }
+    },
+    {
+        "docId": "KxjqUU7Cyp96U89Bvtdy",
+        "createDate": {
+            "seconds": 1725432410,
+            "nanoseconds": 934000000
+        },
+        "subject": {
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "QiTb053uGX2iejY1xJ6x",
+            "topicName": "WORLD - HISTORY"
+        },
+        "bookName": "WH Class 04"
+    },
+    {
+        "docId": "6BNtlpNFqK2PHX7tl60H",
+        "authStatus": true,
+        "topic": {
+            "docId": "dcNGVYdNfMzPjFzTl0fZ",
+            "topicName": "WORLD - GEOGRAPHY"
+        },
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        },
+        "bookName": "WG Class 02",
+        "createDate": {
+            "seconds": 1725373550,
+            "nanoseconds": 115000000
+        }
+    },
+    {
+        "docId": "x3UJxHi602CwKllCCTT8",
+        "topic": {
+            "topicName": "WORLD - HISTORY",
+            "docId": "QiTb053uGX2iejY1xJ6x"
+        },
+        "authStatus": true,
+        "bookName": "WH Class 03",
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725345869,
+            "nanoseconds": 542000000
+        }
+    },
+    {
+        "docId": "wUsk1T4qhEAbyJ7dW8qN",
+        "authStatus": true,
+        "bookName": "WH Class 02",
+        "createDate": {
+            "seconds": 1725253909,
+            "nanoseconds": 916000000
+        },
+        "topic": {
+            "topicName": "WORLD - HISTORY",
+            "docId": "QiTb053uGX2iejY1xJ6x"
+        },
+        "subject": {
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "name": "CLASS ",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        }
+    },
+    {
+        "docId": "6XxhsVNRssg0UKXCw5rh",
+        "authStatus": true,
+        "topic": {
+            "topicName": "WORLD - HISTORY",
+            "docId": "QiTb053uGX2iejY1xJ6x"
+        },
+        "createDate": {
+            "seconds": 1725252664,
+            "nanoseconds": 58000000
+        },
+        "bookName": "WH Class 01",
+        "subject": {
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv",
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            }
+        }
+    },
+    {
+        "docId": "uvUv9YKOsLVYXd7N1C1K",
+        "subject": {
+            "createDate": {
+                "seconds": 1708748554,
+                "nanoseconds": 159000000
+            },
+            "name": "CLASS ",
+            "docId": "p3GeAqULMoz8f1meG1Zv"
+        },
+        "bookName": "WG Class 01",
+        "topic": {
+            "docId": "dcNGVYdNfMzPjFzTl0fZ",
+            "topicName": "WORLD - GEOGRAPHY"
+        },
+        "createDate": {
+            "seconds": 1725252284,
+            "nanoseconds": 402000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "H1T4eJJxaLnnCTNgDEdc",
+        "authStatus": true,
+        "topic": {
+            "topicName": "POLITICAL HISTORY ",
+            "docId": "9Ebap6k1jwHwSMI1EV5h"
+        },
+        "bookName": "आधुनिक भारत_P",
+        "createDate": {
+            "seconds": 1725006891,
+            "nanoseconds": 82000000
+        },
+        "subject": {
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X"
+        }
+    },
+    {
+        "docId": "VzLbqLFUAHgrJFGG6dwj",
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        },
+        "createDate": {
+            "seconds": 1725006772,
+            "nanoseconds": 255000000
+        },
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            }
+        },
+        "bookName": "मुगल काल_P",
+        "authStatus": true
+    },
+    {
+        "docId": "28LVvXwaNQiWswIKE16r",
+        "createDate": {
+            "seconds": 1725006756,
+            "nanoseconds": 43000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY "
+        },
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        },
+        "authStatus": true,
+        "bookName": "सल्तनत काल_P"
+    },
+    {
+        "docId": "dGOL6OziWGxEGqb4zEOO",
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        },
+        "subject": {
+            "name": "HISTORY ",
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            }
+        },
+        "authStatus": true,
+        "bookName": "पूर्व मध्यकाल_P",
+        "createDate": {
+            "seconds": 1725003416,
+            "nanoseconds": 108000000
+        }
+    },
+    {
+        "docId": "nBYy2ATwdaFFqztzAF78",
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "name": "HISTORY "
+        },
+        "authStatus": true,
+        "bookName": "गुप्तोत्तर काल_P",
+        "topic": {
+            "topicName": "POLITICAL HISTORY ",
+            "docId": "9Ebap6k1jwHwSMI1EV5h"
+        },
+        "createDate": {
+            "seconds": 1725003371,
+            "nanoseconds": 619000000
+        }
+    },
+    {
+        "docId": "XO3IecUcVGstejgxZdKw",
+        "authStatus": true,
+        "subject": {
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X"
+        },
+        "createDate": {
+            "seconds": 1725003360,
+            "nanoseconds": 642000000
+        },
+        "bookName": "गुप्त काल_P",
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        }
+    },
+    {
+        "docId": "LbPp3U7TbZPb2Vc7agoE",
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            }
+        },
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1725003278,
+            "nanoseconds": 536000000
+        },
+        "bookName": "मौर्योत्तर काल_P"
+    },
+    {
+        "docId": "r6m0NVTgoLcnalAtKFqU",
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        },
+        "authStatus": true,
+        "bookName": "मौर्य काल_P",
+        "createDate": {
+            "seconds": 1725003268,
+            "nanoseconds": 854000000
+        },
+        "subject": {
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X"
+        }
+    },
+    {
+        "docId": "pRLDMCIsQ3to6rRhLqpE",
+        "createDate": {
+            "seconds": 1725002952,
+            "nanoseconds": 675000000
+        },
+        "bookName": "बौद्ध काल_P",
+        "topic": {
+            "topicName": "POLITICAL HISTORY ",
+            "docId": "9Ebap6k1jwHwSMI1EV5h"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY "
+        }
+    },
+    {
+        "docId": "jIOWAkXqKWvk3NP1Vdfj",
+        "subject": {
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY "
+        },
+        "bookName": "उत्तर वैदिक काल_P",
+        "createDate": {
+            "seconds": 1725002921,
+            "nanoseconds": 38000000
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "POLITICAL HISTORY ",
+            "docId": "9Ebap6k1jwHwSMI1EV5h"
+        }
+    },
+    {
+        "docId": "knFCP4VNPZD3Eo6SKjIF",
+        "topic": {
+            "topicName": "POLITICAL HISTORY ",
+            "docId": "9Ebap6k1jwHwSMI1EV5h"
+        },
+        "createDate": {
+            "seconds": 1725002900,
+            "nanoseconds": 737000000
+        },
+        "subject": {
+            "name": "HISTORY ",
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            }
+        },
+        "authStatus": true,
+        "bookName": "वैदिक काल_P"
+    },
+    {
+        "docId": "klWLV772lTzWwOvjiIAk",
+        "createDate": {
+            "seconds": 1725002870,
+            "nanoseconds": 359000000
+        },
+        "bookName": "हड़प्पा के पश्चात_P",
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        },
+        "authStatus": true,
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            }
+        }
+    },
+    {
+        "docId": "DZBnSPMMAphpCxxOqQOV",
+        "bookName": "हड़प्पा सभ्यता_P",
+        "subject": {
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY "
+        },
+        "createDate": {
+            "seconds": 1725002847,
+            "nanoseconds": 6000000
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        }
+    },
+    {
+        "docId": "WL7EO8FqZy1Nnbxu2rIl",
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725002818,
+            "nanoseconds": 305000000
+        },
+        "bookName": "ताम्रपाषाण काल_P",
+        "topic": {
+            "topicName": "POLITICAL HISTORY ",
+            "docId": "9Ebap6k1jwHwSMI1EV5h"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "SzUGraXK5kcBo2cTzaMy",
+        "bookName": "नवपाषाण काल_P",
+        "authStatus": true,
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "name": "HISTORY "
+        },
+        "topic": {
+            "topicName": "POLITICAL HISTORY ",
+            "docId": "9Ebap6k1jwHwSMI1EV5h"
+        },
+        "createDate": {
+            "seconds": 1725002782,
+            "nanoseconds": 923000000
+        }
+    },
+    {
+        "docId": "iRvb2IJ8FvD9hyEi7Te0",
+        "bookName": "मध्यपाषाण काल_P",
+        "authStatus": true,
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            }
+        },
+        "createDate": {
+            "seconds": 1725002730,
+            "nanoseconds": 107000000
+        },
+        "topic": {
+            "docId": "9Ebap6k1jwHwSMI1EV5h",
+            "topicName": "POLITICAL HISTORY "
+        }
+    },
+    {
+        "docId": "I8f9qZULrflHJu2ZYe3Q",
+        "topic": {
+            "topicName": "POLITICAL HISTORY ",
+            "docId": "9Ebap6k1jwHwSMI1EV5h"
+        },
+        "createDate": {
+            "seconds": 1724999793,
+            "nanoseconds": 9000000
+        },
+        "bookName": "पुरापाषाण काल_P",
+        "authStatus": true,
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            }
+        }
+    },
+    {
+        "docId": "sjlNtnQPD3MzL3QHtLmq",
+        "topic": {
+            "docId": "DeXFgAn20rojZ28ldwPv",
+            "topicName": "INDIAN HISTORY "
+        },
+        "bookName": "Polity",
+        "subject": {
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X"
+        },
+        "createDate": {
+            "seconds": 1724998636,
+            "nanoseconds": 971000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "CECgrRr1qmuP9Ja521xG",
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        },
+        "createDate": {
+            "seconds": 1724919812,
+            "nanoseconds": 869000000
+        },
+        "authStatus": true,
+        "bookName": "अन्य महत्वपूर्ण",
+        "subject": {
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL "
+        }
+    },
+    {
+        "docId": "x0k0A8cxii1LYWz8ATaP",
+        "bookName": "पूर्व मध्यकाल",
+        "authStatus": true,
+        "subject": {
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL ",
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            }
+        },
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        },
+        "createDate": {
+            "seconds": 1724572207,
+            "nanoseconds": 928000000
+        }
+    },
+    {
+        "docId": "rlbWkOPK1xIE3eSVtbbA",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1724572192,
+            "nanoseconds": 464000000
+        },
+        "bookName": "गुप्तोत्तर काल",
+        "subject": {
+            "name": "HISTORY OPTIONAL ",
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "docId": "kNAMNKU4vt7bWLuCxMdL"
+        },
+        "topic": {
+            "topicName": "MAP WORK",
+            "docId": "VSRn5xcHpi3ESI4LJvTe"
+        }
+    },
+    {
+        "docId": "3ppd1iPBZcjQAeI81h4B",
+        "bookName": "गुप्त काल",
+        "subject": {
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "name": "HISTORY OPTIONAL "
+        },
+        "createDate": {
+            "seconds": 1724572183,
+            "nanoseconds": 869000000
+        },
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "BogTqWUipmk4NoQUush6",
+        "subject": {
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "name": "HISTORY OPTIONAL "
+        },
+        "createDate": {
+            "seconds": 1724572170,
+            "nanoseconds": 410000000
+        },
+        "authStatus": true,
+        "bookName": "मौर्योत्तर काल",
+        "topic": {
+            "topicName": "MAP WORK",
+            "docId": "VSRn5xcHpi3ESI4LJvTe"
+        }
+    },
+    {
+        "docId": "6zJuocW6wQ8lBv1zctGJ",
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "name": "HISTORY OPTIONAL ",
+            "docId": "kNAMNKU4vt7bWLuCxMdL"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1724572159,
+            "nanoseconds": 315000000
+        },
+        "bookName": "मौर्य काल"
+    },
+    {
+        "docId": "3tpD51oAy1dr0xHBpTgy",
+        "subject": {
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "name": "HISTORY OPTIONAL "
+        },
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        },
+        "authStatus": true,
+        "bookName": "बौद्ध काल",
+        "createDate": {
+            "seconds": 1724572004,
+            "nanoseconds": 174000000
+        }
+    },
+    {
+        "docId": "ZrL9k2wXyaBPwqUCGACo",
+        "subject": {
+            "name": "HISTORY OPTIONAL ",
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "docId": "kNAMNKU4vt7bWLuCxMdL"
+        },
+        "bookName": "उत्तर वैदिक काल",
+        "authStatus": true,
+        "topic": {
+            "topicName": "MAP WORK",
+            "docId": "VSRn5xcHpi3ESI4LJvTe"
+        },
+        "createDate": {
+            "seconds": 1724571995,
+            "nanoseconds": 575000000
+        }
+    },
+    {
+        "docId": "zYlkuHTT0EBq0qyQRsYG",
+        "subject": {
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL "
+        },
+        "createDate": {
+            "seconds": 1724571984,
+            "nanoseconds": 970000000
+        },
+        "bookName": "वैदिक काल",
+        "authStatus": true,
+        "topic": {
+            "topicName": "MAP WORK",
+            "docId": "VSRn5xcHpi3ESI4LJvTe"
+        }
+    },
+    {
+        "docId": "qnQDXBNFqKFP2cPJwdwj",
+        "createDate": {
+            "seconds": 1724571975,
+            "nanoseconds": 811000000
+        },
+        "bookName": "हड़प्पा के पश्चात",
+        "topic": {
+            "topicName": "MAP WORK",
+            "docId": "VSRn5xcHpi3ESI4LJvTe"
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL "
+        }
+    },
+    {
+        "docId": "iZze2PQ24qBa3B1B3LFO",
+        "createDate": {
+            "seconds": 1724571966,
+            "nanoseconds": 166000000
+        },
+        "authStatus": true,
+        "bookName": "हड़प्पा सभ्यता",
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL "
+        }
+    },
+    {
+        "docId": "y5MDiBiIlKy838etAzKt",
+        "authStatus": true,
+        "bookName": "ताम्रपाषाण काल",
+        "createDate": {
+            "seconds": 1724571949,
+            "nanoseconds": 201000000
+        },
+        "subject": {
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL ",
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            }
+        },
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        }
+    },
+    {
+        "docId": "e0qPExa03PzZjbSVL1uM",
+        "bookName": "नवपाषाण काल",
+        "subject": {
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL "
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        },
+        "createDate": {
+            "seconds": 1724571928,
+            "nanoseconds": 973000000
+        }
+    },
+    {
+        "docId": "Xz2G2J8E2hUnnZUYCLEb",
+        "subject": {
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL ",
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            }
+        },
+        "bookName": "मध्यपाषाण काल",
+        "createDate": {
+            "seconds": 1724571915,
+            "nanoseconds": 532000000
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        }
+    },
+    {
+        "docId": "lWjjGm51pcsZ7JMCiTWz",
+        "bookName": "पुरापाषाण काल",
+        "createDate": {
+            "seconds": 1724571779,
+            "nanoseconds": 804000000
+        },
+        "topic": {
+            "docId": "VSRn5xcHpi3ESI4LJvTe",
+            "topicName": "MAP WORK"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1724996531,
+                "nanoseconds": 66000000
+            },
+            "docId": "kNAMNKU4vt7bWLuCxMdL",
+            "name": "HISTORY OPTIONAL "
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "pG7yVV6hmyZht1gLrkdl",
+        "createDate": {
+            "seconds": 1715511289,
+            "nanoseconds": 748000000
+        },
+        "topic": {
+            "topicName": "WORLD GEOGRAPHY ",
+            "docId": "AAsEiff0FHGu9GrM69tL"
+        },
+        "bookName": "विश्व भूगोल",
+        "subject": {
+            "createDate": {
+                "seconds": 1710261352,
+                "nanoseconds": 799000000
+            },
+            "name": "GEOGRAPHY",
+            "docId": "yPo0aEL8rVdLVgpmQ2tq"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "g2NpV04YcWB0zneKNXdo",
+        "topic": {
+            "topicName": "WORLD GEOGRAPHY ",
+            "docId": "AAsEiff0FHGu9GrM69tL"
+        },
+        "createDate": {
+            "seconds": 1715507499,
+            "nanoseconds": 518000000
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            },
+            "docId": "yPo0aEL8rVdLVgpmQ2tq",
+            "name": "GEOGRAPHY"
+        },
+        "bookName": "मानव भूगोल"
+    },
+    {
+        "docId": "39tDSlinrSiobmMSwEB7",
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            },
+            "name": "GEOGRAPHY",
+            "docId": "yPo0aEL8rVdLVgpmQ2tq"
+        },
+        "createDate": {
+            "seconds": 1715507488,
+            "nanoseconds": 593000000
+        },
+        "topic": {
+            "docId": "AAsEiff0FHGu9GrM69tL",
+            "topicName": "WORLD GEOGRAPHY "
+        },
+        "bookName": "भौतिक भूगोल"
+    },
+    {
+        "docId": "dfYMG5QFi30TTBm0mcbw",
+        "authStatus": true,
+        "bookName": "एशिया",
+        "createDate": {
+            "seconds": 1714045175,
+            "nanoseconds": 739000000
+        },
+        "subject": {
+            "docId": "yPo0aEL8rVdLVgpmQ2tq",
+            "name": "GEOGRAPHY",
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            }
+        },
+        "topic": {
+            "topicName": "WORLD GEOGRAPHY ",
+            "docId": "AAsEiff0FHGu9GrM69tL"
+        }
+    },
+    {
+        "docId": "21pDN7ahESfeIi8MbueA",
+        "createDate": {
+            "seconds": 1714045167,
+            "nanoseconds": 915000000
+        },
+        "authStatus": true,
+        "subject": {
+            "name": "GEOGRAPHY",
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            },
+            "docId": "yPo0aEL8rVdLVgpmQ2tq"
+        },
+        "bookName": "यूरोप",
+        "topic": {
+            "docId": "AAsEiff0FHGu9GrM69tL",
+            "topicName": "WORLD GEOGRAPHY "
+        }
+    },
+    {
+        "docId": "gKCmCC1gU47nDOh799hY",
+        "createDate": {
+            "seconds": 1714045162,
+            "nanoseconds": 716000000
+        },
+        "bookName": "आट्रेलिया",
+        "subject": {
+            "name": "GEOGRAPHY",
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            },
+            "docId": "yPo0aEL8rVdLVgpmQ2tq"
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "AAsEiff0FHGu9GrM69tL",
+            "topicName": "WORLD GEOGRAPHY "
+        }
+    },
+    {
+        "docId": "7lPggx6arjinu9hRZ2tH",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1714045148,
+            "nanoseconds": 249000000
+        },
+        "bookName": "अफ्रीका",
+        "subject": {
+            "name": "GEOGRAPHY",
+            "docId": "yPo0aEL8rVdLVgpmQ2tq",
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            }
+        },
+        "topic": {
+            "topicName": "WORLD GEOGRAPHY ",
+            "docId": "AAsEiff0FHGu9GrM69tL"
+        }
+    },
+    {
+        "docId": "JG6ybLwgqYrCvHyIMjMR",
+        "createDate": {
+            "seconds": 1714045110,
+            "nanoseconds": 321000000
+        },
+        "bookName": "दक्षिण अमेरिका",
+        "authStatus": true,
+        "subject": {
+            "docId": "yPo0aEL8rVdLVgpmQ2tq",
+            "name": "GEOGRAPHY",
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            }
+        },
+        "topic": {
+            "topicName": "WORLD GEOGRAPHY ",
+            "docId": "AAsEiff0FHGu9GrM69tL"
+        }
+    },
+    {
+        "docId": "2Nia8ENRfj6v01sO7Sb6",
+        "createDate": {
+            "seconds": 1714045101,
+            "nanoseconds": 24000000
+        },
+        "authStatus": true,
+        "bookName": "उत्तर अमेरिका",
+        "subject": {
+            "docId": "yPo0aEL8rVdLVgpmQ2tq",
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            },
+            "name": "GEOGRAPHY"
+        },
+        "topic": {
+            "docId": "AAsEiff0FHGu9GrM69tL",
+            "topicName": "WORLD GEOGRAPHY "
+        }
+    },
+    {
+        "docId": "fjduP9iEBTN26czAwRfP",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1713083453,
+            "nanoseconds": 356000000
+        },
+        "topic": {
+            "topicName": "CURRENT SCIENCE ",
+            "docId": "DESkNKgBo7Q18gBkpBbY"
+        },
+        "bookName": "अप्रैल 2024",
+        "subject": {
+            "docId": "NjCcYOSB9wKAAdSn9TXx",
+            "createDate": {
+                "seconds": 1709397688,
+                "nanoseconds": 513000000
+            },
+            "name": "TECHNOLOGY"
+        }
+    },
+    {
+        "docId": "WnKL0pXKtIaRwM5NOP77",
+        "authStatus": true,
+        "bookName": "अप्रैल 2024",
+        "createDate": {
+            "seconds": 1713083158,
+            "nanoseconds": 969000000
+        },
+        "topic": {
+            "topicName": "CURRENT CULTURE ",
+            "docId": "2aJMh84LM8AGEii095kB"
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            },
+            "name": "CULTURE",
+            "docId": "KS0c3UQn8w1neSTDQucz"
+        }
+    },
+    {
+        "docId": "0mgJDt6qfr5CrRm1o4yU",
+        "bookName": "अप्रैल 2024",
+        "createDate": {
+            "seconds": 1713083110,
+            "nanoseconds": 769000000
+        },
+        "topic": {
+            "docId": "7u4JzqcOkPYF6sr5BI9x",
+            "topicName": "CURRENT SOCIETY "
+        },
+        "authStatus": true,
+        "subject": {
+            "name": "SOCIETY",
+            "createDate": {
+                "seconds": 1709395609,
+                "nanoseconds": 107000000
+            },
+            "docId": "eDd2bYBgRKnYVAmUIr9H"
+        }
+    },
+    {
+        "docId": "WOp2jNvlDTCU3TbTbjVB",
+        "createDate": {
+            "seconds": 1713083074,
+            "nanoseconds": 299000000
+        },
+        "topic": {
+            "topicName": "CURRENT ECONOMY ",
+            "docId": "mIKtGKH2KQCoOVeEmOTW"
+        },
+        "bookName": "अप्रैल 2024",
+        "authStatus": true,
+        "subject": {
+            "docId": "opXybMynr2Nt4gUSlGgv",
+            "createDate": {
+                "seconds": 1709395587,
+                "nanoseconds": 824000000
+            },
+            "name": "ECONOMY"
+        }
+    },
+    {
+        "docId": "Kf7HaoL5FdhpOLmi2mcz",
+        "createDate": {
+            "seconds": 1713083022,
+            "nanoseconds": 47000000
+        },
+        "authStatus": true,
+        "bookName": "अप्रैल 2024",
+        "subject": {
+            "docId": "v1nAPYacV2OClXaKBp4c",
+            "createDate": {
+                "seconds": 1709395508,
+                "nanoseconds": 449000000
+            },
+            "name": "POLITY"
+        },
+        "topic": {
+            "topicName": "CURRENT POLITY",
+            "docId": "tIAAkRZ4Pvq2c1TFABAk"
+        }
+    },
+    {
+        "docId": "oWvGArj846VIBbkYPF8y",
+        "authStatus": true,
+        "bookName": "अप्रैल 2024",
+        "createDate": {
+            "seconds": 1713082994,
+            "nanoseconds": 411000000
+        },
+        "subject": {
+            "docId": "yPo0aEL8rVdLVgpmQ2tq",
+            "name": "GEOGRAPHY",
+            "createDate": {
+                "seconds": 1709310952,
+                "nanoseconds": 674000000
+            }
+        },
+        "topic": {
+            "topicName": "CURRENT GEOGRAPHY ",
+            "docId": "nqLaGzDjHeGxzc76staG"
+        }
+    },
+    {
+        "docId": "JBnpDSCOdb17YErS6lqD",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1712390145,
+            "nanoseconds": 124000000
+        },
+        "bookName": "भारतीय प्रशासन",
+        "subject": {
+            "createDate": {
+                "seconds": 1709395508,
+                "nanoseconds": 449000000
+            },
+            "name": "POLITY",
+            "docId": "v1nAPYacV2OClXaKBp4c"
+        },
+        "topic": {
+            "docId": "PTZlwwvgXynwxaIvoeHH",
+            "topicName": "GOVERNANCE "
+        }
+    },
+    {
+        "docId": "qvtina3zs02Rz1NfO4FH",
+        "authStatus": true,
+        "bookName": "विश्व धर्म एवं संस्कृति",
+        "subject": {
+            "name": "HISTORY ",
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "docId": "GLZXkH24dPFr2HUClw7X"
+        },
+        "topic": {
+            "topicName": "WORLD HISTORY BY SUBJECTS ",
+            "docId": "qdhgy3DYLsed17pCUgyu"
+        },
+        "createDate": {
+            "seconds": 1711374525,
+            "nanoseconds": 91000000
+        }
+    },
+    {
+        "docId": "TjWHuGVio88EawjyhG60",
+        "createDate": {
+            "seconds": 1711374439,
+            "nanoseconds": 569000000
+        },
+        "bookName": "विश्व अर्थव्यवस्था",
+        "topic": {
+            "docId": "qdhgy3DYLsed17pCUgyu",
+            "topicName": "WORLD HISTORY BY SUBJECTS "
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "name": "HISTORY ",
+            "docId": "GLZXkH24dPFr2HUClw7X"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "L48ArJmUQfmpIGJfNvlP",
+        "topic": {
+            "docId": "qdhgy3DYLsed17pCUgyu",
+            "topicName": "WORLD HISTORY BY SUBJECTS "
+        },
+        "authStatus": true,
+        "subject": {
+            "createDate": {
+                "seconds": 1709177717,
+                "nanoseconds": 550000000
+            },
+            "name": "HISTORY ",
+            "docId": "GLZXkH24dPFr2HUClw7X"
+        },
+        "bookName": "विश्व राजनीति",
+        "createDate": {
+            "seconds": 1711373212,
+            "nanoseconds": 823000000
+        }
+    },
+    {
+        "docId": "VUP2fdy2R1wVW0vwHyMa",
+        "bookName": "प्रौद्योगिकी का विकास",
+        "authStatus": true,
+        "topic": {
+            "docId": "3EHisXrWRc6n4yuiz1qW",
+            "topicName": "TECHNICAL HISTORY "
+        },
+        "createDate": {
+            "seconds": 1709697659,
+            "nanoseconds": 90000000
+        },
+        "subject": {
+            "createDate": {
+                "seconds": 1709397688,
+                "nanoseconds": 513000000
+            },
+            "name": "TECHNOLOGY",
+            "docId": "NjCcYOSB9wKAAdSn9TXx"
+        }
+    },
+    {
+        "docId": "W6WhE5L6opLCkiJfELnH",
+        "bookName": "गणित,  खगोल, भौतिकी, रसायन एवं औषधि विज्ञान",
+        "topic": {
+            "topicName": "TECHNICAL HISTORY ",
+            "docId": "3EHisXrWRc6n4yuiz1qW"
+        },
+        "authStatus": true,
+        "subject": {
+            "name": "TECHNOLOGY",
+            "docId": "NjCcYOSB9wKAAdSn9TXx",
+            "createDate": {
+                "seconds": 1709397688,
+                "nanoseconds": 513000000
+            }
+        },
+        "createDate": {
+            "seconds": 1709697634,
+            "nanoseconds": 548000000
+        }
+    },
+    {
+        "docId": "dI2A4YRubIAHoo8wdx1K",
+        "subject": {
+            "docId": "KS0c3UQn8w1neSTDQucz",
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            },
+            "name": "CULTURE"
+        },
+        "bookName": "आधुनिक भारत की संस्कृति एवं विरासत",
+        "createDate": {
+            "seconds": 1709612855,
+            "nanoseconds": 509000000
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "PW0AAjc5RJcmwwPOtwjx",
+            "topicName": "CULTURAL HISTORY "
+        }
+    },
+    {
+        "docId": "NKRfY0Jxmd2X3v3FfLGd",
+        "subject": {
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            },
+            "docId": "KS0c3UQn8w1neSTDQucz",
+            "name": "CULTURE"
+        },
+        "authStatus": true,
+        "topic": {
+            "topicName": "CULTURAL HISTORY ",
+            "docId": "PW0AAjc5RJcmwwPOtwjx"
+        },
+        "bookName": "अध्ययन के स्रोत",
+        "createDate": {
+            "seconds": 1709569809,
+            "nanoseconds": 208000000
+        }
+    },
+    {
+        "docId": "0g6pUZAIkFXnjfI5GjlH",
+        "topic": {
+            "topicName": "CULTURAL HISTORY ",
+            "docId": "PW0AAjc5RJcmwwPOtwjx"
+        },
+        "subject": {
+            "docId": "KS0c3UQn8w1neSTDQucz",
+            "name": "CULTURE",
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            }
+        },
+        "authStatus": true,
+        "bookName": "संगीत एवं नृत्य कला",
+        "createDate": {
+            "seconds": 1709546381,
+            "nanoseconds": 868000000
+        }
+    },
+    {
+        "docId": "nzLpUtOl1rpYvLqJRbzL",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1709546374,
+            "nanoseconds": 190000000
+        },
+        "bookName": "चित्रकला",
+        "subject": {
+            "docId": "KS0c3UQn8w1neSTDQucz",
+            "name": "CULTURE",
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            }
+        },
+        "topic": {
+            "topicName": "CULTURAL HISTORY ",
+            "docId": "PW0AAjc5RJcmwwPOtwjx"
+        }
+    },
+    {
+        "docId": "SGfeR6zhCGBzZHTyDSEA",
+        "subject": {
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            },
+            "docId": "KS0c3UQn8w1neSTDQucz",
+            "name": "CULTURE"
+        },
+        "authStatus": true,
+        "topic": {
+            "docId": "PW0AAjc5RJcmwwPOtwjx",
+            "topicName": "CULTURAL HISTORY "
+        },
+        "createDate": {
+            "seconds": 1709546365,
+            "nanoseconds": 620000000
+        },
+        "bookName": "मूर्तिकला"
+    },
+    {
+        "docId": "GsnxBEgfgTuM4WfNdwmF",
+        "subject": {
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            },
+            "name": "CULTURE",
+            "docId": "KS0c3UQn8w1neSTDQucz"
+        },
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1709546358,
+            "nanoseconds": 591000000
+        },
+        "topic": {
+            "docId": "PW0AAjc5RJcmwwPOtwjx",
+            "topicName": "CULTURAL HISTORY "
+        },
+        "bookName": "स्थापत्य कला"
+    },
+    {
+        "docId": "ZHP8fXElgIPOku4V4P1G",
+        "createDate": {
+            "seconds": 1709546352,
+            "nanoseconds": 718000000
+        },
+        "bookName": "भाषा एवं साहित्य",
+        "topic": {
+            "topicName": "CULTURAL HISTORY ",
+            "docId": "PW0AAjc5RJcmwwPOtwjx"
+        },
+        "subject": {
+            "docId": "KS0c3UQn8w1neSTDQucz",
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            },
+            "name": "CULTURE"
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "Wel1o4qqHL0IMrSECfa7",
+        "topic": {
+            "topicName": "CULTURAL HISTORY ",
+            "docId": "PW0AAjc5RJcmwwPOtwjx"
+        },
+        "subject": {
+            "name": "CULTURE",
+            "docId": "KS0c3UQn8w1neSTDQucz",
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            }
+        },
+        "createDate": {
+            "seconds": 1709546344,
+            "nanoseconds": 509000000
+        },
+        "authStatus": true,
+        "bookName": "धर्म एवं दर्शन"
+    },
+    {
+        "docId": "A9Y0oWr87dnCcfSGRRAi",
+        "subject": {
+            "createDate": {
+                "seconds": 1709395628,
+                "nanoseconds": 139000000
+            },
+            "docId": "KS0c3UQn8w1neSTDQucz",
+            "name": "CULTURE"
+        },
+        "authStatus": true,
+        "bookName": "मध्यपाषाण काल",
+        "createDate": {
+            "seconds": 1709545933,
+            "nanoseconds": 324000000
+        },
+        "topic": {
+            "topicName": "चित्रकला",
+            "docId": "ZM31oeXjp9ZwJImWfKvY"
+        }
+    },
+    {
+        "docId": "xbJ1I3mUoxpbXDgrK7aX",
+        "bookName": "वर्ण एवं जाति, महिलाओं, शूद्रों एवं अछूतों की दशा",
+        "createDate": {
+            "seconds": 1709543856,
+            "nanoseconds": 680000000
+        },
+        "topic": {
+            "topicName": "SOCIAL HISTORY ",
+            "docId": "zwiqGy6bDOxB9b9qSYsl"
+        },
+        "subject": {
+            "name": "SOCIETY",
+            "docId": "eDd2bYBgRKnYVAmUIr9H",
+            "createDate": {
+                "seconds": 1709395609,
+                "nanoseconds": 107000000
+            }
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "5K7rkWphL8TkXRSSm1Dx",
+        "subject": {
+            "name": "ECONOMY",
+            "createDate": {
+                "seconds": 1709395587,
+                "nanoseconds": 824000000
+            },
+            "docId": "opXybMynr2Nt4gUSlGgv"
+        },
+        "topic": {
+            "topicName": "ECONOMIC HISTORY ",
+            "docId": "lFXDJP0wwy8wSbsZkN86"
+        },
+        "bookName": "कृषि, फसल एवं सिंचाई, शिल्प एवं उद्योग, व्यापार, मौद्रिक लेनदेन तथा नगरीकरण",
+        "createDate": {
+            "seconds": 1709537551,
+            "nanoseconds": 128000000
+        },
+        "authStatus": true
+    },
+    {
+        "docId": "hefFcE91Dn0Clw6xJsrY",
+        "authStatus": true,
+        "createDate": {
+            "seconds": 1709532145,
+            "nanoseconds": 305000000
+        },
+        "subject": {
+            "docId": "v1nAPYacV2OClXaKBp4c",
+            "createDate": {
+                "seconds": 1709395508,
+                "nanoseconds": 449000000
+            },
+            "name": "POLITY"
+        },
+        "bookName": "राजा की स्थिति, कर व्यवस्था, स्थाई सेना एवं स्वतंत्र नौकरशाही, प्रशासनिक इकाई",
+        "topic": {
+            "docId": "PTZlwwvgXynwxaIvoeHH",
+            "topicName": "GOVERNANCE "
+        }
+    },
+    {
+        "docId": "urMgbZdKbDucUsKxfwzX",
+        "subject": {
+            "docId": "GLZXkH24dPFr2HUClw7X",
+            "createDate": {
+                "seconds": 1678505717,
+                "nanoseconds": 960000000
+            },
+            "name": "HISTORY "
+        },
+        "bookName": "वैदिक काल",
+        "createDate": {
+            "seconds": 1709394376,
+            "nanoseconds": 880000000
+        },
+        "topic": {
+            "docId": "f65718RJFc3BoUPiadnF",
+            "topicName": "राजनीति"
+        },
+        "authStatus": true
+    }
+]

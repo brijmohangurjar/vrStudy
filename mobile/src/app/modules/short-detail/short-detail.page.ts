@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ShortDetailService } from 'src/app/api-services';
+import { RecentShortService } from 'src/app/api-services';
 import { ToastService } from 'src/app/service';
 import { ViewImageComponent } from '../shared-module/view-image/view-image.component';
 
@@ -23,9 +23,10 @@ export class ShortDetailPage implements OnInit, OnDestroy {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private shortDetailService: ShortDetailService,
+    // private shortDetailService: ShortDetailService,
     private toastService: ToastService,
-    private popoverCtrl: PopoverController
+    private popoverCtrl: PopoverController,
+    private recentShortService: RecentShortService
   ) { }
 
   public ngOnInit() {
@@ -47,12 +48,17 @@ export class ShortDetailPage implements OnInit, OnDestroy {
   private getPageDetailByBookId(bookId: string): void {
     this.shortDetailLoading = true;
     this.subscriptions.push(
-      this.shortDetailService.getShortDetailByShortDocId(bookId)
+      this.recentShortService.getRecentShortList()
         .subscribe((responseData: any) => {
           this.shortDetailLoading = false;
-          if (responseData) {
-            this.shortDetail = responseData;
+          if(responseData && responseData.length){
+            const result = responseData.find(res => res?.docId == bookId);
+            this.shortDetail = result ? result : null;
+            // this.originalData = result && result.length ? result : [];;
           }
+          // if (responseData) {
+          //   this.shortDetail = responseData;
+          // }
         }, (error: HttpErrorResponse) => {
           this.shortDetailLoading = false;
           console.log('error', error);
