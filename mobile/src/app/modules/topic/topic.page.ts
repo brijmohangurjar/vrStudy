@@ -16,10 +16,9 @@ export class TopicPage implements OnInit, OnDestroy {
   public topicListLoading = true;
   public loopForImageLoading = new Array(15);
   public originalData: any = [];
-
-  private subjectId: string;
-  private subscriptions: Subscription[] = [];
+  public subjectId: string;
   public title = '';
+  private subscriptions: Subscription[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,

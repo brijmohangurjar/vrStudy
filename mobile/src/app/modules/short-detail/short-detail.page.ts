@@ -14,7 +14,7 @@ import { ViewImageComponent } from '../shared-module/view-image/view-image.compo
 })
 export class ShortDetailPage implements OnInit, OnDestroy {
 
-  public shortDetail = [];
+  public shortDetail;
   public shortDetailLoading = true;
   public loopForImageLoading = new Array(1);
 

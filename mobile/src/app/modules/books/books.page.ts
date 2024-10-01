@@ -17,8 +17,7 @@ export class BooksPage implements OnInit, OnDestroy {
   public loopForImageLoading = new Array(15);
   public originalData: any = [];
   public title = '';
-
-  private topicId: string;
+  public topicId: string;
   private subscriptions: Subscription[] = [];
 
   constructor(
